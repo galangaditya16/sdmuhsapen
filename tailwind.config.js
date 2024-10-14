@@ -9,7 +9,9 @@ export default {
       colors: {
         'dark-blue': '#000080',
         'hover-menu': '#f86f03',
-        'oren': '#f86f03'
+        'oren': '#f86f03', 
+        'kuning-tua': '##ffda3f',
+        'kuning-muda': '#ffde59'
       },
       fontFamily: {
         abeezee: ['AbeeZee'], // Menambahkan font lokal

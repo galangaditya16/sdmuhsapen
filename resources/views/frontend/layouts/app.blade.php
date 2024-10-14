@@ -18,8 +18,7 @@
         @yield('content')
     </div>
 
-    {{-- @include('layouts.frontend.navbar')  --}}
-
+    @include('frontend.layouts.footer')
     @yield('script')
 </body>
 
