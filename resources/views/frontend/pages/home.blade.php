@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('frontend.layouts.app')
 
 @section('content')
     <section class="bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
