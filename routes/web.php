@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route:Route::prefix('backyard')->group(function () {
+    Route::get('/',[DashboardController::class,'index']);
+});
 
 Route::get('/', [HomeController::class, 'index']);
