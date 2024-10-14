@@ -10,8 +10,10 @@ export default {
         'dark-blue': '#000080',
         'hover-menu': '#f86f03',
         'oren': '#f86f03', 
-        'kuning-tua': '##ffda3f',
-        'kuning-muda': '#ffde59'
+        'kuning-tua': '#ffda3f',
+        'kuning-muda': '#ffde59',
+        'biru-remaja': '#4379f2',
+        'biru-tua': '#004aad'
       },
       fontFamily: {
         abeezee: ['AbeeZee'], // Menambahkan font lokal
