@@ -1,6 +1,6 @@
 
 
-<footer class="bg-dark-blue text-white">
+<footer class="bg-dark-blue text-white mt-5">
     <div class="w-full p-4 pt-6 pb-1 lg:py-8">
         <div class="container md:flex md:flex-row mx-auto ">
             <div class="grid gap-12 md:grid-cols-3 sm:gap-6 sm:grid-cols-1 :grid-cols-1 md:flex-auto md:p-2">
