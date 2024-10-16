@@ -19458,7 +19458,8 @@ body {
 
   .navbar-vertical.navbar-expand-lg .navbar-brand {
     padding: .75rem 0;
-    justify-content: center
+    justify-content: center;
+    background: var(--tblr-white);
   }
 
   .navbar-vertical.navbar-expand-lg .navbar-collapse {
