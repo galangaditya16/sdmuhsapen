@@ -9,7 +9,7 @@
 -->
 <html lang="en">
   <head>
-    @include('backend.layout.head')
+    	@include('backend.layout.head')
   </head>
   <body >
     <script src="{{ asset('assets/backend/') }}/js/demo-theme.min.js?1692870487"></script>
@@ -20,8 +20,13 @@
         <!-- Page header -->
         @include('backend.layout.header')
         <!-- Page body -->
-        @yield('content')
-        
+		<div class="page-body">
+			<div class="container-xl">
+			  <div class="row row-cards">
+				@yield('content')
+			  </div>
+			</div>
+		</div>
         @include('backend.layout.footer')
       </div>
     </div>
