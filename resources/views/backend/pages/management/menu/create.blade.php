@@ -2,66 +2,51 @@
 
 @section('content')
     <div class="col-md-12">
-        <form class="card">
+        <form class="card" method="POST" action="{{ route('management-menu.store') }}">
+            @csrf
             <div class="card-header">
-                <h3 class="card-title">Basic form</h3>
+                <h3 class="card-title">Add Menu</h3>
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label required">Email address</label>
+                    <label class="form-label required">Nama Menu</label>
                     <div>
-                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small class="form-hint">We'll never share your email with anyone else.</small>
+                        <input type="text" class="form-control" name="menu_name" aria-describedby="title" placeholder="Enter Name" value="{{ old('menu_name')}}">
+                        @error('menu_name')     
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Password</label>
+                    <label class="form-label">Route</label>
                     <div>
-                        <input type="password" class="form-control" placeholder="Password">
-                        <small class="form-hint">
-                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain
-                            spaces, special characters, or emoji.
-                        </small>
+                        <input type="text" name="route" class="form-control" aria-describedby="title" placeholder="Enter Name Route" value="{{ old('route') }}">
+                        @error('route')     
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Select</label>
+                    <label class="form-label">Parent</label>
                     <div>
-                        <select class="form-select">
-                            <option>Option 1</option>
-                            <optgroup label="Optgroup 1">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                            </optgroup>
-                            <option>Option 2</option>
-                            <optgroup label="Optgroup 2">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                            </optgroup>
-                            <optgroup label="Optgroup 3">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                            </optgroup>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
+                        <select class="form-select" name="parent">
+                            <option selected>---- Parent ---</option>
+                            @foreach ($parents as $parent)
+                            <option value="{{ $parent->id }}">{{ $parent->menu_name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Checkboxes</label>
+                    <label class="form-label">Icon</label>
                     <div>
-                        <label class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                            <span class="form-check-label">Option 1</span>
-                        </label>
-                        <label class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <span class="form-check-label">Option 2</span>
-                        </label>
-                        <label class="form-check">
-                            <input class="form-check-input" type="checkbox" disabled>
-                            <span class="form-check-label">Option 3</span>
-                        </label>
+                        <input type="text" name="icon" class="form-control" aria-describedby="title" placeholder="Enter Icon" value="{{ old('icon') }}">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Order</label>
+                    <div>
+                        <input type="number" name="order" class="form-control" aria-describedby="title" placeholder="Enter Parent" value="old('order')">
                     </div>
                 </div>
             </div>

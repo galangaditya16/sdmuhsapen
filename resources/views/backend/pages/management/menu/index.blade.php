@@ -30,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($menus as $menu)
+                        @forelse ($menus as $menu)
                             <tr>
                                 <td>{{ $menu->id }}</td>
                                 <td>{{ $menu->menu_name }}</td>
@@ -43,7 +43,7 @@
                                             <a href="#" class="btn btn-danger btn-pill w-120">
                                                 Hapus
                                             </a>
-                                            <a href="#" class="btn btn-primary btn-pill w-120">
+                                            <a href="{{ route('management-menu.edit',$menu) }}" class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
                                         </div>
@@ -56,7 +56,11 @@
                                     @endif
                                 </td>
                             </tr>
-                        @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="6" style="text-align: center">Tidak Ada Data</td>
+                            </tr>
+                            @endforelse
                 </table>
             </div>
             {!! $menus->links('backend.layout.pagination') !!}

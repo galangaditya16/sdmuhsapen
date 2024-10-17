@@ -24,9 +24,9 @@ class MenuRequest extends FormRequest
         return [
             //
             'menu_name' => 'required|max:255',
-            'route'     => 'required|max:255',
-            'icon'      => 'required|max:255',
-            'order'     => 'required|max:10|numeric',
+            // 'route'     => 'required|max:255',
+            // 'icon'      => 'required|max:255',
+            // 'order'     => 'required|max:10|numeric',
         ];
     }
     public function attributes()
