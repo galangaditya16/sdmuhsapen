@@ -12,16 +12,19 @@ use Illuminate\Support\Facades\Log;
 
 class MenuController extends BaseController
 {
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         try {
-            $data = Menu::all();
-            return $this->makeView('backend.pages.management.menu.index',compact('data'));
+            $menus = Menu::whereNull('is_active')->with('parent')->paginate(10);
+            return $this->makeView('backend.pages.management.menu.index',compact('menus'));
         } catch (\Throwable $th) {
             dd($th->getMessage());
+            return redirect()->back()->with('error','Tidak Dapat Melakukan Tambah');
         }
     }
 
@@ -30,7 +33,13 @@ class MenuController extends BaseController
      */
     public function create()
     {
-        //
+        try {
+            $parent = Menu::whereNull('is_active')->whereNull('parent_id')->get();
+            return $this->makeView('backend.pages.management.menu.create',compact('parent'));
+        } catch (\Throwable $th) {
+                        dd($th->getMessage());
+           return redirect()->back()->with('error','Tidak Dapat Melakukan Tambah');
+        }
     }
 
     /**
@@ -39,7 +48,7 @@ class MenuController extends BaseController
     public function store(MenuRequest $request)
     {
         try {
-            
+
         } catch (\Throwable $th) {
 
         }

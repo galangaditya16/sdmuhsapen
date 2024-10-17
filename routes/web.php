@@ -26,7 +26,7 @@ Route:Route::prefix('backyard')->group(function () {
     //category
     Route::resource('category',CategoryController::class);
     //menu
-    Route::resource('menu', MenuController::class);
+    Route::resource('management-menu', MenuController::class);
 });
 
 Route::get('/', [HomeController::class, 'index']);
