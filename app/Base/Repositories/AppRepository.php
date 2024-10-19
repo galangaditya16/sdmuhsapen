@@ -175,12 +175,8 @@ class AppRepository
         $data = NULL;
         DB::beginTransaction();
         try {
-            //$data = $this->show($id);
-            //$data->update([
-            //	'enabled' => $status
-            //]);
             $data = $this->model->where('id', $id)->update([
-                'enabled' => $status,
+                'is_active' => $status,
             ]);
             Cache::flush();
             DB::commit();

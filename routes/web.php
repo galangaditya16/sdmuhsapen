@@ -27,6 +27,7 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('category',CategoryController::class);
     //menu
     Route::resource('management-menu', MenuController::class);
+    Route::get('delete/{id}',[MenuController::class,'SoftDelete'])->name('softdel.menu');
 });
 
 Route::get('/', [HomeController::class, 'index']);

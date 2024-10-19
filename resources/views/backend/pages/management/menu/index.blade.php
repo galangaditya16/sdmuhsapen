@@ -40,11 +40,11 @@
                                 <td>
                                     @if ($menu->is_active != 1)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="#" class="btn btn-danger btn-pill w-120">
-                                                Hapus
-                                            </a>
                                             <a href="{{ route('management-menu.edit',$menu) }}" class="btn btn-primary btn-pill w-120">
                                                 Edit
+                                            </a>
+                                            <a href="{{ route('softdel.menu',$menu) }}" class="btn btn-danger btn-pill w-120">
+                                                Hapus
                                             </a>
                                         </div>
                                     @else

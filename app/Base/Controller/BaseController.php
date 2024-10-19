@@ -2,6 +2,7 @@
 namespace App\Base\Controller;
 
 use App\Base\Utilities\LoadMenu;
+use App\Base\Repositories\AppRepository;
 use App\Http\Controllers\Controller as ControllersController;
 
 Class BaseController extends ControllersController{

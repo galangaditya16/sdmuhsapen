@@ -10,11 +10,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Base\Repositories\AppRepository;
 
 class MenuController extends BaseController
 {
 
+    protected $repositories;
 
+    public function __construct(Menu $menu) {
+        $this->repositories = new AppRepository($menu);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -94,11 +99,13 @@ class MenuController extends BaseController
         DB::beginTransaction();
         $menu = NULL;
         try {
-            $menu = Menu::find($id);
+            $menu = Menu::findOrFail($id);
             $menu->update($request->all());
+            DB::commit();
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Disimpan');
         } catch (\Throwable $th) {
             //throw $th;
+            DB::rollBack();
             dd($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
@@ -120,6 +127,16 @@ class MenuController extends BaseController
             //code...
         } catch (\Throwable $th) {
             //throw $th;
+            dd($th);
+            return redirect()->back()->with('error','Gagal Melakukan Aksi');
+        }
+    }
+
+    public function SoftDelete($id){
+        try {
+            $this->repositories->activeNonActive($id,1);
+            return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');  
+        } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
