@@ -12,7 +12,7 @@
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
                       <a href="{{ route('management-menu.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                        Tambah Menu
+                        Add Menu
                       </a>
                     </div>
                   </div>

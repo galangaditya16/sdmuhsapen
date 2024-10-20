@@ -49,12 +49,12 @@ class AppRepository
      * 
      * @return Collection of items.
      */
-    public function paginate(Request $request)
+    public function paginate()
     {
         $data = NULL;
         DB::beginTransaction();
         try {
-            $data = $this->model->orderBy('created_at', 'DESC')->paginate($request->input('limit', 15));
+            $data = $this->model->orderBy('created_at', 'DESC')->paginate(10);
             Cache::flush();
             DB::commit();
         } catch (\Throwable $th) {

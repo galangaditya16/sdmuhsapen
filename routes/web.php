@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\MenuController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route:Route::prefix('backyard')->group(function () {
     Route::get('/',[DashboardController::class,'index']);
     //category
     Route::resource('category',CategoryController::class);
+    Route::get('category/delete/{status}/{id}',[Category::class,'SoftDelete'])->name('softdel.category');
     //menu
     Route::resource('management-menu', MenuController::class);
     Route::get('delete/{id}',[MenuController::class,'SoftDelete'])->name('softdel.menu');
