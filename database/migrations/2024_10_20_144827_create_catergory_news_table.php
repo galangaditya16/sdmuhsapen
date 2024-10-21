@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('category', function (Blueprint $table) {
-            $table->bigIncrements('id')->first(); // Menambahkan kolom id sebagai primary key
+        Schema::create('catergory_news', function (Blueprint $table) {
+            $table->id();
+            $table->string('slug');
+            $table->string('title');
+            $table->text('images');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -21,9 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('category', function (Blueprint $table) {
-            //
-            $table->dropColumn('id'); // Menghapus kolom id jika rollback
-        });
+        Schema::dropIfExists('catergory_news');
     }
 };

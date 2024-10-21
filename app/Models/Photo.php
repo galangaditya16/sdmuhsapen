@@ -22,6 +22,9 @@ class Photo extends Model
                         'trashed',
     ];
 
+    const UPDATED_AT = 'data_updated';
+    const CREATED_AT = 'data_added';
+
     // public function photo(){
     //     return $this->belongsTo(Photo::class,'photo_id','')
     // }

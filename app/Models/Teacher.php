@@ -23,6 +23,8 @@ class Teacher extends Model
         'published',
         'trashed',
     ];
+    const UPDATED_AT = 'data_updated';
+    const CREATED_AT = 'data_added';
 
     public function teacherPosition(){
         return $this->belongsTo(TeacherPosition::class,'teacher_position_id');

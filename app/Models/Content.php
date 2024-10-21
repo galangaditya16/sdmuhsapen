@@ -19,10 +19,13 @@ class Content extends Model
         'dlug',
         'text',
         'date_added',
+        'date_updated',
         'published',
         'trashed',
         'view',
     ];
+    const UPDATED_AT = 'data_updated';
+    const CREATED_AT = 'data_added';
 
     public function category (){
         return $this->belongsTo(Category::class,'category_id','category_id');

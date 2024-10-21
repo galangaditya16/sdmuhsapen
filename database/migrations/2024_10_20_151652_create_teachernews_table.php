@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('teachernews', function (Blueprint $table) {
             $table->id();
+            $table->integer('position_id');
             $table->string('name');
-            $table->string('slug');
-            $table->integer('order');
+            $table->string('no');
+            $table->string('image');
+            $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('teachernews');
     }
 };

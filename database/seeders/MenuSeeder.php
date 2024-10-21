@@ -16,9 +16,9 @@ class MenuSeeder extends Seeder
         //
         DB::table('menus')->insert([
             [
-                'menu_name' => 'Konten',
+                'menu_name' => 'Dashboard',
                 'parent_id' => null,  // root menu
-                'route' => 'dashboard',
+                'route' => '',
                 'icon' => 'home-icon',
                 'order' => 1,
                 'is_active' => '1',
@@ -26,21 +26,101 @@ class MenuSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'menu_name' => 'Manajemen Konten',
-                'route' => 'manajemen-konten.index',
-                'parent_id' => 1,  // root menu
-                'icon' => 'news-icon',
-                'order' => 1,
+                'menu_name' => 'Master Data',
+                'parent_id' => null,  // root menu
+                'route' => '',
+                'icon' => 'master-icon',
+                'order' => 2,
                 'is_active' => '1',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'menu_name' => 'Kategori Konten',
-                'route' => 'kategori-konten.index',
-                'parent_id' => 1,  // root menu
+                'route' => '',
+                'parent_id' => 2,  // root menu
+                'icon' => 'category-icon',
+                'order' => 1,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Kategori Program',
+                'route' => '',
+                'parent_id' => 2,  // root menu
                 'icon' => 'category-icon',
                 'order' => 2,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Kategori Berita',
+                'route' => '',
+                'parent_id' => 3,  // root menu
+                'icon' => 'category-icon',
+                'order' => 2,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Jabatan Guru',
+                'route' => '',
+                'parent_id' => 3,  // root menu
+                'icon' => 'category-icon',
+                'order' => 4,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Manajemen Guru',
+                'route' => '',
+                'parent_id' => '',  // root menu
+                'icon' => 'category-icon',
+                'order' => 4,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Achievement',
+                'route' => '',
+                'parent_id' => '',  // root menu
+                'icon' => 'category-icon',
+                'order' => 5,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Landingpage Management',
+                'route' => '',
+                'parent_id' => '',  // root menu
+                'icon' => 'category-icon',
+                'order' => 3,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'User Management',
+                'route' => '',
+                'parent_id' => '',  // root menu
+                'icon' => 'category-icon',
+                'order' => 6,
+                'is_active' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'menu_name' => 'Contact',
+                'route' => '',
+                'parent_id' => '',  // root menu
+                'icon' => 'category-icon',
+                'order' => 7,
                 'is_active' => '1',
                 'created_at' => now(),
                 'updated_at' => now(),

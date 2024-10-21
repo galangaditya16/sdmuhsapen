@@ -8,22 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $table    = 'category';
+    protected $table    = 'categories';
     // protected $primary
     protected $fillable = [
-                            'category_id',
-                            'parent_category_id',
-                            'language',
+                            'id',
                             'name',
-                            'slug',
-                            'date_added',
-                            'date_updated',
-                            'published',
-                            'trashed',
+                            'language',
+                            'order',
                           ];
-
-
-    public function parent(){
-        return $this->belongsTo(Category::class,'parent_category_id','category_id');
-    }
+    
+    protected $dates = ['deleted_at'];
 }

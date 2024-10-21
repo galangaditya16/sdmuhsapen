@@ -21,4 +21,6 @@ class PhotoAlbum extends Model
         'published',
         'trashed',
     ];
+    const UPDATED_AT = 'data_updated';
+    const CREATED_AT = 'data_added';
 }
