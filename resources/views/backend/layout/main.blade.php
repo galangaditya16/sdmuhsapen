@@ -645,5 +645,6 @@
       });
       // @formatter:on
     </script>
+	@yield('js')
   </body>
 </html>

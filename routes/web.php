@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\backend\CategoryNews;
 use App\Http\Controllers\backend\CategoryProgram;
+use App\Http\Controllers\backend\CategoryNewsController;
 use App\Http\Controllers\backend\Contact;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\backend\TeacherNew;
@@ -37,7 +37,7 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('management-menu', MenuController::class);
     Route::get('delete/{id}',[MenuController::class,'SoftDelete'])->name('softdel.menu');
     // category news
-    Route::resource('category-news',CategoryNews::class);
+    Route::resource('category-news',CategoryNewsController::class);
     //category programs
     Route::resource('category-programs', CategoryProgram::class);
     //achievement

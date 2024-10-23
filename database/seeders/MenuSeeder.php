@@ -57,7 +57,7 @@ class MenuSeeder extends Seeder
             ],
             [
                 'menu_name' => 'Kategori Berita',
-                'route' => '',
+                'route' => 'category-news.index',
                 'parent_id' => 3,  // root menu
                 'icon' => 'category-icon',
                 'order' => 2,
