@@ -28,6 +28,7 @@
 @endsection
 
 @section('content')
+{{-- SLIDER CAROUSEL --}}
 <section class=" border-gray-200 my-20">    
      <!--HTML CODE-->
     <div class="w-full">
@@ -75,6 +76,7 @@
         
 </section>
 
+{{-- PERKENALAN SD MUH SAMPEN --}}
 <section class=" border-gray-200 my-20">    
     <!--HTML CODE-->
    <div class="w-full container mx-auto px-4">
@@ -101,6 +103,7 @@
        
 </section>
 
+{{-- KEUNGGULAN --}}
 <section class=" border-gray-200 my-20">    
        
     <div class="w-full relative container mx-auto px-4">
@@ -171,6 +174,7 @@
         
 </section>
 
+{{-- KEUNGGULAN --}}
 <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(248, 111, 3, 0.1)">    
     <div class="w-full block container mx-auto px-4">
         <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
@@ -211,16 +215,16 @@
     </div>
 </section>
 
+{{-- GALERY --}}
 <section class=" border-gray-200 my-20 py-20">    
     <div class="w-full block container mx-auto px-4">
-        <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
-
-        
+        <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>        
 
         <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2">
             <div class="relative">
-                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 flex text-white font-semibold">
-                    <div class="flex">
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
                         <span class="flex text-black">
                             <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
@@ -228,36 +232,181 @@
                             </svg>
                             25 Gambar
                         </span>
-                        <span class="flex text-black">
-                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
-                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
-                            </svg>
-                            25 Gambar
-                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
                     </div>
                 </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">                
             </div>
             <div class="relative" >
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
+                        <span class="flex text-black">
+                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
+                            </svg>
+                            25 Gambar
+                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
+                    </div>
+                </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
             </div>
             <div class="relative col-span-2 row-span-2">
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
+                        <span class="flex text-black">
+                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
+                            </svg>
+                            25 Gambar
+                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
+                    </div>
+                </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
             </div>
             <div class="relative col-span-2 row-span-2">
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
+                        <span class="flex text-black">
+                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
+                            </svg>
+                            25 Gambar
+                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
+                    </div>
+                </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
             </div>
             <div class="relative">
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
+                        <span class="flex text-black">
+                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
+                            </svg>
+                            25 Gambar
+                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
+                    </div>
+                </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
             </div>
             <div class="relative">
+                <div class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                    <div class="flex flex-col">
+                        
+                        <span class="flex text-black">
+                            <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z" clip-rule="evenodd"/>
+                            </svg>
+                            25 Gambar
+                        </span>
+
+                        <h3 class="text-dark-blue text-xl">
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                        </h3>
+                        <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+                        
+                    </div>
+                </div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
             </div>         
         </div>
 
+        <div class="relative flex">
+            <a href="#" class="mx-auto">
+                <button type="button" class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                    Lihat Semua Galery
+                </button>
+            </a>
+        </div>
 
     </div>
+</section>
+
+{{-- TESTIMONI --}}
+<section class=" border-gray-200 my-20 py-20" style="background-color: rgba(165, 225, 243, 0.2)" >
+    <!--HTML CODE-->
+    <div class="w-full container mx-auto px-4">
+        <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
+            
+            <div>
+                <h1 class="text-lg font-bold text-oren">Testimonial</h1>
+                <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
+                <p class="text-base mt-3 text-justify">
+                    “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan Guru-guru amat perhatian dengan murid-muridnya untuk melejitkan menggali potensinya. Terima kasih Bapak Ibu Guru yang telah mendidik anak-anak saya disini dengan baik, disiplin, islami, amanah, berdedikasi, dan semangat. Jazakumullahu khoiran katsir”
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3 text-dark-blue">Ustadz Eki Firdaus</h3>
+                <p class="text-base"> 
+                    Orang Tua Murid                                          
+                </p>
+                <div class="rate flex flex-row"> 
+                    <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                    </svg>
+                </div>
+                <a href="#">
+                    <button type="button" class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                        Pelajari Selengkapnya
+                    </button>
+                </a>
+            </div>
+            <div class="flex-auto w-50">
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
+            </div>
+            
+        </div>
+    </div>
+        
 </section>
 
 @endsection
