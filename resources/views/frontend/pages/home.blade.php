@@ -174,7 +174,7 @@
         
 </section>
 
-{{-- KEUNGGULAN --}}
+{{-- BERITA --}}
 <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(248, 111, 3, 0.1)">    
     <div class="w-full block container mx-auto px-4">
         <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
@@ -216,7 +216,7 @@
 </section>
 
 {{-- GALERY --}}
-<section class=" border-gray-200 my-20 py-20">    
+<section class=" border-gray-200 my-20 py-20">
     <div class="w-full block container mx-auto px-4">
         <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>        
 
@@ -407,6 +407,18 @@
         </div>
     </div>
         
+</section>
+
+{{-- SEMUA SPONSOR --}}
+<section class=" border-gray-200 my-20 py-20">
+    <!--HTML CODE-->
+    <div class="w-full container mx-auto px-4">
+        <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
+
+        <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
+            
+        </div>
+    </div>
 </section>
 
 @endsection
