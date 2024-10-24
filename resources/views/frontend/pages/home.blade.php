@@ -76,7 +76,32 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
+            <div class="relative z-10 -top-[115px] ">
+                <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-remaja rounded-2xl">
+                    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4     zZx,">
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                            <dt class="text-base leading-7 text-oren">Transactions every 24 hours</dt>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl">945</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                            <dt class="text-base leading-7 text-pink">Assets under holding</dt>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl">174</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                            <dt class="text-base leading-7 text-hijau-terang">New users annually</dt>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl">19</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                            <dt class="text-base leading-7 text-biru-langit">New users annually</dt>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl">84</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
         </div>
+
+        
+          
 
     </section>
 
