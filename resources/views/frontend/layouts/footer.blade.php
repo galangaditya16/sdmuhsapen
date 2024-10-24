@@ -61,7 +61,7 @@
                 <div>
                         <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">Saluran Kami</h2>
                         <div class="w-80 bg-kuning-muda rounded-lg p-3 mx-auto">
-                                <img class="mx-auto my-2 w-64" src="https://lh4.googleusercontent.com/_9W8681AXnyo/TW9AUSl_OKI/AAAAAAAAAQ8/nQzsIeLacQY/equalizer.gif">
+                                <img class="mx-auto my-2 w-64" src="{{ asset('assets/images/equalizer.gif') }}">
                                 <audio controls="" autoplay="autoplay" class="mx-auto w-100">
                                     <source src="http://freeuk22.listen2myradio.com:12804/;listen.pls" type="audio/mp3">
                                         Your browser does not support the audio element.
@@ -69,7 +69,7 @@
                                 <h3 class="text-3xl text-center mt-2 text-black font-bold">Sapen Radio</h3>
                                 <h3 class="text-xl text-center text-black">Mengedukasi Tiada Henti</h3>
                         </div>
-                        <div class="flex mt-4 md:mt-2 sm:justify-center sm:mx-auto sm:mt-auto">
+                        <div class="flex my-4 md:mt-2 justify-center mx-auto justify-items-center">
                             <a href="#" class="">
                                 <div class="p-2 bg-kuning-muda hover:bg-oren rounded-full">
                                     <svg class="w-8 h-8 text-dark-blue dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
