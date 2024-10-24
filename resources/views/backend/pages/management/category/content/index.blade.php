@@ -1,18 +1,18 @@
 @extends('backend.layout.main')
 @section('breadcrumbs')
     <h2 class="page-title">
-        Management Category
+        Management Category Content
     </h2>
 @endsection
 @section('content')
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Management Category</h3>
+                <h3 class="card-title">Management Category Content</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('management-menu.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add Category
+                        <a href="{{ route('category-content.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                            Add Category Content
                         </a>
                     </div>
                 </div>
@@ -22,10 +22,9 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name Category</th>
+                            <th>Name Category Content</th>
                             <th>Slug</th>
-                            <th>Parent</th>
-                            <th>published</th>
+                            <th>Icon</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -38,20 +37,22 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->slug }}</td>
-                                <td>{{ $row->parent ? $row->parent->name : '-' }}</td>
-                                <td>{{ $row->published == 1 ? 'publish' : 'unpublish' }}</td>
+                                <td>{{ $row->icon ? $row->icon : '-' }}</td>
                                 <td>
                                     {{-- @dd($row->category_id) --}}
-                                    @if ($row->trashed != 1)
+                                    @if (!$row->is_delete)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category.edit', $row->category_id) }}"
+                                            <a href="{{ route('category-content.edit',$row) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <a href="{{ route('softdel.category', ['status' => 'active', 'id' => $row->category_id]) }}"
-                                                class="btn btn-danger btn-pill w-120">
-                                                Hapus
-                                            </a>
+                                            <form action="{{ route('category-content.destroy', $row) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                    Hapus
+                                                </button>
+                                            </form>
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

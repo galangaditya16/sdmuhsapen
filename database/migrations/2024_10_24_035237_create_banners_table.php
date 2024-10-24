@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catergory_news', function (Blueprint $table) {
+        Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('title');
-            $table->text('images')->nullable();
-            $table->softDeletes();
+            $table->string('images');
+            $table->string('title')->nullable();
+            $table->text('link')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('catergory_news');
+        Schema::dropIfExists('banners');
     }
 };

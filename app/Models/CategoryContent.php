@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CategoryNews extends Model
+class CategoryContent extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-
+    use HasFactory,SoftDeletes;
 
     protected $fillable = [
+        'name',
         'slug',
-        'title',
-        'images',
+        'icon',
+        'order'
     ];
-    protected $dates = ['deleted_at'];
 }

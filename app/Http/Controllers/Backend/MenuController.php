@@ -26,11 +26,11 @@ class MenuController extends BaseController
     public function index()
     {
         try {
-            $menus = Menu::whereNull('is_active')->with('parent')->paginate(10);
+            $menus = Menu::with('parent')->paginate(10);
             return $this->makeView('backend.pages.management.menu.index',compact('menus'));
         } catch (\Throwable $th) {
             dd($th->getMessage());
-            return redirect()->back()->with('error','Tidak Dapat Melakukan Tambah');
+            return redirect()->back()->with('error','Gagal melakukan aksi');
         }
     }
 
@@ -40,7 +40,7 @@ class MenuController extends BaseController
     public function create()
     {
         try {
-            $parents = Menu::whereNull('is_active')->whereNull('parent_id')->get();
+            $parents = Menu::whereNull('parent_id')->get();
             return $this->makeView('backend.pages.management.menu.create',compact('parents'));
         } catch (\Throwable $th) {
                         dd($th->getMessage());
@@ -81,7 +81,7 @@ class MenuController extends BaseController
     public function edit(string $id)
     {
         try {
-            $parents = Menu::whereNull('is_active')->whereNull('parent_id')->get();
+            $parents = Menu::whereNull('parent_id')->get();
             $menu    = Menu::find($id);
             return $this->makeView('backend.pages.management.menu.edit',compact('menu','parents'));
         } catch (\Throwable $th) {

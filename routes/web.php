@@ -10,7 +10,8 @@ use App\Http\Controllers\backend\CategoryNewsController;
 use App\Http\Controllers\backend\Contact;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\backend\TeacherNew;
-use App\Models\Category;
+use App\Http\Controllers\backend\CategoryContentController;
+use App\Http\Controllers\Backend\NewsController;
 use App\Models\TeacherPositionnew;
 
 /*
@@ -31,8 +32,7 @@ use App\Models\TeacherPositionnew;
 Route:Route::prefix('backyard')->group(function () {
     Route::get('/',[DashboardController::class,'index']);
     //category
-    Route::resource('category',CategoryController::class);
-    Route::get('category/delete/{status}/{id}',[Category::class,'SoftDelete'])->name('softdel.category');
+    Route::resource('category-content',CategoryContentController::class);
     //menu
     Route::resource('management-menu', MenuController::class);
     Route::get('delete/{id}',[MenuController::class,'SoftDelete'])->name('softdel.menu');
@@ -40,6 +40,8 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('category-news',CategoryNewsController::class);
     //category programs
     Route::resource('category-programs', CategoryProgram::class);
+    // news
+    Route::resource('news',NewsController::class);
     //achievement
     Route::resource('achievement', Achievement::class);
     // teacher

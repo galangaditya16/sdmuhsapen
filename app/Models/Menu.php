@@ -12,6 +12,7 @@ class Menu extends Model
     protected $table = 'menus';
     protected $fillable = [
         'menu_name',
+        'route',
         'parent_id',
         'icon',
         'order',

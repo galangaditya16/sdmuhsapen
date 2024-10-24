@@ -16,11 +16,9 @@ return new class extends Migration
             $table->string('id_category');
             $table->string('title');
             $table->string('slug');
-            $table->string('images');
+            $table->text('images');
             $table->text('body');
             $table->string('author');
-            $table->date('published_at');
-            $table->boolean('is_active')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

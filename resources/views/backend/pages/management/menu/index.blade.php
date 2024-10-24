@@ -26,7 +26,7 @@
                             <th>Route</th>
                             <th>Parent</th>
                             <th>Icon</th>
-                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
