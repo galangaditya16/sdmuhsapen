@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class News extends Model
 {
-    use HasFactory;
+    use HasFactory,Notifiable;
 
     protected $fillable = [
         'id_category',
@@ -22,6 +23,6 @@ class News extends Model
     protected $dates = ['deleted_at'];
 
     public function hasCategory(){
-        return $this->belongsTo(CatergoryNews::class,'id','id_category');
+        // return $this->belongsTo(CatergoryNews::class,'id','id_category');
     }
 }
