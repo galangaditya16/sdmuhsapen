@@ -53,3 +53,4 @@ Route:Route::prefix('backyard')->group(function () {
 });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/profile', [HomeController::class, 'profile']);
