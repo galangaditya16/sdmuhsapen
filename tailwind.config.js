@@ -14,7 +14,14 @@ export default {
         'kuning-tua': '#ffda3f',
         'kuning-muda': '#ffde59',
         'biru-remaja': '#4379f2',
-        'biru-tua': '#004aad'
+        'biru-tua': '#004aad', 
+        'biru-langit': '#b6e4ff',
+        'pink': '#ff66c4',
+        'pink-muda': '#ffaee0', 
+        'hijau-tua': '#217f43',
+        'hijau-muda': '#97d7b6',
+        'hijau-terang': '#c1ff72'
+
       },
       fontFamily: {
         abeezee: ['AbeeZee'], // Menambahkan font lokal

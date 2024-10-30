@@ -11,4 +11,10 @@ class HomeController extends Controller
     {
         return view('frontend.pages.home');
     }
+
+    public function profile() 
+    {
+        return view('frontend.pages.profile');
+    }
+
 }
