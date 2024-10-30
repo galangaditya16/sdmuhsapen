@@ -4,6 +4,9 @@
         Management News
     </h2>
 @endsection
+@yield('title')
+Welcomes
+@endsection
 @section('content')
     <div class="col-12">
         <div class="card">

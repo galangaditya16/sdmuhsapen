@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('category_contents', function (Blueprint $table) {
-            $table->id();
-            $table->string('images');
-            $table->string('title')->nullable();
-            $table->text('link')->nullable();
+        Schema::create('content', function (Blueprint $table) {
+            $table->id('id');
+            $table->integer('id_category');
+            $table->integer('author');
+            $table->integer('views')->default('0');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('content_news');
     }
 };

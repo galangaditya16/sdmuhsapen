@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\Base\Controller\BaseController;
 use App\Http\Requests\CategoryNewsRequest;
+use App\Models\AllCatgeoryTranslite;
 use App\Models\CategoryNews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 
 class CategoryNewsController extends BaseController
@@ -48,9 +50,17 @@ class CategoryNewsController extends BaseController
                 $request->images->move($path,$nameImages);
                 $request['images'] = $nameImages;
             }
+            $request['slug'] = Str::slug($request->title);
             $category = New CategoryNews($request->input());
             $category->save();
+
+            $translite = New AllCatgeoryTranslite();
+            $translite->id_category_news = $category->id;
+            $translite->title = $request->title_translite;
+            $translite->slug = str::slug($request->title_translite);
+            $translite->save();
             DB::commit();
+
             return redirect()->route('category-news.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
             //throw $th;

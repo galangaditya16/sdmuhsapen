@@ -12,15 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('programs', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->string('id_category');
-            $table->string('title');
-            $table->string('slug');
-            $table->string('body');
-            $table->string('images');
             $table->string('author');
-            $table->date('published_at');
-            $table->boolean('is_active')->default(false);
+            $table->integer('views')->default('0');
             $table->softDeletes();
             $table->timestamps();
         });
