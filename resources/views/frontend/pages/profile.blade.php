@@ -24,12 +24,20 @@
 @endsection
 
 @section('content')
-    {{-- SLIDER CAROUSEL --}}
-    <section class="h-[200px] my-20" style="background: url({{ asset('assets/images/cover.jpg') }}); background-size: contain; opacity: 0.1;">
+        
+    
+    <div class="relative h-[300px] w-full overflow-hidden">
+        <img src="{{ asset('assets/images/cover.jpg') }}">
+    </div>
+
+    <section class="h-[200px] mb-20 -mt-[300px]">        
         <!--HTML CODE-->
         <div class="w-full ">
-            <h1>ini halaman profile</h1>
-            <div style="width: 100%; height: 500px" ></div>
+            <div class="flex flex-col">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl font-bold text-black z-50">Profil SD Muhammadiyah Sapen</h1>
+                </div>
+            </div>
         </div>                  
 
     </section>
