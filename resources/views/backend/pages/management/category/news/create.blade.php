@@ -1,6 +1,16 @@
 @extends('backend.layout.main');
 
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
     <div class="col-md-12">
         <form class="card" method="POST" action="{{ route('category-news.store') }}" enctype="multipart/form-data">
             @csrf
@@ -9,7 +19,7 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label required">Name Category</label>
+                    <label class="form-label required">Name Kategori(ID)</label>
                     <div>
                         <input type="text" class="form-control" name="title" aria-describedby="title" placeholder="Enter Name" value="{{ old('title')}}">
                         @error('title')     
@@ -18,10 +28,10 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Slug</label>
+                    <label class="form-label required">Name Category(EN)</label>
                     <div>
-                        <input type="text" name="slug" class="form-control" aria-describedby="slug" placeholder="Enter Name Route" value="{{ old('slug') }}">
-                        @error('slug')     
+                        <input type="text" class="form-control" name="title_translite" aria-describedby="title" placeholder="Enter Name" value="{{ old('title')}}">
+                        @error('title_translite')     
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>

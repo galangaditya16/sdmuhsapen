@@ -25,14 +25,16 @@ class CategoryNewsRequest extends FormRequest
             //
 
             'title' => 'required|max:100',
-            'slug' => 'required|max:100',
+            'title_translite' => 'required|max:100',
+            'slug' => 'max:100',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
     public function attributes()
     {
         return [
-            'title'    => 'Name Category',
+            'title'              => 'Name Category',
+            'title_translite'    => 'Name Category',
             'slug' 	   => 'Slug',
             'image'    => 'Icon'
         ];
@@ -42,6 +44,8 @@ class CategoryNewsRequest extends FormRequest
         return [
             'title.required' => ':attribute wajib disi.',
             'title.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
+            'title_translite.required' => ':attribute wajib disi.',
+            'title_translite.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
             'slug.required' => ':attribute wajib disi.',
             'slug.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
             'image.required' => 'Gambar harus diunggah.',

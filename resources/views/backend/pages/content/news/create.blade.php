@@ -48,7 +48,7 @@
                     // Membuat FormData untuk mengunggah file
                     var formData = new FormData();
                     formData.append('file',
-                    file); // Pastikan nama field sesuai dengan yang diterima di server
+                        file); // Pastikan nama field sesuai dengan yang diterima di server
 
                     // Mengirim request ke server
                     fetch('{{ route('tiny.content') }}', {
