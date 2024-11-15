@@ -139,11 +139,11 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(ID)</label>
                     <div>
-                        @if($contentID)
+                        
                         <textarea id="news" name="body">
                             {!! $contentID->body !!}
                         </textarea>
-                        @endif
+                        
                     </div>
                     @error('body')
                     <div class="invalid-feedback" style="display: block">{{ $message }}</div>
@@ -152,11 +152,11 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(EN)</label>
                     <div>
-                        @if($contentEN)
+                        
                         <textarea id="news" name="body_translite">
                             {!! $contentEN->body !!}
                         </textarea>
-                        @endif
+                       
                     </div>
                     @error('body_translite')
                         <div class="invalid-feedback" style="display: block">{{ $message }}</div>

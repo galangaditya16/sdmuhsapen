@@ -21,7 +21,7 @@ class SliderController extends BaseController
             return $this->makeView('backend.pages.management.slider.index',compact('sliders'));
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->back()->with('error','galga melakukan aksi');
+            return redirect()->back()->with('error','gagal melakukan aksi');
         }
 
 

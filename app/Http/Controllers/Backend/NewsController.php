@@ -51,27 +51,29 @@ class NewsController extends BaseController
      * Store a newly created resource in storage.
      */
     public function store(NewsRequest $request)
-    {
+    {        
         DB::beginTransaction();
         try {
             if($request->hasFile('images')){
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
-                    $code = time().'.'.$file->extension();
+                    $code = time().'.'.$file->getClientOriginalExtension();
+                    
                     $file->move($path,$code);
                     $imagesName[] = $code;
-                }
-                $request['images'] = json_encode($imagesName);
+                }                
+                $request['image_filenames'] = json_encode($imagesName);
                 $request['path']   = $path;
                 $request['author'] = 'galang_ganteng';
-            }
+            }                        
             $data           = News::create([
                 'id_category'  => $request->id_category,
-                'author'       => $request->author,
+                'author'       => 'galang_ganteng',
                 'view'         => $request->view,
-                'path'         => $request->input('path'),
-                'image'       => $request->input('images'),
+                'path'         => $request['path'],
+                'image'       => $request['image_filenames'],
             ]);
+            
             $data_tanslite  =AllContentTranslite::create([
                 'id_news' => $data->id,
                 'lang'    => 'id',
@@ -79,13 +81,15 @@ class NewsController extends BaseController
                 'slug'    => Str::slug($request->title),
                 'body'    => $request->body,
             ]);
+
             $data_tanslite  =AllContentTranslite::create([
                 'id_news' => $data->id,
                 'lang'    => 'en',
-                'title'   => $request->title_translite,
-                'slug'    => Str::slug($request->title_translite),
-                'body'    => $request->body_translite,
+                'title'   => $request->title,
+                'slug'    => Str::slug($request->title),
+                'body'    => $request->body,
             ]);
+            
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
@@ -185,8 +189,9 @@ class NewsController extends BaseController
     {
         DB::beginTransaction();
         try {
-            $news = News::deleted($id);
-            $content = AllContentTranslite::where('id_news',$id)->delete();
+            News::where('id', $id)->delete();
+            AllContentTranslite::where('id_news',$id)->delete();
+            DB::commit();
             return redirect()->route('news.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
             //throw $th;

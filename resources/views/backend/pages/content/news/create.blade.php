@@ -83,7 +83,7 @@
         <form class="card" method="POST" action="{{ route('news.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="card-header">
-                <h3 class="card-title">Add Category News</h3>
+                <h3 class="card-title">Create News</h3>
             </div>
             <div class="card-body">
                 <div class="mb-3">

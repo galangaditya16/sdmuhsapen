@@ -47,6 +47,12 @@
                                 </ul>
                             </div>
                         @endif
+
+                        @if(session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
                         @yield('content')
                     </div>
                 </div>
@@ -55,10 +61,10 @@
         </div>
     </div>
     <!-- Libs JS -->
-    <script src="{{ asset('assets/backend') }}/libs/apexcharts/dist/apexcharts.min.js?1692870487" defer></script>
+    {{-- <script src="{{ asset('assets/backend') }}/libs/apexcharts/dist/apexcharts.min.js?1692870487" defer></script>
     <script src="{{ asset('assets/backend') }}/libs/jsvectormap/dist/js/jsvectormap.min.js?1692870487" defer></script>
     <script src="{{ asset('assets/backend') }}/libs/jsvectormap/dist/maps/world.js?1692870487" defer></script>
-    <script src="{{ asset('assets/backend') }}/libs/jsvectormap/dist/maps/world-merc.js?1692870487" defer></script>
+    <script src="{{ asset('assets/backend') }}/libs/jsvectormap/dist/maps/world-merc.js?1692870487" defer></script> --}}
     <!-- Tabler Core -->
     <script src="{{ asset('assets/backend') }}/js/tabler.min.js?1692870487" defer></script>
     <script src="{{ asset('assets/backend') }}/js/demo.min.js?1692870487" defer></script>

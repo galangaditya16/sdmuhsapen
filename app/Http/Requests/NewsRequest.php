@@ -22,8 +22,8 @@ class NewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
-            'title_translite' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
+            'title' => 'required|max:255',
+            'title_translite' => 'required|max:255',
             'id_category' =>  'required|integer',
             'body' => 'required',
             'body_translite' => 'required',
@@ -32,8 +32,8 @@ class NewsRequest extends FormRequest
     public function attributes()
     {
         return [
-            'title'              => 'Name Category(ID)',
-            'title_translite'    => 'Name Category(EN)',
+            'title'              => 'Title (ID)',
+            'title_translite'    => 'Title (EN)',
             'id_category' 	    => 'Category',
             'body'              => 'Body(ID)',
             'body_translite'    => 'Body(EN)'

@@ -21,6 +21,9 @@
                 </div>
             </div>
             <div class="table-responsive">
+                
+                
+
                 <table class="table card-table table-vcenter text-nowrap datatable">
                     <thead>
                         <tr>
@@ -43,6 +46,7 @@
                         @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>{{ $row->hasCategory->title }}</td>
                                 @if($contentid)
                                     <td>{{ $contentid->title ? Str::limit($contentid->title,50) : '-'}}</td>
                                     <td>{{ $contentid->slug ?? '-' }}</td>
