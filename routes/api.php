@@ -20,8 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('tiny-news',[TinyCloudController::class,'news'])->name('tiny.news');
+Route::post('tiny-news-translite',[TinyCloudController::class,'news'])->name('tiny.news');
 Route::post('tiny-program',[TinyCloudController::class,'programs'])->name('tiny.program');
+Route::post('tiny-program-translite',[TinyCloudController::class,'programs'])->name('tiny.program');
 Route::post('tiny-content',[TinyCloudController::class,'content'])->name('tiny.content');
+Route::post('tiny-content-translite',[TinyCloudController::class,'content'])->name('tiny.content');
 
 
 

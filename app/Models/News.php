@@ -12,17 +12,20 @@ class News extends Model
 
     protected $fillable = [
         'id_category',
-        'title',
-        'slug',
-        'images',
-        'body',
         'author',
-        'published_at',
-        'is_active',
+        'views',
+        'path',
+        'image'
     ];
     protected $dates = ['deleted_at'];
 
     public function hasCategory(){
-        // return $this->belongsTo(CatergoryNews::class,'id','id_category');
+        return $this->belongsTo(CategoryNews::class,'id_category','id');
+    }
+    public function content(){
+        return $this->hasMany(AllContentTranslite::class,'id_news','id');
+    }
+    public function translite($lang){
+        return $this->translations()->where('lang', $lang)->first();
     }
 }

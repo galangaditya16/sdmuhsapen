@@ -3,7 +3,6 @@
     <!-- TinyMCE script -->
     <script src="https://cdn.tiny.cloud/1/gafdlqc9hh36ubwwjslopo148dipwejra3hau2lsv7k2pzle/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
-
     <!-- TinyMCE initialization -->
     <script>
         tinymce.init({
@@ -88,7 +87,27 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label required">Name Category</label>
+                    <label class="form-label required">Title(ID)</label>
+                    <div>
+                        <input type="text" name="title" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name title" value="{{ old('title') }}">
+                        @error('title')
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Title(EN)</label>
+                    <div>
+                        <input type="text" name="title_translite" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name title" value="{{ old('title_translite') }}">
+                        @error('title_translite')
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Category</label>
                     <div>
                         <select class="form-select" name="id_category">
                             @forelse ($categorys as $category)
@@ -98,18 +117,11 @@
                             @endforelse
                         </select>
                     </div>
+                    @error('id_category')
+                    <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                @enderror
                 </div>
-                <div class="mb-3">
-                    <label class="form-label required">Title</label>
-                    <div>
-                        <input type="text" name="title" class="form-control" aria-describedby="slug"
-                            placeholder="Enter Name title" value="{{ old('title') }}">
-                        @error('slug')
-                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label class="form-label required">Slug</label>
                     <div>
                         <input type="text" name="slug" class="form-control" aria-describedby="slug"
@@ -118,7 +130,7 @@
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
-                </div>
+                </div> --}}
                 <div class="mb-3">
                     <label class="form-label">Images</label>
                     <div>
@@ -127,11 +139,24 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Body</label>
+                    <label class="form-label required">Body(ID)</label>
                     <div>
                         <textarea id="news" name="body">
                         </textarea>
                     </div>
+                    @error('body')
+                    <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                @enderror
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Body(EN)</label>
+                    <div>
+                        <textarea id="news" name="body_translite">
+                        </textarea>
+                    </div>
+                    @error('body_translite')
+                        <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
             <div class="card-footer text-end">

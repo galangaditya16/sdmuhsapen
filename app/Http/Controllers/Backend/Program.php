@@ -4,8 +4,10 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProgramsNew;
+use App\Base\Controller\BaseController;
 
-class Program extends Controller
+class Program extends BaseController
 {
     /**
      * Display a listing of the resource.

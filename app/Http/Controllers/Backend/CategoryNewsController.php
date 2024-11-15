@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Base\Controller\BaseController;
 use App\Http\Requests\CategoryNewsRequest;
-use App\Models\AllCatgeoryTranslite;
+use App\Models\AllCategoryTranslite;
 use App\Models\CategoryNews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,7 +54,7 @@ class CategoryNewsController extends BaseController
             $category = New CategoryNews($request->input());
             $category->save();
 
-            $translite = New AllCatgeoryTranslite();
+            $translite = New AllCategoryTranslite();
             $translite->id_category_news = $category->id;
             $translite->title = $request->title_translite;
             $translite->slug = str::slug($request->title_translite);
@@ -82,9 +82,11 @@ class CategoryNewsController extends BaseController
      */
     public function edit(string $id)
     {
+
         //
         try {
-            $data = CategoryNews::findOrFail($id);
+            // $data = CategoryNews::findOrFail($id);
+            $data = CategoryNews::with('translite')->findOrFail($id);
             return $this->makeView('backend.pages.management.category.news.edit',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
@@ -95,11 +97,11 @@ class CategoryNewsController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CategoryNewsRequest $request, string $id)
     {
         DB::beginTransaction();
         try {
-            $category = CategoryNews::findOrFail($id);
+            $category = CategoryNews::with('translite')->findOrFail($id);
             if($request->hasFile('images')){
                 $path = public_path('assets/images/category/news/');
                 $old_images = $path.$category->images;
@@ -113,7 +115,14 @@ class CategoryNewsController extends BaseController
             }else{
                 $request['images'] = $category->images;
             }
-            $category->update($request->input()); 
+            $request['slug'] = Str::slug($request->title);
+            $category->update($request->input());
+            if($category->translite){
+                $category->translite->update([
+                    'title' => $request->title_translite, 
+                    'slug'  =>  Str::slug($request->title_translite).'-'.$category->id
+                ]);
+            } 
             DB::commit();
             return redirect()->route('category-news.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {

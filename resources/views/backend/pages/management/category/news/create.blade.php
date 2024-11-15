@@ -1,15 +1,6 @@
 @extends('backend.layout.main');
 
 @section('content')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
     <div class="col-md-12">
         <form class="card" method="POST" action="{{ route('category-news.store') }}" enctype="multipart/form-data">

@@ -38,6 +38,15 @@
             <div class="page-body">
                 <div class="container-xxl">
                     <div class="row row-deck row-cards">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @yield('content')
                     </div>
                 </div>

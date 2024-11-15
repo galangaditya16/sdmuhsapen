@@ -18,4 +18,8 @@ class CategoryNews extends Model
         'images',
     ];
     protected $dates = ['deleted_at'];
+
+    public function translite(){
+        return $this->belongsTo(AllCategoryTranslite::class,'id','id_category_news');
+    }
 }

@@ -152,7 +152,15 @@ class MenuSeeder extends Seeder
                 'icon' => 'category-icon',
                 'order' => 8
             ],
-            //2024102421
+            [
+                'id' => '2024102421',
+                'menu_name' => 'Slider',
+                'route' => 'slider.index',
+                'parent_id' => '2024102402',  // root menu
+                'icon' => 'category-icon',
+                'order' => 8
+            ],
+            //2024102422
         ]);
     }
 }

@@ -6,9 +6,11 @@ use App\Base\Controller\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryContentRequest;
 use App\Http\Requests\CategoryNewsRequest;
+use App\Models\AllCategoryTranslite;
 use App\Models\CategoryContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class CategoryContentController extends BaseController
 {
@@ -18,7 +20,7 @@ class CategoryContentController extends BaseController
     public function index()
     {
         try {
-           $data = CategoryContent::paginate(10);
+           $data = CategoryContent::with('translite')->paginate(10);
            return $this->makeView('backend.pages.management.category.content.index',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
@@ -48,13 +50,20 @@ class CategoryContentController extends BaseController
                 $request->images->move($path,$nameImages);
                 $request['images'] = $nameImages;
             }
+            $request['slug'] = Str::slug($request->title);
             $data = New CategoryContent($request->input());
             $data->save();
+            $translite = New AllCategoryTranslite([
+                'id_category_content' => $data->id,
+                'title'               => $request->title_translite,
+                'slug'                => Str::slug($request->title_translite).'-'.$data->id,   
+            ]);
+            $translite->save();
             DB::commit();
             return redirect()->route('category-content.index')->with('success','Success Saving Data');
-            //code...
         } catch (\Throwable $th) {
             //throw $th;
+            dd($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -75,7 +84,7 @@ class CategoryContentController extends BaseController
     {
         //
         try {
-            $data = CategoryContent::findOrFail($id);
+            $data = CategoryContent::with('translite')->findOrFail($id);
             return $this->makeView('backend.pages.management.category.content.edit',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
@@ -105,8 +114,13 @@ class CategoryContentController extends BaseController
             }else{
                 $request['images'] = $category->images;
             }
-            $category->update($request
-            ->input());
+            $category->update($request->input());
+            if($category->translite){
+                $category->translite->update([
+                    'title' => $request->title->translite,
+                    'slug' => Str::slug($$request->title_translite).'-'.$category->id
+                ]);
+            }
             DB::commit();
             return redirect()->route('category-content.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {

@@ -18,10 +18,10 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Slug</label>
+                    <label class="form-label required">Name Category (EN)</label>
                     <div>
-                        <input type="text" name="slug" class="form-control" aria-describedby="slug" placeholder="Enter Name Route" value="{{ old('slug') ?? $data->slug }}">
-                        @error('slug')     
+                        <input type="text" class="form-control" name="title_translite" aria-describedby="title" placeholder="Enter Name" value="{{ old('title') ?? $data->translite->title }}">
+                        @error('title_translite')     
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
@@ -34,6 +34,7 @@
                 </div>
             </div>
             <div class="card-footer text-end">
+                <a type="button" class="btn btn-secondary" href="{{ route('category-news.index') }}">Back</a>
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>

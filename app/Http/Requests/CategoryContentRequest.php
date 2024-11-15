@@ -15,13 +15,13 @@ class CategoryContentRequest extends FormRequest
     }
 
 
-    protected function prepareForValidation()
-    {
-        // Menggabungkan data 'image' ke 'icon' sebelum validasi
-        $this->merge([
-            'icon' => $this->input('image'),
-        ]);
-    }
+    // protected function prepareForValidation()
+    // {
+    //     // Menggabungkan data 'image' ke 'icon' sebelum validasi
+    //     $this->merge([
+    //         'icon' => $this->input('image'),
+    //     ]);
+    // }
 
     /**
      * Get the validation rules that apply to the request.
@@ -32,35 +32,34 @@ class CategoryContentRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|max:100',
-            'slug' => 'required|max:100',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'order' => 'nullable|numeric|max:2'
+            'title'           => 'required|max:100',
+            'title_translite' => 'required|max:100',
+            'slug'            => 'max:100',
+            'image'           => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
-        
     }
     public function attributes()
     {
         return [
-            'name'    => 'Name Category Order',
-            'slug' 	   => 'Slug',
-            'image'    => 'Icon',
-            'order'    => 'Order'
+            'title'              => 'Name Category',
+            'title_translite'    => 'Name Category',
+            'slug' 	             => 'Slug',
+            'image'              => 'Icon'
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => ':attribute wajib disi.',
-            'name.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
-            'slug.required' => ':attribute wajib disi.',
-            'slug.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
-            'order.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
-            'order.numeric'      => ':attribute Harus Berupa Angka.',
-            // 'image.required' => 'Gambar harus diunggah.',
-            'image.image' => 'File yang diunggah harus berupa gambar.',
-            'image.mimes' => 'Gambar harus berformat: jpeg, png, jpg, gif, svg.',
-            'image.max' => 'Ukuran gambar tidak boleh lebih dari 2MB.',
+            'title.required'           => ':attribute wajib disi.',
+            'title.max'                => ':attribute tidak boleh lebih dari 100 karakter.',
+            'title_translite.required' => ':attribute wajib disi.',
+            'title_translite.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
+            'slug.required'            => ':attribute wajib disi.',
+            'slug.max'                 => ':attribute tidak boleh lebih dari 100 karakter.',
+            'image.required'           => 'Gambar harus diunggah.',
+            'image.image'              => 'File yang diunggah harus berupa gambar.',
+            'image.mimes'              => 'Gambar harus berformat: jpeg, png, jpg, gif, svg.',
+            'image.max'                => 'Ukuran gambar tidak boleh lebih dari 2MB.',
         ];
     }
 }

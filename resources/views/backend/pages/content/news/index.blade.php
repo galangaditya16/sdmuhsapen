@@ -4,8 +4,8 @@
         Management News
     </h2>
 @endsection
-@yield('title')
-Welcomes
+@section('title')
+
 @endsection
 @section('content')
     <div class="col-12">
@@ -28,7 +28,6 @@ Welcomes
                             <th>Category</th>
                             <th>Title</th>
                             <th>Slug</th>
-                            {{-- <th>Images</th> --}}
                             <th>Author</th>
                             <th>Date</th>
                             <th>Action</th>
@@ -39,22 +38,25 @@ Welcomes
                             $no = ($data->currentPage() - 1) * $data->perPage() + 1;
                         @endphp
                         @forelse ($data as $row)
+                        @php
+                             $contentid = $row->content->firstWhere('lang','id');
+                        @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $row->id_category }}</td>
-                                <td>{{ $row->title }}</td>
-                                <td>{{ $row->slug }}</td>
+                                @if($contentid)
+                                    <td>{{ $contentid->title ? Str::limit($contentid->title,50) : '-'}}</td>
+                                    <td>{{ $contentid->slug ?? '-' }}</td>
+                                @endif
                                 <td>{{ $row->author }}</td>
-                                <td>{{ $row->created_at }}</td>
-                                {{-- <td>{{ $row->images ? $row->images : "-"}}</td> --}}
+                                <td>{{ Carbon\Carbon::parse($row->created_at)->format('l') }}</td>
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category-news.edit', $row->id) }}"
+                                            <a href="{{ route('news.edit', $row->id) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('category-news.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('news.destroy', $row->id) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">

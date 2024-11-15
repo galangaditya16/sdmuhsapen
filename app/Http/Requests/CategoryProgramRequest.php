@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsRequest extends FormRequest
+class CategoryProgramRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,21 +22,21 @@ class NewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
-            'title_translite' => 'required|regex:/^[a-zA-Z]+$/u|max:255',
-            'id_category' =>  'required|integer',
-            'body' => 'required',
-            'body_translite' => 'required',
+            //
+
+            'title' => 'required|max:100',
+            'title_translite' => 'required|max:100',
+            'slug' => 'max:100',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
     public function attributes()
     {
         return [
-            'title'              => 'Name Category(ID)',
-            'title_translite'    => 'Name Category(EN)',
-            'id_category' 	    => 'Category',
-            'body'              => 'Body(ID)',
-            'body_translite'    => 'Body(EN)'
+            'title'              => 'Name Category',
+            'title_translite'    => 'Name Category',
+            'slug' 	   => 'Slug',
+            'image'    => 'Icon'
         ];
     }
     public function messages()
@@ -46,12 +46,12 @@ class NewsRequest extends FormRequest
             'title.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
             'title_translite.required' => ':attribute wajib disi.',
             'title_translite.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
+            'slug.required' => ':attribute wajib disi.',
+            'slug.max'      => ':attribute tidak boleh lebih dari 100 karakter.',
             'image.required' => 'Gambar harus diunggah.',
             'image.image' => 'File yang diunggah harus berupa gambar.',
             'image.mimes' => 'Gambar harus berformat: jpeg, png, jpg, gif, svg.',
             'image.max' => 'Ukuran gambar tidak boleh lebih dari 2MB.',
-            'body.required' => ':attribute wajib disi.',
-            'body_translite.required' => ':attribute wajib disi.',
         ];
     }
 }

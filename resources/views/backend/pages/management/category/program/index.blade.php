@@ -1,18 +1,18 @@
 @extends('backend.layout.main')
 @section('breadcrumbs')
     <h2 class="page-title">
-        Management Category News
+        Management Category Programs
     </h2>
 @endsection
 @section('content')
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Management Category News</h3>
+                <h3 class="card-title">Management Category Programs</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('category-news.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add Category News
+                        <a href="{{ route('category-programs.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                            Add Category Programs
                         </a>
                     </div>
                 </div>
@@ -41,11 +41,11 @@
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category-news.edit', $row->id) }}"
+                                            <a href="{{ route('category-programs.edit', $row->id) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('category-news.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('category-programs.destroy', $row->id) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->integer('order');
+            $table->integer('order')->nullable();
             $table->text('link')->nullable();
             $table->string('images')->nullable();
             $table->softDeletes();
