@@ -264,7 +264,7 @@
                             </a>
                             <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
                                 {{ 
-                                    Str::limit($contentid->title, 250, '...');
+                                    Str::limit(strip_tags($contentid->body), 250, '...');
                                 }}
                             </p>
                             <a href="#"
