@@ -25,17 +25,21 @@
 
 @section('content')
     {{-- SLIDER CAROUSEL --}}
-    <section class=" border-gray-200 my-20">
+    <section class=" border-gray-200 mb-20 mt-0">
         <!--HTML CODE-->
         <div class="w-full">
             <div class="swiper default-carousel swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="bg-indigo-50 h-[40vh] flex justify-center items-center">
-                            <span class="text-3xl font-semibold text-indigo-600">Slide 1 </span>
+                <div class="swiper-wrapper overflow-hidden">
+
+                    @foreach ($slider as $sl)
+                        <div class="swiper-slide">
+                            <div class="bg-indigo-50 flex justify-center items-center w-full">
+                                <img class="h-auto max-w-full object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
+                                {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
+                    @endforeach
+                    {{-- <div class="swiper-slide">
                         <div class="bg-indigo-50 h-[40vh] flex justify-center items-center">
                             <span class="text-3xl font-semibold text-indigo-600">Slide 2 </span>
                         </div>
@@ -44,7 +48,7 @@
                         <div class="bg-indigo-50 h-[40vh] flex justify-center items-center">
                             <span class="text-3xl font-semibold text-indigo-600">Slide 3 </span>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="flex items-center gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
@@ -241,9 +245,12 @@
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
 
                 @foreach ($berita as $b)
+                    @php
+                             $contentid = $b->content->firstWhere('lang','id');
+                    @endphp
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ $b->images }}"
+                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}"
                                 alt="" style="object-fit: cover" />
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
@@ -252,12 +259,12 @@
                         <div class="p-5 w-72 md:w-full">
                             <a href="#">
                                 <h5 class="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $b->title }}
+                                    {{ $contentid->title }}
                                 </h5>
                             </a>
                             <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
                                 {{ 
-                                    Str::limit($b->body, 250, '...');
+                                    Str::limit($contentid->title, 250, '...');
                                 }}
                             </p>
                             <a href="#"

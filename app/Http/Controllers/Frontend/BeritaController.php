@@ -15,52 +15,27 @@ class BeritaController extends Controller
      * @param array|null $select ['title', 'body']
      * @param array|null $filter ['category' => '3']
      * @param integer $page 1
-     * @param integer $limit 10
-     * @param array|null $sortOrder ['created_at' => 'desc']
-     * @param string|null $search 'Andaikan'
+     * @param integer $limit 10    
      * @return array
      */
     public static function getListBerita(
         array $select = null, 
         array $filter = null,
         int $page=1, 
-        int $limit=10, 
-        ?array $sortOrder=null, 
-        ?string $search=null
+        int $limit=10
     ) {
-        $berita = new News();
-        $query = $berita->query();
+        $lang = 'id';        
+        $getBeritaCollection = News::with(['hasCategory','content' => function($query) use ($lang){
+            $query->where('lang', $lang ? $lang : 'id');
+        }])->paginate(10);
         
-        $selectField = ['*'];
-        if($select !== null) {
-            $selectField = $select;
-        }
-
-        if ($filter !== null) {
-            foreach ($filter as $fieldFilter=>$filterValue) {
-                $query->where($fieldFilter, $filterValue);
-            }
-        }
-
-        if ($search !== null ) {
-            $query->where('title', 'like', '%' . $search . '%');
-        }
-
-        if ($sortOrder !== null) {
-            $sortKey = array_keys($sortOrder)[0];
-            $query->orderBy($sortKey, $sortOrder[$sortKey]);
-        } else {
-            $query->orderBy('created_at', 'desc');
-        }
-        
-        $getBeritaCollection = $query->paginate($limit, $selectField, 'page', $page); 
+        // $getBeritaCollection = $query->paginate($limit, $selectField, 'page', $page); 
 
         $listBeritaPaginated = new PaginationHelpers($getBeritaCollection);
         $listBerita = $listBeritaPaginated->formatListPagination();        
         $result = [
             'data' => $listBerita['data'], 
-            'pagination' => $listBerita['pagination'], 
-            'search' => $search ? $search : null
+            'pagination' => $listBerita['pagination']            
         ];
 
         return $result;

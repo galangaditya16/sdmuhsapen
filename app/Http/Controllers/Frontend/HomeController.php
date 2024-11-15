@@ -9,10 +9,11 @@ class HomeController extends Controller
 {
     public function index() 
     {
-        $beritaTerkini = BeritaController::getListBerita(null, null, 1, 6, null, null);
-        
+        $beritaTerkini = BeritaController::getListBerita(null, null, 1, 6);
+        $slider = SliderController::getListSlider();
         $result = [
-            'berita' => $beritaTerkini['data']
+            'berita' => $beritaTerkini['data'], 
+            'slider' => $slider
         ];
 
         return view('frontend.pages.home', $result);

@@ -35,4 +35,10 @@ class News extends Model
     {
         return $this->created_at->format('F d, Y');
     }
+
+    public function getFirstImage()
+    {
+        $images = json_decode($this->image);        
+        return $images[0];
+    }
 }
