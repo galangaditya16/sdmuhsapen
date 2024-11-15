@@ -77,7 +77,7 @@
                 <div class="swiper-pagination"></div>
             </div>
             <div class="relative z-10 -top-[115px] ">
-                <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-remaja rounded-2xl">
+                <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
                     <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4     zZx,">
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
                             <dt class="text-base leading-7 text-oren">Transactions every 24 hours</dt>
@@ -240,23 +240,25 @@
 
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
 
-                @for ($a = 1; $a <= 6; $a++)
+                @foreach ($berita as $b)
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg relative mx-auto w-full" src="https://picsum.photos/300/150"
+                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ $b->images }}"
                                 alt="" style="object-fit: cover" />
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
-                            Oktober 22, 2024
+                            {{ $b->getCreatedAtFormated() }}
                         </span>
                         <div class="p-5 w-72 md:w-full">
                             <a href="#">
-                                <h5
-                                    class="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021</h5>
+                                <h5 class="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $b->title }}
+                                </h5>
                             </a>
-                            <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">Here are the
-                                biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                            <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
+                                {{ 
+                                    Str::limit($b->body, 250, '...');
+                                }}
                             </p>
                             <a href="#"
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -269,7 +271,7 @@
                             </a>
                         </div>
                     </div>
-                @endfor
+                @endforeach
 
             </div>
             <div class="relative flex">

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -27,5 +28,10 @@ class News extends Model
     }
     public function translite($lang){
         return $this->translations()->where('lang', $lang)->first();
+    }
+
+    public function getCreatedAtFormated()
+    {
+        return $this->created_at->format('F d, Y');
     }
 }

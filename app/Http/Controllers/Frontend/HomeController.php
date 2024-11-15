@@ -9,7 +9,13 @@ class HomeController extends Controller
 {
     public function index() 
     {
-        return view('frontend.pages.home');
+        $beritaTerkini = BeritaController::getListBerita(null, null, 1, 6, null, null);
+        
+        $result = [
+            'berita' => $beritaTerkini['data']
+        ];
+
+        return view('frontend.pages.home', $result);
     }
 
     public function profile() 

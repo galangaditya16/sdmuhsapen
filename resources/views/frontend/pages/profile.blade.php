@@ -24,13 +24,50 @@
 @endsection
 
 @section('content')
-    {{-- SLIDER CAROUSEL --}}
-    <section class="h-[200px] my-20" style="background: url({{ asset('assets/images/cover.jpg') }}); background-size: contain; opacity: 0.1;">
+        
+    
+    <div class="relative h-[300px] w-full overflow-hidden">        
+        <h1 class="text-xl md:text-5xl absolute left-0 right-0 font-bold text-black z-50 mt-[150px] text-center">Profil SD Muhammadiyah Sapen</h1>        
+        
+        <img src="{{ asset('assets/images/cover.jpg') }}" style="filter:opacity(50%)">
+    </div>
+
+    <section class="h-[800px] mb-20 -mt-[200px]">
         <!--HTML CODE-->
         <div class="w-full ">
-            <h1>ini halaman profile</h1>
-            <div style="width: 100%; height: 500px" ></div>
+            <div class="flex flex-col">
+                <div class="container mx-auto">
+                    
+                </div>
+            </div>
         </div>                  
+
+    </section>
+
+    <section class="my-20">
+        <!--HTML CODE-->
+        <div class="w-full container mx-auto px-4">
+            <h1 class="text-2xl md:text-5xl font-bold my-8 text-oren text-center">Tentang SD Muhammadiyah Sapen</h1>
+            <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
+                <div class="flex-auto w-50">
+                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333"
+                        alt="image description">
+                </div>
+                <div>
+                    
+                    <h1 class="text-xl md:text-4xl font-bold my-3 text-dark-blue">Sejarah Sekolah Dasar Muhammadiyah Sapen</h1>
+                    <p class="text-sm md:text-base mt-3 text-justify">
+                        Sekolah Dasar (SD) Sapen, yang terletak di Yogyakarta, memiliki sejarah yang kaya. Didirikan pada tahun 1976, SD Sapen bertujuan untuk memberikan pendidikan dasar yang berkualitas bagi anak-anak di sekitar wilayah Sapen. Sejak awal, sekolah ini fokus pada pengembangan karakter dan akademik siswa, dengan menekankan pentingnya pendidikan yang holistik.
+                    </p>
+                    <p class="text-sm md:text-base mt-3 text-justify" >
+                        Selama bertahun-tahun, SD Sapen mengalami berbagai perkembangan, baik dalam kurikulum maupun fasilitas. Dengan dukungan masyarakat dan pemerintah, sekolah ini terus berupaya untuk meningkatkan mutu pendidikan dan mengadaptasi metode pengajaran yang relevan dengan kebutuhan zaman.
+                    </p>
+                    
+                </div>
+                
+
+            </div>
+        </div>          
 
     </section>
   
