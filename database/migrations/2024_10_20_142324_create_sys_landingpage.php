@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sys_ladingpage', function (Blueprint $table) {
+        Schema::create('sys_landingpage', function (Blueprint $table) {
             $table->id();
             $table->string('name_section');
             $table->boolean('is_active')->default(true);
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('sys_landingpage');
     }
 };
