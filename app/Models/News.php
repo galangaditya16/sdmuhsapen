@@ -17,6 +17,7 @@ class News extends Model
         'author',
         'views',
         'path',
+        'title',
         'image'
     ];
     protected $dates = ['deleted_at'];
@@ -39,6 +40,6 @@ class News extends Model
     public function getFirstImage()
     {
         $images = json_decode($this->image);        
-        return $images[0];
+        return $images[0] ?? null;
     }
 }

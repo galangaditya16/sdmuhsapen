@@ -19,7 +19,7 @@ class BeritaController extends Controller
      * @return array
      */
     public static function getListBerita(
-        array $select = null, 
+        array $select = ['*'], 
         array $filter = null,
         int $page=1, 
         int $limit=10
@@ -27,9 +27,7 @@ class BeritaController extends Controller
         $lang = 'id';        
         $getBeritaCollection = News::with(['hasCategory','content' => function($query) use ($lang){
             $query->where('lang', $lang ? $lang : 'id');
-        }])->paginate(10);
-        
-        // $getBeritaCollection = $query->paginate($limit, $selectField, 'page', $page); 
+        }])->paginate($limit, $select, 'page', $page);        
 
         $listBeritaPaginated = new PaginationHelpers($getBeritaCollection);
         $listBerita = $listBeritaPaginated->formatListPagination();        
