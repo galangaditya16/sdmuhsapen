@@ -14,7 +14,7 @@ class HomeController extends Controller
         $result = [
             'berita' => $beritaTerkini['data'], 
             'slider' => $slider
-        ];
+        ];        
 
         return view('frontend.pages.home', $result);
     }
