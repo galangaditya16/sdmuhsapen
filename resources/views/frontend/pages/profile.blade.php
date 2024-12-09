@@ -110,7 +110,7 @@
             <div class="text-center">
                 <h1 class="text-4xl font-bold my-5 text-dark-blue mx-auto">Keunggulan SD Muhammadiyah Sapen</h1>                
             </div>
-            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
+            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-16 max-h-[65%]">
                 {{-- <div class="swiper-wrapper"> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
@@ -421,7 +421,108 @@
         </div>
 
     </section>
-    <!-- END - PRESTASI -->    
+    <!-- END - PRESTASI -->   
+    
+    <!-- VISI MISI  -->
+    <section class="my-20">
+        <!--HTML CODE-->
+        <div class="w-full container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold my-5 text-oren mx-auto">Visi & Misi SD Muhammadiyah Sapen</h1>                
+            </div>
+            <div class="grid md:grid-cols-2 grid-rows-auto gap-16">
+                <div class="flex-auto w-50">                                        
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Visi</h1>                
+                    <p class="text-sm md:text-xl my-3 text-justify">
+                        Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
+                    </p>
+                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">                                                                                
+                </div>
+                <div>            
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>                                            
+                    <ul class="list-disc ml-5">
+                        <li class="text-sm md:text-xl">
+                            Melaksanakan pembelajaran dan bimbingan secara efektif sehinggapotensi peserta dididik dapat berkembang.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Mengembangkan pembelajaran berbasis IT dan keterampilan bahasa asing.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Memberikan kesempatan bagi perkembangan kognitif, psikomotor dan kepada pepembentukan manusia pemecah masalah.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Mengembangkan budaya disiplin dan etos kerja yang tinggi.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Menyelenggarakan pendidikan lingkungan di sekolah yang dapat menumbuhkan dadan meningkatkan kualitas siswa yang religius.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Membangkitkan semangat berprestasi di seluruh warga sekolah.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Menumbuhkan kesadaran dan kepedulian terhadap lingkungan.
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>          
+
+    </section>
+    <!-- END - VISI MISI -->
+
+    <!-- TUJUAN  -->
+    <section class="my-20" style="background-color: rgba(165, 225, 243, 0.2)">
+        <!--HTML CODE-->
+        <div class="w-full container mx-auto px-4 py-5">
+            <div class="text-center justify-center">
+                <h1 class="absolute text-4xl m-auto left-0 right-0 font-bold my-5 text-oren mx-auto text-center">The Truly Inspiring Islamic School</h1>                
+                <img class="h-auto max-w-full rounded-lg self-center" src="https://picsum.photos/1400/300" alt="image description">                                
+            </div>
+            <div class="grid md:grid-cols-2 grid-rows-auto gap-16">
+                <div class="flex-auto w-50">                                        
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Visi</h1>                
+                    <p class="text-sm md:text-xl my-3 text-justify">
+                        Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
+                    </p>
+                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">                                                                                
+                </div>
+                <div>            
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>                                            
+                    <ul class="list-disc ml-5">
+                        <li class="text-sm md:text-xl">
+                            Melaksanakan pembelajaran dan bimbingan secara efektif sehinggapotensi peserta dididik dapat berkembang.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Mengembangkan pembelajaran berbasis IT dan keterampilan bahasa asing.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Memberikan kesempatan bagi perkembangan kognitif, psikomotor dan kepada pepembentukan manusia pemecah masalah.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Mengembangkan budaya disiplin dan etos kerja yang tinggi.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Menyelenggarakan pendidikan lingkungan di sekolah yang dapat menumbuhkan dadan meningkatkan kualitas siswa yang religius.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Membangkitkan semangat berprestasi di seluruh warga sekolah.
+                        </li>
+                        <li class="text-sm md:text-xl">
+                            Menumbuhkan kesadaran dan kepedulian terhadap lingkungan.
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>          
+
+    </section>
+    <!-- END - TUJUAN -->
   
 @endsection
 
