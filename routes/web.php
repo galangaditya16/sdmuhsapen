@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\backend\Achievement;
+use App\Http\Controllers\Backend\Achievement;
 use App\Http\Controllers\Backend\CategoryContentController;
 use App\Http\Controllers\Backend\CategoryNewsController;
 use App\Http\Controllers\Backend\CategoryProgram;
