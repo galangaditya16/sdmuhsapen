@@ -12,7 +12,7 @@ use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeacherNew;
-use App\Models\TeacherPositionnew;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +48,8 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('achievement', Achievement::class);
     // teacher
     Route::resource('teacher', TeacherNew::class);
-    // teacher position
-    Route::resource('teacher-position', TeacherPositionnew::class);
+    // // teacher position
+    // Route::resource('teacher-position', TeacherPositionnew::class);
     //contact
     Route::resource('contact', Contact::class);
 });
