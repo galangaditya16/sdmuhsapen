@@ -1,18 +1,17 @@
 <?php
 
 use App\Http\Controllers\backend\Achievement;
+use App\Http\Controllers\Backend\CategoryContentController;
+use App\Http\Controllers\Backend\CategoryNewsController;
+use App\Http\Controllers\Backend\CategoryProgram;
+use App\Http\Controllers\Backend\Contact;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\backend\CategoryProgram;
-use App\Http\Controllers\backend\CategoryNewsController;
-use App\Http\Controllers\backend\Contact;
 use App\Http\Controllers\Backend\MenuController;
-use App\Http\Controllers\backend\TeacherNew;
-use App\Http\Controllers\backend\CategoryContentController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\TeacherNew;
 use App\Models\TeacherPositionnew;
 
 /*
