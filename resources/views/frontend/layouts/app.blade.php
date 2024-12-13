@@ -13,7 +13,7 @@
 
 
     {{--  <!-- production -->  --}}
-    @foreach (\App\Helpers\ViterHelper::viteAssets() as $asset)
+    @foreach (\App\Helpers\ViteHelper::viteAssets() as $asset)
             @vite($asset)
     @endforeach
     @yield('extend-header')
