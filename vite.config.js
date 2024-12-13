@@ -6,11 +6,13 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
+            publicDirectory: 'public',
         }),
     ],
     build: {
         manifest: true,
         outDir: 'public/build',
+        assetsDir: 'assets',
         rollupOptions: {
             output: {
                 manualChunks: undefined,
