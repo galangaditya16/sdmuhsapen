@@ -7,7 +7,15 @@
     <title>{{ env('APP_NAME') }}</title>
     <link rel="icon" href="{{ asset('assets/images/LOGO_SAPEN.png') }}">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{--  <!-- dev -->  --}}
+    {{--  @vite(['resources/css/app.css', 'resources/js/app.js'])  --}}
+
+
+    {{--  <!-- production -->  --}}
+    @foreach (\App\Helpers\ViterHelper::viteAssets() as $asset)
+            @vite($asset)
+    @endforeach
     @yield('extend-header')
 
 </head>

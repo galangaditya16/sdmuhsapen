@@ -7,7 +7,15 @@
     <title><?php echo e(env('APP_NAME')); ?></title>
     <link rel="icon" href="<?php echo e(asset('assets/images/LOGO_SAPEN.png')); ?>">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+
+    
+    
+
+
+    
+    <?php $__currentLoopData = \App\Helpers\ViterHelper::viteAssets(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $asset): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php echo app('Illuminate\Foundation\Vite')($asset); ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php echo $__env->yieldContent('extend-header'); ?>
 
 </head>
