@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 use Request;
-class ViterHelper
+class ViteHelper
 {
 
      public static function viteAssets()
