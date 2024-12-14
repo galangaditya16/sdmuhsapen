@@ -22,5 +22,8 @@ export default defineConfig({
         watch: {
             usePolling: true,
         },
+        base: process.env.APP_ENV === 'production'
+        ? '/sdmuhsapen/' // Prefix base URL di production
+        : '/',          // Di local tetap root
     },
 });
