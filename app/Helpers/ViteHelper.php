@@ -21,7 +21,6 @@ class ViteHelper
                 $assets[] = $file;
             }
         }
-
         return $assets;
     }
 }
