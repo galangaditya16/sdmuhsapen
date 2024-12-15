@@ -4,7 +4,7 @@ export default {
     "./resources/views/**/*.blade.php",
     "./node_modules/flowbite/**/*.js"
   ],
-  theme: {
+  theme: {    
     extend: {
       colors: {
         'dark-blue': '#000080',
@@ -28,7 +28,29 @@ export default {
       },
     },
   },
+  corePlugins: {
+    container: false
+  },
   plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '640px',
+          },
+          '@screen md': {
+            maxWidth: '1366px',
+          },
+          '@screen lg': {
+            maxWidth: '1366px',
+          },
+          '@screen xl': {
+            maxWidth: '1366px',
+          },
+        }
+      })
+    },
     require('flowbite/plugin')
   ],
 }

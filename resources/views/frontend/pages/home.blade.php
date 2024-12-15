@@ -25,30 +25,35 @@
 
 @section('content')
     {{-- SLIDER CAROUSEL --}}
-    <section class=" border-gray-200 mb-20 mt-0">
+    <section class=" border-gray-200 mb-20 mt-0 content-center">
         <!--HTML CODE-->
-        <div class="w-full">
+        <div class="w-full container mx-auto px-4 absolute top-28 md:top-[25%] md:left-[25%] z-50">
+            <h1 class="text-sx md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
+            <h1 class="text-sm md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
+            <h1 class="text-sx md:text-lg my-3 text-white">The Truly Inspiring Islamic School</h1>
+            <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
+                Pelajari Lebih Lanjut
+            </button>
+            <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
+                Inden PPDB
+            </button>
+        </div>
+        <div class="w-full">                    
+            <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
+                &nbsp;
+            </div>
             <div class="swiper default-carousel swiper-container">
-                <div class="swiper-wrapper overflow-hidden">
-
+                
+                <div class="swiper-wrapper overflow-hidden min-h-[450px]">
                     @foreach ($slider as $sl)
                         <div class="swiper-slide">
-                            <div class="bg-indigo-50 flex justify-center items-center w-full">
-                                <img class="h-auto max-w-full object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
+                            <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">                                
+                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="swiper-slide">
-                        <div class="bg-indigo-50 h-[40vh] flex justify-center items-center">
-                            <span class="text-3xl font-semibold text-indigo-600">Slide 2 </span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-indigo-50 h-[40vh] flex justify-center items-center">
-                            <span class="text-3xl font-semibold text-indigo-600">Slide 3 </span>
-                        </div>
-                    </div> --}}
+                    
                 </div>
                 <div class="flex items-center gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
@@ -80,7 +85,7 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="relative z-10 -top-[115px] ">
+            <div class="relative z-20 -top-[70px] md:-top-[115px]">
                 <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
                     <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4     zZx,">
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
@@ -102,6 +107,7 @@
                     </dl>
                 </div>
             </div>
+            
         </div>
 
         
@@ -326,7 +332,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-1.jpeg') }}" alt="">
                 </div>
                 <div class="relative">
                     <div
@@ -353,7 +359,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
                 </div>
                 <div class="relative col-span-2 row-span-2">
                     <div
@@ -380,7 +386,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
                 </div>
                 <div class="relative col-span-2 row-span-2">
                     <div
@@ -407,7 +413,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-3.jpeg') }}" alt="">
                 </div>
                 <div class="relative">
                     <div
@@ -434,7 +440,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-4.jpeg') }}" alt="">
                 </div>
                 <div class="relative">
                     <div
@@ -461,7 +467,7 @@
                         </div>
                     </div>
                     <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+                        src="{{ asset('assets/galeri/galery-5.jpeg') }}" alt="">
                 </div>
             </div>
 

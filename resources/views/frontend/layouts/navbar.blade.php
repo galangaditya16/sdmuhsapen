@@ -76,45 +76,45 @@
                     <div id="dropdownNavbar" class="z-10 hidden font-bold bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
                             <li>
-                                <a href="{{ route('profile') }}" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <a href="javascript:void(0)" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Profil Sekolah
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <a href="javascript:void(0)" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Sambutan Kepala Sekolah
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <a href="javascript:void(0)" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Struktur Organisasi
                                 </a>
                             </li>
                         </ul>
                         <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                 Profil Guru dan Karyawan
                             </a>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Fasilitas
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Program
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Berita
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Hubungi Kami
                     </a>
                 </li>
