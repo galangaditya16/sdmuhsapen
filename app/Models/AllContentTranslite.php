@@ -13,4 +13,8 @@ class AllContentTranslite extends Model
     protected $fillable = ['lang','id_news','id_program','id_content','title','slug','body'];
     protected $dates = ['deleted_at'];
 
+    public function ContentPrograms(){
+        return $this->hasOne(ProgramsNew::class,'id','id_programs');
+    }
+
 }

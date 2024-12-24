@@ -11,6 +11,7 @@ class CategoryNews extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'category_news';
 
     protected $fillable = [
         'slug',
@@ -19,7 +20,7 @@ class CategoryNews extends Model
     ];
     protected $dates = ['deleted_at'];
 
-    public function translite(){
-        return $this->belongsTo(AllCategoryTranslite::class,'id','id_category_news');
+    public function transLite(){
+        return $this->hasMany(AllCategoryTranslite::class,'id_category_news','id');
     }
 }

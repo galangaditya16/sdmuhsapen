@@ -19,7 +19,8 @@ class CategoryNewsController extends BaseController
     public function index()
     {
         try {
-            $data = CategoryNews::paginate(10);
+            $lang = 'id';
+            $data = AllCategoryTranslite::whereHas('CategoryNews')->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.management.category.news.index',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
@@ -53,14 +54,21 @@ class CategoryNewsController extends BaseController
             $request['slug'] = Str::slug($request->title);
             $category = New CategoryNews($request->input());
             $category->save();
-
-            $translite = New AllCategoryTranslite();
-            $translite->id_category_news = $category->id;
-            $translite->title = $request->title_translite;
-            $translite->slug = str::slug($request->title_translite);
-            $translite->save();
+            $lang_id = new AllCategoryTranslite([
+                'id_category_news' => $category->id,
+                'lang'                  => 'id',
+                'title'               => $request->title,
+                'slug'                => Str::slug($request->title).'-'.$category->id,
+            ]);
+            $lang_id->save();
+            $lang_en = new AllCategoryTranslite([
+                'id_category_news' => $category->id,
+                'lang'                  => 'en',
+                'title'               => $request->title_translite,
+                'slug'                => Str::slug($request->title_translite).'-'.$category->id,
+            ]);
+            $lang_en->save();
             DB::commit();
-
             return redirect()->route('category-news.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
             //throw $th;
@@ -86,8 +94,10 @@ class CategoryNewsController extends BaseController
         //
         try {
             // $data = CategoryNews::findOrFail($id);
-            $data = CategoryNews::with('translite')->findOrFail($id);
-            return $this->makeView('backend.pages.management.category.news.edit',compact('data'));
+            $data = CategoryNews::with('transLite')->findOrFail($id);
+            $contentID = $data->transLite->firstWhere('lang','id') ?? '';
+            $contentEN = $data->transLite->firstWhere('lang','en') ?? '';
+            return $this->makeView('backend.pages.management.category.news.edit',compact('data','contentID','contentEN'));
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','Error Action');
@@ -117,12 +127,16 @@ class CategoryNewsController extends BaseController
             }
             $request['slug'] = Str::slug($request->title);
             $category->update($request->input());
-            if($category->translite){
-                $category->translite->update([
-                    'title' => $request->title_translite, 
-                    'slug'  =>  Str::slug($request->title_translite).'-'.$category->id
-                ]);
-            } 
+            $lang_en = AllCategoryTranslite::where('lang','en')->where('id_category_news',$id)->first();
+            $lang_id = AllCategoryTranslite::where('lang','id')->where('id_category_news',$id)->first();
+            $lang_en->update([
+                'title' => $request->title_translite,
+                'slug' => Str::slug($request->title_translite).'-'.$lang_en->id
+            ]);
+            $lang_id->update([
+                'title' => $request->title,
+                'slug' => Str::slug($request->title).'-'.$lang_id->id
+            ]);
             DB::commit();
             return redirect()->route('category-news.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
@@ -137,7 +151,10 @@ class CategoryNewsController extends BaseController
     public function destroy($id)
     {
         try {
-           $category = CategoryNews::findOrFail($id);
+           $category = CategoryNews::with('transLite')->findOrFail($id);
+           if($category->transLite->isNotEmpty()){
+               $delete = $category->transLite()->delete(); // Akan menghapus semua data terkait
+           }
            $category->delete();
            return redirect()->route('category-news.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {

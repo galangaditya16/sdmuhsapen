@@ -41,18 +41,18 @@
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category-programs.edit', $row->id) }}"
+                                            <a href="{{ route('category-programs.edit', $row->CategoryPrograms) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('category-programs.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('category-programs.destroy', $row->CategoryPrograms) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
                                                     Hapus
                                                 </button>
                                             </form>
-                                            
+
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

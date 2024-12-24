@@ -9,13 +9,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     {{--  <!-- dev -->  --}}
-    {{--  @vite(['resources/css/app.css', 'resources/js/app.js'])  --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
     {{--  <!-- production -->  --}}
-    @foreach (\App\Helpers\ViteHelper::viteAssets() as $asset) 
+    {{--  @foreach (\App\Helpers\ViteHelper::viteAssets() as $asset)
         @vite($asset)
-    @endforeach
+    @endforeach  --}}
     @yield('extend-header')
 
 </head>

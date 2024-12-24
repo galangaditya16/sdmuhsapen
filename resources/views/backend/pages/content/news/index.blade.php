@@ -21,9 +21,6 @@
                 </div>
             </div>
             <div class="table-responsive">
-                
-                
-
                 <table class="table card-table table-vcenter text-nowrap datatable">
                     <thead>
                         <tr>
@@ -41,12 +38,9 @@
                             $no = ($data->currentPage() - 1) * $data->perPage() + 1;
                         @endphp
                         @forelse ($data as $row)
-                        @php
-                             $contentid = $row->content->firstWhere('lang','id');
-                        @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $row->hasCategory->title }}</td>
+                                <td>{{ $row->title }}</td>
                                 @if($contentid)
                                     <td>{{ $contentid->title ? Str::limit($contentid->title,50) : '-'}}</td>
                                     <td>{{ $contentid->slug ?? '-' }}</td>
@@ -67,7 +61,7 @@
                                                     Hapus
                                                 </button>
                                             </form>
-                                            
+
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

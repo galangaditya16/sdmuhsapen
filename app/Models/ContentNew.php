@@ -11,5 +11,9 @@ class ContentNew extends Model
     protected $fillable = ['id_category','author','views'];
     protected $table = 'content';
     protected $dates = ['deleted_at'];
+    public function transLite()
+    {
+        return $this->belongsTo(AllCategoryTranslite::class, 'id_category_content', 'id');
+    }
 
 }

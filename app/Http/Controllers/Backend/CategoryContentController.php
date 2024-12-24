@@ -8,6 +8,7 @@ use App\Http\Requests\CategoryContentRequest;
 use App\Http\Requests\CategoryNewsRequest;
 use App\Models\AllCategoryTranslite;
 use App\Models\CategoryContent;
+use App\Models\ContentNew;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -20,10 +21,10 @@ class CategoryContentController extends BaseController
     public function index()
     {
         try {
-           $data = CategoryContent::with('translite')->paginate(10);
+            $lang = 'id';
+            $data = AllCategoryTranslite::whereHas('CategoryContent')->where('lang',$lang)->paginate(10);
            return $this->makeView('backend.pages.management.category.content.index',compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -53,12 +54,21 @@ class CategoryContentController extends BaseController
             $request['slug'] = Str::slug($request->title);
             $data = New CategoryContent($request->input());
             $data->save();
-            $translite = New AllCategoryTranslite([
+
+            $indo = New AllCategoryTranslite([
                 'id_category_content' => $data->id,
-                'title'               => $request->title_translite,
-                'slug'                => Str::slug($request->title_translite).'-'.$data->id,   
+                'lang'                  => 'id',
+                'title'               => $request->title,
+                'slug'                => Str::slug($request->title).'-'.$data->id,
             ]);
-            $translite->save();
+            $indo->save();
+            $en = New AllCategoryTranslite([
+                'id_category_content' => $data->id,
+                'lang'                  => 'en',
+                'title'               => $request->title_translite,
+                'slug'                => Str::slug($request->title_translite).'-'.$data->id,
+            ]);
+            $en->save();
             DB::commit();
             return redirect()->route('category-content.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
@@ -82,10 +92,16 @@ class CategoryContentController extends BaseController
      */
     public function edit(string $id)
     {
-        //
         try {
-            $data = CategoryContent::with('translite')->findOrFail($id);
-            return $this->makeView('backend.pages.management.category.content.edit',compact('data'));
+            $data = CategoryContent::whereHas('transLite', function($query) use ($id) {
+                $query->where('id_category_content', $id);
+            })->with(['transLite' => function($query) use ($id) {
+                $query->where('id_category_content', $id);
+            }])->first();
+            // parse data
+            $contentID = $data->transLite->firstWhere('lang','id') ?? '';
+            $contentEN = $data->transLite->firstWhere('lang','en') ?? '';
+            return $this->makeView('backend.pages.management.category.content.edit',compact('data','contentID','contentEN'));
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','galga melakukan aksi');
@@ -98,6 +114,7 @@ class CategoryContentController extends BaseController
      */
     public function update(CategoryContentRequest $request, string $id)
     {
+
         DB::beginTransaction();
         try {
             $category = CategoryContent::findOrFail($id);
@@ -115,12 +132,16 @@ class CategoryContentController extends BaseController
                 $request['images'] = $category->images;
             }
             $category->update($request->input());
-            if($category->translite){
-                $category->translite->update([
-                    'title' => $request->title->translite,
-                    'slug' => Str::slug($$request->title_translite).'-'.$category->id
-                ]);
-            }
+            $lang_en = AllCategoryTranslite::where('lang','en')->where('id_category_content',$id)->first();
+            $lang_id = AllCategoryTranslite::where('lang','id')->where('id_category_content',$id)->first();
+            $lang_en->update([
+                'title' => $request->title_translite,
+                'slug' => Str::slug($request->title_translite).'-'.$lang_en->id
+            ]);
+            $lang_id->update([
+                'title' => $request->title,
+                'slug' => Str::slug($request->title).'-'.$lang_id->id
+            ]);
             DB::commit();
             return redirect()->route('category-content.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
@@ -137,7 +158,11 @@ class CategoryContentController extends BaseController
     public function destroy(string $id)
     {
         try {
-            $category = CategoryContent::findOrFail($id);
+            $category = CategoryContent::with('transLite')->findOrFail($id);
+            if($category->transLite->isNotEmpty()){
+                $delete = $category->transLite()->delete(); // Akan menghapus semua data terkait
+
+            }
             $category->delete();
             return redirect()->route('category-content.index')->with('success','Success Deleting Data');
         } catch (\Throwable $th) {

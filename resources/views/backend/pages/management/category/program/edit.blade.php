@@ -8,24 +8,28 @@
                 <h3 class="card-title">Update Category Programs</h3>
             </div>
             <div class="card-body">
+                @if ($contentID)
                 <div class="mb-3">
                     <label class="form-label required">Name Category(ID)</label>
                     <div>
-                        <input type="text" class="form-control" name="title" aria-describedby="title" placeholder="Enter Name" value="{{ old('title') ?? $data->title }}">
-                        @error('title')     
+                        <input type="text" class="form-control" name="title" aria-describedby="title" placeholder="Enter Name" value="{{ old('title') ?? $contentID->title }}">
+                        @error('title')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
+                @endif
+                @if ($contentEN)
                 <div class="mb-3">
                     <label class="form-label required">Name Category(EN)</label>
                     <div>
-                        <input type="text" class="form-control" name="title_translite" aria-describedby="title_translite" placeholder="Enter Name" value="{{ old('title_translite') ?? $data->translite->title }}">
-                        @error('title_translite')     
+                        <input type="text" class="form-control" name="title_translite" aria-describedby="title_translite" placeholder="Enter Name" value="{{ old('title_translite') ?? $contentEN->title }}">
+                        @error('title_translite')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
-                </div>  
+                </div>
+                @endif
                 <div class="mb-3">
                     <label class="form-label">Icon</label>
                     <div>

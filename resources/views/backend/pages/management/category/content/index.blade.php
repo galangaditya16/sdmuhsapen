@@ -32,21 +32,20 @@
                         @php
                             $no = ($data->currentPage() - 1) * $data->perPage() + 1;
                         @endphp
-                        @forelse ($data as $row)
+                        @forelse ($data as $key => $row)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->title }}</td>
                                 <td>{{ $row->slug }}</td>
                                 <td>{{ $row->icon ? $row->icon : '-' }}</td>
                                 <td>
-                                    {{-- @dd($row->category_id) --}}
                                     @if (!$row->is_delete)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category-content.edit',$row) }}"
+                                            <a href="{{ route('category-content.edit',$row->CategoryContent) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('category-content.destroy', $row) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('category-content.destroy', $row->CategoryContent) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">

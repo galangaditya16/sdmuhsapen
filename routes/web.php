@@ -3,13 +3,14 @@
 use App\Http\Controllers\Backend\Achievement;
 use App\Http\Controllers\Backend\CategoryContentController;
 use App\Http\Controllers\Backend\CategoryNewsController;
-use App\Http\Controllers\Backend\CategoryProgram;
+use App\Http\Controllers\Backend\CategoryProgramController;
 use App\Http\Controllers\Backend\Contact;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeacherNew;
 
@@ -39,19 +40,21 @@ Route:Route::prefix('backyard')->group(function () {
     // category news
     Route::resource('category-news',CategoryNewsController::class);
     //category programs
-    Route::resource('category-programs', CategoryProgram::class);
+    Route::resource('category-programs', CategoryProgramController::class);
     // news
     Route::resource('news',NewsController::class);
-    //slider 
+    //slider
     Route::resource('slider',SliderController::class);
     //achievement
     Route::resource('achievement', Achievement::class);
     // teacher
     Route::resource('teacher', TeacherNew::class);
     // // teacher position
-    // Route::resource('teacher-position', TeacherPositionnew::class);
-    //contact
     Route::resource('contact', Contact::class);
+    // profile
+    Route::resource('profile' ,ProfileController::class);
+
+
 });
 
 Route::get('/', [HomeController::class, 'index']);
