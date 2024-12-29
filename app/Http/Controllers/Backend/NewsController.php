@@ -24,7 +24,7 @@ class NewsController extends BaseController
             $data = News::with(['hasCategory','content' => function($query) use ($lang){
                 $query->where('lang', $lang ? $lang : 'id');
             }])->paginate(10);
-            return $this->makeView('backend.pages.content.news.index',compact('data'));
+            return $this->makeView('backend.pages.master.news.index',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','galga melakukan aksi');
@@ -39,7 +39,7 @@ class NewsController extends BaseController
         //
         try {
             $categorys = CategoryNews::all();
-            return $this->makeView('backend.pages.content.news.create',compact('categorys'));;
+            return $this->makeView('backend.pages.master.news.create',compact('categorys'));;
         } catch (\Throwable $th) {
             dd($th);
             DB::rollBack();
@@ -51,21 +51,21 @@ class NewsController extends BaseController
      * Store a newly created resource in storage.
      */
     public function store(NewsRequest $request)
-    {        
+    {
         DB::beginTransaction();
         try {
             if($request->hasFile('images')){
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
                     $code = time().'.'.$file->getClientOriginalExtension();
-                    
+
                     $file->move($path,$code);
                     $imagesName[] = $code;
-                }                
+                }
                 $request['image_filenames'] = json_encode($imagesName);
                 $request['path']   = $path;
                 $request['author'] = 'galang_ganteng';
-            }                        
+            }
             $data           = News::create([
                 'id_category'  => $request->id_category,
                 'author'       => 'galang_ganteng',
@@ -73,7 +73,7 @@ class NewsController extends BaseController
                 'path'         => $request['path'],
                 'image'       => $request['image_filenames'],
             ]);
-            
+
             $data_tanslite  =AllContentTranslite::create([
                 'id_news' => $data->id,
                 'lang'    => 'id',
@@ -89,7 +89,7 @@ class NewsController extends BaseController
                 'slug'    => Str::slug($request->title),
                 'body'    => $request->body,
             ]);
-            
+
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
@@ -112,14 +112,14 @@ class NewsController extends BaseController
      */
     public function edit(string $id)
     {
-        
+
         $lang = 'id';
         try {
             $categorys = CategoryNews::all();
             $news      = News::with(['hasCategory','content' => function($query) use ($lang,$id){
                 $query->where('id_news',$id);
             }])->first();
-            return $this->makeView('backend.pages.content.news.edit',compact('news','categorys'));
+            return $this->makeView('backend.pages.master.news.edit',compact('news','categorys'));
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','Error Action');

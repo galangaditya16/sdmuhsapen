@@ -17,4 +17,8 @@ class AllContentTranslite extends Model
         return $this->hasOne(ProgramsNew::class,'id','id_programs');
     }
 
+    public function ContentContent(){
+        return $this->hasOne(ContentNew::class,'id','id_content');
+    }
+
 }

@@ -15,7 +15,7 @@ class TinyCloudController extends Controller
         ]);
 
         if($request->hasFile('file')){
-            $code = time().'-'.$request->file->extension();
+            $code = time().'.'.$request->file->extension();
             $path = public_path('backend/assets/images/texteditor/');
             $request->file->move($path,$code);
 
@@ -31,7 +31,7 @@ class TinyCloudController extends Controller
         ]);
 
         if($request->hasFile('file')){
-            $code = time().'-'.$request->file->extension();
+            $code = time().'.'.$request->file->extension();
             $path = public_path('backend/assets/images/texteditor/');
             $request->file->move($path,$code);
 
@@ -46,7 +46,7 @@ class TinyCloudController extends Controller
         ]);
 
         if($request->hasFile('file')){
-            $code = time().'-'.$request->file->extension();
+            $code = time().'.'.$request->file->extension();
             $path = public_path('backend/assets/images/texteditor/');
             $request->file->move($path,$code);
 

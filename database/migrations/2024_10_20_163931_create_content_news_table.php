@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->integer('id_category');
             $table->integer('author');
+            $table->text('images')->nullable();
             $table->integer('views')->default('0');
             $table->softDeletes();
             $table->timestamps();
