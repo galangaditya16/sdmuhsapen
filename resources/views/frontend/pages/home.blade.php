@@ -489,50 +489,264 @@
         <div class="w-full container mx-auto px-4">
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
 
-                <div>
+                <div class="overflow-hidden">
                     <h1 class="text-lg font-bold text-oren">Testimonial</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
-                    <p class="text-base mt-3 text-justify">
-                        “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
-                        Guru-guru amat perhatian dengan murid-muridnya untuk melejitkan menggali potensinya. Terima kasih
-                        Bapak Ibu Guru yang telah mendidik anak-anak saya disini dengan baik, disiplin, islami, amanah,
-                        berdedikasi, dan semangat. Jazakumullahu khoiran katsir”
-                    </p>
 
-                    <h3 class="text-2xl font-bold mt-3 text-dark-blue">Ustadz Eki Firdaus</h3>
-                    <p class="text-base">
-                        Orang Tua Murid
-                    </p>
-                    <div class="rate flex flex-row">
-                        <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
-                        <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                        </svg>
+                    <div id="default-carousel" class="relative w-full min-h-[330px] md:min-h-[250px]" data-carousel="slide">
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
+                                Guru-guru amat perhatian dengan murid-muridnya untuk melejitkan menggali potensinya. Terima kasih
+                                Bapak Ibu Guru yang telah mendidik anak-anak saya disini dengan baik, disiplin, islami, amanah,
+                                berdedikasi, dan semangat. Jazakumullahu khoiran katsir”
+                            </p>
+
+                            <h3 class="text-2xl font-bold mt-3 text-dark-blue">Ustadz Eki Firdaus</h3>
+                            <p class="text-base">
+                                Orang Tua Murid
+                            </p>
+                            <div class="rate flex flex-row">
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                SD Muhammadiyah Sapen telah meletakan
+                                pondasi dasar yang sangat kuat dalam
+                                pembentukan karakter peser ta didik.
+                                Karakter inilah yang menjadikan keluaran SD
+                                Muhammadiyah Sapen memiliki daya saing
+                                yang tinggi serta menjunjung nilai‑nilai
+                                akhlakul karimah. Kedua karakter ini menjadi
+                                modal sosial yang sangat penting agar
+                                peserta didik dapat beradaptasi dengan
+                                perkembangan jaman tanpa menafikan peran
+                                penting akhlak dalam kehidupannya. Sekolah
+                                dasar, Ya SD Muhammadiyah Sapen"
+                            </p>
+
+                            <h3 class="text-2xl font-bold mt-3 text-dark-blue">Prof. Dr. Sumaryanto, M.Kes. AIFO.</h3>
+                            <p class="text-base">
+                                Rektor Universitas Negeri Yogyakarta
+                            </p>
+                            <div class="rate flex flex-row">
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                Sebagai orang tua yang berpengalaman
+                                menyekolahkan tiga orang anak di SD
+                                Muhammadiyah Sapen, saya memberikan
+                                apresiasi luar biasa untuk sekolah yang selalu
+                                kreatif, inovatif, dan adaptif setiap saat
+                                dalam menjawab tantangan‑tantangan
+                                perkembangan jaman untuk mampu
+                                memberikan pengalaman belajar untuk anak‑anak
+                                agar bermakna dan bermanfaat didalam
+                                kehidupannya kelak.Pokoknya luar biasa
+                                keren untuk SD Muhammadiyah Sapen
+                                Yogyakarta. SD Muhammadiyah Sapen
+                                merupakan pilihan yang tepat untuk dapat
+                                memfasilitasi perkembangan murid melalui
+                                proses pendidikan yang berkualitas dan
+                                berkarakter.
+                            </p>
+
+                            <h3 class="text-2xl font-bold mt-3 text-dark-blue">Prof. Dr. Wuri Wuryandani, S.Pd., M.Pd.</h3>
+                            <p class="text-base">
+                                Ketua Program Studi S3 Pendidikan Dasar <br>
+                                Universitas Negeri Yogyakarta
+                            </p>
+                            <div class="rate flex flex-row">
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                “SD Muhammadiyah Sapen memandang anak
+                                didik secara utuh dan konsisten memfasilitasi
+                                pengembangan setiap potensinya. Ketika
+                                pandemi, ikhtiar tersebut tidak surut.
+                                Beragam inovasi dimunculkan untuk tidak
+                                menyerah pada keadaan yan gmemang tidak
+                                mudah. Penggunaan layanan Google Edu,
+                                Radio Sapen, SapenTV, produksi konten
+                                pembelajaran digital,dan pembuatan modul
+                                suplemen bahan ajar, merupakan beberapa
+                                contoh konkret yang dapat menjadi rujukan
+                                sekolahlain.
+                            </p>
+
+                            <h3 class="text-2xl font-bold mt-3 text-dark-blue">Prof. Fathul Wahid, ST., M.Sc., Ph.D.</h3>
+                            <p class="text-base">
+                                Rektor Universitas Islam Indonesia <br>
+                                Orang tua dari alumni Dr. Awanis Akalili, S.I.P., M.A dan Abiyyu Amajida, M.Or. (kandidat doktor FIK UNY)
+                            </p>
+                            <div class="rate flex flex-row">
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                            <p class="text-base mt-3 text-justify">
+                                Satu kebanggaan dan rasa senang kedua anak
+                                kami menjadi alumni SD Muhammadiyah Sapen.
+                                Selama kedua anak kami menjadi siswa SD
+                                Muhammadiyah Sapen, mereka mendapat
+                                pendidikan yang sangat baik di bidang mata
+                                pelajaran, bidang keagamaan dan kepribadian.
+                                Kini, mereka tumbuh menjadi anak‑anak yang
+                                cerdas, disiplin dan tekun sehingga sukses dalam
+                                menjalani studi di tingkat yang lebih tinggi. Kami
+                                berharap SD Muhammadiyah Sapen terus berkarya
+                                mendidik tunas‑tunas bangsa dan terus berinovasi
+                                meningkatkan kualitas pendidikannya.
+                            </p>
+
+                            <h3 class="text-2xl font-bold mt-3 text-dark-blue">Prof. Ir. Panut Mulyono. M.Eng., D.Eng., IPU, ASEAN Eng</h3>
+                            <p class="text-base">                                
+                                Orang tua dari alumni Dr. Aji Resindra Widya, S.T., M.Eng., D.Eng., <br>
+                                dan Dyah Ayu Permatasari, S.T., M.Mgt.
+                            </p>
+                            <div class="rate flex flex-row">
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                                <svg class="w-6 h-6 text-kuning-tua" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        
                     </div>
+
                     <a href="#">
                         <button type="button"
-                            class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                            class="mt-5 relative text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
                             Pelajari Selengkapnya
                         </button>
                     </a>
