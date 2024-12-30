@@ -60,3 +60,6 @@ Route:Route::prefix('backyard')->group(function () {
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
+Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
+Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->name('teacher-and-staff');
