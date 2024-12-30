@@ -78,7 +78,7 @@
                                 </div>
                                 <span class="sr-only">Instagram</span>
                             </a>
-                            <a href="#" class="text-gray-500 hover: dark:hover:text-white ms-5">
+                            <a href="https://youtube.com/@sdmuhammadiyahsapenyogyaka7302?si=LzpiireR9nMFMpGY" target="_blank" class="text-gray-500 hover: dark:hover:text-white ms-5">
                                 <div class="p-2 bg-kuning-muda hover:bg-oren rounded-full">                                
                                     <svg class="w-8 h-8 text-dark-blue dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clip-rule="evenodd"/>
@@ -94,13 +94,13 @@
                                 </div>
                                 <span class="sr-only">Facebook</span>
                             </a>
-                            <a href="#" class="text-gray-500 hover: dark:hover:text-white ms-5">
+                            <a href="https://moesaradio.radiostream321.com/" target="_blank" class="text-gray-500 hover: dark:hover:text-white ms-5">
                                 <div class="p-2 bg-kuning-muda hover:bg-oren rounded-full">                                                                                                
                                     <svg class="w-8 h-8 text-dark-blue dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd" d="M17.316 4.052a.99.99 0 0 0-.9.14c-.262.19-.416.495-.416.82v8.566a4.573 4.573 0 0 0-2-.464c-1.99 0-4 1.342-4 3.443 0 2.1 2.01 3.443 4 3.443 1.99 0 4-1.342 4-3.443V6.801c.538.5 1 1.219 1 2.262 0 .56.448 1.013 1 1.013s1-.453 1-1.013c0-1.905-.956-3.18-1.86-3.942a6.391 6.391 0 0 0-1.636-.998 4 4 0 0 0-.166-.063l-.013-.005-.005-.002h-.002l-.002-.001ZM4 5.012c-.552 0-1 .454-1 1.013 0 .56.448 1.013 1 1.013h9c.552 0 1-.453 1-1.013 0-.559-.448-1.012-1-1.012H4Zm0 4.051c-.552 0-1 .454-1 1.013 0 .56.448 1.013 1 1.013h9c.552 0 1-.454 1-1.013 0-.56-.448-1.013-1-1.013H4Zm0 4.05c-.552 0-1 .454-1 1.014 0 .559.448 1.012 1 1.012h4c.552 0 1-.453 1-1.012 0-.56-.448-1.013-1-1.013H4Z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
-                                <span class="sr-only">Youtube</span>
+                                <span class="sr-only">Radio</span>
                             </a>
                             
                         </div>
