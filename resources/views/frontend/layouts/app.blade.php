@@ -27,7 +27,6 @@
         @yield('content')
     </div>
 
-    @include('frontend.layouts.footer')
     @yield('extend-script')
 </body>
 
