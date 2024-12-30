@@ -493,7 +493,7 @@
                     <h1 class="text-lg font-bold text-oren">Testimonial</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
 
-                    <div id="default-carousel" class="relative w-full min-h-[330px] md:min-h-[250px]" data-carousel="slide">
+                    <div id="default-carousel" class="relative w-full min-h-[375px] md:min-h-[350px]" data-carousel="slide">
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
                             <p class="text-base mt-3 text-justify">
                                 “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
@@ -534,9 +534,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                                                                                        
                             <p class="text-base mt-3 text-justify">
                                 SD Muhammadiyah Sapen telah meletakan
                                 pondasi dasar yang sangat kuat dalam
@@ -584,9 +582,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                                                        
                             <p class="text-base mt-3 text-justify">
                                 Sebagai orang tua yang berpengalaman
                                 menyekolahkan tiga orang anak di SD
@@ -639,9 +635,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                                                        
                             <p class="text-base mt-3 text-justify">
                                 “SD Muhammadiyah Sapen memandang anak
                                 didik secara utuh dan konsisten memfasilitasi
@@ -690,9 +684,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                                                        
                             <p class="text-base mt-3 text-justify">
                                 Satu kebanggaan dan rasa senang kedua anak
                                 kami menjadi alumni SD Muhammadiyah Sapen.
@@ -752,7 +744,7 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333"
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/img-testimoni.jpeg') }}"
                         alt="image description">
                 </div>
 
