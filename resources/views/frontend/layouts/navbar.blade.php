@@ -98,12 +98,12 @@
                     </div>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="{{ route('facilities') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Fasilitas
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="{{ route('programs') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Program
                     </a>
                 </li>
@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="{{ route('contacts') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Hubungi Kami
                     </a>
                 </li>

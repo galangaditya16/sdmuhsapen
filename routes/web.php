@@ -63,3 +63,6 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
 Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
 Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->name('teacher-and-staff');
+Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
+Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
+Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');

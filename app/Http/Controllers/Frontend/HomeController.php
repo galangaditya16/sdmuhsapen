@@ -38,4 +38,65 @@ class HomeController extends Controller
     {
         return view('frontend.pages.teacher-and-staff');
     }
+
+    public function facilities()
+    {
+        $facilities = [
+            [
+                'title' => 'Masjid Safinatunnajah',
+                'details' => [
+                    "Dapat menampung 500 siswa dan karyawan",
+                    "Memiliki 1 tiang bendera",
+                    "Alas berupa paving block",
+                    "Saluran air anti mampet",
+                ],
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Masjid Safinatunnajah',
+                'details' => [
+                    "Dapat menampung 500 siswa dan karyawan",
+                    "Memiliki 1 tiang bendera",
+                    "Alas berupa paving block",
+                    "Saluran air anti mampet",
+                ],
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Masjid Safinatunnajah',
+                'details' => [
+                    "Dapat menampung 500 siswa dan karyawan",
+                    "Memiliki 1 tiang bendera",
+                    "Alas berupa paving block",
+                    "Saluran air anti mampet",
+                ],
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        return view('frontend.pages.facilities', ['facilities' => $facilities]);
+    }
+
+    public function programs()
+    {
+        $programs = [
+            [
+                'title' => 'Program Kelas CIMIPA',
+                'details' => "Kelas olah raga merupakan salah satu program SD Muhammadiyah Sapen yang sudah berjalan dan banyak peminatnya. Pada kelas ini, siswa dilatih untuk menjadi atlet profesional. Guru yang kompeten pada kelas ini akan mendorong siswa untuk meraih prestasi dan mengembangkan bakat yang dimiliki",
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas Bakat Istimewa Olah Raga',
+                'details' => "Kelas olah raga merupakan salah satu program SD Muhammadiyah Sapen yang sudah berjalan dan banyak peminatnya. Pada kelas ini, siswa dilatih untuk menjadi atlet profesional. Guru yang kompeten pada kelas ini akan mendorong siswa untuk meraih prestasi dan mengembangkan bakat yang dimiliki",
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        return view('frontend.pages.programs', ['programs' => $programs]);
+    }
+
+    public function contacts()
+    {
+        return view('frontend.pages.contacts');
+    }
 }
