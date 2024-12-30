@@ -36,13 +36,18 @@
                     <tbody>
                         @php
                             $no = ($data->currentPage() - 1) * $data->perPage() + 1;
+
                         @endphp
                         @forelse ($data as $row)
-                        @dump($row)
+                            @php
+                             $lang = 'id';
+                             $categoys = $row->ContentContent->Categorys->transLite->firstWhere('lang',$lang) ?? '-';
+                            @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>{{ $categoys->title ?? '-' }}</td>
                                 <td>{{ $row->title ?? '-' }}</td>
-                                <td>{{ $row->title ?? '-' }}</td>
+                                <td>{{ $row->slug ?? '-' }}</td>
                                 <td>{{ $row->ContentContent->author?? '-' }}</td>
                                 <td>{{ $row->ContentContent->created_at ? Carbon\Carbon::parse($row->ContentContent->created_at)->format('l, d F Y') : '-' }}</td>
                                 <td>

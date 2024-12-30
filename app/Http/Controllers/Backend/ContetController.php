@@ -9,6 +9,8 @@ use App\Models\AllContentTranslite;
 use App\Models\ContentNew;
 use Illuminate\Support\Str;
 use App\Base\Controller\BaseController;
+use App\Models\AllCategoryTranslite;
+use PhpParser\Node\Stmt\TryCatch;
 
 class ContetController extends BaseController
 {
@@ -103,7 +105,15 @@ class ContetController extends BaseController
      */
     public function edit(string $id)
     {
-        //
+        try {
+            $lang = 'id';
+            $categorys = AllCategoryTranslite::with(['CategoryContent','CategoryContent.transLite'], function ($query) use($lang){
+                $query->where('lang',$lang);
+            })->get();
+            dd($categorys);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     /**
