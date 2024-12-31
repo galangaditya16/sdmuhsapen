@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('id_category_news')->nullable()->constrained('category_news')->onDelete('casade');
             $table->integer('id_category_programs')->nullable()->constrained('category_programs')->onDelete('casade');
             $table->integer('id_category_content')->nullable()->constrained('category_contents')->onDelete('casade');
+            $table->integer('id_teacher_position')->nullable()->constrained('teacher_positionnews')->onDelete('casade');
             $table->string('title');
             $table->string('slug');
             $table->softDeletes();

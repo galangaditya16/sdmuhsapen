@@ -10,7 +10,7 @@ class AllCategoryTranslite extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $fillable = ['id_category_news','id_category_programs','id_category_content','title','slug','lang'];
+    protected $fillable = ['id_category_news','id_category_programs','id_category_content','id_teacher_position','title','slug','lang'];
     protected $table = 'all_category_translites';
     protected $dates = ['deleted_at'];
 
@@ -24,6 +24,10 @@ class AllCategoryTranslite extends Model
 
     public function CategoryPrograms(){
         return $this->hasOne(CategoryProgram::class,'id','id_category_programs');
+    }
+
+    public function CategoryTeacher(){
+        return $this->hasOne(TeacherPositionnew::class,'id','id_teacher_position');
     }
 }
 

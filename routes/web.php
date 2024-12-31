@@ -10,11 +10,12 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\ContetController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\backend\ProgramController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryNewsController;
 use App\Http\Controllers\Backend\CategoryContentController;
 use App\Http\Controllers\Backend\CategoryProgramController;
-
+use App\Http\Controllers\backend\TeacherPositionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,10 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('teacher', TeacherNew::class);
     // profile
     Route::resource('profile' ,ProfileController::class);
+    // teacher position
+    Route::resource('teacher-position',TeacherPositionController::class);
+    // programs
+    Route::resource('programs',ProgramController::class);
 
 
 });

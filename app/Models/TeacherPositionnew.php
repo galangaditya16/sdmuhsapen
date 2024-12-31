@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TeacherPositionnew extends Model
 {
     use HasFactory;
+    protected $table = 'teacher_positionnews';
     protected $fillable = [
         'name',
         'slug',
@@ -16,5 +17,10 @@ class TeacherPositionnew extends Model
     ];
     protected $dates = ['deleted_at'];
 
-    
+
+    public function transLite(){
+        return $this->hasMany(AllCategoryTranslite::class,'id_teacher_position','id');
+    }
+
+
 }

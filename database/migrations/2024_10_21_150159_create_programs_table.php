@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id('id');
             $table->string('id_category');
             $table->string('author');
-            $table->integer('views')->default('0');
+            $table->integer('views')->default('0')->nullable();
+            $table->text('path')->nullable();
+            $table->text('images');
             $table->softDeletes();
             $table->timestamps();
         });

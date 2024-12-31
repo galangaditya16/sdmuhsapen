@@ -8,6 +8,7 @@ use App\Http\Requests\NewsRequest;
 use App\Models\AllContentTranslite;
 use App\Models\CategoryNews;
 use App\Models\News;
+use App\Models\NewsNew;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -19,11 +20,13 @@ class NewsController extends BaseController
      */
     public function index()
     {
-        $lang = 'id';
         try {
-            $data = News::with(['hasCategory','content' => function($query) use ($lang){
-                $query->where('lang', $lang ? $lang : 'id');
-            }])->paginate(10);
+            $lang = 'id';
+            $data = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+                    ->whereHas('ContentNews.hasCategory.transLite', function ($query) use ($lang) {
+                        $query->where('lang',$lang);
+                    })
+                    ->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.master.news.index',compact('data'));
         } catch (\Throwable $th) {
             dd($th);
@@ -53,12 +56,13 @@ class NewsController extends BaseController
     public function store(NewsRequest $request)
     {
         DB::beginTransaction();
+
         try {
             if($request->hasFile('images')){
+                $imagesName = [];
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
                     $code = time().'.'.$file->getClientOriginalExtension();
-
                     $file->move($path,$code);
                     $imagesName[] = $code;
                 }
@@ -71,7 +75,7 @@ class NewsController extends BaseController
                 'author'       => 'galang_ganteng',
                 'view'         => $request->view,
                 'path'         => $request['path'],
-                'image'       => $request['image_filenames'],
+                'images'       => $request['image_filenames'],
             ]);
 
             $data_tanslite  =AllContentTranslite::create([
@@ -85,9 +89,9 @@ class NewsController extends BaseController
             $data_tanslite  =AllContentTranslite::create([
                 'id_news' => $data->id,
                 'lang'    => 'en',
-                'title'   => $request->title,
-                'slug'    => Str::slug($request->title),
-                'body'    => $request->body,
+                'title'   => $request->title_translite,
+                'slug'    => Str::slug($request->title_translite),
+                'body'    => $request->body_translite,
             ]);
 
             DB::commit();
@@ -189,8 +193,11 @@ class NewsController extends BaseController
     {
         DB::beginTransaction();
         try {
-            News::where('id', $id)->delete();
-            AllContentTranslite::where('id_news',$id)->delete();
+            $content = News::with('transLite')->findOrFail($id);
+            if($content->transLite){
+                $content->transLite()->delete();
+            }
+            $content->delete();
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {

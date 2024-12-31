@@ -10,6 +10,9 @@ use App\Models\ContentNew;
 use Illuminate\Support\Str;
 use App\Base\Controller\BaseController;
 use App\Models\AllCategoryTranslite;
+use App\Models\CategoryContent;
+use App\Models\News;
+use Illuminate\Mail\Mailables\Content;
 use PhpParser\Node\Stmt\TryCatch;
 
 class ContetController extends BaseController
@@ -107,12 +110,14 @@ class ContetController extends BaseController
     {
         try {
             $lang = 'id';
-            $categorys = AllCategoryTranslite::with(['CategoryContent','CategoryContent.transLite'], function ($query) use($lang){
-                $query->where('lang',$lang);
-            })->get();
-            dd($categorys);
+            $categorys = AllCategoryTranslite::with(['CategoryContent'])->where('lang',$lang)->get();
+            $data      = ContentNew::with('transLite')->findOrFail($id);
+            $contentID = $data->transLite->firstWhere('lang','id') ?? '';
+            $contentEN = $data->transLite->firstWhere('lang','en') ?? '';
+             return $this->makeView('backend.pages.master.content.edit',compact('categorys','contentID','contentEN','data'));
         } catch (\Throwable $th) {
             //throw $th;
+            dd($th);
         }
     }
 
@@ -121,7 +126,55 @@ class ContetController extends BaseController
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $content    = ContentNew::with('transLite')->findOrFail($id);
+            $newImages = [];
+            if($request->images){
+                $oldImages = json_decode($content->images, true);
+                if ($oldImages) {
+                    foreach ($oldImages as $oldImage) {
+                        $filePath = public_path('assets/images/content/' . $oldImage);
+                        if (file_exists($filePath)) {
+                            unlink($filePath); // Hapus file
+                        }
+                    }
+                }
+                foreach ($request->file('images') as $file){
+                    $path = public_path('assets/images/content/');
+                    $filename = time() . '.' . $file->getClientOriginalExtension();
+                    $file->move($path, $filename);
+                    $newImages[] = $filename;
+                }
+                $request['images'] = $newImages;
+            }else{
+                $request['images'] = $content->images;
+            }
+            $content->update([
+                'id_category' => $request->id_category,
+                'images'      => $request->input('images'),
+            ]);
+            $contentID  = AllContentTranslite::where('lang','id')->where('id_content',$id)->first();
+            $contentEN  = AllContentTranslite::where('lang','en')->where('id_content',$id)->first();
+            $contentID->update([
+                'title' => $request->title,
+                'slug'  => Str::slug($request->title).$content->id,
+                'body'  => $request->body,
+            ]);
+            $contentEN->update([
+                'title' => $request->title_translite,
+                'slug'  => Str::slug($request->title_translite).$content->id,
+                'body'  =>  $request->body_translite,
+            ]);
+            DB::commit();
+
+            return redirect()->route('content.index')->with('success','Berhasil Menyimpan Data');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            dd($th);
+            return redirect()->route('content.index')->with('error','Gagal Menyimpan Data');
+            //throw $th;
+        }
     }
 
     /**
@@ -130,5 +183,16 @@ class ContetController extends BaseController
     public function destroy(string $id)
     {
         //
+        try {
+            $content = ContentNew::with('transLite')->findOrFail($id);
+            if($content->transLite){
+                $content->transLite()->delete();
+            }
+            $content->delete();
+            return redirect()->route('content.index')->with('success','Success Delete Data');
+        } catch (\Throwable $th) {
+            dd($th);
+            return redirect()->back()->with('error','Error Action');
+        }
     }
 }

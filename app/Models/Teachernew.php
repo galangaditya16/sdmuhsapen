@@ -10,6 +10,7 @@ class Teachernew extends Model
     use HasFactory;
     protected $fillable = [
         'position_id',
+        'detail_position',
         'name',
         'image',
         'no',

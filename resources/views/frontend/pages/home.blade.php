@@ -38,22 +38,22 @@
                 Inden PPDB
             </button>
         </div>
-        <div class="w-full">                    
+        <div class="w-full">
             <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
                 &nbsp;
             </div>
             <div class="swiper default-carousel swiper-container">
-                
+
                 <div class="swiper-wrapper overflow-hidden min-h-[450px]">
                     @foreach ($slider as $sl)
                         <div class="swiper-slide">
-                            <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">                                
+                            <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">
                                 <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
                     @endforeach
-                    
+
                 </div>
                 <div class="flex items-center gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
@@ -107,11 +107,11 @@
                     </dl>
                 </div>
             </div>
-            
+
         </div>
 
-        
-          
+
+
 
     </section>
 
@@ -258,7 +258,7 @@
                         <a href="#">
                             @if($b->getFirstImage() !== null)
                                 <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}" alt="" style="object-fit: cover" />
-                            @else 
+                            @else
                             <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
                             @endif
                         </a>
@@ -272,7 +272,7 @@
                                 </h5>
                             </a>
                             <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
-                                {{ 
+                                {{
                                     Str::limit(strip_tags($contentid->body ?? $b->body), 250, '...');
                                 }}
                             </p>
@@ -494,7 +494,7 @@
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
 
                     <div id="default-carousel" class="relative w-full min-h-[330px] md:min-h-[250px]" data-carousel="slide">
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
                                 Guru-guru amat perhatian dengan murid-muridnya untuk melejitkan menggali potensinya. Terima kasih
@@ -534,9 +534,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 SD Muhammadiyah Sapen telah meletakan
                                 pondasi dasar yang sangat kuat dalam
@@ -584,9 +584,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 Sebagai orang tua yang berpengalaman
                                 menyekolahkan tiga orang anak di SD
@@ -639,9 +639,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 “SD Muhammadiyah Sapen memandang anak
                                 didik secara utuh dan konsisten memfasilitasi
@@ -690,9 +690,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>                            
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 Satu kebanggaan dan rasa senang kedua anak
                                 kami menjadi alumni SD Muhammadiyah Sapen.
@@ -709,7 +709,7 @@
                             </p>
 
                             <h3 class="text-2xl font-bold mt-3 text-dark-blue">Prof. Ir. Panut Mulyono. M.Eng., D.Eng., IPU, ASEAN Eng</h3>
-                            <p class="text-base">                                
+                            <p class="text-base">
                                 Orang tua dari alumni Dr. Aji Resindra Widya, S.T., M.Eng., D.Eng., <br>
                                 dan Dyah Ayu Permatasari, S.T., M.Mgt.
                             </p>
@@ -741,7 +741,7 @@
                                 </svg>
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <a href="#">
@@ -800,9 +800,9 @@
 
 
                 <div class="w-full md:w-10/12 mx-auto mt-8 bg-white" id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
-                    
+
                     <h2 id="accordion-color-heading-1">
-                        <button type="button" 
+                        <button type="button"
                             class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
                             data-accordion-target="#accordion-color-body-1" aria-expanded="true"
                             aria-controls="accordion-color-body-1">
@@ -824,8 +824,8 @@
                                 navbars, and more.
                             </p>
                             <p class="text-gray-500 dark:text-gray-400">
-                                Check out this guide to learn how to 
-                                <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> 
+                                Check out this guide to learn how to
+                                <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a>
                                 and start developing websites even faster with components on top of Tailwind CSS.
                             </p>
                         </div>
@@ -850,8 +850,8 @@
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed
                                 using the Figma software so everything you see in the library has a design equivalent in our
                                 Figma file.</p>
-                            <p class="text-gray-500 dark:text-gray-400">Check out the 
-                                <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> 
+                            <p class="text-gray-500 dark:text-gray-400">Check out the
+                                <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a>
                                 based on the utility classes from Tailwind CSS and components from Flowbite.
                             </p>
                         </div>
