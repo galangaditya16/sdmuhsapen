@@ -469,55 +469,53 @@
     <!-- END - VISI MISI -->
 
     <!-- TUJUAN  -->
-    <section class="my-20" style="background-color: rgba(165, 225, 243, 0.2)">
+    <section class="mt-20 mb-0 py-10" style="background-color: rgba(165, 225, 243, 0.2)">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4 py-5">
             <div class="text-center justify-center">
-                <h1 class="absolute text-4xl m-auto left-0 right-0 font-bold my-5 text-oren mx-auto text-center">The Truly Inspiring Islamic School</h1>
-                <img class="h-auto max-w-full rounded-lg self-center" src="https://picsum.photos/1400/300" alt="image description">
+                <h1 class="absolute text-base md:text-6xl m-auto left-0 right-0 font-bold my-5 md:my-20 text-black text-shadow-white-1 mx-auto text-center z-30">
+                    The Truly Inspiring <br> Islamic School
+                </h1>
+                <img class="h-auto max-w-full rounded-2xl self-center opacity-50" src="{{ asset('assets/images/cover-tujuan.jpg') }}" alt="image description">
             </div>
-            <div class="grid md:grid-cols-2 grid-rows-auto gap-16">
-                <div class="flex-auto w-50">
-                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Visi</h1>
-                    <p class="text-sm md:text-xl my-3 text-justify">
-                        Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
-                    </p>
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
-                </div>
-                <div>
-                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>
+            <div class="flex justify-center w-full">
+                <div class="w-full md:w-1/2">
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Tujuan</h1>
                     <ul class="list-disc ml-5">
                         <li class="text-sm md:text-xl">
-                            Melaksanakan pembelajaran dan bimbingan secara efektif sehinggapotensi peserta dididik dapat berkembang.
+                            Menginventarisasi dan menilai sumber daya yang ada di SD Muhammadiyah Sapen Yogyakarta. Menetapkan program pelatihan tentang prestasi siswa.
                         </li>
                         <li class="text-sm md:text-xl">
-                            Mengembangkan pembelajaran berbasis IT dan keterampilan bahasa asing.
+                            Melibatkan komite sekolah untuk mendapatkan masukan dan dukungan bagi pe pepelaksanaan program sekolah.
                         </li>
                         <li class="text-sm md:text-xl">
-                            Memberikan kesempatan bagi perkembangan kognitif, psikomotor dan kepada pepembentukan manusia pemecah masalah.
+                            Menjalin kerjasama dengan berbagai pihak/instansi terkait dalam rangka pepeningkatan kualitas sumber daya manusia.
                         </li>
                         <li class="text-sm md:text-xl">
-                            Mengembangkan budaya disiplin dan etos kerja yang tinggi.
+                            Mengembangkan bidang garapan kejuruan, seperti kemampuan bahasa Inggris, olah raraga dan tata kelola TI.
                         </li>
                         <li class="text-sm md:text-xl">
-                            Menyelenggarakan pendidikan lingkungan di sekolah yang dapat menumbuhkan dadan meningkatkan kualitas siswa yang religius.
-                        </li>
-                        <li class="text-sm md:text-xl">
-                            Membangkitkan semangat berprestasi di seluruh warga sekolah.
-                        </li>
-                        <li class="text-sm md:text-xl">
-                            Menumbuhkan kesadaran dan kepedulian terhadap lingkungan.
-                        </li>
-
+                            Menumbuhkan kesadaran akan pentingnya lingkungan.
+                        </li>                        
                     </ul>
-                </div>
-
+                </div>                
 
             </div>
         </div>
 
     </section>
     <!-- END - TUJUAN -->
+
+    <section class="py-10 bg-white">
+        <div class="w-full container mx-auto px-4 py-5">
+            <div class="text-center justify-center">
+                <div class="text-center">
+                    <h1 class="text-xl md:text-4xl font-bold my-5 text-dark-blue mx-auto">Kurikulum yang Digunakan</h1>
+                    <img class="h-auto" src="{{ asset('assets/images/logo/logo-kurikulum-merdeka.png') }}" alt="logo kurikulum merdeka">
+                </div>
+            </div>
+        </div>
+    </section>
 
     @include('frontend.layouts.footer')
 @endsection
