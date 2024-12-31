@@ -27,16 +27,18 @@
     {{-- SLIDER CAROUSEL --}}
     <section class=" border-gray-200 mb-20 mt-0 content-center">
         <!--HTML CODE-->
-        <div class="w-full container mx-auto px-4 absolute top-28 md:top-[25%] md:left-[25%] z-50">
+        <div class="w-full container mx-auto px-4 absolute top-28 md:top-[25%] md:left-[25%] z-20">
             <h1 class="text-sx md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
             <h1 class="text-sm md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
             <h1 class="text-sx md:text-lg my-3 text-white">The Truly Inspiring Islamic School</h1>
             <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
                 Pelajari Lebih Lanjut
             </button>
-            <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
-                Inden PPDB
-            </button>
+            <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
+                <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
+                    Inden PPDB
+                </button>
+            </a>
         </div>
         <div class="w-full">
             <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
@@ -247,12 +249,10 @@
     <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
-
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
-
                 @foreach ($berita as $b)
                     @php
-                             $contentid = $b->content->firstWhere('lang','id');
+                      $contentid = $b->content->firstWhere('lang','id');
                     @endphp
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
@@ -493,7 +493,7 @@
                     <h1 class="text-lg font-bold text-oren">Testimonial</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
 
-                    <div id="default-carousel" class="relative w-full min-h-[330px] md:min-h-[250px]" data-carousel="slide">
+                    <div id="default-carousel" class="relative w-full min-h-[500px] md:min-h-[350px]" data-carousel="slide">
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
@@ -535,8 +535,6 @@
                             </div>
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 SD Muhammadiyah Sapen telah meletakan
                                 pondasi dasar yang sangat kuat dalam
@@ -585,8 +583,6 @@
                             </div>
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 Sebagai orang tua yang berpengalaman
                                 menyekolahkan tiga orang anak di SD
@@ -641,8 +637,6 @@
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <p class="text-base mt-3 text-justify">
                                 “SD Muhammadiyah Sapen memandang anak
                                 didik secara utuh dan konsisten memfasilitasi
                                 pengembangan setiap potensinya. Ketika
@@ -691,8 +685,6 @@
                             </div>
                         </div>
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <p class="text-base mt-3 text-justify">
-                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 Satu kebanggaan dan rasa senang kedua anak
                                 kami menjadi alumni SD Muhammadiyah Sapen.
@@ -752,7 +744,7 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333"
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/img-testimoni.jpeg') }}"
                         alt="image description">
                 </div>
 
@@ -929,6 +921,7 @@
 
         </div>
     </section>
+    @include('frontend.layouts.footer')
 @endsection
 
 @section('extend-script')

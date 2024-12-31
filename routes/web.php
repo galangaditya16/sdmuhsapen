@@ -65,3 +65,14 @@ Route:Route::prefix('backyard')->group(function () {
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
+Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
+Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->name('teacher-and-staff');
+Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
+Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
+Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
+Route::get('/news', [HomeController::class, 'news'])->name('news');
+Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
+Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');
+Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
+Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');

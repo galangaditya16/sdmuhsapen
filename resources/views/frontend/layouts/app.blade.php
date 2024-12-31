@@ -17,6 +17,7 @@
         @vite($asset)
     @endforeach  --}}
     @yield('extend-header')
+    @stack('styles')
 
 </head>
 
@@ -27,8 +28,8 @@
         @yield('content')
     </div>
 
-    @include('frontend.layouts.footer')
     @yield('extend-script')
+    @stack('scripts')
 </body>
 
 </html>

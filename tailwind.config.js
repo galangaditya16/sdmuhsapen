@@ -26,6 +26,9 @@ export default {
       fontFamily: {
         abeezee: ['AbeeZee'], // Menambahkan font lokal
       },
+      textShadow: {
+        'white-1': '1px 1px 3px #fff'
+      }
     },
   },
   corePlugins: {
@@ -51,7 +54,8 @@ export default {
         }
       })
     },
-    require('flowbite/plugin')
+    require('flowbite/plugin'), 
+    require('tailwindcss-textshadow')
   ],
 }
 
