@@ -67,3 +67,4 @@ Route::get('/facilities', [HomeController::class, 'facilities'])->name('faciliti
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
+Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');

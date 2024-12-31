@@ -125,31 +125,22 @@ class HomeController extends Controller
             ],
         ];
 
-        $relatedNews = [
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg'),
-                'date' => now()->format('d M')
-            ],
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg'),
-                'date' => now()->format('d M')
-            ],
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg'),
-                'date' => now()->format('d M')
-            ],
-        ];
-
-        $currentNews = [];
-
         return view('frontend.pages.news', [
             'news' => $news,
+        ]);
+    }
+
+    public function newsDetail(string $slug)
+    {
+        $relatedNews = [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg'),
+                'date' => now()->format('d M')
+            ];
+
+        return view('frontend.pages.news-detail', [
+            'slug' => $slug,
             'relatedNews' => $relatedNews,
         ]);
     }

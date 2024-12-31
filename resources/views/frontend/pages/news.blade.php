@@ -61,51 +61,14 @@
                 <p>{{ str($new['body'])->limit(100) }}</p>
               </div>
               <div class="flex justify-center mt-5">
-                <button class="py-2 px-10 bg-biru-tua text-white rounded-3xl">Baca lagi</button>
+                <a href="{{ route('newsDetail', str($new['title'])->slug()) }}" class="py-2 px-10 bg-biru-tua text-white rounded-3xl">Baca lagi</a>
               </div>
             </div>
           </div>
         @endforeach
       </div>
-
       <div class="w-[30%] space-y-3 hidden lg:block">
-        <div>
-          <div>
-            <p class="text-2xl font-bold">Berita Terbaru</p>
-            <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
-          </div>
-          <div class="grid">
-            @foreach ($relatedNews as $relatedNew)
-              <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-                <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
-                  <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-                    <p>{{ $relatedNew['date'] }}</p>
-                  </div>
-                </div>
-                <p class="w-full">{{ $relatedNew['title'] }}</p>
-              </div>
-            @endforeach
-          </div>
-        </div>
-
-        <div>
-          <div>
-            <p class="text-2xl font-bold">Berita Terkait</p>
-            <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
-          </div>
-          <div class="grid">
-            @foreach ($relatedNews as $relatedNew)
-              <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-                <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
-                  <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-                    <p>{{ $relatedNew['date'] }}</p>
-                  </div>
-                </div>
-                <p class="w-full">{{ $relatedNew['title'] }}</p>
-              </div>
-            @endforeach
-          </div>
-        </div>
+        <x-side-news />
       </div>
     </div>
 
@@ -117,43 +80,7 @@
     </div>
 
     <div class="px-4 lg:hidden space-y-3">
-      <div>
-        <div>
-          <p class="text-2xl font-bold">Berita Terbaru</p>
-          <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
-        </div>
-        <div class="grid">
-          @foreach ($relatedNews as $relatedNew)
-            <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-              <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
-                <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-                  <p>{{ $relatedNew['date'] }}</p>
-                </div>
-              </div>
-              <p class="w-full">{{ $relatedNew['title'] }}</p>
-            </div>
-          @endforeach
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <p class="text-2xl font-bold">Berita Terkait</p>
-          <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
-        </div>
-        <div class="grid">
-          @foreach ($relatedNews as $relatedNew)
-            <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-              <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
-                <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-                  <p>{{ $relatedNew['date'] }}</p>
-                </div>
-              </div>
-              <p class="w-full">{{ $relatedNew['title'] }}</p>
-            </div>
-          @endforeach
-        </div>
-      </div>
+      <x-side-news />
     </div>
   </section>
 
