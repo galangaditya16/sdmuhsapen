@@ -66,3 +66,4 @@ Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->na
 Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
+Route::get('/news', [HomeController::class, 'news'])->name('news');

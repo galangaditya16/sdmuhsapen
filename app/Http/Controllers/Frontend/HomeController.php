@@ -99,4 +99,58 @@ class HomeController extends Controller
     {
         return view('frontend.pages.contacts');
     }
+
+    public function news()
+    {
+        $news = [
+            [
+                'title' => 'Prestasi SD Muhammadiyah Sapen di Olimpiade Internasional',
+                'body' => 'SD Muhammadiyah Sapen menyediakan berbagai sarana prasarana yang mendukung pembalajaran siswa untuk meraih prestasi akademis dan',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        $relatedNews = [
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg'),
+                'date' => now()->format('d M')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg'),
+                'date' => now()->format('d M')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg'),
+                'date' => now()->format('d M')
+            ],
+        ];
+
+        $currentNews = [];
+
+        return view('frontend.pages.news', [
+            'news' => $news,
+            'relatedNews' => $relatedNews,
+        ]);
+    }
 }

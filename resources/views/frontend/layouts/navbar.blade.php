@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="{{ route('news') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Berita
                     </a>
                 </li>
