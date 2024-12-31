@@ -252,28 +252,28 @@
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
-                      $contentid = $b->content->firstWhere('lang','id');
+                      $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
                     @endphp
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            @if($b->getFirstImage() !== null)
-                                <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}" alt="" style="object-fit: cover" />
+                            @if($b->ContentNews->getFirstImage() !== null)
+                                <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->ContentNews->getFirstImage()) }}" alt="" style="object-fit: cover" />
                             @else
                             <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
                             @endif
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
-                            {{ $b->getCreatedAtFormated() }}
+                            {{ $b->ContentNews->getCreatedAtFormated() }}
                         </span>
                         <div class="p-5 w-72 md:w-full">
                             <a href="#">
                                 <h5 class="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $contentid->title ?? $b->title }}
+                                    {{ $b->title ?? $b->title }}
                                 </h5>
                             </a>
                             <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
                                 {{
-                                    Str::limit(strip_tags($contentid->body ?? $b->body), 250, '...');
+                                    Str::limit(strip_tags($b->body ?? $b->body), 250, '...');
                                 }}
                             </p>
                             <a href="#"

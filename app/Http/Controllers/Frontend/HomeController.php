@@ -20,16 +20,12 @@ class HomeController extends Controller
           $lang  = 'id';
           $slider= Slider::all();
           DB::enableQueryLog();
-          $news  =AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+          $berita  =AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
           ->whereHas('ContentNews', function($query){
                 $query->orderBy('created_at','ASC');
           })->where('lang',$lang)
           ->paginate(10);
-          $result = [
-            'berita' => $news,
-            'slider' => $slider
-          ];
-           return view('frontend.pages.home', compact('result'));
+           return view('frontend.pages.home', compact('slider','berita','lang'));
         } catch (\Throwable $th) {
             dd($th);
             //throw $th;

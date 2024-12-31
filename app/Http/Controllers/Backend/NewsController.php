@@ -125,6 +125,7 @@ class NewsController extends BaseController
             }])->first();
             $contentID = $news->transLite->firstWhere('lang','id');
             $contentEN = $news->transLite->firstWhere('lang','en');
+
             return $this->makeView('backend.pages.master.news.edit',compact('news','categorys','contentID','contentEN'));
         } catch (\Throwable $th) {
             dd($th);

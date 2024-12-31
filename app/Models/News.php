@@ -36,7 +36,7 @@ class News extends Model
 
     public function getFirstImage()
     {
-        $images = json_decode($this->image);
+        $images = json_decode($this->images);
         return $images[0] ?? null;
     }
 }
