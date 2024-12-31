@@ -120,7 +120,7 @@
                 >
               </div>
             </div>
-            <button class="bg-biru-tua rounded-3xl w-full block text-white py-2">Submit</button>
+            <button class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng">Submit</button>
         </form>
       </div>
     </div>
@@ -180,7 +180,7 @@
       <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
       <div class="w-full mt-10">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19974.227918556066!2d110.70032685000001!3d-6.790490149999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70e875aaaaaaab%3A0x9bc6e4f9809233a5!2sJunior%20High%20School%202%20Mijen%20Demak!5e1!3m2!1sen!2sid!4v1735573520978!5m2!1sen!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4982.473315529783!2d110.3924967!3d-7.7859359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59dafb0f533f%3A0x703ab4cd80139883!2sSD%20Muhammadiyah%20Sapen!5e1!3m2!1sen!2sid!4v1735639636225!5m2!1sen!2sid"
           width="100%"
           height="300"
           style="border:0;"

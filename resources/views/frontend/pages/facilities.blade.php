@@ -52,7 +52,7 @@
                 <!-- Front of card -->
                 <div class="card-front rounded-3xl">
                   <img src="{{ $facility['bg-image'] }}" alt="masjid-safinatunnajah" class="w-full h-[332px] object-cover rounded-3xl">
-                  <button class="rounded-xl bg-oren text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
+                  <button class="rounded-xl bg-biru-tua text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
                     <p class="my-auto"> Lihat detail </p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -89,7 +89,7 @@
                 <!-- Front of card -->
                 <div class="card-front rounded-3xl">
                   <img src="{{ $facility['bg-image'] }}" alt="masjid-safinatunnajah" class="w-full h-[332px] object-cover rounded-3xl">
-                  <button class="rounded-xl bg-oren text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
+                  <button class="rounded-xl bg-biru-tua text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
                     <p class="my-auto"> Lihat detail </p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -132,7 +132,7 @@
                 <!-- Front of card -->
                 <div class="card-front rounded-3xl">
                   <img src="{{ $facility['bg-image'] }}" alt="masjid-safinatunnajah" class="w-full h-[332px] object-cover rounded-3xl">
-                  <button class="rounded-xl bg-oren text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
+                  <button class="rounded-xl bg-biru-tua text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">
                     <p class="my-auto"> Lihat detail </p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
