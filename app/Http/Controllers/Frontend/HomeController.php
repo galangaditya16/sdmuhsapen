@@ -144,4 +144,65 @@ class HomeController extends Controller
             'relatedNews' => $relatedNews,
         ]);
     }
+
+    public function searchNews(Request $request)
+    {
+        $news = [
+            [
+                'title' => 'Prestasi SD Muhammadiyah Sapen di Olimpiade Internasional',
+                'body' => 'SD Muhammadiyah Sapen menyediakan berbagai sarana prasarana yang mendukung pembalajaran siswa untuk meraih prestasi akademis dan',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        return view('frontend.pages.search-news', ['news' => $news]);
+    }
+
+    public function galery()
+    {
+        $galeries = [
+            [
+                'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
+                'date' => 'Diposting 24 September 2024',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Galeri: Kelas WFH Membantu Siswa Beradaptasi',
+                'date' => 'Diposting 24 September 2024',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Galeri: Upacara Peringatan Hari Kemerdekaan Indonesia',
+                'date' => 'Diposting 24 September 2024',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
+                'date' => 'Diposting 24 September 2024',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        return view('frontend.pages.galery', ['galeries' => $galeries]);
+    }
+
+    public function galeryDetail(string $slug)
+    {
+        return view('frontend.pages.galery-detail');
+    }
 }
