@@ -10,12 +10,6 @@
     <div class="sm:flex hidden">
       <img src="{{ asset('assets/images/organization/sapen-1.jpg')}}" alt="organization-sapen-1.jpg">
     </div>
-    <div class="sm:hidden flex">
-      <img src="{{ asset('assets/images/organization/sapen-2.jpg')}}" alt="organization-sapen-2.jpg" class="clickable-image">
-    </div>
-    <div class="sm:flex hidden">
-      <img src="{{ asset('assets/images/organization/sapen-2.jpg')}}" alt="organization-sapen-2.jpg">
-    </div>
   </section>
   @include('frontend.layouts.footer-working-hours')
 
