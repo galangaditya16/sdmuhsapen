@@ -80,7 +80,7 @@
 @endsection
 @section('content')
     <div class="col-md-12">
-        <form class="card" method="POST" action="{{ route('news.update',$news->id) }}" enctype="multipart/form-data">
+        <form class="card" method="POST" action="{{ route('programs.update',$data->id) }}" enctype="multipart/form-data">
             @csrf @method('PUT')
             <div class="card-header">
                 <h3 class="card-title">Update News</h3>
@@ -115,7 +115,7 @@
                     <div>
                         <select class="form-select" name="id_category">
                             @forelse ($categorys as $category)
-                                <option value="{{ $category->id }}" {{ $news->category_id == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                                <option value="{{ $category->CategoryPrograms->id }}" {{ $data->category_id == $category->CategoryPrograms->id ? 'selected' : '' }}>{{ $category->title }}</option>
                             @empty
                                 <option>Kosong</option>
                             @endforelse
@@ -135,8 +135,9 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(ID)</label>
                     <div>
+
                         <textarea id="news" name="body">
-                            {{ $contentID->body }}
+                            {!! $contentID->body !!}
                         </textarea>
 
                     </div>
@@ -149,7 +150,7 @@
                     <div>
 
                         <textarea id="news" name="body_translite">
-                            {{ $contentEN->body }}
+                            {!! $contentEN->body !!}
                         </textarea>
 
                     </div>

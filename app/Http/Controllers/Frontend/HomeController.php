@@ -2,21 +2,43 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\News;
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\BeritaController;
+use App\Models\AllContentTranslite;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $beritaTerkini = BeritaController::getListBerita(['*'], null, 1, 6);
-        $slider = SliderController::getListSlider();
-        $result = [
-            'berita' => $beritaTerkini['data'],
-            'slider' => $slider
-        ];
 
-        return view('frontend.pages.home', $result);
+        try {
+          $lang  = 'id';
+          $slider= Slider::all();
+          DB::enableQueryLog();
+          $news  =AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+          ->whereHas('ContentNews')
+          ->whereHas('ContentNews.hasCategory', function ($query) use ($lang) {
+                $query->where('lang', $lang);
+          })
+          ->get();
+          dd($news);
+        } catch (\Throwable $th) {
+            dd($th);
+            //throw $th;
+        }
+        // $beritaTerkini = BeritaController::getListBerita(['*'], null, 1, 6);
+        // $slider = SliderController::getListSlider();
+        // $result = [
+        //     'berita' => $beritaTerkini['data'],
+        //     'slider' => $slider
+        // ];
+
+        // return view('frontend.pages.home', $result);
     }
 
     public function profile()

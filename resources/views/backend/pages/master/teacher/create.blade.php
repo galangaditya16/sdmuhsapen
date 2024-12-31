@@ -80,34 +80,30 @@
 @endsection
 @section('content')
     <div class="col-md-12">
-        <form class="card" method="POST" action="{{ route('news.update',$news->id) }}" enctype="multipart/form-data">
-            @csrf @method('PUT')
+        <form class="card" method="POST" action="{{ route('programs.store') }}" enctype="multipart/form-data">
+            @csrf
             <div class="card-header">
-                <h3 class="card-title">Update News</h3>
+                <h3 class="card-title">Create Programs</h3>
             </div>
             <div class="card-body">
                 <div class="mb-3">
                     <label class="form-label required">Title(ID)</label>
-                    @if($contentID)
-                        <div>
-                            <input type="text" name="title" class="form-control" aria-describedby="slug"
-                                placeholder="Enter Name title" value="{{ old('title') ??  $contentID->title }}">
-                            @error('title')
-                                <div class="invalid-feedback" style="display: block">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    @endif
+                    <div>
+                        <input type="text" name="title" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name title" value="{{ old('title') }}">
+                        @error('title')
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label required">Title(EN)</label>
                     <div>
-                        @if($contentEN)
-                            <input type="text" name="title_translite" class="form-control" aria-describedby="slug"
-                                placeholder="Enter Name title" value="{{ old('title_translite') ?? $contentEN->title }}">
-                            @error('title_translite')
-                                <div class="invalid-feedback" style="display: block">{{ $message }}</div>
-                            @enderror
-                        @endif
+                        <input type="text" name="title_translite" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name title" value="{{ old('title_translite') }}">
+                        @error('title_translite')
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3">
@@ -115,7 +111,7 @@
                     <div>
                         <select class="form-select" name="id_category">
                             @forelse ($categorys as $category)
-                                <option value="{{ $category->id }}" {{ $news->category_id == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                                <option value="{{ $category->CategoryPrograms->id }}">{{ $category->title }}</option>
                             @empty
                                 <option>Kosong</option>
                             @endforelse
@@ -136,9 +132,7 @@
                     <label class="form-label required">Body(ID)</label>
                     <div>
                         <textarea id="news" name="body">
-                            {{ $contentID->body }}
                         </textarea>
-
                     </div>
                     @error('body')
                     <div class="invalid-feedback" style="display: block">{{ $message }}</div>
@@ -147,11 +141,8 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(EN)</label>
                     <div>
-
                         <textarea id="news" name="body_translite">
-                            {{ $contentEN->body }}
                         </textarea>
-
                     </div>
                     @error('body_translite')
                         <div class="invalid-feedback" style="display: block">{{ $message }}</div>

@@ -120,10 +120,12 @@ class NewsController extends BaseController
         $lang = 'id';
         try {
             $categorys = CategoryNews::all();
-            $news      = News::with(['hasCategory','content' => function($query) use ($lang,$id){
+            $news      = News::with(['hasCategory','hasCategory.transLite','transLite' => function($query) use ($lang,$id){
                 $query->where('id_news',$id);
             }])->first();
-            return $this->makeView('backend.pages.master.news.edit',compact('news','categorys'));
+            $contentID = $news->transLite->firstWhere('lang','id');
+            $contentEN = $news->transLite->firstWhere('lang','en');
+            return $this->makeView('backend.pages.master.news.edit',compact('news','categorys','contentID','contentEN'));
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','Error Action');
@@ -139,9 +141,11 @@ class NewsController extends BaseController
         //
         DB::beginTransaction();
         try {
-            $news = News::with(['hasCategory','content' => function($query) use ($id){
+            $news = News::with(['hasCategory','transLite' => function($query) use ($id){
                 $query->where('id_news',$id);
             }])->first();
+            $contentID = AllContentTranslite::where('id_news',$news->id)->where('lang','id')->first();
+            $contentEN =AllContentTranslite::where('id_news',$news->id)->where('lang','en')->first();
             if($request->hasFile('images')){
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
@@ -164,20 +168,17 @@ class NewsController extends BaseController
                 'image'       => $request->input('images')
             ]);
 
-            $contentid = $news->content->firstWhere('lang','id');
-            $contenten = $news->content->firstWhere('lang','en');
-            if($contentid){
-                $contentid->title = $request->title;
-                $contentid->slug  = str::slug($request->title);
-                $contentid->body  = $request->body;
-                $contentid->save();
-            }
-            if($contenten){
-                $contenten->title = $request->title_translite;
-                $contenten->slug  = str::slug($request->title_translite);
-                $contenten->body  = $request->body_translite;
-                $contenten->save();
-            }
+            $contentID->update([
+                'title' => $request->title,
+                'slug'  => Str::slug($request->title).$news->id,
+                'body'  => $request->body,
+            ]);
+            $contentEN->update([
+                'title' => $request->title_translite,
+                'slug'  => Str::slug($request->title_translite).$news->id,
+                'body'  =>  $request->body_translite,
+            ]);
+
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
