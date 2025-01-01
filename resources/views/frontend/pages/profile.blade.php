@@ -32,8 +32,8 @@
         <div class="w-full ">
             <div class="flex flex-col">
                 <div class="container mx-auto">
-                    <iframe class="rounded-2xl"
-                        width="1000" height="497" src="https://www.youtube.com/embed/9xwazD5SyVg?si=c3ubQDJlYdjAt9xu" 
+                    <iframe class="rounded-2xl w-full h-auto md:w-[1000px] md:h-[497px]"
+                        src="https://www.youtube.com/embed/9xwazD5SyVg?si=c3ubQDJlYdjAt9xu" 
                         title="YouTube video player" frameborder="0" 
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen

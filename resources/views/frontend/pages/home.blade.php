@@ -291,7 +291,7 @@
 
             </div>
             <div class="relative flex">
-                <a href="#" class="mx-auto">
+                <a href="{{ route('news') }}" class="mx-auto">
                     <button type="button"
                         class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
                         Lihat Semua Berita
