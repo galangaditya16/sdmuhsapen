@@ -71,3 +71,4 @@ Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-
 Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');
 Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
 Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
+Route::view('405', 'errors.404');
