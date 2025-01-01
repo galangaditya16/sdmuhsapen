@@ -5,15 +5,15 @@
   </div>
   <div class="flex justify-between text-center">
     <div class="my-auto w-[10%]">
-      <button id="left-button">
+      <button class="left-button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 md:w-20 md:h-20 text-oren">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
         </svg>
       </button>
     </div>
-    <div id="carousel" class="flex md:gap-x-4 overflow-hidden">
+    <div class="carousel flex md:gap-x-4 overflow-hidden">
       @foreach ($sliders as $slider)
-        <div class="mx-auto bg-blue-200">
+        <div class="mx-auto">
           <div style="background-image: url('{{ $slider['image'] }}');" class="bg-no-repeat bg-center bg-cover rounded-2xl overflow-hidden w-[345px] md:w-[300px] lg:w-[275px] max-w-[400px] h-[450px] relative">
             <div class="bg-biru-tua absolute bottom-0 w-full h-32 grid grid-cols-1 justify-between">
               <p class="text-oren font-bold text-2xl">{{ $slider['name'] }}</p>
@@ -24,7 +24,7 @@
       @endforeach
     </div>
     <div class="my-auto w-[10%]">
-      <button id="right-button">
+      <button class="right-button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 md:w-20 md:h-20 text-oren">
           <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
@@ -36,10 +36,11 @@
 @section('extend-script')
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const carousel = document.getElementById('carousel');
-      const leftButton = document.getElementById('left-button');
-      const rightButton = document.getElementById('right-button');
-      function getScrollAmount() {
+      const carousels = document.querySelectorAll('.carousel');
+      const leftButtons = document.querySelectorAll('.left-button');
+      const rightButtons = document.querySelectorAll('.right-button');
+
+      function getScrollAmount(carousel) {
         const width = window.innerWidth;
         if (width >= 1440) {
           return carousel.offsetWidth / 4;
@@ -52,24 +53,29 @@
         }
       }
 
-      leftButton.addEventListener('click', function () {
-        carousel.scrollBy({
-          left: -getScrollAmount(),
-          behavior: 'smooth'
+      leftButtons.forEach((leftButton, index) => {
+        leftButton.addEventListener('click', function () {
+          carousels[index].scrollBy({
+            left: -getScrollAmount(carousels[index]),
+            behavior: 'smooth'
+          });
         });
       });
 
-      rightButton.addEventListener('click', function () {
-        carousel.scrollBy({
-          left: getScrollAmount(),
-          behavior: 'smooth'
+      rightButtons.forEach((rightButton, index) => {
+        rightButton.addEventListener('click', function () {
+          carousels[index].scrollBy({
+            left: getScrollAmount(carousels[index]),
+            behavior: 'smooth'
+          });
         });
       });
 
       window.addEventListener('resize', function () {
         // Update scroll amount on window resize
-        getScrollAmount();
+        carousels.forEach(carousel => getScrollAmount(carousel));
       });
     });
   </script>
 @endsection
+
