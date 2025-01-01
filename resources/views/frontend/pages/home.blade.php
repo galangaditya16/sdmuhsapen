@@ -257,9 +257,9 @@
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             @if($b->getFirstImage() !== null)
-                                <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}" alt="" style="object-fit: cover" />
+                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}" alt="" style="object-fit: cover" />
                             @else
-                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
+                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
                             @endif
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
@@ -306,8 +306,8 @@
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2">
-                <div class="relative">
+            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 h-[560px]">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-1.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -330,11 +330,10 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-1.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -357,11 +356,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-3.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -384,11 +381,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-4.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -411,11 +406,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-3.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-5.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -438,11 +431,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-4.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-6.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -465,9 +456,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-5.jpeg') }}" alt="">
+                    </div>                    
                 </div>
             </div>
 
