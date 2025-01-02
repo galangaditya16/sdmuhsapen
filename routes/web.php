@@ -1,21 +1,24 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\Contact;
-use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\Backend\Achievement;
+use App\Http\Controllers\Backend\CategoryContentController;
+use App\Http\Controllers\Backend\CategoryNewsController;
+use App\Http\Controllers\Backend\CategoryProgramController;
+use App\Http\Controllers\Backend\Contact;
+use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\ContetController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Backend\ContetController;
-use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\backend\ProgramController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\CategoryNewsController;
-use App\Http\Controllers\Backend\CategoryContentController;
-use App\Http\Controllers\Backend\CategoryProgramController;
+use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\backend\TeacherController;
+use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\backend\TeacherPositionController;
+use App\Http\Controllers\Frontend\HomeController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,14 +54,16 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('slider',SliderController::class);
     //achievement
     Route::resource('achievement', Achievement::class);
-    // teacher
-    Route::resource('teacher', TeacherNew::class);
     // profile
     Route::resource('profile' ,ProfileController::class);
     // teacher position
     Route::resource('teacher-position',TeacherPositionController::class);
     // programs
     Route::resource('programs',ProgramController::class);
+    // teacher
+    Route::resource('teacher',TeacherController::class);
+    // contact 
+    Route::resource('contact',ContactController::class);
 
 
 });

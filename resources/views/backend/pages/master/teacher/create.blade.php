@@ -80,24 +80,34 @@
 @endsection
 @section('content')
     <div class="col-md-12">
-        <form class="card" method="POST" action="{{ route('programs.store') }}" enctype="multipart/form-data">
+        <form class="card" method="POST" action="{{ route('teacher.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="card-header">
-                <h3 class="card-title">Create Programs</h3>
+                <h3 class="card-title">Add Teacher</h3>
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label required">Title(ID)</label>
+                    <label class="form-label required">Name</label>
                     <div>
-                        <input type="text" name="title" class="form-control" aria-describedby="slug"
-                            placeholder="Enter Name title" value="{{ old('title') }}">
+                        <input type="text" name="name" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name" value="{{ old('name') }}">
                         @error('title')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Title(EN)</label>
+                    <label class="form-label required">Detail Title (ID)</label>
+                    <div>
+                        <input type="text" name="title" class="form-control" aria-describedby="slug"
+                            placeholder="Enter Name title" value="{{ old('title') }}">
+                        @error('title_translite')
+                            <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Detail Title (EN)</label>
                     <div>
                         <input type="text" name="title_translite" class="form-control" aria-describedby="slug"
                             placeholder="Enter Name title" value="{{ old('title_translite') }}">
@@ -107,11 +117,12 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label required">Category</label>
+                    <label class="form-label required">Title Category</label>
                     <div>
-                        <select class="form-select" name="id_category">
-                            @forelse ($categorys as $category)
-                                <option value="{{ $category->CategoryPrograms->id }}">{{ $category->title }}</option>
+                        <select class="form-select" name="id_posotion">
+                            @forelse ($catgeorys as $category)
+                                <option disabled selected>---Pilih---</option>
+                                <option value="{{ $category->CategoryTeacher->id }}">{{ $category->title }}</option>
                             @empty
                                 <option>Kosong</option>
                             @endforelse
@@ -122,31 +133,11 @@
                 @enderror
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Images</label>
+                    <label class="form-label">Image</label>
                     <div>
-                        <input type="file" name="images[]" class="form-control" aria-describedby="title"
+                        <input type="file" name="image" class="form-control" aria-describedby="title"
                             accept="image/png, image/gif, image/jpeg" multiple>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label required">Body(ID)</label>
-                    <div>
-                        <textarea id="news" name="body">
-                        </textarea>
-                    </div>
-                    @error('body')
-                    <div class="invalid-feedback" style="display: block">{{ $message }}</div>
-                @enderror
-                </div>
-                <div class="mb-3">
-                    <label class="form-label required">Body(EN)</label>
-                    <div>
-                        <textarea id="news" name="body_translite">
-                        </textarea>
-                    </div>
-                    @error('body_translite')
-                        <div class="invalid-feedback" style="display: block">{{ $message }}</div>
-                    @enderror
                 </div>
             </div>
             <div class="card-footer text-end">

@@ -14,8 +14,8 @@
                 <h3 class="card-title">Management Teacher</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('programs.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add Program
+                        <a href="{{ route('teacher.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                            Add Teacher
                         </a>
                     </div>
                 </div>
@@ -25,39 +25,39 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Category</th>
-                            <th>Title</th>
-                            <th>Slug</th>
-                            <th>Author</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Detail</th>
                             <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php
-                            $no = ($data->currentPage() - 1) * $data->perPage() + 1;
+                            $no = ($contents->currentPage() - 1) * $contents->perPage() + 1;
                         @endphp
-                        @forelse ($data as $row)
-
+                        @forelse ($contents as $row)
                             @php
-                                $lang     = 'id';
-                                $categorys = $row->ContentPrograms->Categorys->transLite->firstWhere('lang',$lang);
+                                $title = $row->ticherposition->transLite->firstwhere('lang',$lang);
                             @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $categorys->title }}</td>
-                                <td>{{ $row->title }}</td>
-                                <td>{{ $row->slug }}</td>
-                                <td>{{ $row->author }}</td>
+                                <td>{{ $row->name }}</td>
+                                <td>{{ $title->title }}</td>
+                                @if($lang == 'id')
+                                    <td>{{ $row->detail_id }}</td>
+                                @else
+                                    <td>{{ $row->detail_en }}</td>
+                                @endif
                                 <td>{{ Carbon\Carbon::parse($row->created_at)->format('l, d F Y') }}</td>
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('programs.edit', $row->ContentPrograms) }}"
+                                            <a href="{{ route('teacher.edit', $contents) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('programs.destroy', $row->ContentPrograms) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('teacher.destroy', $contents) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
@@ -83,7 +83,7 @@
                         @endforelse
                 </table>
             </div>
-            {!! $data->links('backend.layout.pagination') !!}
+            {!! $contents->links('backend.layout.pagination') !!}
         </div>
     </div>
 @endsection

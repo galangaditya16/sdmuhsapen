@@ -24,7 +24,7 @@
                             <th>No</th>
                             <th>Name Category</th>
                             <th>Order</th>
-                            <th>Images</th>
+                            <th>Icon</th>
                             <th>Order</th>
                             <th>Action</th>
                         </tr>
