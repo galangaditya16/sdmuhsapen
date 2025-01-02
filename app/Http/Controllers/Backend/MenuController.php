@@ -95,7 +95,7 @@ class MenuController extends BaseController
      * Update the specified resource in storage.
      */
     public function update(MenuRequest $request, string $id)
-    {   
+    {
         DB::beginTransaction();
         $menu = NULL;
         try {
@@ -135,7 +135,7 @@ class MenuController extends BaseController
     public function SoftDelete($id){
         try {
             $this->repositories->activeNonActive($id,1);
-            return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');  
+            return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
         } catch (\Throwable $th) {
             dd($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');

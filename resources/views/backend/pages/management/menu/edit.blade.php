@@ -12,7 +12,7 @@
                 <label class="form-label required">Nama Menu</label>
                 <div>
                     <input type="text" class="form-control" name="menu_name" aria-describedby="title" placeholder="Enter Name" value="{{ $menu->menu_name  ? $menu->menu_name  : old('menu_name') }}">
-                    @error('menu_name')     
+                    @error('menu_name')
                         <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                     @enderror
                 </div>
@@ -21,7 +21,7 @@
                 <label class="form-label">Route</label>
                 <div>
                     <input type="text" name="route" class="form-control" aria-describedby="title" placeholder="Enter Name Route" value="{{ $menu->route ? $menu->route :  old('route') }}">
-                    @error('route')     
+                    @error('route')
                         <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                     @enderror
                 </div>
@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label class="form-label">Parent</label>
                 <div>
-                    <select class="form-select" name="parent">
+                    <select class="form-select" name="parent_id">
                         <option>---- Parent ---</option>
                         @foreach ($parents as $parent)
                         <option value="{{ $parent->id }}" {{ $menu->parent_id == $parent->id ? 'selected' : '' }}>{{ $parent->menu_name }}</option>

@@ -124,7 +124,7 @@
                 <div class="mb-3">
                     <label class="form-label">Images</label>
                     <div>
-                        <input type="file" name="images[]" class="form-control" aria-describedby="title"
+                        <input type="file" name="images" class="form-control" aria-describedby="title"
                             accept="image/png, image/gif, image/jpeg" multiple>
                     </div>
                 </div>

@@ -43,7 +43,7 @@ class MenuSeeder extends Seeder
             [
                 'id' => '2024102413',
                 'menu_name' => 'Programs',
-                'route' => 'programs.index',
+                'route' => '',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
                 'order' => 2
@@ -51,7 +51,7 @@ class MenuSeeder extends Seeder
             [
                 'id' => '2024102414',
                 'menu_name' => 'Content',
-                'route' => 'content.index',
+                'route' => '',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
                 'order' => 2

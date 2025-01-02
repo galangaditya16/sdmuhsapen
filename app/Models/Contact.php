@@ -11,6 +11,6 @@ class Contact extends Model
     use HasFactory,SoftDeletes;
 
     protected $table = 'contacts';
-    protected $fillable = ['name','slug','address','logo','working_hours','mail','google_loc','instagram','facebook','youtube','tiktok','radio'];
+    protected $fillable = ['name','slug','whatsapp','tlp','address','logo','working_hours','working_days','mail','google_loc','instagram','facebook','youtube','tiktok','radio'];
     protected $dates = ['deleted_at'];
 }

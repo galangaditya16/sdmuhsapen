@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
+            $table->string('whatsapp ')->nullable();
+            $table->string('tlp')->nullable();
             $table->string('address')->nullable();
             $table->string('logo')->nullable();
             $table->string('working_hours')->nullable();
+            $table->string('working_days')->nullable();
             $table->text('mail')->nullable();
             $table->text('google_loc')->nullable();
             $table->text('instagram')->nullable();

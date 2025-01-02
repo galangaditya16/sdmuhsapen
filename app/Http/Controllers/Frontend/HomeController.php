@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Models\AllContentTranslite;
+use App\Models\Contact;
 use Illuminate\Support\Facades\DB;
 
 
@@ -58,7 +59,14 @@ class HomeController extends Controller
 
     public function principalsSpeech()
     {
-        return view('frontend.pages.principals-speech');
+        try {
+            $lang  = 'id';
+            $data  = AllContentTranslite::with('ContentContent.transLite','ContentContent.Categorys','ContentContent.Categorys.transLite')->where('lang',$lang)->first();
+            $title = $data ? $data->ContentContent->Categorys->transLite->firstWhere('lang',$lang) : NULL;
+            return view('frontend.pages.principals-speech',compact('title','data'));
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     public function teacherAndStaff()
@@ -106,25 +114,27 @@ class HomeController extends Controller
 
     public function programs()
     {
-        $programs = [
-            [
-                'title' => 'Program Kelas CIMIPA',
-                'details' => "Kelas olah raga merupakan salah satu program SD Muhammadiyah Sapen yang sudah berjalan dan banyak peminatnya. Pada kelas ini, siswa dilatih untuk menjadi atlet profesional. Guru yang kompeten pada kelas ini akan mendorong siswa untuk meraih prestasi dan mengembangkan bakat yang dimiliki",
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Kelas Bakat Istimewa Olah Raga',
-                'details' => "Kelas olah raga merupakan salah satu program SD Muhammadiyah Sapen yang sudah berjalan dan banyak peminatnya. Pada kelas ini, siswa dilatih untuk menjadi atlet profesional. Guru yang kompeten pada kelas ini akan mendorong siswa untuk meraih prestasi dan mengembangkan bakat yang dimiliki",
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-        ];
+        try {
+            $lang = 'id';
+            $programs = AllContentTranslite::with('ContentPrograms','ContentPrograms.Categorys.transLite','ContentPrograms.transLite')
+            ->whereHas('ContentPrograms')->where('lang',$lang)
+            ->get();
+            return view('frontend.pages.programs', compact('programs'));
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
-        return view('frontend.pages.programs', ['programs' => $programs]);
     }
 
     public function contacts()
     {
-        return view('frontend.pages.contacts');
+        try {
+            $contact = Contact::latest()->first();
+            return view('frontend.pages.contacts',compact('contact'));
+        } catch (\Throwable $th) {
+
+        }
+
     }
 
     public function news()

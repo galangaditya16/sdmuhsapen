@@ -11,6 +11,8 @@ use App\Models\ProgramsNew;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+
 
 class ProgramController extends BaseController
 {
@@ -56,21 +58,17 @@ class ProgramController extends BaseController
     {
         DB::beginTransaction();
         try {
-            if($request->images){
-                $imagesName = [];
-                foreach ( $request->file('images') as $file){
-                    $path = public_path('assets/images/programs/');
-                    $name = time().'.'.$file->getClientOriginalExtension();
-                    $file->move($path,$name);
-                    $imagesName[]= $name;
-                }
-                $request['images'] = json_encode($imagesName);
+            if($request->has('images')){
+                $path = public_path('assets/images/programs/');
+                $name = time().'.'.$request->images->getClientOriginalExtension();
+                $request->images->move($path,$name);
+                $request['images'] = $name;
                 $request['path']   = $path;
-                $request['author'] = '1';
             }
+            $request['author'] = '1';
             $content = new ProgramsNew ([
                 'id_category'   => $request->id_category,
-                'author'        => $request->input('author'),
+                'author'        => $request->input('author') ?? '1',
                 'path'          => $request->input('path'),
                 'images'        => $request->input('images')
             ]);
@@ -139,30 +137,27 @@ class ProgramController extends BaseController
         dump($request->all());
         try {
             $content    = ProgramsNew::with('transLite')->findOrFail($id);
-            $newImages = [];
-            if($request->images){
-                $oldImages = json_decode($content->images, true);
+            $path_web = asset('assets/images/programs/');
+            if($request->has('images')){
+                $oldImages = $content->images;
+                $path = public_path('assets/images/programs/');
                 if ($oldImages) {
-                    foreach ($oldImages as $oldImage) {
-                        $filePath = public_path('assets/images/programs/' . $oldImage);
-                        if (file_exists($filePath)) {
-                            unlink($filePath); // Hapus file
-                        }
-                    }
+                    File::delete($path.$oldImages);
                 }
-                foreach ($request->file('images') as $file){
-                    $path = public_path('assets/images/programs/');
-                    $filename = time() . '.' . $file->getClientOriginalExtension();
-                    $file->move($path, $filename);
-                    $newImages[] = $filename;
-                }
-                $request['images'] = $newImages;
+                $path = public_path('assets/images/programs/');
+                $filename = time() . '.' . $request->images->getClientOriginalExtension();
+                $request->images->move($path, $filename);
+                $request['image'] = $filename;
+                $request['path'] = $path_web;
+
             }else{
-                $request['images'] = $content->images;
+                $request['path'] = $path_web;
+                $request['image'] = $content->images;
             }
             $content->update([
                 'id_category' => $request->id_category,
-                'images'      => $request->input('images'),
+                'images'      => $request->input('image'),
+                'path'        => $request->input('path'),
             ]);
             $contentID  = AllContentTranslite::where('lang','id')->where('id_programs',$id)->first();
             $contentEN  = AllContentTranslite::where('lang','en')->where('id_programs',$id)->first();

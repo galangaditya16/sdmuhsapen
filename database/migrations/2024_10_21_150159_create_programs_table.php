@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->id('id');
             $table->string('id_category');
-            $table->string('author');
+            $table->string('author')->nullable();
             $table->integer('views')->default('0')->nullable();
             $table->text('path')->nullable();
-            $table->text('images');
+            $table->text('images')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

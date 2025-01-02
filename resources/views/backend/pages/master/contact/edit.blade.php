@@ -6,13 +6,13 @@
             @csrf
             @if($data)
                 @method('PUT')
-            @endif 
+            @endif
             <div class="card-header">
                 <h3 class="card-title"> Contact Management</h3>
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label">name</label>
+                    <label class="form-label">Name Site</label>
                     <div>
                         <input type="text" class="form-control" name="name" aria-describedby="title" placeholder="Enter name" value="{{ $data->name ?? old('name')}}">
                         @error('name')
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">address</label>
+                    <label class="form-label">Address</label>
                     <div>
                         <input type="text" class="form-control" name="address" aria-describedby="title" placeholder="Enter order" value="{{ $data->address ?? old('address')}}">
                         @error('address')
@@ -30,7 +30,34 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">working hours</label>
+                  <label class="form-label">Whatsapp</label>
+                  <div>
+                      <input type="number" class="form-control" name="whatsapp" aria-describedby="title" placeholder="Enter number" value="{{ $data->radio ?? old('whatsapp')}}">
+                      @error('whatsapp')
+                          <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                      @enderror
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Telp</label>
+                <div>
+                    <input type="number" class="form-control" name="tlp" aria-describedby="title" placeholder="Enter number" value="{{ $data->tlp ?? old('tlp')}}">
+                    @error('tlp')
+                        <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                    @enderror
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Working Days</label>
+                <div>
+                    <input type="text" class="form-control" name="working_days" aria-describedby="title" placeholder="Enter order" value="{{ $data->working_days ?? old('working_days')}}">
+                    @error('working_days')
+                        <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                    @enderror
+                </div>
+              </div>
+                <div class="mb-3">
+                    <label class="form-label">Working Hours</label>
                     <div>
                         <input type="text" class="form-control" name="working_hours" aria-describedby="title" placeholder="Enter order" value="{{ $data->working_hours ?? old('working_hours')}}">
                         @error('working_hours')
