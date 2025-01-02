@@ -18,7 +18,7 @@ class RoleController extends BaseController
         try {
             $permission = DB::table('permissions')->where('name','LIKE','role-%')->get();
             $roles      = DB::table('roles')->paginate(10);
-            dd($roles);
+            return $this->makeView('backend.pages.master.role.index',compact('roles','permission'));
         } catch (\Throwable $th) {
             dd($th);
         }
@@ -29,7 +29,18 @@ class RoleController extends BaseController
      */
     public function create()
     {
-        //
+        try {
+            $typePermissions = SysPermission::selectRaw('SUBSTRING_INDEX(name, "-", 1) AS first_word, COUNT(*) AS total')
+            ->groupBy('first_word')
+            ->get();
+			$lists = SysPermission::where('name', 'like', '%view%')->orderBy('created_at', 'ASC')->get();
+			$creates = SysPermission::where('name', 'like', '%create%')->orderBy('created_at', 'ASC')->get();
+			$updates = SysPermission::where('name', 'like', '%edit%')->orderBy('created_at', 'ASC')->get();
+			$deletes = SysPermission::where('name', 'like', '%delete%')->orderBy('created_at', 'ASC')->get();
+            return $this->makeView('backend.pages.master.role.create',compact('typePermissions','lists','creates','updates','deletes'));
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     /**

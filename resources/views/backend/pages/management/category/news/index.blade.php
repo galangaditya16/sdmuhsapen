@@ -11,8 +11,8 @@
                 <h3 class="card-title">Management Category News</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('category-news.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add Category News
+                        <a href="{{ route('permission.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                            Add Role
                         </a>
                     </div>
                 </div>
@@ -22,17 +22,16 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name Category</th>
-                            <th>Slug</th>
-                            <th>Images</th>
+                            <th>Name Role</th>
+                            <th>Guard</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php
-                            $no = ($data->currentPage() - 1) * $data->perPage() + 1;
+                            $no = ($roles->currentPage() - 1) * $roles->perPage() + 1;
                         @endphp
-                        @forelse ($data as $row)
+                        @forelse ($roles as $row)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->title }}</td>
@@ -71,7 +70,7 @@
                         @endforelse
                 </table>
             </div>
-            {!! $data->links('backend.layout.pagination') !!}
+            {!! $roles->links('backend.layout.pagination') !!}
         </div>
     </div>
 @endsection
