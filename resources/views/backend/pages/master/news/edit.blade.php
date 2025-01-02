@@ -85,10 +85,6 @@
             <div class="card-header">
                 <h3 class="card-title">Update News</h3>
             </div>
-            @php
-                $contentID = $news->content->firstWhere('lang','id');
-                $contentEN = $news->content->firstWhere('lang','en');
-            @endphp
             <div class="card-body">
                 <div class="mb-3">
                     <label class="form-label required">Title(ID)</label>
@@ -139,11 +135,10 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(ID)</label>
                     <div>
-                        
                         <textarea id="news" name="body">
-                            {!! $contentID->body !!}
+                            {{ $contentID->body }}
                         </textarea>
-                        
+
                     </div>
                     @error('body')
                     <div class="invalid-feedback" style="display: block">{{ $message }}</div>
@@ -152,11 +147,11 @@
                 <div class="mb-3">
                     <label class="form-label required">Body(EN)</label>
                     <div>
-                        
+
                         <textarea id="news" name="body_translite">
-                            {!! $contentEN->body !!}
+                            {{ $contentEN->body }}
                         </textarea>
-                       
+
                     </div>
                     @error('body_translite')
                         <div class="invalid-feedback" style="display: block">{{ $message }}</div>

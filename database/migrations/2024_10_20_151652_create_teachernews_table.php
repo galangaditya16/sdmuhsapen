@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('position_id');
             $table->string('name');
-            $table->string('no');
             $table->string('image');
+            $table->string('detail_id');
+            $table->string('detail_en');
             $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();

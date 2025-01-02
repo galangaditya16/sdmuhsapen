@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ContentNew extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
     protected $fillable = ['id_category','author','views','images'];
     protected $table = 'content';
     protected $dates = ['deleted_at'];
     public function transLite()
     {
-        return $this->belongsTo(AllCategoryTranslite::class, 'id_category_content', 'id');
+        return $this->hasMany(AllContentTranslite::class, 'id_content', 'id');
     }
 
     public function Categorys () {

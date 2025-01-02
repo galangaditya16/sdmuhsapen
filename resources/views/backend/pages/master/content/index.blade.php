@@ -53,11 +53,11 @@
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('content.edit', $row->id) }}"
+                                            <a href="{{ route('content.edit', $row->ContentContent) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('content.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('content.destroy', $row->ContentContent) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">

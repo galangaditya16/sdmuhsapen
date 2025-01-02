@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Teachernew extends Model
 {
     use HasFactory;
+    protected $table = 'teachernews';
     protected $fillable = [
         'position_id',
         'name',
         'image',
-        'no',
+        'detail_id',
+        'detail_en',
     ];
     protected $dates = ['deleted_at'];
 
     public function ticherposition(){
-        return $this->belongsTo(TeacherPositionnew::class,'id','position_id');
+        return $this->belongsTo(TeacherPositionnew::class,'position_id','id');
     }
 }

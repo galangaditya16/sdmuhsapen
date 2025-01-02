@@ -18,18 +18,15 @@ class News extends Model
         'views',
         'path',
         'title',
-        'image'
+        'images'
     ];
     protected $dates = ['deleted_at'];
 
     public function hasCategory(){
         return $this->belongsTo(CategoryNews::class,'id_category','id');
     }
-    public function content(){
+    public function transLite(){
         return $this->hasMany(AllContentTranslite::class,'id_news','id');
-    }
-    public function translite($lang){
-        return $this->translations()->where('lang', $lang)->first();
     }
 
     public function getCreatedAtFormated()
@@ -39,7 +36,7 @@ class News extends Model
 
     public function getFirstImage()
     {
-        $images = json_decode($this->image);        
+        $images = json_decode($this->images);
         return $images[0] ?? null;
     }
 }

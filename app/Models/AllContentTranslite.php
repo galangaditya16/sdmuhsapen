@@ -10,7 +10,7 @@ class AllContentTranslite extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'all_content_translites';
-    protected $fillable = ['lang','id_news','id_program','id_content','title','slug','body'];
+    protected $fillable = ['lang','id_news','id_programs','id_content','title','slug','body'];
     protected $dates = ['deleted_at'];
 
     public function ContentPrograms(){
@@ -19,6 +19,10 @@ class AllContentTranslite extends Model
 
     public function ContentContent(){
         return $this->hasOne(ContentNew::class,'id','id_content');
+    }
+
+    public function ContentNews(){
+        return $this->hasOne(News::class,'id','id_news');
     }
 
 }

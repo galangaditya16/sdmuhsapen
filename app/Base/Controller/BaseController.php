@@ -55,7 +55,8 @@ Class BaseController extends ControllersController{
         $data = NULL;
         DB::beginTransaction();
         try {
-           $data = AllCategoryTranslite::whereHas('CategoryPrograms',function ($query){
+           $data = AllCategoryTranslite::with('CategoryPrograms')
+           ->whereHas('CategoryPrograms',function ($query){
                 $query->whereNotNull('id_category_programs');
            })->where('lang',$lang)->get();
            DB::commit();

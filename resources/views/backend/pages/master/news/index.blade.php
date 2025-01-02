@@ -38,23 +38,25 @@
                             $no = ($data->currentPage() - 1) * $data->perPage() + 1;
                         @endphp
                         @forelse ($data as $row)
+                            @php
+                                $lang     = 'id';
+                                $categorys = $row->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
+                            @endphp
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>{{ $categorys->title }}</td>
                                 <td>{{ $row->title }}</td>
-                                @if($contentid)
-                                    <td>{{ $contentid->title ? Str::limit($contentid->title,50) : '-'}}</td>
-                                    <td>{{ $contentid->slug ?? '-' }}</td>
-                                @endif
+                                <td>{{ $row->slug }}</td>
                                 <td>{{ $row->author }}</td>
-                                <td>{{ Carbon\Carbon::parse($row->created_at)->format('l') }}</td>
+                                <td>{{ Carbon\Carbon::parse($row->created_at)->format('l, d F Y') }}</td>
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('news.edit', $row->id) }}"
+                                            <a href="{{ route('news.edit', $row->ContentNews) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('news.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            <form action="{{ route('news.destroy', $row->ContentNews) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
