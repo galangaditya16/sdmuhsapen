@@ -31,7 +31,7 @@ class MenuSeeder extends Seeder
                 'icon' => 'master-icon',
                 'order' => 2
             ],
-            // master data 
+            // master data
             [
                 'id' => '2024102419',
                 'menu_name' => 'Berita',
@@ -43,7 +43,7 @@ class MenuSeeder extends Seeder
             [
                 'id' => '2024102413',
                 'menu_name' => 'Programs',
-                'route' => '',
+                'route' => 'programs.index',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
                 'order' => 2
@@ -51,7 +51,7 @@ class MenuSeeder extends Seeder
             [
                 'id' => '2024102414',
                 'menu_name' => 'Content',
-                'route' => '',
+                'route' => 'content.index',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
                 'order' => 2
@@ -99,7 +99,7 @@ class MenuSeeder extends Seeder
             ],            [
                 'id' => '2024102418',
                 'menu_name' => 'Guru',
-                'route' => '',
+                'route' => 'teacher.index',
                 'parent_id' => '2024102408',  // root menu
                 'icon' => 'category-icon',
                 'order' => 4

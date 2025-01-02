@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('youtube')->nullable();
             $table->text('tiktok')->nullable();
             $table->text('radio')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
