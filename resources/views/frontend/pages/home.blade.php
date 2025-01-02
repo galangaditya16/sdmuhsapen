@@ -252,14 +252,14 @@
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
-                      $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
+                      $contentid = $b->content->firstWhere('lang','id');
                     @endphp
                     <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            @if($b->ContentNews->getFirstImage() !== null)
-                                <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->ContentNews->getFirstImage()) }}" alt="" style="object-fit: cover" />
+                            @if($b->getFirstImage() !== null)
+                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/news/' . $b->getFirstImage()) }}" alt="" style="object-fit: cover" />
                             @else
-                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
+                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
                             @endif
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
@@ -273,7 +273,7 @@
                             </a>
                             <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
                                 {{
-                                    Str::limit(strip_tags($b->body ?? $b->body), 250, '...');
+                                    Str::limit(strip_tags($contentid->body ?? $b->body), 250, '...');
                                 }}
                             </p>
                             <a href="#"
@@ -291,7 +291,7 @@
 
             </div>
             <div class="relative flex">
-                <a href="#" class="mx-auto">
+                <a href="{{ route('news') }}" class="mx-auto">
                     <button type="button"
                         class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
                         Lihat Semua Berita
@@ -306,8 +306,8 @@
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2">
-                <div class="relative">
+            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 h-[560px]">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-1.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -331,10 +331,9 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-1.jpeg') }}" alt="">
                 </div>
-                <div class="relative">
+
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -358,10 +357,8 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-3.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -385,10 +382,8 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-4.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -412,10 +407,8 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-3.jpeg') }}" alt="">
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-5.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -439,10 +432,8 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-4.jpeg') }}" alt="">
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-6.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -466,8 +457,6 @@
 
                         </div>
                     </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-5.jpeg') }}" alt="">
                 </div>
             </div>
 

@@ -4,20 +4,21 @@ export default {
     "./resources/views/**/*.blade.php",
     "./node_modules/flowbite/**/*.js"
   ],
-  theme: {    
+  theme: {
     extend: {
       colors: {
         'dark-blue': '#000080',
         'hover-menu': '#f86f03',
-        'oren': '#f86f03', 
+        'oren': '#f86f03',
         'oren-muda': '#f86f0333',
         'kuning-tua': '#ffda3f',
         'kuning-muda': '#ffde59',
         'biru-remaja': '#4379f2',
-        'biru-tua': '#004aad', 
+        'biru-tua': '#004aad',
+        'biru-tua-peteng': '#062c65',
         'biru-langit': '#b6e4ff',
         'pink': '#ff66c4',
-        'pink-muda': '#ffaee0', 
+        'pink-muda': '#ffaee0',
         'hijau-tua': '#217f43',
         'hijau-muda': '#97d7b6',
         'hijau-terang': '#c1ff72'
@@ -54,7 +55,7 @@ export default {
         }
       })
     },
-    require('flowbite/plugin'), 
+    require('flowbite/plugin'),
     require('tailwindcss-textshadow')
   ],
 }

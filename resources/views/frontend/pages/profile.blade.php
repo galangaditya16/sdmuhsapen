@@ -27,12 +27,18 @@
     <!-- PROFILE SD MUHAMDIYAH SAPEN -->
     <x-profile-menu-header title="Profil SD Muhammadiyah Sapen" />
 
-    <section class="h-[800px] mb-20 -mt-[200px]">
+    <section class="mb-20 -mt-[50px]">
         <!--HTML CODE-->
         <div class="w-full ">
             <div class="flex flex-col">
                 <div class="container mx-auto">
-
+                    <iframe class="rounded-2xl w-full h-auto md:w-[1000px] md:h-[497px]"
+                        src="https://www.youtube.com/embed/9xwazD5SyVg?si=c3ubQDJlYdjAt9xu"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                    >
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -67,36 +73,6 @@
 
     </section>
     <!-- END - PROFILE SD MUHAMDIYAH SAPEN -->
-
-    <!-- SEJARAH SEKOLAH  -->
-    <section class="my-20">
-        <!--HTML CODE-->
-        <div class="w-full container mx-auto px-4">
-
-            <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
-                <div class="flex-auto w-50">
-
-                    <p class="text-sm md:text-base mt-3 text-justify">
-                        SD Muhammadiyah Sapen berdiri pada tahun 1 Agustus 1967. Tidak seperti sekolah-sekolah swasta sekarang yang didirikan dengan modal besar oleh pemilik atau yayasannya, SD Muhammadiyah Sapen didirikan dengan modal niat, semangat, dan keihlasan oleh para pendirinya. Diantara para tokoh yang memprakarsai berdirinya SD Muhammadiyah Sapen adalah H. Sutrisno, Drs. Marsum, M.M., Sumarno, Djazari Hisyam, S.H., Drs. Kirmadji, dan tokoh sekitar kampung Sapen yang peduli dengan pendidikan.
-                    </p>
-
-                    <a href="#">
-                        <button type="button" class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                            Pelajari Selengkapnya
-                        </button>
-                    </a>
-
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
-                </div>
-
-
-            </div>
-        </div>
-
-    </section>
-    <!-- END - KEUNGGULAN -->
 
     <!-- KEUNGGULAN -->
     <section class=" border-gray-200 my-20">
@@ -263,6 +239,36 @@
 
     </section>
     <!-- END - KEUNGGULAN -->
+
+    <!-- SEJARAH SEKOLAH  -->
+    <section class="my-20">
+        <!--HTML CODE-->
+        <div class="w-full container mx-auto px-4">
+
+            <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
+                <div class="flex-auto w-50">
+
+                    <p class="text-sm md:text-base mt-3 text-justify">
+                        SD Muhammadiyah Sapen berdiri pada tahun 1 Agustus 1967. Tidak seperti sekolah-sekolah swasta sekarang yang didirikan dengan modal besar oleh pemilik atau yayasannya, SD Muhammadiyah Sapen didirikan dengan modal niat, semangat, dan keihlasan oleh para pendirinya. Diantara para tokoh yang memprakarsai berdirinya SD Muhammadiyah Sapen adalah H. Sutrisno, Drs. Marsum, M.M., Sumarno, Djazari Hisyam, S.H., Drs. Kirmadji, dan tokoh sekitar kampung Sapen yang peduli dengan pendidikan.
+                    </p>
+
+                    <a href="#">
+                        <button type="button" class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                            Pelajari Selengkapnya
+                        </button>
+                    </a>
+
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+    <!-- END - SEJARAH SEKOLAH -->
 
     <!-- PRESTASI -->
     <section class=" border-gray-200 my-20 py-5 bg-biru-tua">
@@ -496,9 +502,9 @@
                         </li>
                         <li class="text-sm md:text-xl">
                             Menumbuhkan kesadaran akan pentingnya lingkungan.
-                        </li>                        
+                        </li>
                     </ul>
-                </div>                
+                </div>
 
             </div>
         </div>
@@ -517,7 +523,7 @@
         </div>
     </section>
 
-    @include('frontend.layouts.footer')
+    @include('frontend.layouts.footer-working-hours')
 @endsection
 
 

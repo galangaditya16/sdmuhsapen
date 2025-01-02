@@ -15,6 +15,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $beritaTerkini = BeritaController::getListBerita(['*'], null, 1, 6);
+        $slider = SliderController::getListSlider();
+        $result = [
+            'berita' => $beritaTerkini['data'],
+            'slider' => $slider
+        ];
 
         try {
           $lang  = 'id';

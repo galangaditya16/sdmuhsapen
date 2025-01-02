@@ -62,7 +62,7 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('programs',ProgramController::class);
     // teacher
     Route::resource('teacher',TeacherController::class);
-    // contact 
+    // contact
     Route::resource('contact',ContactController::class);
 
 
