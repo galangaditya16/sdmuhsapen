@@ -68,6 +68,7 @@ Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
+Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');
 Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');
 Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
 Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');

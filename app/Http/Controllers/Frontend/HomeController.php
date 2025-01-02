@@ -205,4 +205,34 @@ class HomeController extends Controller
     {
         return view('frontend.pages.galery-detail');
     }
+
+    public function globalSearch()
+    {
+        $lists = [
+            [
+                'title' => 'Prestasi SD Muhammadiyah Sapen di Olimpiade Internasional',
+                'body' => 'SD Muhammadiyah Sapen menyediakan berbagai sarana prasarana yang mendukung pembalajaran siswa untuk meraih prestasi akademis dan',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+            [
+                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
+                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
+                'bg-image' => asset('assets/images/dummy-1.jpeg')
+            ],
+        ];
+
+        return view('frontend.pages.global-search', [
+            'lists' => $lists,
+        ]);
+    }
 }
