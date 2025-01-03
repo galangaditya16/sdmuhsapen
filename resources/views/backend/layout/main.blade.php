@@ -36,7 +36,7 @@
             @include('backend.layout.header')
             <!-- Page body -->
             <div class="page-body">
-                <div class="container-xxl">
+                <div class="container-xl">
                     <div class="row row-deck row-cards">
                         @if ($errors->any())
                             <div class="alert alert-danger">

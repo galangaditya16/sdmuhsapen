@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Backend\Achievement;
 use App\Http\Controllers\Backend\CategoryContentController;
 use App\Http\Controllers\Backend\CategoryNewsController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\backend\TeacherController;
 use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\backend\TeacherPositionController;
+use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\UserController;
 use App\Models\SysPermission;
@@ -38,8 +40,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route:Route::prefix('backyard')->group(function () {
-    Route::get('/',[DashboardController::class,'index']);
+Route:Route::prefix('backyard')->middleware('auth')->group(function () {
+    Route::get('/dashboard',[DashboardController::class,'index']);
     //category
     Route::resource('category-content',CategoryContentController::class);
     //menu
@@ -73,9 +75,12 @@ Route:Route::prefix('backyard')->group(function () {
     Route::resource('permission',RoleController::class);
 
 
-
+    Route::post('logout',[AuthController::class,'logout'])->name('logout');
 });
 
+Route::get('login',[AuthController::class,'login'])->name('login');
+
+Route::post('authentication',[AuthController::class,'authenticate'])->name('login.process');
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
@@ -84,7 +89,8 @@ Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->na
 Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
-Route::get('/news', [HomeController::class, 'news'])->name('news');
+// Route::get('/news', [HomeController::class, 'news'])->name('news');
+Route::get('/news',[BeritaController::class,'listNews'])->name('news');
 Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
 Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');
 Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');

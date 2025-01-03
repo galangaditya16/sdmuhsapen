@@ -1,7 +1,7 @@
 @extends('backend.layout.main')
 @section('breadcrumbs')
     <h2 class="page-title">
-        Management Category News
+        Management Role
     </h2>
 @endsection
 @section('content')

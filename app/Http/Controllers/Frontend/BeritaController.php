@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\PaginationHelpers;
+use App\Models\AllCategoryTranslite;
+use App\Models\AllContentTranslite;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -37,6 +39,31 @@ class BeritaController extends Controller
         ];
 
         return $result;
+    }
+
+
+
+    public function listNews(Request $request){
+        try {
+            $lang = 'id';
+            $categorys = AllCategoryTranslite::with('CategoryNews','CategoryNews.transLite')
+            ->whereHas('CategoryNews')
+            ->where('lang',$lang)
+            ->get();
+            if($request->has('search')){
+                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+                //  @if($request->has(''))
+                ->whereHas('ContentNews')->where('lang',$lang)->paginate(4);
+                dd($news);
+            }else{
+                $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+                ->whereHas('ContentNews')->where('lang',$lang)->paginate(4);
+                return view('frontend.pages.news', compact('categorys','news','lang'));
+            }
+
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
 }

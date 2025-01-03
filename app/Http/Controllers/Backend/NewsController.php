@@ -122,10 +122,11 @@ class NewsController extends BaseController
             $categorys = CategoryNews::all();
             $news      = News::with(['hasCategory','hasCategory.transLite','transLite' => function($query) use ($lang,$id){
                 $query->where('id_news',$id);
-            }])->first();
+            }])
+            ->whereHas('transLite')
+            ->findOrFail($id);
             $contentID = $news->transLite->firstWhere('lang','id');
             $contentEN = $news->transLite->firstWhere('lang','en');
-
             return $this->makeView('backend.pages.master.news.edit',compact('news','categorys','contentID','contentEN'));
         } catch (\Throwable $th) {
             dd($th);
@@ -144,9 +145,11 @@ class NewsController extends BaseController
         try {
             $news = News::with(['hasCategory','transLite' => function($query) use ($id){
                 $query->where('id_news',$id);
-            }])->first();
+            }])->findOrFail($id);
+
             $contentID = AllContentTranslite::where('id_news',$news->id)->where('lang','id')->first();
             $contentEN =AllContentTranslite::where('id_news',$news->id)->where('lang','en')->first();
+
             if($request->hasFile('images')){
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
@@ -168,7 +171,6 @@ class NewsController extends BaseController
                 'path'        => $request->input('path'),
                 'image'       => $request->input('images')
             ]);
-
             $contentID->update([
                 'title' => $request->title,
                 'slug'  => Str::slug($request->title).$news->id,
