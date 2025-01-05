@@ -44,20 +44,20 @@
             <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
                 &nbsp;
             </div>
-            <div class="swiper default-carousel swiper-container">
+            <div class="swiper default-carousel swiper-container" data-carousel="slide">
 
-                <div class="swiper-wrapper overflow-hidden min-h-[450px]">
-                    @foreach ($slider as $sl)
-                        <div class="swiper-slide">
+                <div class="swiper-wrapper overflow-hidden min-h-[450px]" >
+                    @foreach ($slider as $indexSlider=>$sl)
+                        <div class="shrink-0 relative duration-100 ease-in-out hidden" data-carousel-item>
                             <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">
-                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
+                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}">
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
                     @endforeach
 
                 </div>
-                <div class="flex items-center gap-8 lg:justify-start justify-center">
+                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
                     <button type="button"
                         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
@@ -493,7 +493,7 @@
                     <h1 class="text-lg font-bold text-oren">Testimonial</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
 
-                    <div id="default-carousel" class="relative w-full min-h-[500px] md:min-h-[350px]" data-carousel="slide">
+                    <div class="default-carousel relative w-full min-h-[500px] md:min-h-[350px]" data-carousel="slide">
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan

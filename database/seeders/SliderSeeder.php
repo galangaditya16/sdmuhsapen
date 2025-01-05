@@ -15,10 +15,41 @@ class SliderSeeder extends Seeder
     {
         $slider = new Slider();
 
+        // $slider->create([
+        //     'title' => 'Slider Utama', 
+        //     'path' => 'assets/images/', 
+        //     'image' => 'cover-example.jpg'
+        // ]);
+
         $slider->create([
             'title' => 'Slider Utama', 
-            'path' => 'assets/images/', 
-            'image' => 'cover-example.jpg'
+            'path' => 'assets/images/slider/', 
+            'image' => 'slider1.jpg'
         ]);
+
+        $slider->create([
+            'title' => 'Slider Utama 2', 
+            'path' => 'assets/images/slider/', 
+            'image' => 'slider2.jpg'
+        ]);
+
+        $slider->create([
+            'title' => 'Slider Utama 3', 
+            'path' => 'assets/images/slider/', 
+            'image' => 'slider3.jpg'
+        ]);
+
+        $slider->create([
+            'title' => 'Slider Utama 4', 
+            'path' => 'assets/images/slider/', 
+            'image' => 'slider4.jpg'
+        ]);
+
+        $slider->create([
+            'title' => 'Slider Utama 5', 
+            'path' => 'assets/images/slider/', 
+            'image' => 'slider5.jpg'
+        ]);
+
     }
 }
