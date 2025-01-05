@@ -160,8 +160,8 @@
                     didik antara lain :
                 </p>
             </div>
-            <div class="swiper multiple-slide-carousel">
-                <div class="swiper-wrapper">
+            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-16 max-h-[65%]">
+                {{-- <div class="swiper-wrapper "> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
@@ -237,7 +237,7 @@
 
                         </div>
                     </div>
-                </div>
+                {{-- </div> --}}
                 <div class="multiple-swiper-pagination"></div>
             </div>
 
@@ -915,23 +915,23 @@
 
 @section('extend-script')
     <script>
-        var swiper = new Swiper(".default-carousel", {
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+        // var swiper = new Swiper(".default-carousel", {
+        //     loop: true,
+        //     pagination: {
+        //         el: ".swiper-pagination",
+        //         clickable: true,
+        //     },
+        //     navigation: {
+        //         nextEl: ".swiper-button-next",
+        //         prevEl: ".swiper-button-prev",
+        //     },
+        // });
 
-        var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        var swiperMultipleSliderKeunggulan = new Swiper(".multiple-slide-carousel-keunggulan", {
             loop: true,
             slidesPerView: 1,
             spaceBetween: 20,
-            pagination: '.multiple-swiper-pagination',
+            pagination: '.multiple-swiper-pagination-keunggulan',
             breakpoints: {
                 960: {
                     slidesPerView: 3,
@@ -939,5 +939,18 @@
                 }
             }
         });
+
+        // var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        //     loop: true,
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //     pagination: '.multiple-swiper-pagination',
+        //     breakpoints: {
+        //         960: {
+        //             slidesPerView: 3,
+        //             spaceBetween: 25,
+        //         }
+        //     }
+        // });
     </script>
 @endsection
