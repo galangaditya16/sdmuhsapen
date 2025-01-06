@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tlp')->nullable();
             $table->string('address')->nullable();
             $table->string('logo')->nullable();
+            $table->string('whatsapp')->nullable();
             $table->string('working_hours')->nullable();
             $table->string('working_days')->nullable();
             $table->text('mail')->nullable();
