@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id('id');
-            $table->string('id_category');
+            $table->unsignedInteger('id_category');
             $table->string('author');
             $table->integer('views')->default('0')->nullable();
             $table->text('path')->nullable();
             $table->text('images');
+            $table->unsignedInteger('headline')->default('0')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

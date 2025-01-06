@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\Contact;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\ContetController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\ProfileController;
@@ -74,6 +75,9 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
 
     Route::resource('permission',RoleController::class);
 
+    route::resource('gallery',GalleryController::class);
+
+    Route::post('upload/images-gallery/{id}', [GalleryController::class, 'uploadImages'])->name('upload.image-gallery');
 
     Route::post('logout',[AuthController::class,'logout'])->name('logout');
 });
