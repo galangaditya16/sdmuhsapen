@@ -44,20 +44,20 @@
             <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
                 &nbsp;
             </div>
-            <div class="swiper default-carousel swiper-container">
+            <div class="swiper default-carousel swiper-container" data-carousel="slide">
 
-                <div class="swiper-wrapper overflow-hidden min-h-[450px]">
-                    @foreach ($slider as $sl)
-                        <div class="swiper-slide">
+                <div class="swiper-wrapper overflow-hidden min-h-[450px]" >
+                    @foreach ($slider as $indexSlider=>$sl)
+                        <div class="shrink-0 relative duration-100 ease-in-out hidden" data-carousel-item>
                             <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">
-                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}" >
+                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}">
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
                     @endforeach
 
                 </div>
-                <div class="flex items-center gap-8 lg:justify-start justify-center">
+                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
                     <button type="button"
                         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
@@ -160,8 +160,8 @@
                     didik antara lain :
                 </p>
             </div>
-            <div class="swiper multiple-slide-carousel">
-                <div class="swiper-wrapper">
+            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-16 max-h-[65%]">
+                {{-- <div class="swiper-wrapper "> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
@@ -237,7 +237,7 @@
 
                         </div>
                     </div>
-                </div>
+                {{-- </div> --}}
                 <div class="multiple-swiper-pagination"></div>
             </div>
 
@@ -259,7 +259,7 @@
                             @if($b->ContentNews->getFirstImage() !== null)
                                 <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->ContentNews->getFirstImage()) }}" alt="" style="object-fit: cover" />
                             @else
-                            <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
+                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
                             @endif
                         </a>
                         <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
@@ -306,8 +306,8 @@
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2">
-                <div class="relative">
+            <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 h-[560px]">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-1.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -330,11 +330,10 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-1.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -357,11 +356,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-3.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -384,11 +381,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-2.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative col-span-2 row-span-2">
+                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-4.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -411,11 +406,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-3.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-5.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -438,11 +431,9 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-4.jpeg') }}" alt="">
+                    </div>                    
                 </div>
-                <div class="relative">
+                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-6.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -465,9 +456,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="{{ asset('assets/galeri/galery-5.jpeg') }}" alt="">
+                    </div>                    
                 </div>
             </div>
 
@@ -493,7 +482,7 @@
                     <h1 class="text-lg font-bold text-oren">Testimonial</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
 
-                    <div id="default-carousel" class="relative w-full min-h-[500px] md:min-h-[350px]" data-carousel="slide">
+                    <div class="default-carousel relative w-full min-h-[500px] md:min-h-[350px]" data-carousel="slide">
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <p class="text-base mt-3 text-justify">
                                 “SD terbaik di Yogyakarta, bahkan Nasional dengan prestasi yang istimewa. Kepala Sekolah dan
@@ -926,23 +915,23 @@
 
 @section('extend-script')
     <script>
-        var swiper = new Swiper(".default-carousel", {
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+        // var swiper = new Swiper(".default-carousel", {
+        //     loop: true,
+        //     pagination: {
+        //         el: ".swiper-pagination",
+        //         clickable: true,
+        //     },
+        //     navigation: {
+        //         nextEl: ".swiper-button-next",
+        //         prevEl: ".swiper-button-prev",
+        //     },
+        // });
 
-        var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        var swiperMultipleSliderKeunggulan = new Swiper(".multiple-slide-carousel-keunggulan", {
             loop: true,
             slidesPerView: 1,
             spaceBetween: 20,
-            pagination: '.multiple-swiper-pagination',
+            pagination: '.multiple-swiper-pagination-keunggulan',
             breakpoints: {
                 960: {
                     slidesPerView: 3,
@@ -950,5 +939,18 @@
                 }
             }
         });
+
+        // var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        //     loop: true,
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //     pagination: '.multiple-swiper-pagination',
+        //     breakpoints: {
+        //         960: {
+        //             slidesPerView: 3,
+        //             spaceBetween: 25,
+        //         }
+        //     }
+        // });
     </script>
 @endsection
