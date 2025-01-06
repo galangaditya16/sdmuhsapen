@@ -14,21 +14,27 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function authenticate(Request $request){
+    public function authenticate(Request $request)
+    {
         try {
             $credential = $request->validate([
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
-            if(Auth::attempt($credential)){
-                return redirect()->intended('/dashboard');
-            }
-            return back()->withErrors(['email' => 'Email atau password salah.'])->withInput();
-        } catch (\Throwable $th) {
-           dd($th);
-        }
+            if (Auth::attempt($credential)) {
 
+                return redirect()->intended('backyard/dashboard');
+            }
+            return back()->withErrors([
+                'email' => 'Email atau password salah.',
+            ])->withInput();
+        } catch (\Throwable $th) {
+            return back()->withErrors([
+                'error' => 'Terjadi kesalahan saat memproses permintaan Anda. Silakan coba lagi nanti.',
+            ]);
+        }
     }
+
 
     public function logout(Request $request){
         Auth::logout();
