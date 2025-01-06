@@ -30,7 +30,7 @@
                 <label class="form-label">Parent</label>
                 <div>
                     <select class="form-select" name="parent_id">
-                        <option>---- Parent ---</option>
+                        <option value="" disabled selected>---- Parent ---</option>
                         @foreach ($parents as $parent)
                         <option value="{{ $parent->id }}" {{ $menu->parent_id == $parent->id ? 'selected' : '' }}>{{ $parent->menu_name }}</option>
                         @endforeach
