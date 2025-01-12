@@ -41,16 +41,17 @@
             </a>
         </div>
         <div class="w-full">
-            <div class="w-full h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
+            <div class="w-full h-full md:h-[835px] absolute z-[19]" style="background: rgba(0, 0, 0, 0.4)">
                 &nbsp;
             </div>
-            <div class="swiper default-carousel swiper-container" data-carousel="slide">
-
-                <div class="swiper-wrapper overflow-hidden min-h-[450px]" >
+            <div class="relative w-full h-full md:h-[835px] z-[18] overflow-hidden">
+                
+                {{-- <div class="default-carousel w-full min-h-[450px] h-full" data-carousel="slide" > --}}
+                    <div class="default-carousel w-full min-h-svh h-full" data-carousel="slide" >
                     @foreach ($slider as $indexSlider=>$sl)
-                        <div class="shrink-0 relative duration-100 ease-in-out hidden" data-carousel-item>
+                        <div class="shrink-0 duration-1000 ease-in-out hidden" <?= $indexSlider == 0 ? "data-carousel-item='active'" : 'data-carousel-item' ?>>
                             <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">
-                                <img class="min-h-[450px] md:h-auto md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}">
+                                <img class="min-h-[450px] md:h-auto max-w-max md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}">
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
@@ -59,7 +60,7 @@
                 </div>
                 <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">
                     <!-- Slider controls -->
-                    <button type="button"
+                    {{-- <button type="button"
                         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
                         <span
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -82,7 +83,7 @@
                             </svg>
                             <span class="sr-only">Next</span>
                         </span>
-                    </button>
+                    </button> --}}
 
                 </div>
                 <div class="swiper-pagination"></div>
