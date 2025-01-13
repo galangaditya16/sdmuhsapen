@@ -3,10 +3,10 @@
         <div class="text-center">
           <p>
             <span class="text-sm text-white font-bold">
-              Jam Kerja:
+              Jam Kerja: 
             </span>
             <span class="text-sm text-white">
-              Senin-Jumat 07:00-14.30 WIB
+              {{ \App\Helpers\Untils::getWork()->working_hours ?? '00:00' }}
             </span>
           </p>
         </div>

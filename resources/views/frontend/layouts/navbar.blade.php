@@ -83,7 +83,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('principals-speech') }}" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Sambutan Kepala Sekolah
+                                    Sambutxan Kepala Sekolah
                                 </a>
                             </li>
                             <li>

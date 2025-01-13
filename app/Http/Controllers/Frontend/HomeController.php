@@ -55,8 +55,12 @@ class HomeController extends Controller
     {
         try {
             $lang  = 'id';
-            $data  = AllContentTranslite::with('ContentContent.transLite','ContentContent.Categorys','ContentContent.Categorys.transLite')->where('lang',$lang)->first();
-            $title = $data ? $data->ContentContent->Categorys->transLite->firstWhere('lang',$lang) : NULL;
+            $data_new  = AllContentTranslite::with('ContentContent.transLite','ContentContent.Categorys','ContentContent.Categorys.transLite')->where('lang',$lang)->first();
+            $data = AllContentTranslite::whereHas('ContentContent','Categorys')
+            ->with('ContentContent')
+            ->get();
+            dd($data);
+            $title = $data != null ? $data->ContentContent->Categorys->transLite->firstWhere('lang',$lang) : NULL;
             return view('frontend.pages.principals-speech',compact('title','data'));
         } catch (\Throwable $th) {
             dd($th);
