@@ -36,6 +36,8 @@ export default {
     container: false
   },
   plugins: [
+    require('flowbite/plugin'),
+    require('tailwindcss-textshadow'),
     function ({ addComponents }) {
       addComponents({
         '.container': {
@@ -54,9 +56,7 @@ export default {
           },
         }
       })
-    },
-    require('flowbite/plugin'),
-    require('tailwindcss-textshadow')
+    }
   ],
 }
 
