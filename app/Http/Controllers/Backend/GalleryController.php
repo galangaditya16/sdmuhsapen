@@ -109,7 +109,7 @@ class GalleryController extends BaseController
                 if (!file_exists($path)) {
                     mkdir($path, 0777, true);
                 }
-                $nameImages = time() . '.' . $file->getClientOriginalExtension();
+                $nameImages = Str::random(5) . '-' . time() . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $nameImages);
                 if (is_array($data_ori)) {
                     $data_ori[] = $nameImages;
@@ -147,5 +147,71 @@ class GalleryController extends BaseController
             ], 500);
         }
     }
+
+    public function getAsset($id){
+        try {
+            $data = Gallery::findOrfail($id);
+            return response()->json(['success' => true, 'data' => $data], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => true, 'message' => $th->getMessage()], 404);
+        }
+    }
+
+    public function removeAsset(Request $request)
+    {
+        try {
+            // Validate incoming request
+            $validatedData = $request->validate([
+                'assetId' => 'required|numeric',
+                'imageId' => 'required',
+            ]);
+
+            if (!$validatedData) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Validation failed.',
+                    'errors' => $validatedData->errors(),
+                ], 422);
+            }
+
+            $gallery = Gallery::findOrFail($request->assetId);
+            if ($gallery->images != NULL) {
+                $images_data = json_decode($gallery->images, true);
+                $valueToRemove = $request->imageId;
+                if (in_array($request->imageId, $images_data)){
+                    $array = array_filter($images_data, function ($value) use ($valueToRemove) {
+                        return $value !== $valueToRemove;
+                    });
+                    $array = array_values($array);
+                    $img_remove = public_path('assets/images/gallery').'/'.$valueToRemove;
+                    if (file_exists($img_remove)) {
+                        unlink($img_remove);
+                    }
+                    $gallery->images = json_encode($array);
+                    $gallery->save();
+
+                    return response()->json([
+                        'status' => 'success',
+                        'message' => 'Image successfully removed.',
+                    ]);
+                } else {
+                    return response()->json([
+                        'status' => 'error',
+                        'message' => 'Image not found.',
+                    ], 404);
+                }
+            }
+
+
+
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'An error occurred while removing the image.',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
 
 }

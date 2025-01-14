@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Models\AllContentTranslite;
 use App\Models\Contact;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\DB;
 
 
@@ -26,19 +27,13 @@ class HomeController extends Controller
                 $query->orderBy('created_at','ASC');
           })->where('lang',$lang)
           ->paginate(10);
-           return view('frontend.pages.home', compact('slider','berita','lang'));
+          $gallerys = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
+          return view('frontend.pages.home', compact('slider','berita','lang','gallerys'));
         } catch (\Throwable $th) {
             dd($th);
-            //throw $th;
+            return view('errors.404');
         }
-        // $beritaTerkini = BeritaController::getListBerita(['*'], null, 1, 6);
-        // $slider = SliderController::getListSlider();
-        // $result = [
-        //     'berita' => $beritaTerkini['data'],
-        //     'slider' => $slider
-        // ];
 
-        // return view('frontend.pages.home', $result);
     }
 
     public function profile()
@@ -210,30 +205,37 @@ class HomeController extends Controller
 
     public function galery()
     {
-        $galeries = [
-            [
-                'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
-                'date' => 'Diposting 24 September 2024',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Galeri: Kelas WFH Membantu Siswa Beradaptasi',
-                'date' => 'Diposting 24 September 2024',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Galeri: Upacara Peringatan Hari Kemerdekaan Indonesia',
-                'date' => 'Diposting 24 September 2024',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
-                'date' => 'Diposting 24 September 2024',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-        ];
+        // $galeries = [
+        //     [
+        //         'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
+        //         'date' => 'Diposting 24 September 2024',
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        //     [
+        //         'title' => 'Galeri: Kelas WFH Membantu Siswa Beradaptasi',
+        //         'date' => 'Diposting 24 September 2024',
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        //     [
+        //         'title' => 'Galeri: Upacara Peringatan Hari Kemerdekaan Indonesia',
+        //         'date' => 'Diposting 24 September 2024',
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        //     [
+        //         'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
+        //         'date' => 'Diposting 24 September 2024',
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        // ];
 
-        return view('frontend.pages.galery', ['galeries' => $galeries]);
+        try {
+            $data = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
+            dd($data);
+            return view('frontend.pages.galery', ['galeries' => $galeries]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
     }
 
     public function galeryDetail(string $slug)

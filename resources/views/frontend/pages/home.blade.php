@@ -45,7 +45,7 @@
                 &nbsp;
             </div>
             <div class="relative w-full h-full md:h-[835px] z-[18] overflow-hidden">
-                
+
                 {{-- <div class="default-carousel w-full min-h-[450px] h-full" data-carousel="slide" > --}}
                     <div class="default-carousel w-full min-h-svh h-full" data-carousel="slide" >
                     @foreach ($slider as $indexSlider=>$sl)
@@ -58,7 +58,7 @@
                     @endforeach
 
                 </div>
-                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">                    
+                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -283,7 +283,40 @@
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
 
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-1.jpeg') }}') ">
+              @forelse ( $gallerys as $key => $value)
+              <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-1.jpeg') }}') ">
+                  <div
+                      class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
+                      <div class="flex flex-col">
+
+                          <span class="flex text-black">
+                              <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                  width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                  <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
+                                      clip-rule="evenodd" />
+                                  <path fill-rule="evenodd"
+                                      d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
+                                      clip-rule="evenodd" />
+                              </svg>
+                              25 Gambar
+                          </span>
+
+                          <h3 class="text-dark-blue text-xl">
+                            @if($lang == 'id')
+                            Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
+                            {{ $ }}
+                            @else
+                            @endif
+                          </h3>
+                          <p class="italic text-black text-sm"> Oktober 24, 2024</p>
+
+                      </div>
+                  </div>
+              </div>
+              @empty
+
+              @endforelse
+                {{--  <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -306,33 +339,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>                    
-                </div>
-
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
-
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-3.jpeg') }}') ">
                     <div
@@ -357,7 +364,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-4.jpeg') }}') ">
                     <div
@@ -382,7 +389,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-5.jpeg') }}') ">
                     <div
@@ -407,7 +414,7 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-6.jpeg') }}') ">
                     <div
@@ -432,8 +439,8 @@
                             <p class="italic text-black text-sm"> Oktober 24, 2024</p>
 
                         </div>
-                    </div>                    
-                </div>
+                    </div>
+                </div>  --}}
             </div>
 
             <div class="relative flex">

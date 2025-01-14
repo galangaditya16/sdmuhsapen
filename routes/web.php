@@ -76,7 +76,8 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
     Route::resource('permission',RoleController::class);
 
     route::resource('gallery',GalleryController::class);
-
+    Route::get('gallery/asset/{id}',[GalleryController::class,'getAsset'])->name('get.asset');
+    Route::POST('gallery/remove/}',[GalleryController::class,'removeAsset'])->name('remove.asset-image');
     Route::post('upload/images-gallery/{id}', [GalleryController::class, 'uploadImages'])->name('upload.image-gallery');
 
     Route::post('logout',[AuthController::class,'logout'])->name('logout');
