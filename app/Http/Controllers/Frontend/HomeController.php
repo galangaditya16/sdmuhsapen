@@ -209,35 +209,14 @@ class HomeController extends Controller
 
     public function galery()
     {
-        // $galeries = [
-        //     [
-        //         'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
-        //         'date' => 'Diposting 24 September 2024',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        //     [
-        //         'title' => 'Galeri: Kelas WFH Membantu Siswa Beradaptasi',
-        //         'date' => 'Diposting 24 September 2024',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        //     [
-        //         'title' => 'Galeri: Upacara Peringatan Hari Kemerdekaan Indonesia',
-        //         'date' => 'Diposting 24 September 2024',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        //     [
-        //         'title' => 'Galeri: Prestasi SD Muhammadiyah Sapen',
-        //         'date' => 'Diposting 24 September 2024',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        // ];
+
 
         try {
-            $data = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->take(6);
-            dd($data);
-            return view('frontend.pages.galery', ['galeries' => $galeries]);
+            $lang = 'id';
+            $galeries = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->paginate(6);
+            return view('frontend.pages.galery', compact('lang','galeries'));
         } catch (\Throwable $th) {
-            //throw $th;
+            abort(404);
         }
 
     }
