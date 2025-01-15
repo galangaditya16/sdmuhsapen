@@ -110,7 +110,7 @@ class GalleryController extends BaseController
             $data = Gallery::findOrFail($id);
             if ($request->hasFile('file')) {
                 $request->validate([
-                    'file' => 'required|image|mimes:jpeg,png,jpg|max:4048',
+                    'file' => 'required|image|mimes:jpeg,png,jpg|max:5120', // max 5 mb
                 ]);
 
                 $file = $request->file('file');
