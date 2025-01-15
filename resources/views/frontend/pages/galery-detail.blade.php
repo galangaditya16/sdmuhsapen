@@ -45,10 +45,18 @@
           </div>
         </div>
         <div class="w-full space-y-12">
-          <p class="font-bold text-3xl relative before:content-[''] before:absolute before:left-0 before:-bottom-4 before:h-1 before:w-48 before:bg-biru-tua">Ini Adalah Halaman Template untuk Menampilkan Postingan Berita</p>
-          <img src="{{ asset('assets/images/dummy-1.jpeg') }}" alt="banner.jpg" class="h-[450px] object-cover w-full rounded-lg">
-          <img src="{{ asset('assets/images/dummy-1.jpeg') }}" alt="banner.jpg" class="h-[450px] object-cover w-full rounded-lg">
-          <img src="{{ asset('assets/images/dummy-1.jpeg') }}" alt="banner.jpg" class="h-[450px] object-cover w-full rounded-lg">
+          @if($lang == 'id')
+          <p class="font-bold text-3xl relative before:content-[''] before:absolute before:left-0 before:-bottom-4 before:h-1 before:w-48 before:bg-biru-tua">{{ $gallery->title_id }}</p>
+          @else
+          <p class="font-bold text-3xl relative before:content-[''] before:absolute before:left-0 before:-bottom-4 before:h-1 before:w-48 before:bg-biru-tua">{{ $gallery->title_en }}</p>
+          @endif
+          @php
+            $images = json_decode($gallery->images, true);
+          @endphp
+          @forelse($images as $image)
+          <img src="{{ asset('assets/images/gallery/').'/'. $image }}" alt="banner.jpg" class="h-[450px] object-cover w-full rounded-lg">
+          @empty
+          @endforelse
         </div>
       </div>
       <div class="w-[30%] space-y-3 hidden lg:block">

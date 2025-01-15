@@ -40,7 +40,7 @@
                 </button>
 
             </div>
-            
+
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
                 <button type="button" class="text-white ml-3 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-full text-sm px-10 py-2 text-center md:mx-1">
                     PPDB
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('news') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
+                    <a href="{{ route('front.news') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
                         Berita
                     </a>
                 </li>

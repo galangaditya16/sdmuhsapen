@@ -223,7 +223,14 @@ class HomeController extends Controller
 
     public function galeryDetail(string $slug)
     {
-        return view('frontend.pages.galery-detail');
+        $lang = 'id';
+        if($lang == 'id'){
+            $gallery = Gallery::where('slug_id', $slug)->first();
+        }else{
+            $gallery = Gallery::where('slug_en', $slug)->first();
+
+        }
+        return view('frontend.pages.galery-detail',compact('gallery','lang'));
     }
 
     public function globalSearch()
