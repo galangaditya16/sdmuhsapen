@@ -229,7 +229,7 @@ class HomeController extends Controller
         // ];
 
         try {
-            $data = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
+            $data = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->take(6);
             dd($data);
             return view('frontend.pages.galery', ['galeries' => $galeries]);
         } catch (\Throwable $th) {

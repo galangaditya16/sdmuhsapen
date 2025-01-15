@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\ProfileController;
-use App\Http\Controllers\backend\ProgramController;
+use App\Http\Controllers\Backend\ProgramController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\backend\TeacherController;
@@ -79,6 +79,7 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
     Route::get('gallery/asset/{id}',[GalleryController::class,'getAsset'])->name('get.asset');
     Route::POST('gallery/remove/}',[GalleryController::class,'removeAsset'])->name('remove.asset-image');
     Route::post('upload/images-gallery/{id}', [GalleryController::class, 'uploadImages'])->name('upload.image-gallery');
+    Route::get('gallery/headline/{id}',[GalleryController::class,'headline'])->name('gallery.headline');
 
     Route::post('logout',[AuthController::class,'logout'])->name('logout');
 });

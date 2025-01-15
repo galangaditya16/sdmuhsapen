@@ -94,7 +94,13 @@ class GalleryController extends BaseController
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $data = Gallery::findOrfail($id);
+            $data->delete();
+            return redirect()->route('gallery.index')->with('success','Success Delete Data');
+        } catch (\Throwable $th) {
+           abort(404);
+        }
     }
 
     public function uploadImages(Request $request, $id)
@@ -210,6 +216,30 @@ class GalleryController extends BaseController
                 'message' => 'An error occurred while removing the image.',
                 'error' => $th->getMessage(),
             ], 500);
+        }
+    }
+
+    public function headline($id){
+        try {
+            $data = Gallery::findOrfail($id);
+
+            if($data->headline == null){
+                $counter = Gallery::whereNotNull('headline')->get();
+                if(count($counter) > 6){
+                    return redirect()->route('gallery.index')->with('error','Headline Max 5');
+                }else{
+                    $data->headline = 1;
+                    $data->save();
+                    return redirect()->route('gallery.index')->with('success','Success Add Headline');
+                }
+            }else{
+                $data->headline = NULL;
+                $data->save();
+                return redirect()->route('gallery.index')->with('success','Success Remove Headline');
+            }
+
+        } catch (\Throwable $th) {
+            abort(404);
         }
     }
 
