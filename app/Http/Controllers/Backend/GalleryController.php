@@ -87,7 +87,25 @@ class GalleryController extends BaseController
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $data = Gallery::findOrfail($id);
+            if($request->has('image_thumnail')){
+                $path = public_path('assets/images/gallery/thumbnail');
+                if ($data->thumbnail && file_exists($path . '/' . $data->thumbnail)) {
+                    unlink($path . '/' . $data->thumbnail);
+                }
+                $namaImage = time() . '.' . $request->image_thumnail->getClientOriginalExtension();
+                $request->image_thumnail->move($path, $namaImage);
+                $request['thumbnail'] = $namaImage;
+            }else{
+                $request['thumbnail'] = $data->thumbnail;
+            }
+            $data->update($request->input());
+            return redirect()->route('gallery.index')->with('success', 'Berhasil Menyimpan Data');
+        } catch (\Throwable $th) {
+            dd($th);
+            abort(404);
+        }
     }
 
     /**
