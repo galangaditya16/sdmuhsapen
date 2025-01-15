@@ -36,7 +36,7 @@
 
         <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($galeries as $new)
-                <div style="background-image: url('{{ $new->path . '/thumbnail/' . $new->thumbnail }}');" alt="galeries-1.png"
+                <div style="background-image: url('{{ asset('assets/images/gallery/thumbnail/').'/'. $new->thumbnail }}');" alt="galeries-1.png"
                     class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
                     <div class="h-[565px] relative">
                         <div
@@ -56,7 +56,7 @@
                             @else
                                 <p class="text-lg font-bold">{{ $new->title_en }}</p>
                             @endif
-                            <p class="font-thin text-sm">{{ $new['date'] }}</p>
+                            <p class="font-thin text-sm">{{ $new->created_at }}</p>
                         </div>
                         <div class="flex justify-center mt-5">
                             @if ($lang == 'id')
