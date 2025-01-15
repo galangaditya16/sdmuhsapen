@@ -19,6 +19,7 @@ class Gallery extends Model
 
     public function countGallery()
     {
-        return is_array($this->images) ? count($this->images) : 0;
+        $imagesArray = is_array($this->images) ? $this->images : json_decode($this->images, true);
+        return is_array($imagesArray) ? count($imagesArray) : 0;
     }
 }
