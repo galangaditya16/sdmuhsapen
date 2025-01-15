@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Base\Controller\BaseController;
 use App\Base\Repositories\AppRepository;
+use Intervention\Image\Facades\Image;
 
 class GalleryController extends BaseController
 {
@@ -20,7 +21,7 @@ class GalleryController extends BaseController
     {
         //
         $data = Gallery::orderBy('created_at', 'ASC')->paginate(10);
-        return $this->makeView('backend.pages.management.gallery.index',compact('data'));
+        return $this->makeView('backend.pages.management.gallery.index', compact('data'));
     }
 
     /**
@@ -38,9 +39,9 @@ class GalleryController extends BaseController
     public function store(Request $request)
     {
         try {
-            if($request->hasFile('image_thumnail')){
+            if ($request->hasFile('image_thumnail')) {
                 $path      = public_path('assets/images/gallery/thumbnail');
-                $namaImage = time().'.'. $request->image_thumnail->getClientOriginalExtension();
+                $namaImage = time() . '.' . $request->image_thumnail->getClientOriginalExtension();
                 $request->image_thumnail->move($path, $namaImage);
                 $request['thumbnail'] = $namaImage;
             }
@@ -48,10 +49,10 @@ class GalleryController extends BaseController
             $request['slug_en'] = Str::slug($request->title_en);
             $data = new Gallery($request->input());
             $data->save();
-            return redirect()->route('gallery.index')->with('success','Berhasil Menyimpan Data');
+            return redirect()->route('gallery.index')->with('success', 'Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->route('content.index')->with('error','Gagal Menyimpan Data');
+            return redirect()->route('content.index')->with('error', 'Gagal Menyimpan Data');
         }
     }
 
@@ -62,7 +63,7 @@ class GalleryController extends BaseController
     {
         //
         $data = Gallery::findOrfail($id);
-        return $this->makeView('backend.pages.management.gallery.detail',compact('data'));
+        return $this->makeView('backend.pages.management.gallery.detail', compact('data'));
     }
 
     /**
@@ -74,10 +75,10 @@ class GalleryController extends BaseController
         try {
 
             $data = Gallery::findOrfail($id);
-            return $this->makeView('backend.pages.management.gallery.edit',compact('data'));
+            return $this->makeView('backend.pages.management.gallery.edit', compact('data'));
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->route('content.index')->with('error','Gagal Melakukan Aksi');
+            return redirect()->route('content.index')->with('error', 'Gagal Melakukan Aksi');
         }
     }
 
@@ -97,32 +98,45 @@ class GalleryController extends BaseController
         try {
             $data = Gallery::findOrfail($id);
             $data->delete();
-            return redirect()->route('gallery.index')->with('success','Success Delete Data');
+            return redirect()->route('gallery.index')->with('success', 'Success Delete Data');
         } catch (\Throwable $th) {
-           abort(404);
+            abort(404);
         }
     }
 
     public function uploadImages(Request $request, $id)
     {
         try {
-
             $data = Gallery::findOrFail($id);
-            $data_ori = json_decode($data->images, true);
             if ($request->hasFile('file')) {
+                $request->validate([
+                    'file' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                ]);
+
                 $file = $request->file('file');
                 $path = public_path('assets/images/gallery');
+
+                // Buat direktori jika belum ada
                 if (!file_exists($path)) {
                     mkdir($path, 0777, true);
                 }
+
+                // Nama file unik
                 $nameImages = Str::random(5) . '-' . time() . '.' . $file->getClientOriginalExtension();
-                $file->move($path, $nameImages);
-                if (is_array($data_ori)) {
-                    $data_ori[] = $nameImages;
-                } else {
-                    $data_ori = [$nameImages];
-                }
-                if($data->path == null){
+
+                // Kompres dan simpan gambar
+                $img = Image::make($file->getRealPath());
+                $img->resize(800, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($path . '/' . $nameImages, 70); // Kualitas 70
+
+                // Tambahkan gambar ke array
+                $data_ori = json_decode($data->images, true) ?? [];
+                $data_ori[] = $nameImages;
+
+                // Update data
+                if ($data->path == null) {
                     $data->path = asset('assets/images/gallery');
                 }
                 $data->images = json_encode($data_ori);
@@ -154,7 +168,10 @@ class GalleryController extends BaseController
         }
     }
 
-    public function getAsset($id){
+
+
+    public function getAsset($id)
+    {
         try {
             $data = Gallery::findOrfail($id);
             return response()->json(['success' => true, 'data' => $data], 200);
@@ -184,12 +201,12 @@ class GalleryController extends BaseController
             if ($gallery->images != NULL) {
                 $images_data = json_decode($gallery->images, true);
                 $valueToRemove = $request->imageId;
-                if (in_array($request->imageId, $images_data)){
+                if (in_array($request->imageId, $images_data)) {
                     $array = array_filter($images_data, function ($value) use ($valueToRemove) {
                         return $value !== $valueToRemove;
                     });
                     $array = array_values($array);
-                    $img_remove = public_path('assets/images/gallery').'/'.$valueToRemove;
+                    $img_remove = public_path('assets/images/gallery') . '/' . $valueToRemove;
                     if (file_exists($img_remove)) {
                         unlink($img_remove);
                     }
@@ -207,9 +224,6 @@ class GalleryController extends BaseController
                     ], 404);
                 }
             }
-
-
-
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => 'error',
@@ -219,29 +233,27 @@ class GalleryController extends BaseController
         }
     }
 
-    public function headline($id){
+    public function headline($id)
+    {
         try {
             $data = Gallery::findOrfail($id);
 
-            if($data->headline == null){
+            if ($data->headline == null) {
                 $counter = Gallery::whereNotNull('headline')->get();
-                if(count($counter) > 6){
-                    return redirect()->route('gallery.index')->with('error','Headline Max 5');
-                }else{
+                if (count($counter) > 6) {
+                    return redirect()->route('gallery.index')->with('error', 'Headline Max 5');
+                } else {
                     $data->headline = 1;
                     $data->save();
-                    return redirect()->route('gallery.index')->with('success','Success Add Headline');
+                    return redirect()->route('gallery.index')->with('success', 'Success Add Headline');
                 }
-            }else{
+            } else {
                 $data->headline = NULL;
                 $data->save();
-                return redirect()->route('gallery.index')->with('success','Success Remove Headline');
+                return redirect()->route('gallery.index')->with('success', 'Success Remove Headline');
             }
-
         } catch (\Throwable $th) {
             abort(404);
         }
     }
-
-
 }
