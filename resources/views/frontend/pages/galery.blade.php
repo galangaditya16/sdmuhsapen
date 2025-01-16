@@ -52,9 +52,9 @@
                     <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full">
                         <div class="space-y-3">
                             @if ($lang == 'id')
-                                <p class="text-lg font-bold">Galeri :{{ $new->title_id }}</p>
+                                <p class="text-lg font-bold">Galeri: {{ $new->title_id }}</p>
                             @else
-                                <p class="text-lg font-bold">Galeri : {{ $new->title_en }}</p>
+                                <p class="text-lg font-bold">Galeri: {{ $new->title_en }}</p>
                             @endif
                             <p class="font-thin text-sm">{{ $new->created_at }}</p>
                         </div>
