@@ -60,9 +60,9 @@
                 </div>
                 <div>
                         <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">Saluran Kami</h2>
-                        <div class="w-80 bg-kuning-muda rounded-lg p-3 mx-auto">
+                        <div class="w-full bg-kuning-muda rounded-lg p-3 mx-auto">
                                 <img class="mx-auto my-2 w-64" src="{{ asset('assets/images/equalizer.gif') }}">
-                                <audio controls="" autoplay="autoplay" class="mx-auto w-100">
+                                <audio controls="" autoplay="autoplay" class="mx-auto w-full">
                                     <source src="http://freeuk22.listen2myradio.com:12804/;listen.pls" type="audio/mp3">
                                         Your browser does not support the audio element.
                                 </audio>
