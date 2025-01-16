@@ -27,10 +27,10 @@
     {{-- SLIDER CAROUSEL --}}
     <section class=" border-gray-200 mb-20 mt-0 content-center">
         <!--HTML CODE-->
-        <div class="w-full container mx-auto px-4 absolute top-28 md:top-[25%] md:left-[25%] z-20">
-            <h1 class="text-sx md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
-            <h1 class="text-sm md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
-            <h1 class="text-sx md:text-lg my-3 text-white">The Truly Inspiring Islamic School</h1>
+        <div class="w-full md:w-[75%] container mx-auto px-4 absolute top-52 md:top-[25%] md:left-[5%] lg:top-[25%] lg:left-[25%] z-20">
+            <h1 class="text-xl md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
+            <h1 class="text-xl md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
+            <h1 class="text-xl md:text-lg my-3 text-white">The Truly Inspiring Islamic School</h1>
             <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
                 Pelajari Lebih Lanjut
             </button>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="relative z-20 -top-[70px] md:-top-[50px]">
+            <div class="relative z-20 -top-[70px] md:-top-[50px] mx-5">
                 <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
                     <dl class="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4     zZx,">
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">

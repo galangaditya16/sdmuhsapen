@@ -21,10 +21,10 @@
 
 </head>
 
-<body class="font-abeezee" style="background: url('{{ asset('assets/images/body-bg.png') }}')">
+<body class="font-abeezee w-screen" style="background: url('{{ asset('assets/images/body-bg.png') }}')">
     @include('frontend.layouts.navbar')
 
-    <div class=" dark:bg-gray-900 min-h-96">
+    <div class="dark:bg-gray-900 min-h-96">
         @yield('content')
     </div>
 
