@@ -11,7 +11,7 @@
       <img src="{{ asset('assets/images/organization/sapen-1.jpg')}}" alt="organization-sapen-1.jpg">
     </div>
   </section>
-  @include('frontend.layouts.footer-working-hours')
+  @include('frontend.layouts.footer')
 
   <!-- Modal -->
   <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
