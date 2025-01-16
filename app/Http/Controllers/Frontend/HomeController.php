@@ -57,8 +57,9 @@ class HomeController extends Controller
                 'ContentContent.Categorys',
                 'ContentContent.Categorys.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite pada Categorys berdasarkan lang
-                }
+                },
             ])->where('lang', $lang)->first();
+            // dd($data);
             return view('frontend.pages.principals-speech',compact('data','lang'));
         } catch (\Throwable $th) {
             dd($th);

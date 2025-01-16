@@ -21,4 +21,10 @@ class ContentNew extends Model
         return $this->belongsTo(CategoryContent::class,'id_category','id');
     }
 
+    public function getFirstImage()
+    {
+        $images = json_decode($this->images);
+        return $images[0] ?? null;
+    }
+
 }
