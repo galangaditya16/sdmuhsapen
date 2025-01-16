@@ -53,7 +53,7 @@
                             </div>
                             <div class="flex justify-center mt-5">
                                 <a href="{{ route('newsDetail', ['id' => $new->slug, 'lang' => $lang]) }}"
-                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl">Baca lagi</a>
+                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5">Baca lagi</a>
                             </div>
                         </div>
                     </div>
