@@ -135,7 +135,6 @@ class ProgramController extends BaseController
     public function update(Request $request, string $id)
     {
         //
-        dump($request->all());
         try {
             $content    = ProgramsNew::with('transLite')->findOrFail($id);
             $path_web = asset('assets/images/programs/');
@@ -188,13 +187,14 @@ class ProgramController extends BaseController
     public function destroy(string $id)
     {
         //
-        DB::beginTransaction();
         try {
-           $data =ProgramsNew::with('transLite')->findOrfail($id);
+            DB::beginTransaction();
+            $data =ProgramsNew::with('transLite')->findOrfail($id);
            if($data->transLite){
                 $data->transLite()->delete();
            }
            $data->delete();
+           DB::commit();
            return redirect()->route('programs.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
             DB::rollBack();

@@ -53,7 +53,7 @@
                             <div class="card-wrapper relative w-full h-[332px]">
                                 <!-- Front of card -->
                                 <div class="card-front rounded-3xl">
-                                    <img src="{{ $program->ContentPrograms->images != null ? $program->ContentPrograms->path . '/' . $program->ContentPrograms->images : asset('assets/images/default.jpg') }}"
+                                    <img src="{{ $program->ContentPrograms->images != null ? asset('assets/images/programs'). '/' . $program->ContentPrograms->images : asset('assets/images/default.jpg') }}"
                                         alt="masjid-safinatunnajah" class="w-full h-[332px] object-cover rounded-3xl">
                                     <button
                                         class="rounded-xl bg-oren text-white text-sm px-2.5 py-1.5 mt-2 absolute right-5 bottom-5 btn-card-open flex items-center justify-items-center gap-x-0.5 hover:scale-105 transition-transform duration-300">

@@ -62,12 +62,13 @@ class NewsController extends BaseController
                 $imagesName = [];
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
+                    $manifes_path = asset('assets/images/news');
                     $code = time().'.'.$file->getClientOriginalExtension();
                     $file->move($path,$code);
                     $imagesName[] = $code;
                 }
                 $request['image_filenames'] = json_encode($imagesName);
-                $request['path']   = $path;
+                $request['path']   = $manifes_path;
                 $request['author'] = 'galang_ganteng';
             }
             $data           = News::create([
@@ -153,12 +154,13 @@ class NewsController extends BaseController
             if($request->hasFile('images')){
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
+                    $manifes_path = asset('assets/images/news');
                     $code = time().'.'.$file->extension();
                     $file->move($path,$code);
                     $imagesName[] = $code;
                 }
                 $request['images'] = json_encode($imagesName);
-                $request['path']   = $path;
+                $request['path']   = $manifes_path;
                 $request['author'] = 'galang_ganteng';
             }else{
                 $request['images'] = $news->image;
