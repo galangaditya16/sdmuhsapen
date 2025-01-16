@@ -45,8 +45,7 @@
                 &nbsp;
             </div>
             <div class="relative w-full h-full md:h-[835px] z-[18] overflow-hidden">
-
-                {{-- <div class="default-carousel w-full min-h-[450px] h-full" data-carousel="slide" > --}}
+                {{--  <div class="default-carousel w-full min-h-[450px] h-full" data-carousel="slide" >  --}}
                     <div class="default-carousel w-full min-h-svh h-full" data-carousel="slide" >
                     @foreach ($slider as $indexSlider=>$sl)
                         <div class="shrink-0 duration-1000 ease-in-out hidden" <?= $indexSlider == 0 ? "data-carousel-item='active'" : 'data-carousel-item' ?>>
