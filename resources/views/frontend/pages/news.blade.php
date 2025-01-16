@@ -41,7 +41,7 @@
         <div class="block lg:flex gap-x-10">
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($news as $new)
-                    <div style="background-image: url('{{ $new['bg-image'] }}');" alt="news-1.png"
+                    <div style="background-image: url('{{ asset('assets/images/news').'/'.$new->ContentNews->getFirstImage() }}');" alt="$news"
                         class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
                         <div class="h-[565px] relative">
                             <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">September
@@ -50,7 +50,7 @@
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2">
                             <div class="space-y-3">
                                 <p class="text-lg font-bold">{{ $new['title'] }}</p>
-                                <p>{{ str($new['body'])->limit(100) }}</p>
+                                <p>{!! str($new->body)->limit(100) !!}</p>
                             </div>
                             <div class="flex justify-center mt-5">
                                 <a href="{{ route('newsDetail', str($new['title'])->slug()) }}"
