@@ -10,7 +10,7 @@
                             <span class="self-center text-2xl font-semibold">{{ env('APP_NAME') }}</span>
                         </a>
                         <p class="text-xl mt-4">
-                            Sekolah rujukan Nasional Versi kendikbud - Unggul, Maju, Modern, dan Berkarakter.
+                            Sekolahku inspirasiku
                         </p>
                         <p class="text-lg mt-4">
                             Jl. Bimo Kurdo No.33, Demangan, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55221
