@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="font-abeezee w-screen" style="background: url('{{ asset('assets/images/body-bg.png') }}')">
+<body class="font-abeezee w-screen overflow-x-hidden" style="background: url('{{ asset('assets/images/body-bg.png') }}')">
     @include('frontend.layouts.navbar')
 
     <div class="dark:bg-gray-900 min-h-96">

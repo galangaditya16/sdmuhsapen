@@ -47,6 +47,7 @@ class CategoryContentController extends BaseController
         try {
             if($request->hasFile('images')){
                 $path = public_path('assets/images/category/conten');
+                $manifes_path = asset('assets/images/category/conten');
                 $nameImages = time().'.'.$request->images->extension();
                 $request->images->move($path,$nameImages);
                 $request['images'] = $nameImages;

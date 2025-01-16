@@ -105,7 +105,7 @@
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="email"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="Email" aria-label="Email">
+                                type="text" placeholder="Tulis captcha" aria-label="Tulis captcha">
                         </div>
                     </div>
                     <button
@@ -178,7 +178,7 @@
             <div>
                 <p class="text-3xl font-bold text-biru-tua text-center relative">Lokasi Google Maps</p>
                 <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
-                <div class="w-full mt-10">
+                <div class="w-full mt-10 rounded-xl overflow-hidden">
                   {!! $contact->google_loc !!}
                 </div>
             </div>

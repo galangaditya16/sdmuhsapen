@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <x-profile-menu-header title="Berita Sekolah" />
+    <x-profile-menu-header title="Galeri Sekolah" />
 
     <section class="container mx-auto grid grid-cols-1 gap-y-7 md:my-20">
         <div class="md:flex md:justify-between gap-x-10 grid gap-y-5 px-4 md:px-0">

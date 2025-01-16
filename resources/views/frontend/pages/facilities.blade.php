@@ -43,7 +43,7 @@
         {{-- mobile --}}
         <div class="grid grid-cols-1 lg:grid-cols-3 space-y-5 lg:hidden">
           <div class="lg:justify-items-center lg:content-center text-center lg:text-left">
-            <p class="text-biru-tua font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-biru-tua lg:before:absolute lg:before:-left-6">{{ $facility['title'] }}</p>
+            <p class="text-biru-tua font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-biru-tua lg:before:absolute lg:before:-left-6 w-3/4 text-wrap mx-auto">{{ $facility['title'] }}</p>
             <div class="lg:hidden block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
           </div>
           <div class="lg:col-span-2 flex justify-center lg:justify-end lg:flex-none cursor-pointer lg:pr-10">
@@ -83,7 +83,7 @@
 
         {{-- desktop --}}
         <div class="lg:grid grid-cols-1 lg:grid-cols-3 hidden">
-          <div class="lg:col-span-2 flex justify-center lg:justify-end lg:flex-none cursor-pointer lg:pr-10">
+          <div class="lg:col-span-2 flex md:ml-4 lg:ml-7 lg:flex-none cursor-pointer lg:pr-10">
             <div class="relative w-4/5 lg:w-[628px] card-container">
               <div class="card-wrapper relative w-full h-[332px]">
                 <!-- Front of card -->
@@ -116,14 +116,14 @@
               </div>
             </div>
           </div>
-          <div class="justify-items-center content-center pr-10">
-            <p class="text-biru-tua font-extrabold text-4xl relative before:block before:h-full before:w-3 before:bg-biru-tua before:absolute before:-right-6">{{ $facility['title'] }}</p>
+          <div class="justify-items-center content-center xl:pr-10">
+            <p class="text-biru-tua font-extrabold text-4xl relative before:block before:h-full before:w-3 before:bg-biru-tua before:absolute before:-right-6 w-3/4 text-wrap mx-auto">{{ $facility['title'] }}</p>
           </div>
         </div>
       @else
         <div class="grid grid-cols-1 lg:grid-cols-3 space-y-5">
-          <div class="lg:justify-items-center lg:content-center text-center lg:text-left pl-10">
-            <p class="text-biru-tua font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-biru-tua lg:before:absolute lg:before:-left-6">{{ $facility['title']}}</p>
+          <div class="lg:justify-items-center lg:content-center text-center lg:text-left pl-10 lg:pl-0">
+            <p class="text-biru-tua font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-biru-tua lg:before:absolute lg:before:-left-6 w-3/4 text-wrap mx-auto">{{ $facility['title']}}</p>
             <div class="lg:hidden block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
           </div>
           <div class="lg:col-span-2 flex justify-center lg:justify-end lg:flex-none cursor-pointer lg:pr-10">
