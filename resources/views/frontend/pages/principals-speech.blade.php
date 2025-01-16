@@ -1,5 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
+@dd(!is_null($data->ContentContent->images));
     @if (!is_null($data))
         <x-profile-menu-header title="Sambutan Kepala Sekolah" />
         <section class="w-10/12 xl:w-9/12 mx-auto my-10 md:my-20">

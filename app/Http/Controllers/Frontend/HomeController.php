@@ -54,12 +54,14 @@ class HomeController extends Controller
                 'ContentContent.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite berdasarkan lang
                 },
-                'ContentContent.Categorys',
+                'ContentContent' => function ($query){
+                    $query->where('id_category','201202506');
+                },
                 'ContentContent.Categorys.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite pada Categorys berdasarkan lang
                 },
             ])->where('lang', $lang)->first();
-            // dd($data);
+            dd($data);
             return view('frontend.pages.principals-speech',compact('data','lang'));
         } catch (\Throwable $th) {
             dd($th);
