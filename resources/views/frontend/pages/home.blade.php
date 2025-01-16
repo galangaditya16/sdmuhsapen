@@ -487,7 +487,7 @@
     </section>
 
     {{-- TESTIMONI --}}
-    <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(165, 225, 243, 0.2)">
+    <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(165, 225, 243, 0.5  )">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <div class="grid md:grid-cols-2 grid-rows-auto gap-28">
@@ -836,14 +836,12 @@
                     <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
                         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">
-                                Flowbite is an open-source library of
-                                interactive components built on top of Tailwind CSS including buttons, dropdowns, modals,
-                                navbars, and more.
+                                SD Muhammadiyah Sapen merupakan salah satu sekolah dasar unggulan yang dikenal dengan pendekatan pendidikan berbasis nilai-nilai Islam. Sekolah ini mengintegrasikan ajaran agama dengan kurikulum nasional, menciptakan lingkungan belajar yang tidak hanya berfokus pada akademik tetapi juga pengembangan karakter dan akhlak mulia. Dengan pendekatan ini, siswa dididik untuk menjadi pribadi yang cerdas, beriman, dan berakhlak baik, sesuai dengan prinsip pendidikan holistik.
+
                             </p>
                             <p class="text-gray-500 dark:text-gray-400">
-                                Check out this guide to learn how to
-                                <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a>
-                                and start developing websites even faster with components on top of Tailwind CSS.
+                                Selain itu, SD Muhammadiyah Sapen memiliki rekam jejak prestasi gemilang di berbagai bidang, baik akademik maupun non-akademik. Sekolah ini menyediakan fasilitas yang lengkap, tenaga pendidik yang kompeten, serta berbagai kegiatan ekstrakurikuler untuk mendukung pengembangan minat dan bakat siswa. Lingkungan belajar yang positif dan program-program pengayaan yang inovatif menjadikan SD Muhammadiyah Sapen sebagai pilihan yang tepat bagi orang tua yang ingin memberikan pendidikan terbaik bagi anak-anak mereka.
+
                             </p>
                         </div>
                     </div>
@@ -864,12 +862,10 @@
                     </h2>
                     <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
                         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed
-                                using the Figma software so everything you see in the library has a design equivalent in our
-                                Figma file.</p>
-                            <p class="text-gray-500 dark:text-gray-400">Check out the
-                                <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a>
-                                based on the utility classes from Tailwind CSS and components from Flowbite.
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">Untuk mendaftar di SD Muhammadiyah Sapen, langkah pertama adalah mendapatkan informasi terbaru mengenai Penerimaan Peserta Didik Baru (PPDB). Anda dapat mengunjungi situs resmi sekolah di sdmuhsapen-yog.sch.id atau menghubungi call center di nomor 0811-2642-733. Informasi yang tersedia mencakup jadwal pendaftaran, persyaratan, dan prosedur yang harus diikuti. Selain itu, sekolah juga menyediakan layanan inden PPDB bagi calon siswa yang berminat mendaftar lebih awal.
+
+                                </p>
+                            <p class="text-gray-500 dark:text-gray-400">Selanjutnya, siapkan dokumen-dokumen yang diperlukan, seperti akta kelahiran, kartu keluarga, dan pas foto terbaru. Proses pendaftaran bisa dilakukan secara online melalui platform yang disediakan sekolah atau secara langsung dengan mendatangi kantor administrasi SD Muhammadiyah Sapen. Jika membutuhkan informasi tambahan, Anda dapat menghubungi pihak sekolah melalui email di info@sdmuhsapen-yog.sch.id atau akun Instagram resmi mereka di @sdmuhsapen. Pastikan semua persyaratan terpenuhi agar proses pendaftaran berjalan lancar.
                             </p>
                         </div>
                     </div>
@@ -890,20 +886,10 @@
                     </h2>
                     <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
                         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core
-                                components from Flowbite are open source under the MIT license, whereas Tailwind UI is a
-                                paid product. Another difference is that Flowbite relies on smaller and standalone
-                                components, whereas Tailwind UI offers sections of pages.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
-                                Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you
-                                from using the best of two worlds.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                            <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                                <li><a href="https://flowbite.com/pro/"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                                <li><a href="https://tailwindui.com/" rel="nofollow"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                            </ul>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">SD Muhammadiyah Sapen memiliki sejumlah keunggulan yang menjadikannya pilihan unggul bagi para orang tua. Sekolah ini menawarkan pendidikan berbasis nilai-nilai Islam yang terintegrasi dengan kurikulum nasional, memastikan siswa tidak hanya berkembang secara akademis tetapi juga memiliki karakter yang berakhlak mulia. Dengan pendekatan ini, sekolah berhasil mencetak siswa yang cerdas, disiplin, dan bertanggung jawab. Selain itu, prestasi akademik dan non-akademik yang diraih siswa di tingkat lokal, nasional, dan internasional menjadi bukti kualitas pendidikan di sekolah ini.
+
+                                </p>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">Fasilitas yang lengkap dan modern, seperti laboratorium, perpustakaan, ruang multimedia, dan area olahraga, mendukung kegiatan belajar yang nyaman dan efektif. Didukung oleh tenaga pendidik yang kompeten dan berdedikasi, siswa mendapatkan bimbingan yang optimal untuk mengembangkan potensi mereka. SD Muhammadiyah Sapen juga menawarkan berbagai kegiatan ekstrakurikuler, seperti robotik, seni, dan olahraga, untuk mengasah minat dan bakat siswa. Dengan kombinasi kurikulum inovatif, lingkungan belajar yang kondusif, dan pendidikan karakter, sekolah ini menjadi pilihan ideal untuk membangun generasi yang unggul dan berintegritas.</p>
                         </div>
                     </div>
                     <h2 id="accordion-color-heading-4">
@@ -912,7 +898,7 @@
                             data-accordion-target="#accordion-color-body-4" aria-expanded="false"
                             aria-controls="accordion-color-body-4">
                             <span class="text-left">
-                                Apabila saya mengikuti PPDB berapa biaya yang dikenakan?
+                                Apabila saya mengikuti PPDB di SD Muhammadiyah Sapen berapa biaya yang dikenakan?
                             </span>
                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -923,20 +909,9 @@
                     </h2>
                     <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
                         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core
-                                components from Flowbite are open source under the MIT license, whereas Tailwind UI is a
-                                paid product. Another difference is that Flowbite relies on smaller and standalone
-                                components, whereas Tailwind UI offers sections of pages.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both
-                                Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you
-                                from using the best of two worlds.</p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                            <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                                <li><a href="https://flowbite.com/pro/"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                                <li><a href="https://tailwindui.com/" rel="nofollow"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                            </ul>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">SD Muhammadiyah Sapen menawarkan berbagai program pendidikan dengan biaya yang disesuaikan untuk setiap jenjang dan layanan yang diberikan. Biaya ini mencakup pendaftaran, pengembangan fasilitas sekolah, kebutuhan seragam, buku, serta kegiatan belajar mengajar. Selain itu, ada biaya bulanan yang sudah termasuk layanan makan siang dan kebutuhan harian siswa selama di sekolah. Program reguler dan kelas khusus, seperti program Cerdas Istimewa Matematika dan IPA (CIMIKA), memiliki rincian biaya yang berbeda sesuai dengan fasilitas tambahan yang disediakan.
+                                </p>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">Dengan sistem pembayaran yang transparan, sekolah ini juga memastikan bahwa setiap biaya yang dikenakan sebanding dengan fasilitas dan kualitas pendidikan yang diberikan. Untuk mendapatkan informasi lebih lengkap dan memastikan biaya sesuai dengan kebutuhan Anda, calon wali murid disarankan untuk langsung menghubungi pihak sekolah melalui situs resmi atau saluran komunikasi lainnya. SD Muhammadiyah Sapen selalu berkomitmen memberikan layanan terbaik bagi siswa dan orang tua.</p>
                         </div>
                     </div>
                 </div>
