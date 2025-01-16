@@ -63,7 +63,6 @@ class HomeController extends Controller
             ])
             ->whereNotNull('id_content')
             ->where('lang', $lang)->first();
-            dd($data);
             return view('frontend.pages.principals-speech',compact('data','lang'));
         } catch (\Throwable $th) {
             dd($th);
