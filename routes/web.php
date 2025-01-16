@@ -99,7 +99,7 @@ Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
 Route::get('/news',[BeritaController::class,'listNews'])->name('front.news');
 Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
 Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');
-Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');
+Route::get('/news/{id}/{lang}', [HomeController::class, 'newsDetail'])->name('newsDetail');
 Route::get('/galery', [HomeController::class, 'galery'])->name('front.galery');
 Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
 

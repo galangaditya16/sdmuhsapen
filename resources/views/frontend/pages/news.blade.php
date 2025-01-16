@@ -37,7 +37,6 @@
                 </div>
             </div>
         </div>
-
         <div class="block lg:flex gap-x-10">
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($news as $new)
@@ -53,7 +52,7 @@
                                 <p>{!! str($new->body)->limit(100) !!}</p>
                             </div>
                             <div class="flex justify-center mt-5">
-                                <a href="{{ route('newsDetail', str($new['title'])->slug()) }}"
+                                <a href="{{ route('newsDetail', ['id' => $new->slug, 'lang' => $lang]) }}"
                                     class="py-2 px-10 bg-biru-tua text-white rounded-3xl">Baca lagi</a>
                             </div>
                         </div>
