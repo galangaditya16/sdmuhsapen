@@ -178,7 +178,7 @@
             <div>
                 <p class="text-3xl font-bold text-biru-tua text-center relative">Lokasi Google Maps</p>
                 <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
-                <div class="w-full mt-10">
+                <div class="w-full mt-10 rounded-xl overflow-hidden">
                   {!! $contact->google_loc !!}
                 </div>
             </div>
