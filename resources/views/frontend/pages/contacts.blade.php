@@ -105,7 +105,7 @@
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="email"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="Email" aria-label="Email">
+                                type="text" placeholder="Tulis captcha" aria-label="Tulis captcha">
                         </div>
                     </div>
                     <button
