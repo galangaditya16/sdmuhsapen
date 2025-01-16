@@ -8,7 +8,7 @@
         <p class="text-6xl text-center font-bold text-oren">NOT FOUND</p>
       </div>
       <p class="font-bold text-2xl mt-10">Maaf, halaman yang Anda cari tidak ditemukan.</p>
-      <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="/" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
+      <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
     </div>
   </section>
   @include('frontend.layouts.footer-working-hours')

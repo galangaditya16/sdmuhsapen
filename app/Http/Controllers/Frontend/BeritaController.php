@@ -52,13 +52,15 @@ class BeritaController extends Controller
             ->get();
             if($request->has('search')){
                  $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
-                //  @if($request->has(''))
                 ->whereHas('ContentNews')->where('lang',$lang)->paginate(4);
-                dd($news);
             }else{
                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
                 ->whereHas('ContentNews')->where('lang',$lang)->paginate(4);
-                return view('frontend.pages.news', compact('categorys','news','lang'));
+                $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+                ->whereHas('ContentNews')->where('lang',$lang)
+                ->orderBy('created_at', 'ASC')
+                ->take(4);
+                return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
             }
 
         } catch (\Throwable $th) {

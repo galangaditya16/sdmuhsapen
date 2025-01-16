@@ -14,7 +14,7 @@
         }
 
         .swiper-pagination-bullet {
-            background: #4f46e5;
+            background: #4f46e5
         }
 
         .swiper-pagination-bullet-active {
@@ -281,7 +281,6 @@
     <section class=" border-gray-200 my-20 py-20">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
-
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
               @forelse ( $gallerys as $key => $value)
                 @if($key == 2 || $key == 3)

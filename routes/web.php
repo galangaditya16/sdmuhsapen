@@ -87,7 +87,7 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
 Route::get('login',[AuthController::class,'login'])->name('login');
 
 Route::post('authentication',[AuthController::class,'authenticate'])->name('login.process');
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
 Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
@@ -102,3 +102,7 @@ Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('glo
 Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('newsDetail');
 Route::get('/galery', [HomeController::class, 'galery'])->name('front.galery');
 Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
+
+Route::get('test', function () {
+    return view('errors.404');
+});
