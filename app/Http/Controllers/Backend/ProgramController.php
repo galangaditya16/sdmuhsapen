@@ -60,10 +60,11 @@ class ProgramController extends BaseController
         try {
             if($request->has('images')){
                 $path = public_path('assets/images/programs/');
+                $manifes_path = asset('assets/images/programs');
                 $name = time().'.'.$request->images->getClientOriginalExtension();
                 $request->images->move($path,$name);
                 $request['images'] = $name;
-                $request['path']   = $path;
+                $request['path']   = $manifes_path;
             }
             $request['author'] = '1';
             $content = new ProgramsNew ([
