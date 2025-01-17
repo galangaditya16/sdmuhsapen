@@ -477,7 +477,7 @@
     </section>
 
     {{-- TESTIMONI --}}
-    <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(165, 225, 243, 0.5  )">
+    <section class=" border-gray-200 py-20" style="background-color: rgba(165, 225, 243, 0.5  )">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <div class="grid md:grid-cols-2 grid-rows-auto gap-28">
@@ -769,9 +769,9 @@
     </section>
 
     {{-- SEMUA SPONSOR --}}
-    <section class=" border-gray-200 ">
+    <section class=" border-gray-200 mt-10">
         <!--HTML CODE-->
-        <div class="w-full container mx-auto px-4">
+        <div class="w-full container mx-auto">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
 
             <div class="flex flex-row  gap-4 overflow-x-auto">
