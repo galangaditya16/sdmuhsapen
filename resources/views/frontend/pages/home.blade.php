@@ -242,7 +242,7 @@
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
                                 <p class="text-lg font-bold">{{ $b['title'] }}</p>
-                                <p class="news-content">{!! $b->body !!}</p>
+                                <p class="news-content">{!! Str::limit(strip_tags($b->body), 100) !!}</p>
                             </div>
                             <div class="flex justify-center mt-5">
                                 <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
