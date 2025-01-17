@@ -61,10 +61,10 @@
                         <div class="flex justify-center mt-5">
                             @if ($lang == 'id')
                                 <a href="{{ route('galeryDetail', $new->slug_id) }}"
-                                    class="py-2 px-10 bg-oren text-white rounded-3xl bottom-5">Lihat Galeri</a>
+                                    class="py-2 px-10 bg-oren text-white rounded-3xl">Lihat Galeri</a>
                             @else
                                 <a href="{{ route('galeryDetail', $new->slug_en) }}"
-                                    class="py-2 px-10 bg-oren text-white rounded-3xl bottom-5">Lihat Galeri</a>
+                                    class="py-2 px-10 bg-oren text-white rounded-3xl">Lihat Galeri</a>
                             @endif
                         </div>
                     </div>
