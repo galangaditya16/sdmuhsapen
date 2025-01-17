@@ -126,7 +126,7 @@
                 @enderror
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Images</label>
+                    <label class="form-label">Images (2MB)</label>
                     <div>
                         <input type="file" name="images[]" class="form-control" aria-describedby="title"
                             accept="image/png, image/gif, image/jpeg" multiple>
