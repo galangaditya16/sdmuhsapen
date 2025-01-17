@@ -134,7 +134,7 @@
                     didik antara lain :
                 </p>
             </div>
-            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-16 max-h-[65%]">
+            <div class="flex flex-nowrap lg:grid overflow-x-auto md:grid-cols-2 lg:grid-cols-3 gap-16 max-h-[65%]">
                 {{-- <div class="swiper-wrapper "> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
@@ -229,13 +229,13 @@
     <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-5 text-black text-center mx-auto">Berita Terkini</h1>
-            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
+            <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-16 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
                       $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
                     @endphp
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$b->ContentNews->getFirstImage() }}');" alt="{{ $b->ContentNews->getFirstImage() }}"
-                        class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
+                        class="swiper-slide rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
                         <div class="h-[565px] relative">
                           <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $b->created_at->format('F d, Y') }}</button>
                         </div>
