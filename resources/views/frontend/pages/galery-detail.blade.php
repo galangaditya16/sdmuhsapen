@@ -4,7 +4,7 @@
     <section class="container mx-auto grid grid-cols-1 gap-y-6 md:my-20">
         <div class="sm:flex mt-20 sm:mt-12 lg:mt-5 sm:justify-between grid gap-y-4 sm:gap-y-0">
             <div class="sm:w-[65%] px-2 lg:px-0">
-                <x-breadcumb :breadcrumbs="[['url' => '/news', 'name' => 'Berita'], ['url' => '', 'name' => 'Kategori']]" />
+                <x-breadcumb :breadcrumbs="[['url' => '/news', 'name' => 'Galery']/>
             </div>
 
             <div class="px-2 lg:px-0 sm:place-self-center sm:place-items-end">
