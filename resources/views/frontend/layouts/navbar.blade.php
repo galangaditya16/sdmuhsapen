@@ -1,15 +1,15 @@
 <nav class="bg-dark-blue dark:bg-gray-900 fixed w-full z-50 top-0">
     <div class="container flex flex-wrap items-center justify-between mx-auto p-1">
-        <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="{{ url('/') }}" class="flex items-center rtl:space-x-reverse">
             <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-16" alt="Flowbite Logo">
         </a>
-        <div class="flex md:order-2 rtl:space-x-reverse">
+        <div class="flex md:order-2 rtl:space-x-reverse">            
 
             <ul class="flex flex-col mt-1 mx-1 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-1">
                 <li>
                     <button id="buttonDropdownBahasa" data-dropdown-toggle="dropdownBahasa" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
                         ID
-                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
                     </button>
@@ -42,7 +42,7 @@
             </div>
 
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
-                <button type="button" class="text-white ml-3 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-full text-sm px-10 py-2 text-center md:mx-1">
+                <button type="button" class="text-white ml-3 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-full text-sm px-8 lg:px-10 py-2 text-center md:mx-1">
                     PPDB
                 </button>
             </a>
@@ -65,11 +65,11 @@
                 </div>
                 <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
             </div>
-            <ul class="flex flex-col p-3 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul class="flex flex-col p-1 lg:p-3 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-2 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
                         Tentang Kami
-                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
                     </button>

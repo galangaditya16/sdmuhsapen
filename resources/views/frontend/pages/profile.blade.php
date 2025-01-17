@@ -27,12 +27,12 @@
     <!-- PROFILE SD MUHAMDIYAH SAPEN -->
     <x-profile-menu-header title="Profil SD Muhammadiyah Sapen" />
 
-    <section class="mb-20 -mt-[50px]">
+    <section class="my-10 md:my-20">
         <!--HTML CODE-->
         <div class="w-full ">
             <div class="flex flex-col">
                 <div class="container mx-auto">
-                    <iframe class="rounded-2xl w-full h-auto md:w-[1000px] md:h-[497px]"
+                    <iframe class="rounded-2xl w-auto h-auto md:w-[650px] md:h-[400px] lg:w-[900px] lg:h-[497px] mx-6"
                         src="https://www.youtube.com/embed/Tg3HPOaezX4?si=rltAfYV7_FboAb9l"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
