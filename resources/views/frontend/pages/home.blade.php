@@ -229,7 +229,7 @@
     <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-5 text-black text-center mx-auto">Berita Terkini</h1>
-            <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-16 max-h-[65%]">
+            <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
                       $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
