@@ -30,7 +30,7 @@
         <div class="w-full md:w-[75%] container mx-auto px-4 absolute top-52 md:top-[25%] md:left-[5%] lg:top-[25%] lg:left-[25%] z-20">
             <h1 class="text-xl md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
             <h1 class="text-xl md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
-            <h1 class="text-xl md:text-lg my-3 text-white">The Truly Inspiring Islamic School</h1>
+            <h1 class="text-xl md:text-lg my-3 text-white">Sekolahku Inspirasiku</h1>
             <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
                 Pelajari Lebih Lanjut
             </button>
@@ -251,7 +251,7 @@
                                     Str::limit(strip_tags($b->body ?? $b->body), 250, '...');
                                 }}
                             </p>
-                            <a href="#"
+                            <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Read more
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"

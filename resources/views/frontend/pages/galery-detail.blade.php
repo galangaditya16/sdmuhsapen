@@ -79,4 +79,5 @@
             <x-side-news />
         </div>
     </section>
+    @include('frontend.layouts.footer')
 @endsection

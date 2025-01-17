@@ -8,6 +8,6 @@
       <img src="{{ asset('assets/images/organization/sapen-1.jpg')}}" alt="organization-sapen-1.jpg">
     </a>
   </section>
-  @include('frontend.layouts.footer-working-hours')
+  @include('frontend.layouts.footer')
 
 @endsection
