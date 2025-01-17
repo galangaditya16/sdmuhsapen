@@ -3,7 +3,7 @@
 @section('content')
     <x-profile-menu-header title="Berita Sekolah" />
 
-    <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20">
+    <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 px-2">
         <div class="grid md:grid-cols-2 gap-y-4 px-4 lg:px-0">
             <div class="w-full md:flex grid gap-y-4">
                 <div class="flex items-center w-full bg-gray-300 rounded-3xl">
@@ -43,10 +43,9 @@
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$new->ContentNews->getFirstImage() }}');" alt="$news"
                         class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
                         <div class="h-[565px] relative">
-                            <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">September
-                                24, 2024</button>
+                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $new->created_at->format('F d, Y') }}</button>
                         </div>
-                        <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2">
+                        <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
                                 <p class="text-lg font-bold">{{ $new['title'] }}</p>
                                 <p>{!! str($new->body)->limit(100) !!}</p>

@@ -48,38 +48,37 @@
                 {{--  <div class="default-carousel w-full min-h-[450px] h-full" data-carousel="slide" >  --}}
                     <div class="default-carousel w-full min-h-svh h-full" data-carousel="slide" >
                     @foreach ($slider as $indexSlider=>$sl)
-                        <div class="shrink-0 duration-1000 ease-in-out hidden" <?= $indexSlider == 0 ? "data-carousel-item='active'" : 'data-carousel-item' ?>>
+                        <div
+                          class="bg-cover shrink-0 duration-1000 ease-in-out hidden" {{ $indexSlider == 0 ? "data-carousel-item='active'" : 'data-carousel-item' }}
+                          style="background-image: url('{{ $sl->path . '/' . $sl->image }}');">
                             <div class="bg-indigo-50 flex justify-center items-center w-full max-h-[768px]">
-                                <img class="min-h-[450px] md:h-auto max-w-max md:max-w-full md:object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}">
+                                {{-- <img class="min-h-[450px] md:h-auto max-w-max md:max-w-full object-cover" src="{{ $sl->path . '/' . $sl->image }}" alt="{{  $sl->title }}"> --}}
                                 {{-- <span class="text-3xl font-semibold text-indigo-600">{{ $sl->title }}</span> --}}
                             </div>
                         </div>
                     @endforeach
-
                 </div>
-                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center">
-
-                </div>
+                <div class="flex items-center z-30 gap-8 lg:justify-start justify-center"></div>
                 <div class="swiper-pagination"></div>
             </div>
             <div class="relative z-20 -top-[70px] md:-top-[50px] mx-5">
                 <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
-                    <dl class="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4     zZx,">
-                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                    <dl class="grid grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
                             <dt class="text-base leading-7 text-oren">Transactions every 24 hours</dt>
-                            <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl">945</dd>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl" data-text="945">945</dd>
                         </div>
-                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
                             <dt class="text-base leading-7 text-pink">Assets under holding</dt>
-                            <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl">174</dd>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl" data-text="174">174</dd>
                         </div>
-                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full md:border-r-2">
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
                             <dt class="text-base leading-7 text-hijau-terang">New users annually</dt>
-                            <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl">19</dd>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl" data-text="100">19</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                             <dt class="text-base leading-7 text-biru-langit">New users annually</dt>
-                            <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl">84</dd>
+                            <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl" data-text="84">84</dd>
                         </div>
                     </dl>
                 </div>
@@ -142,22 +141,24 @@
 
                             <a href="#"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
+                              <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
+                                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                  viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
                                 </svg>
                                 <h5
-                                    class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                    Unggul dalam Prestasi Akademik
+                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                                  Unggul dalam Prestasi Akademik
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                  SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
+                                  pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
+                                  Sehingga para peserta didik dapat belajar dengan cara terbaik.
                                 </p>
+                              </div>
                             </a>
 
                         </div>
@@ -167,22 +168,24 @@
 
                             <a href="#"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
+                              <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
+                                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                  viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
                                 </svg>
                                 <h5
-                                    class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                    Unggul dalam Prestasi NonAkademik
+                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                                  Unggul dalam Prestasi NonAkademik
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
+                                pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
+                                Sehingga para peserta didik dapat belajar dengan cara terbaik.
                                 </p>
+                              </div>
                             </a>
 
                         </div>
@@ -192,22 +195,24 @@
 
                             <a href="#"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
+                              <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
+                                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                  viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
                                 </svg>
                                 <h5
-                                    class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                    Unggul dalam Pendidikan Karakter
+                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                                  Unggul dalam Pendidikan Karakter
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
+                                pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
+                                Sehingga para peserta didik dapat belajar dengan cara terbaik.
                                 </p>
+                              </div>
                             </a>
 
                         </div>
@@ -221,47 +226,32 @@
     </section>
 
     {{-- BERITA --}}
-    <section class=" border-gray-200 my-20 py-20" style="background-color: rgba(248, 111, 3, 0.1)">
+    <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
+            <h1 class="text-4xl font-bold my-5 text-black text-center mx-auto">Berita Terkini</h1>
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
                       $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
                     @endphp
-                    <div class="bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            @if($b->ContentNews->getFirstImage() !== null)
-                                <img class="rounded-t-lg relative mx-auto w-full" src="{{ asset('assets/images/news/' . $b->ContentNews->getFirstImage()) }}" alt="" style="object-fit: cover" />
-                            @else
-                                <img class="rounded-t-lg relative mx-auto w-full max-h-[50%]" src="{{ asset('assets/images/not-found-image.png') }}" alt="" style="object-fit: cover" />
-                            @endif
-                        </a>
-                        <span class="bg-oren p-3 rounded-full md:text-sm relative text-white font-bold left-2 -top-10">
-                            {{ $b->ContentNews->getCreatedAtFormated() }}
-                        </span>
-                        <div class="p-5 w-72 md:w-full">
-                            <a href="#">
-                                <h5 class="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $b->title ?? $b->title }}
-                                </h5>
-                            </a>
-                            <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
-                                {{
-                                    Str::limit(strip_tags($b->body ?? $b->body), 250, '...');
-                                }}
-                            </p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
+                    <div style="background-image: url('{{ asset('assets/images/news').'/'.$b->ContentNews->getFirstImage() }}');" alt="{{ $b->ContentNews->getFirstImage() }}"
+                        class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
+                        <div class="h-[565px] relative">
+                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $b->created_at->format('F d, Y') }}</button>
+                        </div>
+                        <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
+                            <div class="space-y-3">
+                                <p class="text-lg font-bold">{{ $b['title'] }}</p>
+                                <p class="news-content">{!! $b->body !!}</p>
+                            </div>
+                            <div class="flex justify-center mt-5">
+                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
+                                  class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5"
+                                >Baca lagi</a>
+                            </div>
                         </div>
                     </div>
+
                 @endforeach
 
             </div>
@@ -277,7 +267,7 @@
     </section>
 
     {{-- GALERY --}}
-    <section class=" border-gray-200 my-20 py-20">
+    <section class=" border-gray-200 py-10">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
@@ -779,7 +769,7 @@
     </section>
 
     {{-- SEMUA SPONSOR --}}
-    <section class=" border-gray-200 my-20 py-20">
+    <section class=" border-gray-200 ">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
@@ -806,7 +796,7 @@
     </section>
 
     {{-- FAQ --}}
-    <section class=" border-gray-200 my-20 py-40">
+    <section class=" border-gray-200 my-20 pt-40">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Pertanyaan yang Sering Ditanyakan</h1>
@@ -926,6 +916,31 @@
 
 @section('extend-script')
     <script>
+      var elements = document.querySelectorAll('[data-text]');
+
+      // Now you can manipulate the elements
+      elements.forEach(function(element) {
+        const text = parseInt(element.getAttribute('data-text'), 10);
+        let count = 0;
+        const increment = Math.ceil(text / 100);
+        const interval = setInterval(() => {
+            if (count < text) {
+                count += increment;
+                if (count > text) count = text;
+                element.textContent = count;
+            } else {
+                clearInterval(interval);
+            }
+        }, 10);
+      });
+
+      var newsContent = document.querySelectorAll('.news-content');
+      newsContent.forEach(function(element) {
+        const textLength = window.innerWidth >= 1024 ? 150 : 100;
+        const originalText = element.innerHTML;
+        element.innerHTML = originalText.substring(0, textLength) + '...';
+      });
+
         // var swiper = new Swiper(".default-carousel", {
         //     loop: true,
         //     pagination: {
