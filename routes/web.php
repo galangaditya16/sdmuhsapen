@@ -16,7 +16,7 @@ use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ProgramController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SliderController;
-use App\Http\Controllers\backend\TeacherController;
+use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\Backend\TeacherPositionController;
 use App\Http\Controllers\Frontend\BeritaController;
