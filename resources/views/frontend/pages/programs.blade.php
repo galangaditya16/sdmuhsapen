@@ -67,17 +67,19 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
+                                    <div class="w-full h-full md:text-xl text-white p-10 space-y-5">
+                                      <div class="scrollable-container-with-custom-scrollbar h-full">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{{ $program['body'] }}</p>
                                         <button
-                                            class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-5 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6 18 18 6M6 6l12 12" />
-                                            </svg>
+                                          class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-5 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18 18 6M6 6l12 12" />
+                                          </svg>
                                         </button>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -107,17 +109,19 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
+                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                                      <div class="scrollable-container-with-custom-scrollbar h-full">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{!! $program['body'] !!}</p>
                                         <button
-                                            class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-4 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6 18 18 6M6 6l12 12" />
-                                            </svg>
+                                          class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-4 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18 18 6M6 6l12 12" />
+                                          </svg>
                                         </button>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -155,17 +159,19 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
+                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                                      <div class="scrollable-container-with-custom-scrollbar h-full">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{!! $program['body'] !!}</p>
                                         <button
-                                            class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-5 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6 18 18 6M6 6l12 12" />
-                                            </svg>
+                                          class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-5 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18 18 6M6 6l12 12" />
+                                          </svg>
                                         </button>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
