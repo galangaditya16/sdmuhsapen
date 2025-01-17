@@ -7,7 +7,7 @@
     <div class="flex justify-between">
       <div></div>
       <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3">
-        <div class="font-bold lg:col-start-2 text-center mx-auto">
+        {{--  <div class="font-bold lg:col-start-2 text-center mx-auto">
           <div class="mb-14">
             <p class="text-3xl text-biru-tua place-self-center mx-auto w-fit">Kepala Sekolah</p>
             <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"> </div>
@@ -18,74 +18,14 @@
               <p class="text-white font-bold">Kepala SD Muh Sapen</p>
             </div>
           </div>
-        </div>
+        </div>  --}}
       </div>
       <div></div>
     </div>
-
-    <x-picture-slider title="Jajaran Kepala Bagian" :sliders="[
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-      ]"/>
-
-    <x-picture-slider title="Guru Kelas" :sliders="[
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-      ]"/>
-
-    <x-picture-slider title="Guru Mata Pelajaran" :sliders="[
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-        [
-          'name' => 'Agung Rahmanto, S.H., M.Pd.',
-          'role' => 'Kepala SD Muh Sapen',
-          'image' => asset('assets/images/teachers/grand-teacher.jpg'),
-        ],
-      ]"/>
+    @forelse($positions as $key => $value)
+      <x-picture-slider title="{{ $value->title}}" :sliders="$value->CategoryTeacher->Guru"/>
+    @empty
+    @endforelse
   </section>
 
   @include('frontend.layouts.footer')

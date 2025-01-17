@@ -22,8 +22,8 @@ class SliderRequest extends FormRequest
     public function rules(): array
     {
         return [
-         'image'           => 'mimes:jpeg,jpg,png,jpg,gif,svg|max:2048',
-         'title'           => 'required|max:255',
+        'image' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048|dimensions:min_height=900',
+        'title' => 'required|max:255',
         ];
     }
     public function attributes()

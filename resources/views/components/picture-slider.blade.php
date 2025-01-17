@@ -11,13 +11,20 @@
         </svg>
       </button>
     </div>
+    @php
+      $lang = 'id';
+    @endphp
     <div class="carousel flex md:gap-x-4 overflow-hidden">
       @foreach ($sliders as $slider)
         <div class="mx-auto">
-          <div style="background-image: url('{{ $slider['image'] }}');" class="bg-no-repeat bg-center bg-cover rounded-2xl overflow-hidden w-[345px] md:w-[300px] lg:w-[275px] max-w-[400px] h-[450px] relative">
+          <div style="background-image: url('{{ asset('assets/images/teacher') . '/' . $slider->image }}');" class="bg-no-repeat bg-center bg-cover rounded-2xl overflow-hidden w-[345px] md:w-[300px] lg:w-[275px] max-w-[400px] h-[450px] relative">
             <div class="bg-biru-tua absolute bottom-0 w-full h-32 grid grid-cols-1 justify-between">
               <p class="text-oren font-bold text-2xl">{{ $slider['name'] }}</p>
-              <p class="text-white font-bold">{{ $slider['role'] }}</p>
+              @if($lang == 'id')
+              <p class="text-white font-bold">{{ $slider['detail_id'] }}</p>
+              @else
+              <p class="text-white font-bold">{{ $slider['detail_en'] }}</p>
+              @endif
             </div>
           </div>
         </div>

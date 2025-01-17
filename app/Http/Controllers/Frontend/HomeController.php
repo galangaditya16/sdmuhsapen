@@ -7,9 +7,12 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend\BeritaController;
+use App\Models\AllCategoryTranslite;
 use App\Models\AllContentTranslite;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Models\TeacherPositionnew;
+use Database\Seeders\TeacherPosition;
 use Illuminate\Support\Facades\DB;
 
 
@@ -72,7 +75,17 @@ class HomeController extends Controller
 
     public function teacherAndStaff()
     {
-        return view('frontend.pages.teacher-and-staff');
+        try {
+            $lang = 'id';
+            $positions = AllCategoryTranslite::with(['CategoryTeacher','CategoryTeacher.Guru','CategoryTeacher.transLite'])
+            ->whereNotNull('id_teacher_position')
+            ->where('lang',$lang)
+            ->get();
+            return view('frontend.pages.teacher-and-staff',compact('lang','positions'));
+        } catch (\Throwable $th) {
+            dd($th);
+            abort(404);
+        }
     }
 
     public function facilities()

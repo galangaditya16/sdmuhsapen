@@ -22,5 +22,9 @@ class TeacherPositionnew extends Model
         return $this->hasMany(AllCategoryTranslite::class,'id_teacher_position','id');
     }
 
+    public function Guru(){
+        return $this->hasMany(Teachernew::class,'position_id','id');
+    }
+
 
 }
