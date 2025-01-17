@@ -796,7 +796,7 @@
     </section>
 
     {{-- FAQ --}}
-    <section class=" border-gray-200 my-20 pt-40">
+    <section class=" border-gray-200 my-10 pt-40">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Pertanyaan yang Sering Ditanyakan</h1>
