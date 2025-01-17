@@ -49,7 +49,7 @@
                             <p>25 Foto</p>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/3 w-full">
+                    <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full">
                         <div class="space-y-3">
                             @if ($lang == 'id')
                                 <p class="text-lg font-bold">Galeri: {{ $new->title_id }}</p>
