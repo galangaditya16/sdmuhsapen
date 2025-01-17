@@ -43,8 +43,7 @@
                 {{-- mobile --}}
                 <div class="grid grid-cols-1 lg:grid-cols-3 space-y-5 lg:hidden">
                     <div class="lg:justify-items-center lg:content-center text-center lg:text-left">
-                        <p
-                            class="text-oren font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-oren lg:before:absolute lg:before:-left-6">
+                        <p class="text-oren font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-oren lg:before:absolute lg:before:-left-6 w-3/4 text-wrap mx-auto">
                             {{ $program['title'] }}</p>
                         <div class="lg:hidden block w-32 h-1 bg-oren mx-auto mt-2"></div>
                     </div>
@@ -68,7 +67,7 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{{ $program['body'] }}</p>
                                         <button
@@ -85,9 +84,10 @@
                         </div>
                     </div>
                 </div>
+
                 {{-- desktop --}}
                 <div class="lg:grid grid-cols-1 lg:grid-cols-3 hidden">
-                    <div class="lg:col-span-2 flex justify-center lg:justify-end lg:flex-none cursor-pointer lg:pr-10">
+                    <div class="lg:col-span-2 flex md:ml-4 lg:ml-7 lg:flex-none cursor-pointer lg:pr-10">
                         <div class="relative w-4/5 lg:w-[628px] card-container">
                             <div class="card-wrapper relative w-full h-[332px]">
                                 <!-- Front of card -->
@@ -107,11 +107,11 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{!! $program['body'] !!}</p>
                                         <button
-                                            class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-5 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
+                                            class="rounded-full bg-red-500 text-white text-sm p-2.5 absolute right-4 bottom-5 hover:scale-105 transition-transform duration-300 btn-card">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -124,16 +124,14 @@
                         </div>
                     </div>
                     <div class="justify-items-center content-center pr-10">
-                        <p
-                            class="text-oren font-extrabold text-4xl relative before:block before:h-full before:w-3 before:bg-oren before:absolute before:-right-6">
+                        <p class="text-oren font-extrabold text-4xl relative before:block before:h-full before:w-3 before:bg-oren before:absolute before:-right-6 w-3/4 text-wrap mx-auto">
                             {{ $program['title'] }}</p>
                     </div>
                 </div>
             @else
                 <div class="grid grid-cols-1 lg:grid-cols-3 space-y-5">
-                    <div class="lg:justify-items-center lg:content-center text-center lg:text-left pl-10">
-                        <p
-                            class="text-oren font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-oren lg:before:absolute lg:before:-left-6">
+                    <div class="lg:justify-items-center lg:content-center text-center lg:text-left">
+                        <p class="text-oren font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-oren lg:before:absolute lg:before:-left-6 w-3/4 text-wrap mx-auto">
                             {{ $program['title'] }}</p>
                         <div class="lg:hidden block w-32 h-1 bg-oren mx-auto mt-2"></div>
                     </div>
@@ -157,7 +155,7 @@
 
                                 <!-- Back of card -->
                                 <div class="card-back rounded-3xl bg-oren">
-                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                                    <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                                         <p class="font-bold text-xl">{{ $program['title'] }}</p>
                                         <p class="text-white">{!! $program['body'] !!}</p>
                                         <button
@@ -177,7 +175,7 @@
             @endif
         @empty
             <div class="grid grid-cols-1 lg:grid-cols-3 space-y-5">
-                <div class="lg:justify-items-center lg:content-center text-center lg:text-left pl-10">
+                <div class="lg:justify-items-center lg:content-center text-center lg:text-left">
                     <p
                         class="text-oren font-extrabold text-4xl relative lg:before:block lg:before:h-full lg:before:w-3 lg:before:bg-oren lg:before:absolute lg:before:-left-6">
                     </p>

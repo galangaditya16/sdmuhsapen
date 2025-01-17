@@ -19,6 +19,40 @@
     @yield('extend-header')
     @stack('styles')
 
+    <style>
+      .scrollable-container {
+        overflow-y: auto;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .scrollable-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollable-container-with-custom-scrollbar {
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+
 </head>
 
 <body class="font-abeezee w-screen overflow-x-hidden" style="background: url('{{ asset('assets/images/body-bg.png') }}')">

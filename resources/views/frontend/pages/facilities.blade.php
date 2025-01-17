@@ -62,7 +62,7 @@
 
                 <!-- Back of card -->
                 <div class="card-back rounded-3xl bg-biru-tua">
-                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                     <p class="font-bold text-xl">{{ $facility['title'] }}</p>
                     <ul class="list-disc pl-10">
                       @foreach ($facility['details'] as $spec)
@@ -99,7 +99,7 @@
 
                 <!-- Back of card -->
                 <div class="card-back rounded-3xl bg-biru-tua">
-                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                     <p class="font-bold text-xl">{{ $facility['title'] }}</p>
                     <ul class="list-disc pl-10">
                       @foreach ($facility['details'] as $spec)
@@ -142,7 +142,7 @@
 
                 <!-- Back of card -->
                 <div class="card-back rounded-3xl bg-biru-tua">
-                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5">
+                  <div class="w-full h-full p-10 md:text-xl text-white space-y-5 scrollable-container-with-custom-scrollbar">
                     <p class="font-bold text-xl">{{ $facility['title'] }}</p>
                     <ul class="list-disc pl-10">
                       @foreach ($facility['details'] as $spec)
