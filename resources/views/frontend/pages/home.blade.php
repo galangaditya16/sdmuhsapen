@@ -65,19 +65,19 @@
                 <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
                     <dl class="grid grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-oren">Transactions every 24 hours</dt>
+                            <dt class="text-base leading-7 text-oren">Prestasi Matematika dan Sains</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl" data-text="945">945</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-pink">Assets under holding</dt>
+                            <dt class="text-base leading-7 text-pink">Prestasi Bahasa dan Sastra</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl" data-text="174">174</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-hijau-terang">New users annually</dt>
+                            <dt class="text-base leading-7 text-hijau-terang">Prestasi Bidang Agama</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl" data-text="100">19</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <dt class="text-base leading-7 text-biru-langit">New users annually</dt>
+                            <dt class="text-base leading-7 text-biru-langit">Prestasi Seni dan Olahraga</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl" data-text="84">84</dd>
                         </div>
                     </dl>
