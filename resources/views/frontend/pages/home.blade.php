@@ -36,7 +36,7 @@
             </button>
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
                 <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
-                    Inden PPDB
+                PPDB
                 </button>
             </a>
         </div>
@@ -251,7 +251,7 @@
                                     Str::limit(strip_tags($b->body ?? $b->body), 250, '...');
                                 }}
                             </p>
-                            <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
+                            <a href="#"
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Read more
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
