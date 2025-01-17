@@ -33,7 +33,7 @@
             <div class="flex flex-col">
                 <div class="container mx-auto">
                     <iframe class="rounded-2xl w-full h-auto md:w-[1000px] md:h-[497px]"
-                        src="https://www.youtube.com/watch?v=Tg3HPOaezX4"
+                        src="https://www.youtube.com/embed/Tg3HPOaezX4?si=rltAfYV7_FboAb9l"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
