@@ -77,11 +77,15 @@ class HomeController extends Controller
     {
         try {
             $lang = 'id';
-            $positions = AllCategoryTranslite::with(['CategoryTeacher', 'CategoryTeacher.Guru', 'CategoryTeacher.transLite'])
+            $positions = AllCategoryTranslite::with(['CategoryTeacher' => function ($query) {
+                $query->orderBy('order', 'ASC'); // Urutkan relasi
+            }, 'CategoryTeacher.Guru', 'CategoryTeacher.transLite'])
             ->whereNotNull('id_teacher_position')
             ->where('lang', $lang)
-            ->orderBy('order', 'ASC') // Tambahkan ini untuk mengurutkan berdasarkan kolom 'order'
-            ->get();
+            ->get()
+            ->sortBy(function ($item) {
+                return $item->CategoryTeacher->order ?? null;
+            });
             return view('frontend.pages.teacher-and-staff',compact('lang','positions'));
         } catch (\Throwable $th) {
             dd($th);
