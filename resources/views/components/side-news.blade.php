@@ -30,9 +30,10 @@
     <div class="grid">
       @foreach ($relatedNews as $relatedNew)
         <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-          <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
+          <div class="relative h-[50px] w-[100px] rounded-xl bg-cover"
+        style="background-image: url('{{ !empty($relatedNew->ContentNews->images) ? asset('assets/images/news').'/'.$relatedNew->ContentNews->getFirstImage() : asset('assets/images/default.jpg') }}');">
             <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-              <p>{{ $relatedNew->created_at ?? '-' }}</p>
+              <p>{{ $relatedNew->created_at->format('d F') ?? '-'}}</p>
             </div>
           </div>
           <p class="w-full">{{ $relatedNew->title ?? '-' }}</p>
