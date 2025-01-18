@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="w-full space-y-12">
-          <p class="font-bold text-3xl relative before:content-[''] before:absolute before:left-0 before:-bottom-4 before:h-1 before:w-48 before:bg-biru-tua">{{ $title->title ?? '-' }}</p>
+          <p class="font-bold text-3xl relative before:content-[''] before:absolute before:left-0 before:-bottom-4 before:h-1 before:w-48 before:bg-biru-tua">{{ $relatedNews->title ?? '-' }}</p>
           <img src="{{ asset('assets/images/news').'/'.$relatedNews->ContentNews->getFirstImage() }}" alt="banner.jpg" class="h-[450px] object-cover w-full rounded-lg">
           <div class="body">
             {!! $relatedNews->body !!}
