@@ -49,6 +49,7 @@ class BeritaController extends Controller
             $categorys = AllCategoryTranslite::with('CategoryNews','CategoryNews.transLite')
             ->whereHas('CategoryNews')
             ->where('lang',$lang)
+            ->orderBy('created_at','ASC')
             ->get();
             if($request->has('search')){
                  $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
