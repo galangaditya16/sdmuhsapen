@@ -95,40 +95,55 @@ class HomeController extends Controller
 
     public function facilities()
     {
-        $facilities = [
-            [
-                'title' => 'Masjid Safinatunnajah',
-                'details' => [
-                    "Dapat menampung 500 siswa dan karyawan",
-                    "Memiliki 1 tiang bendera",
-                    "Alas berupa paving block",
-                    "Saluran air anti mampet",
-                ],
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Masjid Safinatunnajah',
-                'details' => [
-                    "Dapat menampung 500 siswa dan karyawan",
-                    "Memiliki 1 tiang bendera",
-                    "Alas berupa paving block",
-                    "Saluran air anti mampet",
-                ],
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Masjid Safinatunnajah',
-                'details' => [
-                    "Dapat menampung 500 siswa dan karyawan",
-                    "Memiliki 1 tiang bendera",
-                    "Alas berupa paving block",
-                    "Saluran air anti mampet",
-                ],
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-        ];
+        // $facilities = [
+        //     [
+        //         'title' => 'Masjid Safinatunnajah',
+        //         'details' => [
+        //             "Dapat menampung 500 siswa dan karyawan",
+        //             "Memiliki 1 tiang bendera",
+        //             "Alas berupa paving block",
+        //             "Saluran air anti mampet",
+        //         ],
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        //     [
+        //         'title' => 'Masjid Safinatunnajah',
+        //         'details' => [
+        //             "Dapat menampung 500 siswa dan karyawan",
+        //             "Memiliki 1 tiang bendera",
+        //             "Alas berupa paving block",
+        //             "Saluran air anti mampet",
+        //         ],
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        //     [
+        //         'title' => 'Masjid Safinatunnajah',
+        //         'details' => [
+        //             "Dapat menampung 500 siswa dan karyawan",
+        //             "Memiliki 1 tiang bendera",
+        //             "Alas berupa paving block",
+        //             "Saluran air anti mampet",
+        //         ],
+        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
+        //     ],
+        // ];
+        try {
+            $lang = 'id';
+            $facilities = AllContentTranslite::with(['ContentContent' => function($query){
+                $query->where('id_category','201202507');
+            },'ContentContent.transLite','ContentContent.Categorys','ContentContent.Categorys.transLite'])
+            ->whereHas('ContentContent', function ($query) use ($lang){
+                $query->where('lang',$lang);
+                $query->where('id_category','201202507');
+            })
+            ->whereNotNull('id_content')
+            ->where('lang',$lang)
+            ->get();
+            return view('frontend.pages.facilities', compact('facilities','lang'));
+        } catch (\Throwable $th) {
+           abort(404);
+        }
 
-        return view('frontend.pages.facilities', ['facilities' => $facilities]);
     }
 
     public function programs()
