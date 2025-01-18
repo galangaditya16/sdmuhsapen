@@ -61,7 +61,7 @@
                 @endforelse
             </div>
             <div class="w-[30%] space-y-3 hidden lg:block">
-                <x-side-news />
+              <x-side-news/>
             </div>
         </div>
 

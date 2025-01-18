@@ -23,58 +23,18 @@ class SideNews extends Component
      */
     public function render(): View|Closure|string
     {
-        // $relatedNews = [
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        // ];
-
-        // $currentNews = [
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        //     [
-        //         'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-        //         'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg'),
-        //         'date' => now()->format('d M')
-        //     ],
-        // ];
-
         try {
             $lang = 'id';
             $currentNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)
             ->orderBy('created_at', 'ASC')
-            ->take(4);
+            ->take(4)
+            ->get();
             $relatedNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)
             ->orderBy('created_at', 'ASC')
-            ->take(4);
+            ->take(4)
+            ->get();
             return view('components.side-news', [
                 'relatedNews' => $relatedNews,
                 'currentNews' => $currentNews,

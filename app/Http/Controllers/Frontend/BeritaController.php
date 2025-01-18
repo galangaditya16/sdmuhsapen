@@ -64,7 +64,8 @@ class BeritaController extends Controller
                 $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
                 ->whereHas('ContentNews')->where('lang',$lang)
                 ->orderBy('created_at', 'DESC')
-                ->paginate(10);
+                ->take(5)
+                ->get();
                 return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
             }
 

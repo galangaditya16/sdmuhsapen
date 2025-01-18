@@ -4,17 +4,21 @@
       <p class="text-2xl font-bold">Berita Terbaru</p>
       <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
     </div>
+
     <div class="grid">
-      @foreach ($currentNews as $relatedNew)
-        <div class="flex mt-5 gap-x-3 wrapper-flip-date">
-          <div class="relative h-[50px] w-[100px] rounded-xl bg-cover" style="background-image: url('{{ $relatedNew['bg-image'] }}');" >
-            <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
-              <p>{{ $relatedNew->created_at ?? '-'}}</p>
-            </div>
+      @forelse ( $currentNews as $relatedNew )
+      <div class="flex mt-5 gap-x-3 wrapper-flip-date">
+        <div class="relative h-[50px] w-[100px] rounded-xl bg-cover"
+        style="background-image: url('{{ !empty($relatedNew->ContentNews->images) ? asset('assets/images/news').'/'.$relatedNew->ContentNews->getFirstImage() : asset('assets/images/default.jpg') }}');">
+          <div class="absolute h-full bg-gray-300 bg-opacity-70 top-0 w-full rounded-xl text-biru-tua text-lg font-bold items-center justify-center text-wrap hidden flip-date">
+            <p>{{ $relatedNew->created_at->format('d F') ?? '-'}}</p>
           </div>
-          <p class="w-full">{{ $relatedNew->title ?? '-' }}</p>
         </div>
-      @endforeach
+        <p class="w-full">{{ $relatedNew->title ?? '-' }}</p>
+      </div>
+      @empty
+
+      @endforelse
     </div>
   </div>
 
