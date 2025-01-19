@@ -85,25 +85,25 @@
                 {{-- <div class="swiper-wrapper"> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
-
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group">
-                                <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
-                                </svg>
-                                <h5
-                                    class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Unggul dalam Ilmu Pendidikan
-                                </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
-                                </p>
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
+                              <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
+                              </svg>
+                              <h5
+                                class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
+                                Unggul dalam Ilmu Pendidikan
+                              </h5>
+                              <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
+                              SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
+                              pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
+                              Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                              </p>
+
                             </a>
 
                         </div>
@@ -112,7 +112,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 hover:duration-300 group">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                     viewBox="0 0 24 24">
@@ -124,7 +124,7 @@
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
                                     Unggul dalam Ilmu Agama
                                 </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
                                     SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
                                     pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
                                     Sehingga para peserta didik dapat belajar dengan cara terbaik.
@@ -137,7 +137,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                     viewBox="0 0 24 24">
@@ -149,7 +149,7 @@
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
                                     Tenaga Pengajar yang Kompeten
                                 </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
                                     SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
                                     pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
                                     Sehingga para peserta didik dapat belajar dengan cara terbaik.
@@ -162,7 +162,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                     viewBox="0 0 24 24">
@@ -174,7 +174,7 @@
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
                                     Unggul dalam Inovasi dan Kreatifitas Pembelajaran
                                 </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
                                     SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
                                 </p>
                             </a>
@@ -185,7 +185,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                     viewBox="0 0 24 24">
@@ -197,7 +197,7 @@
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
                                     Fasilitas Pendukung yang Memadai
                                 </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
                                     SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
                                     pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
                                     Sehingga para peserta didik dapat belajar dengan cara terbaik.
@@ -210,7 +210,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="#"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                     viewBox="0 0 24 24">
@@ -222,7 +222,7 @@
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
                                     Program Ekstrakulikuler Penunjang Prestasi
                                 </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
                                     SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
                                     pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
                                     Sehingga para peserta didik dapat belajar dengan cara terbaik.
