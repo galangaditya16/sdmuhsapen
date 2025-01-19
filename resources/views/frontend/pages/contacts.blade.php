@@ -106,16 +106,18 @@
                     </div>
                     <div class="flex gap-x-2 mb-20">
                         <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <p>{{ $captcha ?? '-' }}</p>
+                            <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">{{ $captcha ?? '-' }}</p>
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <input name="email"
+                            <input name="captcha"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                                 type="text" placeholder="Tulis captcha" aria-label="Tulis captcha">
                         </div>
                     </div>
                     <button
-                        class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng">Submit</button>
+                      id="submit-btn"
+                      disabled
+                      class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng disabled:bg-gray-400">Submit</button>
                 </form>
             </div>
         </div>
@@ -194,5 +196,16 @@
 @endsection
 
 @section('extend-script')
-    <script></script>
+    <script>
+      const captcha = document.getElementById('captcha').innerText;
+      const submitBtn = document.getElementById('submit-btn');
+
+      document.querySelector('input[name="captcha"]').addEventListener('input', function() {
+        if (this.value === captcha) {
+          submitBtn.disabled = false;
+        } else {
+          submitBtn.disabled = true;
+        }
+      });
+    </script>
 @endsection
