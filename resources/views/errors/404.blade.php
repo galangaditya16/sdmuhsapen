@@ -11,7 +11,7 @@
       <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
     </div>
   </section>
-  @include('frontend.layouts.footer-working-hours')
+  @include('frontend.layouts.footer')
 @endsection
 
 @section('extend-script')

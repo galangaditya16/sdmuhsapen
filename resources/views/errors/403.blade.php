@@ -9,7 +9,7 @@
       </div>
     </div>
   </section>
-  @include('frontend.layouts.footer-working-hours')
+  @include('frontend.layouts.footer')
 @endsection
 
 @section('extend-script')
