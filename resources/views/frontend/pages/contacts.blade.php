@@ -67,23 +67,29 @@
                 <p class="text-3xl text-biru-tua text-center">Kirimi Kami Pesan</p>
                 <p class="text-black text-sm text-center">Kami sangat ingin mendengar pesan, saran, kritik, dan masukan dari
                     Anda.</p>
-                <form action="" method="post" class="space-y-6">
+                <form action="{{ route('contact-us')}}" method="post" class="space-y-6">
                     @csrf
                     <div class="flex items-center border-b border-black py-1">
                         <input name="name"
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                            type="text" placeholder="Nama anda" aria-label="Nama anda">
+                            type="text" placeholder="Nama anda" aria-label="Nama anda"
+                            required
+                            >
                     </div>
                     <div class="flex gap-x-1.5">
-                        <div class="flex items-center border-b border-black py-1">
+                        <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="phone"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="No. hp" aria-label="No. hp">
+                                type="text" placeholder="No. hp" aria-label="No. hp"
+                                required
+                                >
                         </div>
-                        <div class="flex items-center border-b border-black py-1">
+                        <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="email"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="Email" aria-label="Email">
+                                type="text" placeholder="Email" aria-label="Email"
+                                required
+                                >
                         </div>
                     </div>
                     <div class="flex items-center border-b border-black py-1">
@@ -96,11 +102,11 @@
                     <div class="flex items-center border-b border-black py-1">
                         <textarea
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                            type="text" placeholder="Pesan Anda" aria-label="Pesan Anda"></textarea>
+                            type="text" placeholder="Pesan Anda" aria-label="Pesan Anda" required></textarea>
                     </div>
                     <div class="flex gap-x-2 mb-20">
                         <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <p>Captcha</p>
+                            <p>{{ $captcha ?? '-' }}</p>
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="email"

@@ -14,7 +14,7 @@ use App\Models\Gallery;
 use App\Models\TeacherPositionnew;
 use Database\Seeders\TeacherPosition;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -162,7 +162,8 @@ class HomeController extends Controller
     {
         try {
             $contact = Contact::latest()->first();
-            return view('frontend.pages.contacts', compact('contact'));
+            $captcha = Str::random(6);
+            return view('frontend.pages.contacts', compact('contact', 'captcha'));
         } catch (\Throwable $th) {
         }
     }

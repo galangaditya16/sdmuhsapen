@@ -18,10 +18,10 @@ class ContactController extends BaseController
     public function index()
     {
         try {
-            return redirect()->route('contact.show',1);
+            return redirect()->route('contact.show', 1);
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->back()->with('error','galga melakukan aksi');
+            return redirect()->back()->with('error', 'galga melakukan aksi');
         }
     }
 
@@ -40,19 +40,19 @@ class ContactController extends BaseController
     {
         //
         try {
-            if($request->has('logo')){
-                $nameImage = time().'.'. $request->logo->extension();
+            if ($request->has('logo')) {
+                $nameImage = time() . '.' . $request->logo->extension();
                 $path = public_path('assets/images/contact');
-                $request->logo->move($path,$nameImage);
+                $request->logo->move($path, $nameImage);
                 $request['image']  = $nameImage;
             }
             $request['slug']    = Str::slug($request->name) ?? '-';
             $data  = new Contact($request->input());
             $data->save();
-            return redirect()->route('contact.index')->with('success','Data Success Save');
+            return redirect()->route('contact.index')->with('success', 'Data Success Save');
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->back()->with('error','galga melakukan aksi');
+            return redirect()->back()->with('error', 'galga melakukan aksi');
         }
     }
 
@@ -60,13 +60,13 @@ class ContactController extends BaseController
      * Display the specified resource.
      */
     public function show(string $id)
-    {   
+    {
         try {
             $data = Contact::latest()->first();
-            return $this->makeView('backend.pages.master.contact.edit',compact('data'));
+            return $this->makeView('backend.pages.master.contact.edit', compact('data'));
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->back()->with('error','galga melakukan aksi');
+            return redirect()->back()->with('error', 'galga melakukan aksi');
         }
     }
 
@@ -87,21 +87,21 @@ class ContactController extends BaseController
         try {
             $data = Contact::findorfail($id);
             $path = public_path('assets/images/contact');
-            if($request->has('logo')){
-                if($data->logo){
+            if ($request->has('logo')) {
+                if ($data->logo) {
                     \File::delete(public_path('assets/images/contact/' . $data->logo));
-                    $nameImage = time().'.'.$request->logo->extension();
-                    $request->logo->move($path,$nameImage);
+                    $nameImage = time() . '.' . $request->logo->extension();
+                    $request->logo->move($path, $nameImage);
                     $request['image']   = $nameImage;
-                }else{
+                } else {
                     $request['image'] = $data->logo;
                 }
             }
             $data->update($request->input());
-            return redirect()->route('contact.index')->with('success','Data Success Save');
+            return redirect()->route('contact.index')->with('success', 'Data Success Save');
         } catch (\Throwable $th) {
             dd($th);
-            return redirect()->back()->with('error','galga melakukan aksi');
+            return redirect()->back()->with('error', 'galga melakukan aksi');
         }
     }
 
@@ -111,5 +111,16 @@ class ContactController extends BaseController
     public function destroy(string $id)
     {
         //
+    }
+
+    public function contactUs(Request $request)
+    {
+        try {
+            // TODO: write the logic here
+            return redirect()->back()->with('success', 'Data Success Save');
+        } catch (\Throwable $th) {
+            dd($th);
+            return redirect()->back()->with('error', 'galga melakukan aksi');
+        }
     }
 }

@@ -103,6 +103,8 @@ Route::get('/news/{id}/{lang}', [HomeController::class, 'newsDetail'])->name('ne
 Route::get('/galery', [HomeController::class, 'galery'])->name('front.galery');
 Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
 
+Route::post('/contact-us', [ContactController::class, 'contactUs'])->name('contact-us');
+
 Route::get('test', function () {
     return view('errors.404');
 });
