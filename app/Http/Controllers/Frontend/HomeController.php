@@ -22,21 +22,21 @@ class HomeController extends Controller
     {
 
         try {
-          $lang  = 'id';
-          $slider= Slider::all();
-          DB::enableQueryLog();
-          $berita  =AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
-          ->whereHas('ContentNews', function($query){
-                $query->orderBy('created_at','ASC');
-          })->where('lang',$lang)
-          ->paginate(10);
-          $gallerys = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
-          return view('frontend.pages.home', compact('slider','berita','lang','gallerys'));
+            $lang  = 'id';
+            $slider = Slider::all();
+            DB::enableQueryLog();
+            $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+                ->whereHas('ContentNews', function ($query) {
+                    $query->orderBy('created_at', 'ASC');
+                })->where('lang', $lang)
+                ->latest()
+                ->paginate(10);
+            $gallerys = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
+            return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
             dd($th);
             return view('errors.404');
         }
-
     }
 
     public function profile()
@@ -57,16 +57,16 @@ class HomeController extends Controller
                 'ContentContent.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite berdasarkan lang
                 },
-                'ContentContent' => function ($query){
-                    $query->where('id_category','201202506');
+                'ContentContent' => function ($query) {
+                    $query->where('id_category', '201202506');
                 },
                 'ContentContent.Categorys.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite pada Categorys berdasarkan lang
                 },
             ])
-            ->whereNotNull('id_content')
-            ->where('lang', $lang)->first();
-            return view('frontend.pages.principals-speech',compact('data','lang'));
+                ->whereNotNull('id_content')
+                ->where('lang', $lang)->first();
+            return view('frontend.pages.principals-speech', compact('data', 'lang'));
         } catch (\Throwable $th) {
             dd($th);
             abort(404);
@@ -80,13 +80,13 @@ class HomeController extends Controller
             $positions = AllCategoryTranslite::with(['CategoryTeacher' => function ($query) {
                 $query->orderBy('order', 'ASC'); // Urutkan relasi
             }, 'CategoryTeacher.Guru', 'CategoryTeacher.transLite'])
-            ->whereNotNull('id_teacher_position')
-            ->where('lang', $lang)
-            ->get()
-            ->sortBy(function ($item) {
-                return $item->CategoryTeacher->order ?? null;
-            });
-            return view('frontend.pages.teacher-and-staff',compact('lang','positions'));
+                ->whereNotNull('id_teacher_position')
+                ->where('lang', $lang)
+                ->get()
+                ->sortBy(function ($item) {
+                    return $item->CategoryTeacher->order ?? null;
+                });
+            return view('frontend.pages.teacher-and-staff', compact('lang', 'positions'));
         } catch (\Throwable $th) {
             dd($th);
             abort(404);
@@ -129,93 +129,74 @@ class HomeController extends Controller
         // ];
         try {
             $lang = 'id';
-            $facilities = AllContentTranslite::with(['ContentContent' => function($query){
-                $query->where('id_category','201202507');
-            },'ContentContent.transLite','ContentContent.Categorys','ContentContent.Categorys.transLite'])
-            ->whereHas('ContentContent', function ($query) use ($lang){
-                $query->where('lang',$lang);
-                $query->where('id_category','201202507');
-            })
-            ->whereNotNull('id_content')
-            ->where('lang',$lang)
-            ->get();
-            return view('frontend.pages.facilities', compact('facilities','lang'));
+            $facilities = AllContentTranslite::with(['ContentContent' => function ($query) {
+                $query->where('id_category', '201202507');
+            }, 'ContentContent.transLite', 'ContentContent.Categorys', 'ContentContent.Categorys.transLite'])
+                ->whereHas('ContentContent', function ($query) use ($lang) {
+                    $query->where('lang', $lang);
+                    $query->where('id_category', '201202507');
+                })
+                ->whereNotNull('id_content')
+                ->where('lang', $lang)
+                ->get();
+            return view('frontend.pages.facilities', compact('facilities', 'lang'));
         } catch (\Throwable $th) {
-           abort(404);
+            abort(404);
         }
-
     }
 
     public function programs()
     {
         try {
             $lang = 'id';
-            $programs = AllContentTranslite::with('ContentPrograms','ContentPrograms.Categorys.transLite','ContentPrograms.transLite')
-            ->whereHas('ContentPrograms')->where('lang',$lang)
-            ->get();
+            $programs = AllContentTranslite::with('ContentPrograms', 'ContentPrograms.Categorys.transLite', 'ContentPrograms.transLite')
+                ->whereHas('ContentPrograms')->where('lang', $lang)
+                ->get();
             return view('frontend.pages.programs', compact('programs'));
         } catch (\Throwable $th) {
             //throw $th;
         }
-
     }
 
     public function contacts()
     {
         try {
             $contact = Contact::latest()->first();
-            return view('frontend.pages.contacts',compact('contact'));
+            return view('frontend.pages.contacts', compact('contact'));
         } catch (\Throwable $th) {
-
         }
-
     }
 
     public function news()
     {
-        $news = [
-            [
-                'title' => 'Prestasi SD Muhammadiyah Sapen di Olimpiade Internasional',
-                'body' => 'SD Muhammadiyah Sapen menyediakan berbagai sarana prasarana yang mendukung pembalajaran siswa untuk meraih prestasi akademis dan',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-            [
-                'title' => 'Kelas WFH Membantu Siswa Beradaptasi dengan Teknologi',
-                'body' => 'Kelas WFH (Work From Home) telah menjadi tantangan sekaligus peluang bagi siswa untuk beradaptasi dengan teknologi. Berikut beberapa cara di mana pembelajaran jarak jauh...',
-                'bg-image' => asset('assets/images/dummy-1.jpeg')
-            ],
-        ];
+        $lang = 'id';
+        $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+            ->whereHas('ContentNews', function ($query) {
+                $query->orderBy('created_at', 'ASC');
+            })->where('lang', $lang)
+            ->latest()
+            ->paginate(10);
 
         return view('frontend.pages.news', [
-            'news' => $news,
+            'news' => $berita,
         ]);
     }
 
-    public function newsDetail(string $slug,$lang)
+    public function newsDetail(string $slug, $lang)
     {
 
         try {
-            $relatedNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory','ContentNews.hasCategory.transLite')
-            ->whereHas('ContentNews.hasCategory.transLite', function($query) use ($lang){
-                $query->where('lang',$lang);
-            })
-            ->whereNotNull('id_news')
-            ->where('lang',$lang)
-            ->where('slug',$slug)
-            ->first();
-            if($relatedNews->ContentNews->hasCategory !== null){
-                $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
-            }else{
+            $relatedNews = AllContentTranslite::with('ContentNews', 'ContentNews.hasCategory', 'ContentNews.hasCategory.transLite')
+                ->whereHas('ContentNews.hasCategory.transLite', function ($query) use ($lang) {
+                    $query->where('lang', $lang);
+                })
+                ->whereNotNull('id_news')
+                ->where('lang', $lang)
+                ->where('slug', $slug)
+                ->first();
+            if ($relatedNews->ContentNews->hasCategory !== null) {
+                $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
+            } else {
                 throw new \Exception('An error occurred. Please try again later.');
             }
             return view('frontend.pages.news-detail', [
@@ -226,7 +207,6 @@ class HomeController extends Controller
             dd($th);
             abort(404);
         }
-
     }
 
     public function searchNews(Request $request)
@@ -264,23 +244,21 @@ class HomeController extends Controller
         try {
             $lang = 'id';
             $galeries = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->paginate(6);
-            return view('frontend.pages.galery', compact('lang','galeries'));
+            return view('frontend.pages.galery', compact('lang', 'galeries'));
         } catch (\Throwable $th) {
             abort(404);
         }
-
     }
 
     public function galeryDetail(string $slug)
     {
         $lang = 'id';
-        if($lang == 'id'){
+        if ($lang == 'id') {
             $gallery = Gallery::where('slug_id', $slug)->first();
-        }else{
+        } else {
             $gallery = Gallery::where('slug_en', $slug)->first();
-
         }
-        return view('frontend.pages.galery-detail',compact('gallery','lang'));
+        return view('frontend.pages.galery-detail', compact('gallery', 'lang'));
     }
 
     public function globalSearch()
