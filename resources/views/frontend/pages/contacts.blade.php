@@ -8,7 +8,7 @@
                 <p class="text-3xl font-bold text-biru-tua">Mari Saling Terhubung</p>
                 <p class="text-black text-sm">Apakah Anda mencari cara untuk menghubungi kami? Anda dapat menghubungi kami
                     melalui telepon, email, atau dengan mengisi formulir kontak online kami.</p>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -21,7 +21,7 @@
                         <p class="font-bold text-xl">{{ $contact->whatsapp ?? '-' }}</p>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -34,7 +34,7 @@
                         <p class="font-bold text-xl">{{ $contact->email ?? '-' }}</p>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -47,7 +47,7 @@
                         <p class="font-bold text-xl">{{ $contact->tlp ?? '-' }}</p>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -119,7 +119,7 @@
             <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-10">
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -134,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -147,7 +147,7 @@
                     </div>
                 </div>
 
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -160,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
