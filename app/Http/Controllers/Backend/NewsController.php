@@ -212,4 +212,27 @@ class NewsController extends BaseController
             return redirect()->back()->with('error','Error Action');
         }
     }
+
+    public function headline($id){
+        try {
+            $news   = News::findOrFail($id);
+            $counter= News::where('headline','!=', 0)->get();
+            if(count($counter) < 3){
+                if($news && $news->headline == 0){
+                    $news->headline = 1;
+                    $news->save();
+                    return redirect()->route('news.index')->with('success','Success Set Hadline');
+                }else{
+                    $news->headline = 0;
+                    $news->save();
+                    return redirect()->route('news.index')->with('success','Success Unset Hadline');
+                }
+            }else{
+                return redirect()->back()->with('error','Headline Max');
+            }
+        } catch (\Throwable $th) {
+            dd($th);
+           abort(404);
+        }
+    }
 }

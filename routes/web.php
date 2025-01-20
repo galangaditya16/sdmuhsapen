@@ -55,6 +55,8 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
     Route::resource('category-programs', CategoryProgramController::class);
     // news
     Route::resource('news',NewsController::class);
+    // headline news
+    Route::get('news/headline/{id}',[NewsController::class,'headline'])->name('headline');
     // content
     Route::resource('content', ContetController::class);
     //slider
@@ -99,7 +101,6 @@ Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->na
 Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
-// Route::get('/news', [HomeController::class, 'news'])->name('news');
 Route::get('/news',[BeritaController::class,'listNews'])->name('front.news');
 Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
 Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');

@@ -31,16 +31,21 @@ class SideNews extends Component
             ->orderBy('created_at', 'ASC')
             ->take(4)
             ->get();
-            $relatedNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
-            ->whereHas('ContentNews')->where('lang',$lang)
+            $relatedNews = AllContentTranslite::with(['ContentNews','ContentNews.hasCategory'])
+            ->whereHas('ContentNews', function($query){
+                $query->where('headline','!=',0);
+            })
+            ->where('lang',$lang)
             ->orderBy('created_at', 'ASC')
             ->take(4)
             ->get();
             $banners = Banner::orderBy('created_at', 'DESC')->take(3)->get();
+
             return view('components.side-news', [
                 'relatedNews' => $relatedNews,
                 'currentNews' => $currentNews,
                 'banners' => $banners,
+                'lang'  => $lang,
             ]);
         } catch (\Throwable $th) {
             dd($th);

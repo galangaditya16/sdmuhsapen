@@ -185,7 +185,6 @@ class HomeController extends Controller
 
     public function newsDetail(string $slug, $lang)
     {
-
         try {
             $relatedNews = AllContentTranslite::with('ContentNews', 'ContentNews.hasCategory', 'ContentNews.hasCategory.transLite')
                 ->whereHas('ContentNews.hasCategory.transLite', function ($query) use ($lang) {
@@ -195,15 +194,20 @@ class HomeController extends Controller
                 ->where('lang', $lang)
                 ->where('slug', $slug)
                 ->first();
-            if ($relatedNews->ContentNews->hasCategory !== null) {
-                $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
-            } else {
-                throw new \Exception('An error occurred. Please try again later.');
+            if($relatedNews != null){
+                if ($relatedNews->ContentNews->hasCategory !== null) {
+                    $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
+                } else {
+                    throw new \Exception('An error occurred. Please try again later.');
+                }
+                return view('frontend.pages.news-detail', [
+                    'title' => $title ?? '-',
+                    'relatedNews' => $relatedNews,
+                ]);
+            }else{
+                abort(404);
             }
-            return view('frontend.pages.news-detail', [
-                'title' => $title ?? '-',
-                'relatedNews' => $relatedNews,
-            ]);
+
         } catch (\Throwable $th) {
             dd($th);
             abort(404);
