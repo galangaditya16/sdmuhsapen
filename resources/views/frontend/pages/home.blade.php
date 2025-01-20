@@ -266,7 +266,7 @@
     {{-- GALERY --}}
     <section class=" border-gray-200 py-10">
         <div class="w-full block container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
+            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto my-10">Galeri Kegiatan</h1>
             <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0"></div>
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
               @forelse ( $gallerys as $key => $value)
@@ -746,9 +746,6 @@
                         </button>
 
                     </div>
-
-
-
                     <a target="_blank" href="https://www.google.com/maps/place/SD+Muhammadiyah+Sapen/@-7.7859359,110.3899218,17z/data=!4m8!3m7!1s0x2e7a59dafb0f533f:0x703ab4cd80139883!8m2!3d-7.7859359!4d110.3924967!9m1!1b1!16s%2Fg%2F11f3rdnn6m?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D">
                         <button type="button"
                             class="mt-5 relative text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
@@ -767,7 +764,7 @@
     </section>
 
     {{-- SEMUA SPONSOR --}}
-    <section class=" border-gray-200 mt-10">
+    <section class=" border-gray-200 mx-auto">
         <!--HTML CODE-->
         <div class="w-full container mx-auto">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
@@ -795,7 +792,7 @@
     </section>
 
     {{-- FAQ --}}
-    <section class=" border-gray-200 my-10 pt-40">
+    <section class=" border-gray-200 my-10 pt-20">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Pertanyaan yang Sering Ditanyakan</h1>
