@@ -52,7 +52,7 @@
             <h1 class="text-2xl md:text-5xl font-bold my-8 text-oren text-center">Tentang SD Muhammadiyah Sapen</h1>
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333"
+                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
                         alt="image description">
                 </div>
                 <div>
@@ -241,33 +241,26 @@
     <!-- END - KEUNGGULAN -->
 
     <!-- SEJARAH SEKOLAH  -->
-    <section class="my-20">
+    {{-- <section class="my-20">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
-
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
                 <div class="flex-auto w-50">
-
                     <p class="text-sm md:text-base mt-3 text-justify">
                         SD Muhammadiyah Sapen berdiri pada tahun 1 Agustus 1967. Tidak seperti sekolah-sekolah swasta sekarang yang didirikan dengan modal besar oleh pemilik atau yayasannya, SD Muhammadiyah Sapen didirikan dengan modal niat, semangat, dan keihlasan oleh para pendirinya. Diantara para tokoh yang memprakarsai berdirinya SD Muhammadiyah Sapen adalah H. Sutrisno, Drs. Marsum, M.M., Sumarno, Djazari Hisyam, S.H., Drs. Kirmadji, dan tokoh sekitar kampung Sapen yang peduli dengan pendidikan.
                     </p>
-
                     <a href="#">
                         <button type="button" class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
                             Pelajari Selengkapnya
                         </button>
                     </a>
-
                 </div>
                 <div>
                     <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
                 </div>
-
-
             </div>
         </div>
-
-    </section>
+    </section> --}}
     <!-- END - SEJARAH SEKOLAH -->
 
     <!-- PRESTASI -->
@@ -437,7 +430,7 @@
                     <p class="text-sm md:text-xl my-3 text-justify">
                         Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
                     </p>
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
+                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/testi-20012025.jpeg" alt="visi dan misi sd muh sapen">
                 </div>
                 <div>
                     <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>
@@ -511,17 +504,6 @@
 
     </section>
     <!-- END - TUJUAN -->
-
-    <section class="py-10 bg-white">
-        <div class="w-full container mx-auto px-4 py-5">
-            <div class="text-center justify-center">
-                <div class="text-center">
-                    <h1 class="text-xl md:text-4xl font-bold my-5 text-dark-blue mx-auto">Kurikulum yang Digunakan</h1>
-                    <img class="h-auto" src="{{ asset('assets/images/logo/logo-kurikulum-merdeka.png') }}" alt="logo kurikulum merdeka">
-                </div>
-            </div>
-        </div>
-    </section>
 
     @include('frontend.layouts.footer')
 @endsection
