@@ -75,7 +75,7 @@
     <!-- END - PROFILE SD MUHAMDIYAH SAPEN -->
 
     <!-- KEUNGGULAN -->
-    <section class=" border-gray-200 my-20">
+    <section class=" border-gray-200">
 
         <div class="w-full relative container mx-auto px-4">
             <div class="text-center">
@@ -85,7 +85,7 @@
                 {{-- <div class="swiper-wrapper"> --}}
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                               <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -99,9 +99,7 @@
                                 Unggul dalam Ilmu Pendidikan
                               </h5>
                               <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                              SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                              pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                              Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                SD Muhammadiyah Sapen Yogyakarta unggul dalam ilmu pendidikan dengan kurikulum terpadu, metode pengajaran inovatif, dan tenaga pendidik berkualitas yang berkomitmen mencetak generasi cerdas, kreatif, dan berakhlak mulia.
                               </p>
 
                             </a>
@@ -111,7 +109,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -125,9 +123,7 @@
                                     Unggul dalam Ilmu Agama
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam ilmu agama melalui program tahfiz Al-Qur'an, pembiasaan ibadah, dan penguatan akhlak Islami, membimbing siswa menjadi pribadi beriman, berakhlak mulia, dan berkarakter kuat.
                                 </p>
                             </a>
 
@@ -136,7 +132,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -150,9 +146,7 @@
                                     Tenaga Pengajar yang Kompeten
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta memiliki tenaga pengajar yang kompeten, berpengalaman, dan berdedikasi tinggi dalam mendidik siswa, menggunakan metode inovatif untuk mencetak generasi berprestasi, berkarakter Islami, dan berdaya saing global.
                                 </p>
                             </a>
 
@@ -161,7 +155,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -175,7 +169,7 @@
                                     Unggul dalam Inovasi dan Kreatifitas Pembelajaran
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
+                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam inovasi dan kreativitas pembelajaran dengan menerapkan metode modern, teknologi interaktif, dan pendekatan tematik, sehingga siswa lebih aktif, kreatif, dan terlibat dalam proses belajar.
                                 </p>
                             </a>
 
@@ -184,7 +178,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -198,9 +192,7 @@
                                     Fasilitas Pendukung yang Memadai
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta memiliki fasilitas pendukung yang memadai, seperti ruang kelas modern, perpustakaan lengkap, laboratorium teknologi, area olahraga, dan tempat ibadah, menciptakan lingkungan belajar yang nyaman dan kondusif.
                                 </p>
                             </a>
 
@@ -209,7 +201,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -223,9 +215,7 @@
                                     Program Ekstrakulikuler Penunjang Prestasi
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                    pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                    Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta memiliki program ekstrakurikuler unggulan yang menunjang prestasi, seperti seni, olahraga, tahfiz Al-Qur'an, teknologi dan keterampilan , yang membantu mengembangkan bakat dan minat siswa secara optimal.
                                 </p>
                             </a>
 
@@ -264,7 +254,7 @@
     <!-- END - SEJARAH SEKOLAH -->
 
     <!-- PRESTASI -->
-    <section class=" border-gray-200 my-20 py-5 bg-biru-tua">
+    <section class=" border-gray-200 my-10 py-5 bg-biru-tua">
 
         <div class="w-full relative container mx-auto px-4 py-5">
             <div class="text-center">

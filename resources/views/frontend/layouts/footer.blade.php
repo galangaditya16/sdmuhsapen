@@ -23,39 +23,50 @@
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
-                                <span>Profile Sekolah SD Sapen</span>
+                                <a href="{{ route('profile') }}">
+                                <p>Profile Sekolah SD Sapen</p>
+                                </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
+                                <a href="{{ route('teacher-and-staff') }}">
                                 <span>Profile Pengajar</span>
+                                </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
-                                <span>Kurikulum yang Digunakan</span>
+                                <a href="{{ route('contacts') }}">
+                                <p>Hubungi Kami</p>
+                                </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
-                                <span>Fasilitas Sekolah</span>
+                                <a href="{{ route('facilities') }}">
+                                <p>Fasilitas Sekolah</p>
+                                </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
+                                <a href="{{ route('front.news') }}">
                                 <span>Berita Sekolah</span>
+                                </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
-                                <span>Galeri Kegiatan Sekolah</span>
+                                <a href="{{ route('front.galery') }}">
+                                <p>Galeri Kegiatan Sekolah</p>
+                                </a>
                             </li>
-
                         </ul>
                 </div>
                 <div>
