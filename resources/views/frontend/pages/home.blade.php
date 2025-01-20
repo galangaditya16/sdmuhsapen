@@ -134,7 +134,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
                               <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
@@ -162,7 +162,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
                               <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
@@ -187,7 +187,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
 
-                            <a href="#"
+                            <a href="javascript:void(0)"
                                 class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
                               <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
