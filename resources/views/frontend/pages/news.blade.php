@@ -47,7 +47,9 @@
                         </div>
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
-                                <p class="text-lg font-bold">{{ $new['title'] }}</p>
+                                <a href="{{ route('newsDetail', ['id' => $new->slug, 'lang' => $lang]) }}">
+                                    <strong><p class="text-lg font-bold">{{ $new['title'] }}</p></strong>
+                                </a>
                                 <p>{!! str($new->body)->limit(100) !!}</p>
                             </div>
                             <div class="flex justify-center mt-5">
