@@ -42,9 +42,11 @@
     </div>
   </div>
   @forelse ( $banners as $banner )
-  <div class="bg-cover bg-center h-40 rounded-3xl  hidden md:block mt-10"
-       style="background-image: url('{{ asset('assets/images/banner/').'/'.$banner->images }}'); ">
-  </div>
+  <a href="{{ $banner->link !=  NULL ? $banner->link : '#'  }}">
+    <div class="bg-cover bg-center h-40 rounded-3xl hidden md:block mt-10"
+         style="background-image: url('{{ asset('assets/images/banner/').'/'.$banner->images }}'); ">
+    </div>
+  </a>
   @empty
 
   @endforelse
