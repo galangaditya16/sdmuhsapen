@@ -31,9 +31,11 @@
             <h1 class="text-xl md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
             <h1 class="text-xl md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
             <h1 class="text-xl md:text-lg my-3 text-white">Sekolahku Inspirasiku</h1>
-            <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
-                Pelajari Lebih Lanjut
-            </button>
+            <a href="{{ route('profile') }}">
+                <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
+                    Pelajari Lebih Lanjut
+                </button>
+            </a>
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
                 <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
                 PPDB
@@ -126,7 +128,7 @@
                 <h1 class="text-4xl font-bold my-3 text-black mx-auto">Keunggulan SD Muhammadiyah Sapen</h1>
                 <p class="text-lg my-6 text-black mx-auto">
                     SD Muhammadiyah Sapen adalah sekolah yang memiliki berbagai keungggulan dalam membentuk karakter peserta
-                    didik antara lain :
+                    didik antara lain:
                 </p>
             </div>
             <div class="flex flex-nowrap lg:grid overflow-x-auto md:grid-cols-2 lg:grid-cols-3 gap-16 max-h-[65%]">
@@ -234,7 +236,9 @@
                         </div>
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
-                                <p class="text-lg font-bold">{{ $b['title'] }}</p>
+                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
+                                    <strong><p class="text-lg font-bold">{{ $b['title'] }}</p></strong>
+                                </a>
                                 <p class="news-content">{!! Str::limit(strip_tags($b->body), 150) !!}</p>
                             </div>
                             <div class="flex justify-center mt-5">
