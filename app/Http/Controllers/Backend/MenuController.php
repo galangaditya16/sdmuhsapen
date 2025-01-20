@@ -120,9 +120,8 @@ class MenuController extends BaseController
         DB::beginTransaction();
         $menu = NULL;
         try {
-            $menu = Menu::find($id);
-            $menu->is_active = 1;
-            $menu->save();
+            $menu = Menu::findOrFail($id);
+            $menu->delete();
             DB::commit();
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
         } catch (\Throwable $th) {
