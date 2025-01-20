@@ -18,6 +18,16 @@
                     </div>
                 </div>
                 <div class="mb-3">
+                  <label class="form-label required">Link</label>
+                  <div>
+                      <input type="text" name="link" class="form-control" aria-describedby="slug"
+                          placeholder="Enter Link" value="{{ old('link') }}">
+                      @error('link')
+                          <div class="invalid-feedback" style="display: block">{{ $message }}</div>
+                      @enderror
+                  </div>
+              </div>
+                <div class="mb-3">
                     <label class="form-label">Images(1 MB)</label>
                     <div>
                         <input type="file" name="image" class="form-control" aria-describedby="title"

@@ -41,6 +41,7 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->title ?? '-' }}</td>
                                 <td>{{ $row->image ?? '-' }}</td>
+                                <td>{{ $row->link ?? '-' }}</td>
                                 <td>{{ $row->created_at->format('d F Y') ?? '-' }}</td>
                                 <td>
                                     @if (!$row->delete_at)
