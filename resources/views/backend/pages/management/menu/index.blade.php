@@ -38,23 +38,30 @@
                                 <td>{{ $menu->parent ? $menu->parent->menu_name : '-' }}</td>
                                 <td>{{ $menu->icon }}</td>
                                 <td>
-                                    @if ($menu->is_active != 1)
-                                        <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('management-menu.edit',$menu) }}" class="btn btn-primary btn-pill w-120">
-                                                Edit
-                                            </a>
-                                            <a href="{{ route('softdel.menu',$menu) }}" class="btn btn-danger btn-pill w-120">
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    @else
-                                        <div class="col-6 col-sm-4 col-md- col-xl py-3">
-                                            <a href="#" class="btn btn-warning btn-pill w-200">
-                                                Restore
-                                            </a>
-                                        </div>
-                                    @endif
-                                </td>
+                                  @if (!$menu->delete_at)
+                                      <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                          <a href="{{ route('management-menu.edit', $menu->id) }}"
+                                              class="btn btn-primary btn-pill w-120">
+                                              Edit
+                                          </a>
+                                          <form action="{{ route('management-menu.destroy', $menu->id) }}" method="POST" style="display: inline;">
+                                              @csrf
+                                              @method('DELETE')
+                                              <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                  Hapus
+                                              </button>
+                                          </form>
+
+                                      </div>
+                                  @else
+                                      <div class="col-6 col-sm-4 col-md- col-xl py-3">
+                                          <a href=""
+                                              class="btn btn-warning btn-pill w-200">
+                                              Restore
+                                          </a>
+                                      </div>
+                                  @endif
+                              </td>
                             </tr>
                             @empty
                             <tr>

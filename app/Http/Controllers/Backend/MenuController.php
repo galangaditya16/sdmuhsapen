@@ -125,6 +125,7 @@ class MenuController extends BaseController
             DB::commit();
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
         } catch (\Throwable $th) {
+            dd($th);
             DB::rollBack();
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
