@@ -32,7 +32,7 @@
                 <div class="mb-3">
                   <label class="form-label">Whatsapp</label>
                   <div>
-                      <input type="number" class="form-control" name="whatsapp" aria-describedby="title" placeholder="Enter number" value="{{ $data->radio ?? old('whatsapp')}}">
+                      <input type="number" class="form-control" name="whatsapp" aria-describedby="title" placeholder="Enter number" value="{{ $data->whatsapp ?? old('whatsapp')}}">
                       @error('whatsapp')
                           <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                       @enderror
@@ -68,7 +68,7 @@
                 <div class="mb-3">
                     <label class="form-label">email</label>
                     <div>
-                        <input type="text" class="form-control" name="email" aria-describedby="title" placeholder="Enter email" value="{{ $data->email ?? old('email')}}">
+                        <input type="text" class="form-control" name="mail" aria-describedby="title" placeholder="Enter email" value="{{ $data->mail ?? old('email')}}">
                         @error('email')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror

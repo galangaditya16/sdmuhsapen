@@ -31,7 +31,7 @@
                     </div>
                     <div class="w-5/6">
                         <p class="text-sm">Email</p>
-                        <p class="font-bold text-xl">{{ $contact->email ?? '-' }}</p>
+                        <p class="font-bold text-xl">{{ $contact->mail ?? '-' }}</p>
                     </div>
                 </div>
                 <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
