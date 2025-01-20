@@ -149,9 +149,10 @@
                                   Unggul dalam Prestasi Akademik
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                  SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                  pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                  Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta memiliki reputasi gemilang dalam prestasi akademik, baik di tingkat lokal, 
+                                    nasional, maupun internasional. Dengan didukung oleh kurikulum yang modern, tenaga pendidik profesional, dan 
+                                    metode pembelajaran inovatif, siswa berhasil meraih berbagai penghargaan di bidang sains, matematika, bahasa, dan teknologi. 
+                                    Prestasi ini mencerminkan komitmen sekolah dalam mencetak generasi unggul yang berdaya saing tinggi dan berwawasan luas.
                                 </p>
                               </div>
                             </a>
@@ -176,9 +177,7 @@
                                   Unggul dalam Prestasi NonAkademik
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta juga unggul dalam prestasi non-akademik dengan berbagai penghargaan di bidang seni, olahraga, dan keterampilan. Siswa-siswa kami sering kali memenangkan kompetisi tari, musik, keagamaan, serta olahraga seperti futsal, pencak silat, tapak suci, renang di tingkat daerah maupun nasional. Keberhasilan ini didukung oleh program ekstrakurikuler yang terarah dan pembinaan intensif, menjadikan siswa tidak hanya cerdas secara akademik, tetapi juga berbakat dan berprestasi di berbagai bidang lainnya.
                                 </p>
                               </div>
                             </a>
@@ -203,9 +202,7 @@
                                   Unggul dalam Pendidikan Karakter
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                SD Muhammadiyah Sapen menerapkan kurikulum terbaru yang mengikuti perkembangan kebijakan
-                                pendidikan nasional, dengan fokus pada pembelajaran yang berorientasi pada siswa.
-                                Sehingga para peserta didik dapat belajar dengan cara terbaik.
+                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam pendidikan karakter dengan mengintegrasikan nilai-nilai Islami ke dalam setiap aspek pembelajaran dan kegiatan sekolah. Melalui program seperti pembiasaan ibadah harian, tahfiz Al-Qur'an, dan penguatan akhlak mulia, siswa dibimbing untuk menjadi individu yang beriman, bertanggung jawab, dan memiliki empati tinggi. Pendekatan ini memastikan siswa tidak hanya unggul secara akademik, tetapi juga tumbuh menjadi pribadi yang berkarakter dan siap menghadapi tantangan masa depan.
                                 </p>
                               </div>
                             </a>
