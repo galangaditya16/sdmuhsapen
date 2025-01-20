@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Models\AllCategoryTranslite;
 use App\Models\AllContentTranslite;
+use App\Models\Banner;
 
 class SideNews extends Component
 {
@@ -35,9 +36,11 @@ class SideNews extends Component
             ->orderBy('created_at', 'ASC')
             ->take(4)
             ->get();
+            $banners = Banner::orderBy('created_at', 'DESC')->take(3)->get();
             return view('components.side-news', [
                 'relatedNews' => $relatedNews,
                 'currentNews' => $currentNews,
+                'banners' => $banners,
             ]);
         } catch (\Throwable $th) {
             dd($th);

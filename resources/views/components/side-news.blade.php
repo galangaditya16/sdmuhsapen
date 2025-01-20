@@ -41,8 +41,14 @@
       @endforeach
     </div>
   </div>
-  <div class="bg-gray-300 w-full h-20 rounded-3xl text-center hidden md:block mt-10">
-    banner
+  @forelse ( $banners as $banner )
+  <div class="bg-cover bg-center h-40 rounded-3xl  hidden md:block mt-10"
+       style="background-image: url('{{ asset('assets/images/banner/').'/'.$banner->images }}'); ">
+  </div>
+  @empty
+
+  @endforelse
+
   </div>
 </div>
 

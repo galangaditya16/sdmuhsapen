@@ -75,6 +75,12 @@ class BannerController extends BaseController
     public function edit(string $id)
     {
         //
+        try {
+           $data = Banner::findOrfail($id);
+           return $this->makeView('backend.pages.master.banner.edit',compact('data'));
+        } catch (\Throwable $th) {
+           abort(404);
+        }
     }
 
     /**
@@ -83,6 +89,24 @@ class BannerController extends BaseController
     public function update(Request $request, string $id)
     {
         //
+        try {
+            $data_banner = Banner::findOrfail($id);
+            if($request->hasFile('image') && file_exists(public_path('assets/images/banner/'.$data_banner->images))){
+                $path = public_path('assets/images/banner');
+                $nameImages = time().'.'.$request->image->extension();
+                $request->image->move($path,$nameImages);
+                $request->merge(['images' => $nameImages]);
+            }else{
+                $request->merge(['images' => $data_banner->images]);
+            }
+
+            $data_banner->update($request->all());
+            return redirect()->route('banner.index')->with('success', 'Berhasil Update Data');
+        } catch (\Throwable $th) {
+            //throw $th;
+            abort(404);
+        }
+
     }
 
     /**
@@ -91,5 +115,12 @@ class BannerController extends BaseController
     public function destroy(string $id)
     {
         //
+        try {
+            $data_banner = Banner::findOrfail($id);
+            $data_banner->delete();
+            return redirect()->route('banner.index')->with('success', 'Berhasil Hapus Data');
+        } catch (\Throwable $th) {
+            abort(404);
+        }
     }
 }
