@@ -430,7 +430,7 @@
                     <p class="text-sm md:text-xl my-3 text-justify">
                         Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
                     </p>
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333" alt="image description">
+                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/testi-20012025.jpeg" alt="visi dan misi sd muh sapen">
                 </div>
                 <div>
                     <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>
