@@ -123,11 +123,10 @@ class MenuController extends BaseController
             $menu = Menu::find($id);
             $menu->is_active = 1;
             $menu->save();
+            DB::commit();
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
-            //code...
         } catch (\Throwable $th) {
-            //throw $th;
-            dd($th);
+            DB::rollBack();
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
     }
