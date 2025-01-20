@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Backend\Achievement;
+use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CategoryContentController;
 use App\Http\Controllers\Backend\CategoryNewsController;
 use App\Http\Controllers\Backend\CategoryProgramController;
@@ -72,8 +73,11 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
     Route::resource('contact',ContactController::class);
     // user
     Route::resource('user', UserController::class);
-
+    // permission
     Route::resource('permission',RoleController::class);
+    //banner
+    Route::resource('banner', BannerController::class);
+
 
     route::resource('gallery',GalleryController::class);
     Route::get('gallery/asset/{id}',[GalleryController::class,'getAsset'])->name('get.asset');

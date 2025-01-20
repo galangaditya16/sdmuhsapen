@@ -38,7 +38,7 @@ class MenuSeeder extends Seeder
                 'route' => 'news.index',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
-                'order' => 2
+                'order' => 1
             ],
             [
                 'id' => '2024102413',
@@ -54,7 +54,15 @@ class MenuSeeder extends Seeder
                 'route' => '',
                 'parent_id' => '2024102402',  // root menu
                 'icon' => 'master-icon',
-                'order' => 2
+                'order' => 3
+            ],
+            [
+                'id' => '2024102422',
+                'menu_name' => 'Banner',
+                'route' => 'banner.index',
+                'parent_id' => '2024102402',  // root menu
+                'icon' => 'master-icon',
+                'order' => 4
             ],
             [
                 'id' => '2024102404',
@@ -110,23 +118,15 @@ class MenuSeeder extends Seeder
                 'route' => '',
                 'parent_id' => NULL,  // root menu
                 'icon' => 'category-icon',
-                'order' => 4
+                'order' => 3
             ],
             [
                 'id' => '2024102409',
-                'menu_name' => 'Achievement',
-                'route' => 'achievement.index',
+                'menu_name' => 'Gallery',
+                'route' => 'gallery.index',
                 'parent_id' => NULL,  // root menu
                 'icon' => 'category-icon',
                 'order' => 5
-            ],
-            [
-                'id' => '2024102410',
-                'menu_name' => 'Landingpage Management',
-                'route' => '',
-                'parent_id' => NULL,  // root menu
-                'icon' => 'category-icon',
-                'order' => 3
             ],
             [
                 'id' => '2024102411',
