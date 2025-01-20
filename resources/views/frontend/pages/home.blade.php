@@ -220,7 +220,8 @@
     {{-- BERITA --}}
     <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-5 text-black text-center mx-auto">Berita Terkini</h1>
+            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0"></div>
             <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
@@ -262,6 +263,7 @@
     <section class=" border-gray-200 py-10">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Galeri Kegiatan</h1>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0"></div>
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
               @forelse ( $gallerys as $key => $value)
                 @if($key == 2 || $key == 3)
@@ -765,8 +767,9 @@
         <!--HTML CODE-->
         <div class="w-full container mx-auto">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
-            <div class="flex flex-row  gap-4 overflow-x-auto">
+            <div class="flex flex-row  gap-4 overflow-x-auto mt-10">
 
                 <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
 
