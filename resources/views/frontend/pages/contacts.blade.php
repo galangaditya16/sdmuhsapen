@@ -106,7 +106,8 @@
                     </div>
                     <div class="flex gap-x-2 mb-20">
                         <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">{{ $captcha ?? '-' }}</p>
+                            {{--  <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">{{ $captcha ?? '-' }}</p>  --}}
+                            {{--  <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"></p>  --}}
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="captcha"

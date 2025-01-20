@@ -39,6 +39,7 @@ class ContactController extends BaseController
     public function store(Request $request)
     {
         //
+
         try {
             if ($request->has('logo')) {
                 $nameImage = time() . '.' . $request->logo->extension();
