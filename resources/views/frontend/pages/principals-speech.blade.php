@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="clear-both pt-8">
-                    <img class="h-64 w-full object-cover rounded-3xl" src="{{ asset('assets/galeri/galery-1.jpeg') }}"
-                        alt="galeri-1.jpeg">
+                    {{--  <img class="h-64 w-full object-cover rounded-3xl" src="{{ asset('assets/galeri/galery-1.jpeg') }}"
+                        alt="galeri-1.jpeg">  --}}
                 </div>
             </div>
         </section>
