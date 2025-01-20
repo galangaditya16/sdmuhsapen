@@ -114,7 +114,7 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/id/1/5000/3333"
+                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
                         alt="image description">
                 </div>
 
@@ -759,7 +759,7 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/img-testimoni.jpeg') }}"
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/testi-20012025.jpeg') }}"
                         alt="image description">
                 </div>
 
