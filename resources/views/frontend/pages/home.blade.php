@@ -137,14 +137,14 @@
                         <div class="flex items-center justify-center">
 
                             <a href="javascript:void(0)"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
+                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
                               <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                   viewBox="0 0 24 24">
                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                   stroke-width="2"
-                                  d="M15 5v14m-8-7h2m0 0h2m-2 0v2m0-2v-2m12 1h-6m6 4h-6M4 19h16c.5523 0 1-.4477 1-1V6c0-.55228-.4477-1-1-1H4c-.55228 0-1 .44772-1 1v12c0 .5523.44772 1 1 1Z" />
+                                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                                 </svg>
                                 <h5
                                   class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
@@ -190,7 +190,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="javascript:void(0)"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 group">
+                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
                               <div class="scrollable-container-with-custom-scrollbar h-full">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -230,7 +230,7 @@
                       $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
                     @endphp
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$b->ContentNews->getFirstImage() }}');" alt="{{ $b->ContentNews->getFirstImage() }}"
-                        class="swiper-slide rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
+                        class="swiper-slide rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
                         <div class="h-[565px] relative">
                           <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $b->created_at->format('F d, Y') }}</button>
                         </div>
