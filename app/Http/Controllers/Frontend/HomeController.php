@@ -248,7 +248,7 @@ class HomeController extends Controller
 
         try {
             $lang = 'id';
-            $galeries = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->paginate(6);
+            $galeries = Gallery::orderBy('created_at', 'asc')->paginate(6);
             return view('frontend.pages.galery', compact('lang', 'galeries'));
         } catch (\Throwable $th) {
             abort(404);
