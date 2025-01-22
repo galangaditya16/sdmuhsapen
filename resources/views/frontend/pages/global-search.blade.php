@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-  <x-profile-menu-header title="Berita Sekolah" />
+  <x-profile-menu-header title="Hasil Penelusuran" />
   <section class="container mx-auto grid grid-cols-1 gap-y-4 md:my-20">
     <div class="md:flex md:justify-between gap-x-10 grid gap-y-5 px-4 md:px-0">
       <div class="lg:px-0">
@@ -31,7 +31,7 @@
 
     <p class="px-4 md:px-0 font-bold">Hasil penulusuran untuk “Contoh Halaman Hasil Penelusuran</p>
 
-    <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
       <ol class="list-disc space-y-3">
         @foreach ($lists as $list)
           <li class="list-none flex justify-between">
