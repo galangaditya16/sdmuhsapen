@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Achievement extends BaseController
+class SriticismandSuggestionsController extends Controller
 {
     /**
      * Display a listing of the resource.
