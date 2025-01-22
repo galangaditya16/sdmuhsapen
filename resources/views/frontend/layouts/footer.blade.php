@@ -124,7 +124,7 @@
     <div class="w-full px-4 py-2 bg-biru-tua">
         <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-black mx-auto">
-                Copyrigth © {{ date('Y') }} <a href="{{ route('front.home') }}">{{env('APP_NAME') }}</a> | Build with &#9825; by <a href="https://www.jagoweb.com/">Jagoweb</a>
+                Copyrigth © {{ date('Y') }} <a href="{{ route('front.home') }}">{{env('APP_NAME') }}</a> | Build with &#9825; by <a href="https://www.jagoweb.com/" target="_blank">Jagoweb</a>
             </span>
         </div>
     </div>
