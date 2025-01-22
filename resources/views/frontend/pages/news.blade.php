@@ -2,7 +2,6 @@
 
 @section('content')
     <x-profile-menu-header title="Berita Sekolah" />
-
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 px-2">
         <div class="grid md:grid-cols-2 gap-y-4 px-4 lg:px-0">
             <div class="w-full md:flex grid gap-y-4">
@@ -23,19 +22,21 @@
             </div>
 
             <div class="md:w-1/2 md:place-self-end">
-                <div class="flex items-center relative bg-gray-300 rounded-3xl">
-                    <input name="search"
-                        class="appearance-none bg-transparent border-none rounded-3xl text-center md:text-end font-bold bg-gray-300 w-full text-gray-700 py-2.5 pl-2 pr-10 leading-tight focus:outline-2 focus:border-2"
-                        type="text" placeholder="Search...." aria-label="Search....">
-                    <div class="absolute right-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6 text-gray-700">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
+              <form action="#" method="GET" class="flex items-center relative bg-gray-300 rounded-3xl">
+                  <input name="search"
+                      class="appearance-none bg-transparent border-none rounded-3xl text-center md:text-end font-bold bg-gray-300 w-full text-gray-700 py-2.5 pl-2 pr-10 leading-tight focus:outline-2 focus:border-2"
+                      type="text" placeholder="Search...." aria-label="Search....">
+                  <input name="lang" value="{{ $lang }}" type="hidden">
+                  <button type="submit" class="absolute right-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                          stroke="currentColor" class="size-6 text-gray-700">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                      </svg>
+                  </button>
+              </form>
+          </div>
+
         </div>
         <div class="block lg:flex gap-x-10">
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">

@@ -95,38 +95,6 @@ class HomeController extends Controller
 
     public function facilities()
     {
-        // $facilities = [
-        //     [
-        //         'title' => 'Masjid Safinatunnajah',
-        //         'details' => [
-        //             "Dapat menampung 500 siswa dan karyawan",
-        //             "Memiliki 1 tiang bendera",
-        //             "Alas berupa paving block",
-        //             "Saluran air anti mampet",
-        //         ],
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        //     [
-        //         'title' => 'Masjid Safinatunnajah',
-        //         'details' => [
-        //             "Dapat menampung 500 siswa dan karyawan",
-        //             "Memiliki 1 tiang bendera",
-        //             "Alas berupa paving block",
-        //             "Saluran air anti mampet",
-        //         ],
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        //     [
-        //         'title' => 'Masjid Safinatunnajah',
-        //         'details' => [
-        //             "Dapat menampung 500 siswa dan karyawan",
-        //             "Memiliki 1 tiang bendera",
-        //             "Alas berupa paving block",
-        //             "Saluran air anti mampet",
-        //         ],
-        //         'bg-image' => asset('assets/images/dummy-1.jpeg')
-        //     ],
-        // ];
         try {
             $lang = 'id';
             $facilities = AllContentTranslite::with(['ContentContent' => function ($query) {

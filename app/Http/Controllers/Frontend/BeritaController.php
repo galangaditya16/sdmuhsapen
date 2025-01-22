@@ -51,9 +51,12 @@ class BeritaController extends Controller
             ->where('lang',$lang)
             ->orderBy('created_at','DESC')
             ->get();
-            if($request->has('search')){
-                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
-                ->whereHas('ContentNews')->where('lang',$lang)
+            if($request->has('search') && $request->search != null){
+                $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+                ->where('lang',$lang)
+                ->whereHas('ContentNews', function ($query) use ($request){
+                    $query->where('title', 'like', '%' . $request->search . '%');
+                })
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
             }else{
@@ -61,13 +64,13 @@ class BeritaController extends Controller
                 ->whereHas('ContentNews')->where('lang',$lang)
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
-                $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
-                ->whereHas('ContentNews')->where('lang',$lang)
-                ->orderBy('created_at', 'DESC')
-                ->take(5)
-                ->get();
-                return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
             }
+            $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+            ->whereHas('ContentNews')->where('lang',$lang)
+            ->orderBy('created_at', 'DESC')
+            ->take(5)
+            ->get();
+            return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
 
         } catch (\Throwable $th) {
             dd($th);
