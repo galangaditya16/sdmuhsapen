@@ -31,7 +31,7 @@ class HomeController extends Controller
                 })->where('lang', $lang)
                 ->latest()
                 ->paginate(10);
-            $gallerys = Gallery::whereNotNull('headline')->orderBy('created_at', 'asc')->get();
+            $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
             dd($th);

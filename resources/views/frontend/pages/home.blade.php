@@ -223,7 +223,7 @@
     <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Berita Terkini</h1>
-            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0"></div>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0 mb-4"></div>
             <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-4 max-h-[65%]">
                 @foreach ($berita as $b)
                     @php
@@ -267,12 +267,14 @@
     <section class=" border-gray-200 py-10">
         <div class="w-full block container mx-auto px-4">
             <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto my-10">Galeri Kegiatan</h1>
-            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0"></div>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0 mb-4"></div>
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
               @forelse ( $gallerys as $key => $value)
                 @if($key == 2 || $key == 3)
+                
                 <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/images/gallery/thumbnail'.'/'.$value->thumbnail) }}') ">
-                  <div
+                    <a href="{{ route('galeryDetail', $value->slug_id) }}">
+                    <div
                       class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                       <div class="flex flex-col">
 
@@ -299,9 +301,13 @@
 
                       </div>
                   </div>
+                </a>
               </div>
+              
+
                 @else
                 <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/images/gallery/thumbnail'.'/'.$value->thumbnail) }}') ">
+                    <a href="{{ route('galeryDetail', $value->slug_id) }}">  
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -327,6 +333,7 @@
                             <p class="italic text-black text-sm">{{ Carbon\Carbon::parse($value->created_at)->format('l, d F Y') }}</p>
                         </div>
                     </div>
+                    </a>
                 </div>
                 @endif
 
