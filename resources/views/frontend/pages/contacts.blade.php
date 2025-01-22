@@ -8,7 +8,7 @@
                 <p class="text-3xl font-bold text-biru-tua">Mari Saling Terhubung</p>
                 <p class="text-black text-sm">Apakah Anda mencari cara untuk menghubungi kami? Anda dapat menghubungi kami
                     melalui telepon, email, atau dengan mengisi formulir kontak online kami.</p>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-101 duration-150">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -18,10 +18,12 @@
                     </div>
                     <div class="w-5/6">
                         <p class="text-sm">WhatsApp Call Center</p>
-                        <p class="font-bold text-xl">{{ $contact->whatsapp ?? '-' }}</p>
+                        <a href="https://api.whatsapp.com/send/?phone=628112642733&text=Halo%2C+saya+ingin+bertanya+mengenai+info+PPDB+di+SD+Muhammadiyah+Sapen&type=phone_number&app_absent=0" target="_blank">
+                            <p class="font-bold text-xl">{{ $contact->whatsapp ?? '-' }}</p>
+                        </a>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-101 duration-150">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
                             stroke="currentColor" class="size-8">
@@ -31,10 +33,12 @@
                     </div>
                     <div class="w-5/6">
                         <p class="text-sm">Email</p>
-                        <p class="font-bold text-xl">{{ $contact->mail ?? '-' }}</p>
+                        <a href="mailto:info@sdmuhsapen-yog.sch.id" target="_blank">
+                            <p class="font-bold text-xl">{{ $contact->mail ?? '-' }}</p>
+                        </a>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-101 duration-150">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-8">
@@ -44,10 +48,12 @@
                     </div>
                     <div class="w-5/6">
                         <p class="text-sm">Telepon</p>
-                        <p class="font-bold text-xl">{{ $contact->tlp ?? '-' }}</p>
+                        <a href="tel:62274556674" target="_blank">
+                            <p class="font-bold text-xl">{{ $contact->tlp ?? '-' }}</p>
+                        </a>
                     </div>
                 </div>
-                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
+                <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-101 duration-150">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
                         stroke="currentColor" class="size-8">
@@ -97,6 +103,7 @@
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                             type="text" placeholder="No. hp" aria-label="No. hp">
                             <option value="Bagian pendaftaran">Bagian pendaftaran</option>
+                            <option value="Bagian pendaftaran">Admin</option>
                         </select>
                     </div>
                     <div class="flex items-center border-b border-black py-1">
@@ -106,8 +113,8 @@
                     </div>
                     <div class="flex gap-x-2 mb-20">
                         <div class="flex items-center border-b border-black py-1 w-1/2">
-                            {{--  <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">{{ $captcha ?? '-' }}</p>  --}}
-                            {{--  <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"></p>  --}}
+                             <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">{{ $captcha ?? '-' }}</p>
+                             <p id="captcha" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"></p>
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="captcha"
@@ -117,7 +124,6 @@
                     </div>
                     <button
                       id="submit-btn"
-                      disabled
                       class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng disabled:bg-gray-400">Submit</button>
                 </form>
             </div>
@@ -128,7 +134,7 @@
             <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-10">
-                <a href="{{ $contact->instagram ?? '#' }}">
+                <a href="https://www.instagram.com/{{ $contact->instagram ?? '#' }}/" target="_blank">
                 <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" stroke-width="1.5"
@@ -143,6 +149,7 @@
                 </div>
                 </a>
 
+                <a href="https://www.youtube.com/@sdmuhammadiyahsapenyogyaka7302" target="_blank">
                 <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512" stroke-width="1.5"
@@ -155,7 +162,9 @@
                         <p class="font-bold text-xl">YouTube: SAPEN TV</p>
                     </div>
                 </div>
+                </a>
 
+                <a href="https://www.facebook.com/sdmsapen/" target="_blank">
                 <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" stroke-width="1.5"
@@ -168,19 +177,21 @@
                         <p class="font-bold text-xl">FB: SD Muh Sapen</p>
                     </div>
                 </div>
+                </a>
 
+                <a href="https://moesaradio.radiostream321.com/" target="_blank">
                 <div class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white">
                     <div class="w-1/6 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
                             stroke="currentColor" class="size-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 7.5 16.5-4.125M12 6.75c-2.708 0-5.363.224-7.948.655C2.999 7.58 2.25 8.507 2.25 9.574v9.176A2.25 2.25 0 0 0 4.5 21h15a2.25 2.25 0 0 0 2.25-2.25V9.574c0-1.067-.75-1.994-1.802-2.169A48.329 48.329 0 0 0 12 6.75Zm-1.683 6.443-.005.005-.006-.005.006-.005.005.005Zm-.005 2.127-.005-.006.005-.005.005.005-.005.005Zm-2.116-.006-.005.006-.006-.006.005-.005.006.005Zm-.005-2.116-.006-.005.006-.005.005.005-.005.005ZM9.255 10.5v.008h-.008V10.5h.008Zm3.249 1.88-.007.004-.003-.007.006-.003.004.006Zm-1.38 5.126-.003-.006.006-.004.004.007-.006.003Zm.007-6.501-.003.006-.007-.003.004-.007.006.004Zm1.37 5.129-.007-.004.004-.006.006.003-.004.007Zm.504-1.877h-.008v-.007h.008v.007ZM9.255 18v.008h-.008V18h.008Zm-3.246-1.87-.007.004L6 16.127l.006-.003.004.006Zm1.366-5.119-.004-.006.006-.004.004.007-.006.003ZM7.38 17.5l-.003.006-.007-.003.004-.007.006.004Zm-1.376-5.116L6 12.38l.003-.007.007.004-.004.007Zm-.5 1.873h-.008v-.007h.008v.007ZM17.25 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Zm0 4.5a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
                           </svg>
-                          
                     </div>
                     <div class="w-5/6 my-auto">
                         <p class="font-bold text-xl">Sapen Radio</p>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
         @if ($contact->google_loc)
