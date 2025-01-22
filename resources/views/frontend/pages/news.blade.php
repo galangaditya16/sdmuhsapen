@@ -42,9 +42,9 @@
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($news as $new)
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$new->ContentNews->getFirstImage() }}');" alt="$news"
-                        class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full relative overflow-hidden">
+                        class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
                         <div class="h-[565px] relative">
-                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $new->created_at->format('F d, Y') }}</button>
+                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px] ">{{ $new->created_at->format('F d, Y') }}</button>
                         </div>
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
