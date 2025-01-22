@@ -198,6 +198,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="sidebar-menu">
+            <h1 style="margin-left: 20px;">Sapen Dashboard</h1>
             <ul class="navbar-nav pt-lg-3">
                 @foreach ($activeMenu as $menus)
                     @if ($menus->children && $menus->children->count() > 0)
@@ -260,7 +261,7 @@
         </div>
     </div>
 </aside>
-<header class="navbar navbar-expand-md d-none d-lg-flex d-print-none" >
+<header class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
   <div class="container-xl">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
