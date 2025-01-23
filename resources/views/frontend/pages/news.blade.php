@@ -9,7 +9,7 @@
               <div class="flex items-center w-full bg-gray-300 rounded-3xl">
                 <select name="category"
                   class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
-                  type="text" placeholder="No. hp" aria-label="No. hp" onchange="this.form.submit()">
+                  type="text" onchange="this.form.submit()">
                   <option value="">Semua kategori</option>
                   <option value="Kategori 1">Kategori 1</option>
                 </select>
@@ -17,7 +17,7 @@
               <div class="flex items-center w-full bg-gray-300 rounded-3xl">
                 <select name="orderBy"
                   class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
-                  type="text" placeholder="No. hp" aria-label="No. hp" onchange="this.form.submit()">
+                  type="text" onchange="this.form.submit()">
                   <option value="DESC">Terbaru</option>
                   <option value="ASC">Terlama</option>
                 </select>
@@ -64,7 +64,7 @@
                     </div>
                 @empty
                 <div class="text-center">
-                  <p class="font-bold text-2xl mt-10">Maaf, halaman yang Anda cari tidak ditemukan.</p>
+                  <p class="font-bold text-2xl mt-10">Maaf, kata kunci yang Anda masukkan tidak ditemukan.</p>
                   <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
                 </div>
                 @endforelse
