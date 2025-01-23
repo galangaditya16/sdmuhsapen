@@ -3,7 +3,7 @@
         <a href="{{ url('/') }}" class="flex items-center rtl:space-x-reverse">
             <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-16" alt="Flowbite Logo">
         </a>
-        <div class="flex md:order-2 rtl:space-x-reverse">            
+        <div class="flex md:order-2 rtl:space-x-reverse">
 
             <ul class="flex flex-col mt-1 mx-1 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-1">
                 <li>
@@ -30,16 +30,31 @@
             </ul>
 
 
-
             <div class="relative hidden md:flex border-r border-r-white mr-3">
-                <button type="submit" id="search-navbar" class="p-2.5 ms-2 text-sm font-medium md:mx-2 text-white bg-oren rounded-full hover:bg-orange-800">
+                <button type="button" id="search-navbar" class="p-2.5 ms-2 text-sm font-medium md:mx-2 text-white bg-oren rounded-full hover:bg-orange-800">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
                     </svg>
                     <span class="sr-only">Search</span>
                 </button>
-
+                <div id="search-popup" class="absolute top-12 right-0 hidden bg-white rounded-lg shadow-lg p-4 w-96">
+                    <form class="relative">
+                        <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="absolute right-2 top-2 text-gray-500 hover:text-blue-500">
+                            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
+
+            <script>
+                document.getElementById('search-navbar').addEventListener('click', function() {
+                    const popup = document.getElementById('search-popup');
+                    popup.classList.toggle('hidden');
+                });
+            </script>
 
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
                 <button type="button" class="text-white ml-3 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-full text-sm px-8 lg:px-10 py-2 text-center md:mx-1">
