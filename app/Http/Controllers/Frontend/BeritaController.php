@@ -64,6 +64,7 @@ class BeritaController extends Controller
                 ->whereHas('ContentNews')->where('lang',$lang)
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
+           
             }
             $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)
@@ -73,7 +74,7 @@ class BeritaController extends Controller
             return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
 
         } catch (\Throwable $th) {
-            dd($th);
+            abort(404);
         }
     }
 
