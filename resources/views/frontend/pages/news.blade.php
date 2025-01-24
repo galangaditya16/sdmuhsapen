@@ -43,7 +43,7 @@
         </form>
         <div class="block lg:flex gap-x-10">
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
-                @forelse ($news as $new)
+              @forelse ($news as $new)
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$new->ContentNews->getFirstImage() }}');" alt="$news"
                         class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
                         <div class="h-[565px] relative">
@@ -62,8 +62,8 @@
                             </div>
                         </div>
                     </div>
-                @empty
-                <div class="text-center">
+              @empty
+                <div class="text-center lg:col-span-2 px-10 lg:px-30 pt-0 pb-20">
                   <p class="font-bold text-2xl mt-10">Maaf, kata kunci yang Anda masukkan tidak ditemukan.</p>
                   <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
                 </div>
