@@ -86,7 +86,7 @@
                     <div class="swiper-slide">
                         <div class="flex items-center justify-center">
                             <a href="javascript:void(0)"
-                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96 items-stretch">
                               <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                 viewBox="0 0 24 24">
@@ -110,7 +110,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="javascript:void(0)"
-                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96 items-stretch">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                                     viewBox="0 0 512 560">
@@ -133,7 +133,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="javascript:void(0)"
-                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96 items-stretch">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                     viewBox="0 0 512 560">
@@ -156,7 +156,7 @@
                         <div class="flex items-center justify-center">
 
                             <a href="javascript:void(0)"
-                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96">
+                                class="block w-full rounded-2xl shadow bg-dark-blue hover:bg-blue-300 group scrollable-container-with-custom-scrollbar p-6 h-96 ">
                                 <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                     viewBox="0 0 512 560">
