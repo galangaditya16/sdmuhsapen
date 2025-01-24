@@ -1,7 +1,7 @@
 <nav class="bg-dark-blue dark:bg-gray-900 fixed w-full z-50 top-0">
     <div class="container flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="{{ url('/') }}" class="flex items-center rtl:space-x-reverse">
-            <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-16" alt="Flowbite Logo">
+            <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-16" alt="Logo SD Muhammadiyah Sapen">
         </a>
         <div class="flex md:order-2 rtl:space-x-reverse">
 
