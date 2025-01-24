@@ -787,29 +787,34 @@
           <div class="carousel flex md:gap-x-4 overflow-hidden h-40 items-stretch">
             <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
               <div class="p-2 my-auto h-fit">
-                <img class="object-contain " src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
+                <img class="object-contain " src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bes">
               </div>
             </div>
             <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
               <div class="p-2 my-auto h-fit">
-                <img class="object-contain " src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-bos">
+                <img class="object-contain " src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-mu">
               </div>
             </div>
             <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
               <div class="p-2 my-auto h-fit">
-                <img class="object-contain " src="{{ asset('assets/images/logo/logo-sipintar.png') }}" alt="logo-bos">
+                <img class="object-contain " src="{{ asset('assets/images/logo/logo-sipintar.png') }}" alt="logo-bas">
               </div>
             </div>
             <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
               <div class="p-2 my-auto h-fit">
-                <img class="object-contain " src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}" alt="logo-bos">
+                <img class="object-contain " src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}" alt="logo-ds">
               </div>
             </div>
             <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
               <div class="p-2 my-auto h-fit">
-                <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-bos">
+                <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-ku">
               </div>
             </div>
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+                <div class="p-2 my-auto h-fit">
+                  <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-bos">
+                </div>
+              </div>
           </div>
           <div class="my-auto w-[10%]">
             <button class="right-button bg-biru-tua rounded-full p-2">
