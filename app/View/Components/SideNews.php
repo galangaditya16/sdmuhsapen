@@ -51,7 +51,5 @@ class SideNews extends Component
             dd($th);
            abort('404');
         }
-
-
     }
 }

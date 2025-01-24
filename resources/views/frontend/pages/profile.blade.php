@@ -256,153 +256,138 @@
     <!-- PRESTASI -->
     <section class=" border-gray-200 my-10 py-1 bg-biru-tua">
 
-        <div class="w-full relative container mx-auto px-4 py-5">
-            <div class="text-center">
-                <h1 class="text-4xl font-bold my-5 text-white mx-auto">Prestasi Kami</h1>
-            </div>
-            <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-6 gap-2 max-h-[65%]">
+      <div class="w-full relative container mx-auto px-4 py-5">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold my-5 text-white mx-auto">Prestasi Kami</h1>
+        </div>
+        <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-6 gap-2 max-h-[65%]">
 
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
 
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
 
-                            <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 600 600">
-                                <path fill-rule="evenodd" d="M282.6 78.1c8-27.3 33-46.1 61.4-46.1H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H344L238.7 457c-3.6 12.3-14.1 21.2-26.8 22.8s-25.1-4.6-31.5-15.6L77.6 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H77.6c22.8 0 43.8 12.1 55.3 31.8l65.2 111.8L282.6 78.1zM393.4 233.4c12.5-12.5 32.8-12.5 45.3 0L480 274.7l41.4-41.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L525.3 320l41.4 41.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L480 365.3l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L434.7 320l-41.4-41.4c-12.5-12.5-12.5-32.8 0-45.3z clip-rule="evenodd"/>
-                            </svg>
+                <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 600 600">
+                  <path fill-rule="evenodd" d="M282.6 78.1c8-27.3 33-46.1 61.4-46.1H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H344L238.7 457c-3.6 12.3-14.1 21.2-26.8 22.8s-25.1-4.6-31.5-15.6L77.6 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H77.6c22.8 0 43.8 12.1 55.3 31.8l65.2 111.8L282.6 78.1zM393.4 233.4c12.5-12.5 32.8-12.5 45.3 0L480 274.7l41.4-41.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L525.3 320l41.4 41.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L480 365.3l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L434.7 320l-41.4-41.4c-12.5-12.5-12.5-32.8 0-45.3z clip-rule="evenodd"/>
+                </svg>
 
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                129
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Bidang Akademis
-                            </p>
+                <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="129">0</h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Bidang Akademis
+                </p>
 
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
-
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
-
-                            <svg class="w-[100%] h-[50%] md:w-[40%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 448 512">
-                                <path fill-rule="evenodd" d="M0 32v448h448V32H0zm316.5 325.2L224 445.9l-92.5-88.7 64.5-184-64.5-86.6h184.9L252 173.2l64.5 184z" clip-rule="evenodd"/>
-                            </svg>
-
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                945
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Prestasi Siswa
-                            </p>
-
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
-
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
-
-                            <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 640 512">
-                                <path fill-rule="evenodd" d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" clip-rule="evenodd"/>
-                            </svg>
-
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                174
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Prestasi Guru
-                            </p>
-
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
-
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
-
-                            <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 640 560">
-                                <path fill-rule="evenodd" d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z" clip-rule="evenodd"/>
-                            </svg>
-
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                19
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Prestasi Sekolah
-                            </p>
-
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
-
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
-
-                            <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 512 560">
-                                <path fill-rule="evenodd" d="M51.7 295.1l31.7 6.3c7.9 1.6 16-.9 21.7-6.6l15.4-15.4c11.6-11.6 31.1-8.4 38.4 6.2l9.3 18.5c4.8 9.6 14.6 15.7 25.4 15.7c15.2 0 26.1-14.6 21.7-29.2l-6-19.9c-4.6-15.4 6.9-30.9 23-30.9h2.3c13.4 0 25.9-6.7 33.3-17.8l10.7-16.1c5.6-8.5 5.3-19.6-.8-27.7l-16.1-21.5c-10.3-13.7-3.3-33.5 13.4-37.7l17-4.3c7.5-1.9 13.6-7.2 16.5-14.4l16.4-40.9C303.4 52.1 280.2 48 256 48C141.1 48 48 141.1 48 256c0 13.4 1.3 26.5 3.7 39.1zm407.7 4.6c-3-.3-6-.1-9 .8l-15.8 4.4c-6.7 1.9-13.8-.9-17.5-6.7l-2-3.1c-6-9.4-16.4-15.1-27.6-15.1s-21.6 5.7-27.6 15.1l-6.1 9.5c-1.4 2.2-3.4 4.1-5.7 5.3L312 330.1c-18.1 10.1-25.5 32.4-17 51.3l5.5 12.4c8.6 19.2 30.7 28.5 50.5 21.1l2.6-1c10-3.7 21.3-2.2 29.9 4.1l1.5 1.1c37.2-29.5 64.1-71.4 74.4-119.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm144.5 92.1c-2.1 8.6 3.1 17.3 11.6 19.4l32 8c8.6 2.1 17.3-3.1 19.4-11.6s-3.1-17.3-11.6-19.4l-32-8c-8.6-2.1-17.3 3.1-19.4 11.6zm92-20c-2.1 8.6 3.1 17.3 11.6 19.4s17.3-3.1 19.4-11.6l8-32c2.1-8.6-3.1-17.3-11.6-19.4s-17.3 3.1-19.4 11.6l-8 32zM343.2 113.7c-7.9-4-17.5-.7-21.5 7.2l-16 32c-4 7.9-.7 17.5 7.2 21.5s17.5 .7 21.5-7.2l16-32c4-7.9 .7-17.5-7.2-21.5z" clip-rule="evenodd"/>
-                            </svg>
-
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                84
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Prestasi Internasional
-                            </p>
-
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="block w-[33%] md:w-auto">
-                    <div class="flex items-center justify-center">
-
-                        <a href="#"
-                            class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
-
-                            <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 512 560">
-                                <path fill-rule="evenodd" d="M62.7 223.4c-4.8 .4-9.7 .6-14.7 .6c-15.6 0-30.8-2-45.2-5.9C19.2 107.1 107.1 19.2 218.1 2.8C222 17.2 224 32.4 224 48c0 4.9-.2 9.8-.6 14.7c-.7 8.8 5.8 16.5 14.6 17.3s16.5-5.8 17.3-14.6c.5-5.7 .7-11.5 .7-17.3c0-16.5-1.9-32.6-5.6-47.9c1.8 0 3.7-.1 5.6-.1C397.4 0 512 114.6 512 256c0 1.9 0 3.7-.1 5.6c-15.4-3.6-31.4-5.6-47.9-5.6c-5.8 0-11.6 .2-17.3 .7c-8.8 .7-15.4 8.5-14.6 17.3s8.5 15.4 17.3 14.6c4.8-.4 9.7-.6 14.7-.6c15.6 0 30.8 2 45.2 5.9C492.8 404.9 404.9 492.8 293.9 509.2C290 494.8 288 479.6 288 464c0-4.9 .2-9.8 .6-14.7c.7-8.8-5.8-16.5-14.6-17.3s-16.5 5.8-17.3 14.6c-.5 5.7-.7 11.5-.7 17.3c0 16.5 1.9 32.6 5.6 47.9c-1.8 0-3.7 .1-5.6 .1C114.6 512 0 397.4 0 256c0-1.9 0-3.7 .1-5.6C15.4 254.1 31.5 256 48 256c5.8 0 11.6-.2 17.3-.7c8.8-.7 15.4-8.5 14.6-17.3s-8.5-15.4-17.3-14.6zM121.3 208c-8 3.7-11.6 13.2-7.9 21.2s13.2 11.6 21.2 7.9c45.2-20.8 81.7-57.2 102.5-102.5c3.7-8 .2-17.5-7.9-21.2s-17.5-.2-21.2 7.9c-17.6 38.3-48.5 69.2-86.7 86.7zm277.2 74.7c-3.7-8-13.2-11.6-21.2-7.9c-45.2 20.8-81.7 57.2-102.5 102.5c-3.7 8-.2 17.5 7.9 21.2s17.5 .2 21.2-7.9c17.6-38.3 48.5-69.2 86.7-86.7c8-3.7 11.6-13.2 7.9-21.2z" clip-rule="evenodd"/>
-                            </svg>
-
-                            <h5
-                                class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
-                                93
-                            </h5>
-                            <p class="group-hover:block text-white font-bold text-center mt-2">
-                                Bidang Olahraga
-                            </p>
-
-                        </a>
-
-                    </div>
-                </div>
+              </a>
 
             </div>
+          </div>
+
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
+
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+
+                <svg class="w-[100%] h-[50%] md:w-[40%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 448 512">
+                  <path fill-rule="evenodd" d="M0 32v448h448V32H0zm316.5 325.2L224 445.9l-92.5-88.7 64.5-184-64.5-86.6h184.9L252 173.2l64.5 184z" clip-rule="evenodd"/>
+                </svg>
+
+                <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="945">0</h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Prestasi Siswa
+                </p>
+
+              </a>
+
+            </div>
+          </div>
+
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
+
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+
+                <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 640 512">
+                  <path fill-rule="evenodd" d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" clip-rule="evenodd"/>
+                </svg>
+
+                <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="174">0</h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Prestasi Guru
+                </p>
+
+              </a>
+
+            </div>
+          </div>
+
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
+
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+
+                <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 640 560">
+                  <path fill-rule="evenodd" d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z" clip-rule="evenodd"/>
+                </svg>
+
+                <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="19">0</h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Prestasi Sekolah
+                </p>
+
+              </a>
+
+            </div>
+          </div>
+
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
+
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+
+                <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 512 560">
+                  <path fill-rule="evenodd" d="M51.7 295.1l31.7 6.3c7.9 1.6 16-.9 21.7-6.6l15.4-15.4c11.6-11.6 31.1-8.4 38.4 6.2l9.3 18.5c4.8 9.6 14.6 15.7 25.4 15.7c15.2 0 26.1-14.6 21.7-29.2l-6-19.9c-4.6-15.4 6.9-30.9 23-30.9h2.3c13.4 0 25.9-6.7 33.3-17.8l10.7-16.1c5.6-8.5 5.3-19.6-.8-27.7l-16.1-21.5c-10.3-13.7-3.3-33.5 13.4-37.7l17-4.3c7.5-1.9 13.6-7.2 16.5-14.4l16.4-40.9C303.4 52.1 280.2 48 256 48C141.1 48 48 141.1 48 256c0 13.4 1.3 26.5 3.7 39.1zm407.7 4.6c-3-.3-6-.1-9 .8l-15.8 4.4c-6.7 1.9-13.8-.9-17.5-6.7l-2-3.1c-6-9.4-16.4-15.1-27.6-15.1s-21.6 5.7-27.6 15.1l-6.1 9.5c-1.4 2.2-3.4 4.1-5.7 5.3L312 330.1c-18.1 10.1-25.5 32.4-17 51.3l5.5 12.4c8.6 19.2 30.7 28.5 50.5 21.1l2.6-1c10-3.7 21.3-2.2 29.9 4.1l1.5 1.1c37.2-29.5 64.1-71.4 74.4-119.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm144.5 92.1c-2.1 8.6 3.1 17.3 11.6 19.4l32 8c8.6 2.1 17.3-3.1 19.4-11.6s-3.1-17.3-11.6-19.4l-32-8c-8.6-2.1-17.3 3.1-19.4 11.6zm92-20c-2.1 8.6 3.1 17.3 11.6 19.4s17.3-3.1 19.4-11.6l8-32c2.1-8.6-3.1-17.3-11.6-19.4s-17.3 3.1-19.4 11.6l-8 32zM343.2 113.7c-7.9-4-17.5-.7-21.5 7.2l-16 32c-4 7.9-.7 17.5 7.2 21.5s17.5 .7 21.5-7.2l16-32c4-7.9 .7-17.5-7.2-21.5z" clip-rule="evenodd"/>
+                </svg>
+
+                <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="84">0</h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Prestasi Internasional
+                </p>
+
+              </a>
+
+            </div>
+          </div>
+
+          <div class="block w-[33%] md:w-auto">
+            <div class="flex items-center justify-center">
+
+              <a href="#"
+                class="block w-full p-6 h-96 rounded-2xl group justify-items-center">
+
+                <svg class="w-[100%] h-[50%] md:w-[50%] md:h-[50%] text-kuning-tua self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 512 560">
+                  <path fill-rule="evenodd" d="M62.7 223.4c-4.8 .4-9.7 .6-14.7 .6c-15.6 0-30.8-2-45.2-5.9C19.2 107.1 107.1 19.2 218.1 2.8C222 17.2 224 32.4 224 48c0 4.9-.2 9.8-.6 14.7c-.7 8.8 5.8 16.5 14.6 17.3s16.5-5.8 17.3-14.6c.5-5.7 .7-11.5 .7-17.3c0-16.5-1.9-32.6-5.6-47.9c1.8 0 3.7-.1 5.6-.1C397.4 0 512 114.6 512 256c0 1.9 0 3.7-.1 5.6c-15.4-3.6-31.4-5.6-47.9-5.6c-5.8 0-11.6 .2-17.3 .7c-8.8 .7-15.4 8.5-14.6 17.3s8.5 15.4 17.3 14.6c4.8-.4 9.7-.6 14.7-.6c15.6 0 30.8 2 45.2 5.9C492.8 404.9 404.9 492.8 293.9 509.2C290 494.8 288 479.6 288 464c0-4.9 .2-9.8 .6-14.7c.7-8.8-5.8-16.5-14.6-17.3s-16.5 5.8-17.3 14.6c-.5 5.7-.7 11.5-.7 17.3c0 16.5 1.9 32.6 5.6 47.9c-1.8 0-3.7 .1-5.6 .1C114.6 512 0 397.4 0 256c0-1.9 0-3.7 .1-5.6C15.4 254.1 31.5 256 48 256c5.8 0 11.6-.2 17.3-.7c8.8-.7 15.4-8.5 14.6-17.3s-8.5-15.4-17.3-14.6zM121.3 208c-8 3.7-11.6 13.2-7.9 21.2s13.2 11.6 21.2 7.9c45.2-20.8 81.7-57.2 102.5-102.5c3.7-8 .2-17.5-7.9-21.2s-17.5-.2-21.2 7.9c-17.6 38.3-48.5 69.2-86.7 86.7zm277.2 74.7c-3.7-8-13.2-11.6-21.2-7.9c-45.2 20.8-81.7 57.2-102.5 102.5c-3.7 8-.2 17.5 7.9 21.2s17.5 .2 21.2-7.9c17.6-38.3 48.5-69.2 86.7-86.7c8-3.7 11.6-13.2 7.9-21.2z" clip-rule="evenodd"/>
+                </svg>
+
+                <h5
+                  class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center">
+                  93
+                </h5>
+                <p class="group-hover:block text-white font-bold text-center mt-2">
+                Bidang Olahraga
+                </p>
+
+              </a>
+
+            </div>
+          </div>
 
         </div>
+
+      </div>
 
     </section>
     <!-- END - PRESTASI -->

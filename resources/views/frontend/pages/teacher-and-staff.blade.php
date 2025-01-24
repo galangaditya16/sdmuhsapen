@@ -30,3 +30,49 @@
 
   @include('frontend.layouts.footer')
 @endsection
+
+@section('extend-script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.carousel');
+            const leftButtons = document.querySelectorAll('.left-button');
+            const rightButtons = document.querySelectorAll('.right-button');
+
+            function getScrollAmount(carousel) {
+                const width = window.innerWidth;
+                if (width >= 1440) {
+                    return carousel.offsetWidth / 4;
+                } else if (width >= 1024) {
+                    return carousel.offsetWidth / 3;
+                } else if (width >= 768) {
+                    return carousel.offsetWidth / 2;
+                } else {
+                    return carousel.offsetWidth;
+                }
+            }
+
+            leftButtons.forEach((leftButton, index) => {
+                leftButton.addEventListener('click', function() {
+                    carousels[index].scrollBy({
+                        left: -getScrollAmount(carousels[index]),
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            rightButtons.forEach((rightButton, index) => {
+                rightButton.addEventListener('click', function() {
+                    carousels[index].scrollBy({
+                        left: getScrollAmount(carousels[index]),
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                // Update scroll amount on window resize
+                carousels.forEach(carousel => getScrollAmount(carousel));
+            });
+        });
+    </script>
+@endsection

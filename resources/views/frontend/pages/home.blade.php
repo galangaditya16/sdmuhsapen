@@ -132,87 +132,85 @@
                 </p>
             </div>
             <div class="flex flex-nowrap lg:grid overflow-x-auto md:grid-cols-2 lg:grid-cols-3 gap-16 max-h-[65%]">
-                {{-- <div class="swiper-wrapper "> --}}
-                    <div class="swiper-slide">
-                        <div class="flex items-center justify-center">
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
 
-                            <a href="javascript:void(0)"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
-                              <div class="scrollable-container-with-custom-scrollbar h-full">
-                                <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                  viewBox="0 0 24 24">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                                </svg>
-                                <h5
-                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                  Unggul dalam Prestasi Akademik
-                                </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen Yogyakarta memiliki reputasi gemilang dalam prestasi akademik, baik di tingkat lokal, 
-                                    nasional, maupun internasional. Dengan didukung oleh kurikulum yang modern, tenaga pendidik profesional, dan 
-                                    metode pembelajaran inovatif, siswa berhasil meraih berbagai penghargaan di bidang sains, matematika, bahasa, dan teknologi. 
-                                    Prestasi ini mencerminkan komitmen sekolah dalam mencetak generasi unggul yang berdaya saing tinggi dan berwawasan luas.
-                                </p>
-                              </div>
-                            </a>
-
-                        </div>
+                  <a href="javascript:void(0)"
+                    class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
+                    <div class="scrollable-container-with-custom-scrollbar h-full">
+                      <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                      </svg>
+                      <h5
+                        class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                        Unggul dalam Prestasi Akademik
+                      </h5>
+                      <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                      SD Muhammadiyah Sapen Yogyakarta memiliki reputasi gemilang dalam prestasi akademik, baik di tingkat lokal,
+                      nasional, maupun internasional. Dengan didukung oleh kurikulum yang modern, tenaga pendidik profesional, dan
+                      metode pembelajaran inovatif, siswa berhasil meraih berbagai penghargaan di bidang sains, matematika, bahasa, dan teknologi.
+                      Prestasi ini mencerminkan komitmen sekolah dalam mencetak generasi unggul yang berdaya saing tinggi dan berwawasan luas.
+                      </p>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="flex items-center justify-center">
+                  </a>
 
-                            <a href="javascript:void(0)"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
-                              <div class="scrollable-container-with-custom-scrollbar h-full">
-                                <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                  xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                  viewBox="0 0 512 560">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="1"
-                                  d="M4.1 38.2C1.4 34.2 0 29.4 0 24.6C0 11 11 0 24.6 0H133.9c11.2 0 21.7 5.9 27.4 15.5l68.5 114.1c-48.2 6.1-91.3 28.6-123.4 61.9L4.1 38.2zm503.7 0L405.6 191.5c-32.1-33.3-75.2-55.8-123.4-61.9L350.7 15.5C356.5 5.9 366.9 0 378.1 0H487.4C501 0 512 11 512 24.6c0 4.8-1.4 9.6-4.1 13.6zM80 336a176 176 0 1 1 352 0A176 176 0 1 1 80 336zm184.4-94.9c-3.4-7-13.3-7-16.8 0l-22.4 45.4c-1.4 2.8-4 4.7-7 5.1L168 298.9c-7.7 1.1-10.7 10.5-5.2 16l36.3 35.4c2.2 2.2 3.2 5.2 2.7 8.3l-8.6 49.9c-1.3 7.6 6.7 13.5 13.6 9.9l44.8-23.6c2.7-1.4 6-1.4 8.7 0l44.8 23.6c6.9 3.6 14.9-2.2 13.6-9.9l-8.6-49.9c-.5-3 .5-6.1 2.7-8.3l36.3-35.4c5.6-5.4 2.5-14.8-5.2-16l-50.1-7.3c-3-.4-5.7-2.4-7-5.1l-22.4-45.4z"/>
-                                </svg>
-                                <h5
-                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                  Unggul dalam Prestasi NonAkademik
-                                </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen Yogyakarta juga unggul dalam prestasi non-akademik dengan berbagai penghargaan di bidang seni, olahraga, dan keterampilan. Siswa-siswa kami sering kali memenangkan kompetisi tari, musik, keagamaan, serta olahraga seperti futsal, pencak silat, tapak suci, renang di tingkat daerah maupun nasional. Keberhasilan ini didukung oleh program ekstrakurikuler yang terarah dan pembinaan intensif, menjadikan siswa tidak hanya cerdas secara akademik, tetapi juga berbakat dan berprestasi di berbagai bidang lainnya.
-                                </p>
-                              </div>
-                            </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
 
-                        </div>
+                  <a href="javascript:void(0)"
+                    class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
+                    <div class="scrollable-container-with-custom-scrollbar h-full">
+                      <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        viewBox="0 0 512 560">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M4.1 38.2C1.4 34.2 0 29.4 0 24.6C0 11 11 0 24.6 0H133.9c11.2 0 21.7 5.9 27.4 15.5l68.5 114.1c-48.2 6.1-91.3 28.6-123.4 61.9L4.1 38.2zm503.7 0L405.6 191.5c-32.1-33.3-75.2-55.8-123.4-61.9L350.7 15.5C356.5 5.9 366.9 0 378.1 0H487.4C501 0 512 11 512 24.6c0 4.8-1.4 9.6-4.1 13.6zM80 336a176 176 0 1 1 352 0A176 176 0 1 1 80 336zm184.4-94.9c-3.4-7-13.3-7-16.8 0l-22.4 45.4c-1.4 2.8-4 4.7-7 5.1L168 298.9c-7.7 1.1-10.7 10.5-5.2 16l36.3 35.4c2.2 2.2 3.2 5.2 2.7 8.3l-8.6 49.9c-1.3 7.6 6.7 13.5 13.6 9.9l44.8-23.6c2.7-1.4 6-1.4 8.7 0l44.8 23.6c6.9 3.6 14.9-2.2 13.6-9.9l-8.6-49.9c-.5-3 .5-6.1 2.7-8.3l36.3-35.4c5.6-5.4 2.5-14.8-5.2-16l-50.1-7.3c-3-.4-5.7-2.4-7-5.1l-22.4-45.4z"/>
+                      </svg>
+                      <h5
+                        class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                        Unggul dalam Prestasi NonAkademik
+                      </h5>
+                      <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                      SD Muhammadiyah Sapen Yogyakarta juga unggul dalam prestasi non-akademik dengan berbagai penghargaan di bidang seni, olahraga, dan keterampilan. Siswa-siswa kami sering kali memenangkan kompetisi tari, musik, keagamaan, serta olahraga seperti futsal, pencak silat, tapak suci, renang di tingkat daerah maupun nasional. Keberhasilan ini didukung oleh program ekstrakurikuler yang terarah dan pembinaan intensif, menjadikan siswa tidak hanya cerdas secara akademik, tetapi juga berbakat dan berprestasi di berbagai bidang lainnya.
+                      </p>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="flex items-center justify-center">
+                  </a>
 
-                            <a href="javascript:void(0)"
-                                class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
-                              <div class="scrollable-container-with-custom-scrollbar h-full">
-                                <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
-                                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                  viewBox="0 0 512 560">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z">
-                                </svg>
-                                <h5
-                                  class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                                  Unggul dalam Pendidikan Karakter
-                                </h5>
-                                <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam pendidikan karakter dengan mengintegrasikan nilai-nilai Islami ke dalam setiap aspek pembelajaran dan kegiatan sekolah. Melalui program seperti pembiasaan ibadah harian, tahfiz Al-Qur'an, dan penguatan akhlak mulia, siswa dibimbing untuk menjadi individu yang beriman, bertanggung jawab, dan memiliki empati tinggi. Pendekatan ini memastikan siswa tidak hanya unggul secara akademik, tetapi juga tumbuh menjadi pribadi yang berkarakter dan siap menghadapi tantangan masa depan.
-                                </p>
-                              </div>
-                            </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
 
-                        </div>
+                  <a href="javascript:void(0)"
+                    class="block w-full p-6 h-96 rounded-2xl shadow bg-oren hover:bg-orange-200 hover:duration-300 group">
+                    <div class="scrollable-container-with-custom-scrollbar h-full">
+                      <svg class="w-[50%] h-[50%] text-white mx-auto group-hover:hidden" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 512 560">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z">
+                      </svg>
+                      <h5
+                        class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
+                        Unggul dalam Pendidikan Karakter
+                      </h5>
+                      <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
+                      SD Muhammadiyah Sapen Yogyakarta unggul dalam pendidikan karakter dengan mengintegrasikan nilai-nilai Islami ke dalam setiap aspek pembelajaran dan kegiatan sekolah. Melalui program seperti pembiasaan ibadah harian, tahfiz Al-Qur'an, dan penguatan akhlak mulia, siswa dibimbing untuk menjadi individu yang beriman, bertanggung jawab, dan memiliki empati tinggi. Pendekatan ini memastikan siswa tidak hanya unggul secara akademik, tetapi juga tumbuh menjadi pribadi yang berkarakter dan siap menghadapi tantangan masa depan.
+                      </p>
                     </div>
-                {{-- </div> --}}
-                <div class="multiple-swiper-pagination"></div>
+                  </a>
+
+                </div>
+              </div>
+              <div class="multiple-swiper-pagination"></div>
             </div>
 
         </div>
@@ -271,7 +269,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-2 min-h-[560px] h-[560px]">
               @forelse ( $gallerys as $key => $value)
                 @if($key == 2 || $key == 3)
-                
+
                 <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/images/gallery/thumbnail'.'/'.$value->thumbnail) }}') ">
                     <a href="{{ route('galeryDetail', $value->slug_id) }}">
                     <div
@@ -303,11 +301,11 @@
                   </div>
                 </a>
               </div>
-              
+
 
                 @else
                 <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/images/gallery/thumbnail'.'/'.$value->thumbnail) }}') ">
-                    <a href="{{ route('galeryDetail', $value->slug_id) }}">  
+                    <a href="{{ route('galeryDetail', $value->slug_id) }}">
                     <div
                         class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
                         <div class="flex flex-col">
@@ -772,30 +770,58 @@
 
     {{-- SEMUA SPONSOR --}}
     <section class=" border-gray-200 mx-auto">
-        <!--HTML CODE-->
-        <div class="w-full container mx-auto">
-            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
-            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
+      <!--HTML CODE-->
+      <div class="w-full container mx-auto">
+        <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Semua Aplikasi Kami</h1>
+        <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
-            <div class="flex flex-row  gap-4 overflow-x-auto mt-10">
-
-                <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
-
-                <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/dapodik-logo.png') }}"
-                    alt="logo-bos">
-
-                <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/logo-sipintar.png') }}"
-                    alt="logo-bos">
-
-                <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}"
-                    alt="logo-bos">
-
-                <img class="self-center md:w-[20%]" src="{{ asset('assets/images/logo/rumah-belajar.png') }}"
-                    alt="logo-bos">
-
+        <div class="flex justify-between text-center">
+          <div class="my-auto w-[10%] z-10">
+            <button class="left-button bg-biru-tua rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+          </div>
+          <div class="carousel flex md:gap-x-4 overflow-hidden h-40 items-stretch">
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+              <div class="p-2 my-auto h-fit">
+                <img class="object-contain " src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
+              </div>
             </div>
-
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+              <div class="p-2 my-auto h-fit">
+                <img class="object-contain " src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-bos">
+              </div>
+            </div>
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+              <div class="p-2 my-auto h-fit">
+                <img class="object-contain " src="{{ asset('assets/images/logo/logo-sipintar.png') }}" alt="logo-bos">
+              </div>
+            </div>
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+              <div class="p-2 my-auto h-fit">
+                <img class="object-contain " src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}" alt="logo-bos">
+              </div>
+            </div>
+            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+              <div class="p-2 my-auto h-fit">
+                <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-bos">
+              </div>
+            </div>
+          </div>
+          <div class="my-auto w-[10%]">
+            <button class="right-button bg-biru-tua rounded-full p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
         </div>
+
+      </div>
     </section>
 
     {{-- FAQ --}}
@@ -919,24 +945,6 @@
 
 @section('extend-script')
     <script>
-      var elements = document.querySelectorAll('[data-text]');
-
-      // Now you can manipulate the elements
-      elements.forEach(function(element) {
-        const text = parseInt(element.getAttribute('data-text'), 10);
-        let count = 0;
-        const increment = Math.ceil(text / 100);
-        const interval = setInterval(() => {
-            if (count < text) {
-                count += increment;
-                if (count > text) count = text;
-                element.textContent = count;
-            } else {
-                clearInterval(interval);
-            }
-        }, 10);
-      });
-
       var newsContent = document.querySelectorAll('.news-content');
       newsContent.forEach(function(element) {
         const textLength = window.innerWidth >= 1024 ? 150 : 100;
@@ -956,30 +964,55 @@
         //     },
         // });
 
-        var swiperMultipleSliderKeunggulan = new Swiper(".multiple-slide-carousel-keunggulan", {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: '.multiple-swiper-pagination-keunggulan',
-            breakpoints: {
-                960: {
-                    slidesPerView: 3,
-                    spaceBetween: 25,
-                }
-            }
-        });
+      var swiperMultipleSliderKeunggulan = new Swiper(".multiple-slide-carousel-keunggulan", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: '.multiple-swiper-pagination-keunggulan',
+        breakpoints: {
+          960: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          }
+        }
+      });
 
-        // var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
-        //     loop: true,
-        //     slidesPerView: 1,
-        //     spaceBetween: 20,
-        //     pagination: '.multiple-swiper-pagination',
-        //     breakpoints: {
-        //         960: {
-        //             slidesPerView: 3,
-        //             spaceBetween: 25,
-        //         }
-        //     }
-        // });
+      var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: '.multiple-swiper-pagination',
+        breakpoints: {
+          960: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          }
+        }
+      })
+
+      var swiper = new Swiper(".default-carousel", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      var swiperMultipleSlider = new Swiper(".multiple-slide-carousel", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: '.multiple-swiper-pagination',
+        breakpoints: {
+          960: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          }
+        }
+      });
     </script>
 @endsection
