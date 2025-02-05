@@ -6,7 +6,7 @@
     <!-- TinyMCE initialization -->
     <script>
         tinymce.init({
-            selector: 'textarea#', // change this value according to your HTML
+            selector: '#news', // change this value according to your HTML
             plugins: 'a_tinymce_plugin',
             a_plugin_option: true,
             height: 750,
