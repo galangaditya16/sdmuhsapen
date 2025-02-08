@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Slider;
 
 class SliderController extends Controller
-{   
+{
     public static function getListSlider()
     {
         $getBeritaCollection = new Slider();
-        return $getBeritaCollection->all();        
+        return $getBeritaCollection->all();
     }
 }

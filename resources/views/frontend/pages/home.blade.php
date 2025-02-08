@@ -250,10 +250,9 @@
                             </div>
                         </div>
                     </div>
-
                 @endforeach
-
             </div>
+
             <div class="relative flex">
                 <a href="{{ route('front.news') }}" class="mx-auto">
                     <button type="button"
