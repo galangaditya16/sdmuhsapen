@@ -23,6 +23,10 @@
     </style>
 @endsection
 
+
+
+
+
 @section('content')
     {{-- SLIDER CAROUSEL --}}
     <section class=" border-gray-200 mb-20 mt-0 content-center">

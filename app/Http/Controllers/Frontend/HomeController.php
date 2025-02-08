@@ -11,6 +11,7 @@ use App\Models\AllCategoryTranslite;
 use App\Models\AllContentTranslite;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Helpers\SessionHelpers;
 use App\Models\TeacherPositionnew;
 use Database\Seeders\TeacherPosition;
 use Illuminate\Support\Facades\DB;
@@ -20,9 +21,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-
         try {
-            $lang  = 'id';
+            $lang = SessionHelpers::get('lang');
             $slider = Slider::all();
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
@@ -52,7 +52,7 @@ class HomeController extends Controller
     public function principalsSpeech()
     {
         try {
-            $lang  = 'id';
+            $lang = SessionHelpers::get('lang');
             $data = AllContentTranslite::with([
                 'ContentContent.transLite' => function ($query) use ($lang) {
                     $query->where('lang', $lang); // Filter transLite berdasarkan lang
@@ -76,7 +76,7 @@ class HomeController extends Controller
     public function teacherAndStaff()
     {
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $positions = AllCategoryTranslite::with(['CategoryTeacher' => function ($query) {
                 $query->orderBy('order', 'ASC'); // Urutkan relasi
             }, 'CategoryTeacher.Guru', 'CategoryTeacher.transLite'])
@@ -96,7 +96,7 @@ class HomeController extends Controller
     public function facilities()
     {
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $facilities = AllContentTranslite::with(['ContentContent' => function ($query) {
                 $query->where('id_category', '201202507');
             }, 'ContentContent.transLite', 'ContentContent.Categorys', 'ContentContent.Categorys.transLite'])
@@ -116,7 +116,7 @@ class HomeController extends Controller
     public function programs()
     {
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $programs = AllContentTranslite::with('ContentPrograms', 'ContentPrograms.Categorys.transLite', 'ContentPrograms.transLite')
                 ->whereHas('ContentPrograms')->where('lang', $lang)
                 ->get();
@@ -138,7 +138,7 @@ class HomeController extends Controller
 
     public function news()
     {
-        $lang = 'id';
+        $lang = SessionHelpers::get('lang');
         $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
             ->whereHas('ContentNews', function ($query) {
                 $query->orderBy('created_at', 'ASC');
@@ -215,7 +215,7 @@ class HomeController extends Controller
 
 
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $galeries = Gallery::orderBy('created_at', 'asc')->paginate(6);
             return view('frontend.pages.galery', compact('lang', 'galeries'));
         } catch (\Throwable $th) {
@@ -225,7 +225,7 @@ class HomeController extends Controller
 
     public function galeryDetail(string $slug)
     {
-        $lang = 'id';
+        $lang = SessionHelpers::get('lang');
         if ($lang == 'id') {
             $gallery = Gallery::where('slug_id', $slug)->first();
         } else {

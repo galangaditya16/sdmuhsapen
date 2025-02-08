@@ -10,8 +10,12 @@
                 <select name="category"
                   class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
                   type="text" onchange="this.form.submit()">
-                  <option value="">Semua kategori</option>
-                  <option value="Kategori 1">Kategori 1</option>
+                  <option value="" disabled>Semua kategori</option>
+                  @forelse ($categorys as $category )
+                  <option value="">{{ $category->title }}</option>
+                  @empty
+                  <option value="">Kategori Kosong</option>
+                  @endforelse
                 </select>
               </div>
               <div class="flex items-center w-full bg-gray-300 rounded-3xl">

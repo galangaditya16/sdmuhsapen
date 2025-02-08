@@ -3,25 +3,35 @@
         <a href="{{ url('/') }}" class="flex items-center rtl:space-x-reverse">
             <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-16" alt="Logo SD Muhammadiyah Sapen">
         </a>
-        <div class="flex md:order-2 rtl:space-x-reverse">
 
+        <div class="flex md:order-2 rtl:space-x-reverse">
             <ul class="flex flex-col mt-1 mx-1 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-1">
                 <li>
-                    <button id="buttonDropdownBahasa" data-dropdown-toggle="dropdownBahasa" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
-                        ID
-                        <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button>
+                  @if(\App\Helpers\SessionHelpers::get('lang') == 'id')
+                  <button id="buttonDropdownBahasa" data-dropdown-toggle="dropdownBahasa" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
+                    ID
+                    <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                  </button>
+                  @else
+                  <button id="buttonDropdownBahasa" data-dropdown-toggle="dropdownBahasa" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
+                    EN
+                    <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                  </button>
+                  @endif
+
                     <!-- Dropdown menu -->
                     <div id="dropdownBahasa" class="z-10 hidden font-bold bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
                         <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                            <a href="{{ route('switchlang','id') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                 ID
                             </a>
                         </div>
                         <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                            <a href="{{ route('switchlang','en') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                 EN
                             </a>
                         </div>

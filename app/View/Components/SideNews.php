@@ -3,11 +3,12 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-use App\Models\AllCategoryTranslite;
-use App\Models\AllContentTranslite;
 use App\Models\Banner;
+use Illuminate\View\Component;
+use App\Helpers\SessionHelpers;
+use App\Models\AllContentTranslite;
+use Illuminate\Contracts\View\View;
+use App\Models\AllCategoryTranslite;
 
 class SideNews extends Component
 {
@@ -25,7 +26,7 @@ class SideNews extends Component
     public function render(): View|Closure|string
     {
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $currentNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)
             ->orderBy('created_at', 'ASC')

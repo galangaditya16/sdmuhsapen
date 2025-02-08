@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\PaginationHelpers;
 use App\Models\AllCategoryTranslite;
 use App\Models\AllContentTranslite;
+use App\Helpers\SessionHelpers;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class BeritaController extends Controller
         int $page=1,
         int $limit=10
     ) {
-        $lang = 'id';
+        $lang = SessionHelpers::get('lang');
         $getBeritaCollection = News::with(['hasCategory','content' => function($query) use ($lang){
             $query->where('lang', $lang ? $lang : 'id');
         }])->paginate($limit, $select, 'page', $page);
@@ -45,7 +46,7 @@ class BeritaController extends Controller
 
     public function listNews(Request $request){
         try {
-            $lang = 'id';
+            $lang = SessionHelpers::get('lang');
             $categorys = AllCategoryTranslite::with('CategoryNews','CategoryNews.transLite')
             ->whereHas('CategoryNews')
             ->where('lang',$lang)
@@ -64,7 +65,7 @@ class BeritaController extends Controller
                 ->whereHas('ContentNews')->where('lang',$lang)
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
-           
+
             }
             $newnews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)

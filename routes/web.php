@@ -22,6 +22,7 @@ use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\Backend\TeacherPositionController;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\SwitchLangController;
 use App\Http\Controllers\UserController;
 use App\Models\SysPermission;
 use Illuminate\Support\Facades\Route;
@@ -89,25 +90,26 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
 
     Route::post('logout',[AuthController::class,'logout'])->name('logout');
 });
-Route::middleware(['setLocal'])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('front.home');
-    Route::get('login',[AuthController::class,'login'])->name('login');
-    Route::post('authentication',[AuthController::class,'authenticate'])->name('login.process');
-    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-    Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
-    Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
-    Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->name('teacher-and-staff');
-    Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
-    Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
-    Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
-    Route::get('/news',[BeritaController::class,'listNews'])->name('front.news');
-    Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
-    Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');
-    Route::get('/news/{id}/{lang}', [HomeController::class, 'newsDetail'])->name('newsDetail');
-    Route::get('/galery', [HomeController::class, 'galery'])->name('front.galery');
-    Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
-    Route::post('/contact-us', [ContactController::class, 'contactUs'])->name('contact-us');
-});
+
+
+Route::get('/', [HomeController::class, 'index'])->name('front.home');
+Route::get('login',[AuthController::class,'login'])->name('login');
+Route::post('authentication',[AuthController::class,'authenticate'])->name('login.process');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/organization', [HomeController::class, 'organization'])->name('organization');
+Route::get('/principals-speech', [HomeController::class, 'principalsSpeech'])->name('principals-speech');
+Route::get('/teacher-and-staff', [HomeController::class, 'teacherAndStaff'])->name('teacher-and-staff');
+Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
+Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
+Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
+Route::get('/news',[BeritaController::class,'listNews'])->name('front.news');
+Route::get('/search-news', [HomeController::class, 'searchNews'])->name('search-news');
+Route::get('/global-search', [HomeController::class, 'globalSearch'])->name('global-search');
+Route::get('/news/{id}/{lang}', [HomeController::class, 'newsDetail'])->name('newsDetail');
+Route::get('/galery', [HomeController::class, 'galery'])->name('front.galery');
+Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
+Route::post('/contact-us', [ContactController::class, 'contactUs'])->name('contact-us');
+Route::get('lang/{lang}', [SwitchLangController::class, 'index'])->name('switchlang');
 
 
 
