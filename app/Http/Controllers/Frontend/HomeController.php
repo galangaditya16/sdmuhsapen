@@ -30,7 +30,8 @@ class HomeController extends Controller
                     $query->orderBy('created_at', 'ASC');
                 })->where('lang', $lang)
                 ->latest()
-                ->paginate(10);
+                ->take(3)
+                ->get();
             $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
