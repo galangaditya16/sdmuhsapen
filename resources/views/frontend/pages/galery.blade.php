@@ -38,7 +38,7 @@
             @forelse ($galeries as $new)
                 <div style="background-image: url('{{ asset('assets/images/gallery/thumbnail/').'/'. $new->thumbnail }}');" alt="galeries-1.png"
                     class="rounded-3xl bg-cover bg-center h-[450px] max-h-[500px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
-                    <div class="h-[565px] relative">
+                    <div class="h-[480px] relative">
                         <div
                             class="py-1.5 px-4 bg-black bg-opacity-40 text-white rounded-lg absolute left-8 top-[180px] flex gap-x-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -60,7 +60,13 @@
                                 <p class="text-lg font-bold">Galeri: {{ $new->title_en }}</p>
                                 </a>
                             @endif
-                            <p class="font-thin text-sm">{{ $new->created_at }}</p>
+                            <p class="font-thin text-sm">
+                                @if ($lang == 'id')
+                                {{ \Carbon\Carbon::parse($new->created_at)->translatedFormat('l, d F Y') }}
+                                @else
+                                {{ $new->created_at->format('l, d F Y') }}
+                                @endif
+                            </p>
                         </div>
                         <div class="flex justify-center mt-20">
                             @if ($lang == 'id')
