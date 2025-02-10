@@ -29,7 +29,7 @@ class SideNews extends Component
             $lang = SessionHelpers::get('lang');
             $currentNews = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
             ->whereHas('ContentNews')->where('lang',$lang)
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->take(4)
             ->get();
             $relatedNews = AllContentTranslite::with(['ContentNews','ContentNews.hasCategory'])
@@ -37,7 +37,7 @@ class SideNews extends Component
                 $query->where('headline','!=',0);
             })
             ->where('lang',$lang)
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->take(4)
             ->get();
             $banners = Banner::orderBy('created_at', 'DESC')->take(3)->get();
