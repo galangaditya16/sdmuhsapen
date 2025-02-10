@@ -22,6 +22,7 @@ use App\Http\Controllers\Backend\TeacherNew;
 use App\Http\Controllers\Backend\TeacherPositionController;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\MessageController;
 use App\Http\Controllers\SwitchLangController;
 use App\Http\Controllers\UserController;
 use App\Models\SysPermission;
@@ -113,6 +114,7 @@ Route::middleware(['setLocal'])->group(function() {
     Route::get('/galery/{id}', [HomeController::class, 'galeryDetail'])->name('galeryDetail');
     Route::post('/contact-us', [ContactController::class, 'contactUs'])->name('contact-us');
     Route::get('lang/{lang}', [SwitchLangController::class, 'index'])->name('switchlang');
+    Route::post('send/message',[MessageController::class,'sendMessage'])->name('send.message');
 });
 
 
