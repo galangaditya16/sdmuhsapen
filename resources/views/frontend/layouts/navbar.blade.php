@@ -7,7 +7,7 @@
         <div class="flex md:order-2 rtl:space-x-reverse">
             <ul class="flex flex-col mt-1 mx-1 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-1">
                 <li>
-                  @if(\App\Helpers\SessionHelpers::get('lang') == 'id')
+                  @if(\App\Helpers\SessionHelpers::get('lang') == 'id' || \App\Helpers\SessionHelpers::get('lang') == 'null')
                   <button id="buttonDropdownBahasa" data-dropdown-toggle="dropdownBahasa" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
                     ID
                     <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -93,7 +93,7 @@
             <ul class="flex flex-col p-1 lg:p-3 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-2 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-1 px-1 font-bold text-white bg-dark-blue">
-                        Tentang Kami
+                        {{ __('message.tentang_kami') }}
                         <svg class="w-2.5 h-2.5 ms-1 lg:ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
@@ -103,45 +103,45 @@
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
                             <li>
                                 <a href="{{ route('profile') }}" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Profil Sekolah
+                                   {{ __('message.profil_sekolah')}}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('principals-speech') }}" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Sambutan Kepala Sekolah
+                                    {{ __('message.sambutan_kepala_sekolah') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('organization') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Struktur Organisasi
+                                    {{ __('message.struktur_organisasi') }}
                                 </a>
                             </li>
                         </ul>
                         <div class="py-1">
                             <a href="{{ route('teacher-and-staff')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                Profil Guru dan Karyawan
+                                {{ __('message.profil_guru_dan_karyawan') }}
                             </a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <a href="{{ route('facilities') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
-                        Fasilitas
+                        {{ __('message.fasilitas') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('programs') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
-                        Program
+                       {{ __('message.program')}}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('front.news') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
-                        Berita
+                        {{ __('message.berita') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('contacts') }}" class="block py-1 px-1 text-white font-bold bg-dark-blue">
-                        Hubungi Kami
+                        {{ __('message.hubungi_kami') }}
                     </a>
                 </li>
             </ul>

@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Session;
 class SessionHelpers {
     public static function get($key, $default = 'ID')
     {
+        if($key == 'lang'){
+            return Session($key) ?? 'id';
+        }
         return Session::get($key, $default);
     }
 
