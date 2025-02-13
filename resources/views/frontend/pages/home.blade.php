@@ -75,7 +75,8 @@
                             <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl" data-text="945">945</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-pink">Prestasi Bahasa dan Sastra</dt>
+
+                            <dt class="text-base leading-7 text-pink">{{ __('message.prestasi_bahasa_dan_sastra') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl" data-text="174">174</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
@@ -102,10 +103,7 @@
                     <h1 class="text-lg font-bold text-oren">Selayang Pandang</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">SD Muhammadiyah Sapen Yogyakarta</h1>
                     <p class="text-base mt-3 text-justify">
-                        SD Muhammadiyah Sapen adalah salah satu sekolah dasar yang berada di Yogyakarta, Indonesia. Sekolah
-                        ini merupakan bagian dari jaringan Muhammadiyah, sebuah organisasi Islam yang berfokus pada
-                        pendidikan dan sosial. SD Muhammadiyah Sapen dikenal karena mengintegrasikan nilai-nilai agama dalam
-                        proses pembelajaran, serta mengutamakan pengembangan karakter dan keterampilan siswa.
+                       {{ __('message.selayang_pandang_content') }}
                     </p>
                     <a href="{{ route('profile') }}">
                         <button type="button"
