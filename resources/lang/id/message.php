@@ -33,5 +33,6 @@ return [
     'visi_misi_sd_muhammadiyah_sapen' => 'Visi dan Misi SD Muhammadiyah Sapen',
     'sambutan_kepala_sekolah' => 'Sambutan Kepala Sekolah',
     'kepala_sd_muhammadiyahsapen' => 'Kepala SD Muhammadiyah Sapen',
+    'selayang_pandang_content' => 'SD Muhammadiyah Sapen adalah salah satu sekolah dasar yang berada di Yogyakarta, Indonesia. Sekolah ini merupakan bagian dari jaringan Muhammadiyah, sebuah organisasi Islam yang berfokus pada pendidikan dan sosial. SD Muhammadiyah Sapen dikenal karena mengintegrasikan nilai-nilai agama dalam proses pembelajaran, serta mengutamakan pengembangan karakter dan keterampilan aiaquß.'
 ];
 
