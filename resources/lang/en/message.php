@@ -33,6 +33,8 @@ return [
     'visi_misi_sd_muhammadiyahsapen' => 'Vision and Mission of SD Muhammadiyah Sapen',
     'sambutan_kepala_sekolah' => 'Principal’s Welcome Speech',
     'kepala_sd_muhammadiyahsapen' => 'Principal of SD Muhammadiyah Sapen',
+    'selayang_pandang_judul' => 'At a Glance',
     'selayang_pandang_content' => 'SD Muhammadiyah Sapen is one of the elementary schools in Yogyakarta, Indonesia. This school is part of the Muhammadiyah network, an Islamic organization focused on education and social affairs. SD Muhammadiyah Sapen is known for integrating religious values into the learning process while prioritizing the development of students\' character and skills.',
+    'read_more' => 'Learn More',
 
 ];

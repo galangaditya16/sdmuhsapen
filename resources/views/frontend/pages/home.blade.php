@@ -100,7 +100,7 @@
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
 
                 <div>
-                    <h1 class="text-lg font-bold text-oren">Selayang Pandang</h1>
+                    <h1 class="text-lg font-bold text-oren">{{ __('message.selayang_pandang_judul') }}</h1>
                     <h1 class="text-4xl font-bold my-3 text-dark-blue">SD Muhammadiyah Sapen Yogyakarta</h1>
                     <p class="text-base mt-3 text-justify">
                        {{ __('message.selayang_pandang_content') }}
@@ -108,7 +108,7 @@
                     <a href="{{ route('profile') }}">
                         <button type="button"
                             class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                            Pelajari Selengkapnya
+                            {{ __('message.read_more') }}
                         </button>
                     </a>
                 </div>
