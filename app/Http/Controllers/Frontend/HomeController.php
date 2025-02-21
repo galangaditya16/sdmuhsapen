@@ -32,20 +32,21 @@ class HomeController extends Controller
                     })
                     ->where('lang', $lang)
                     ->get()
-                    ->each(function ($item) {
-                        $item->type = 'news'; // Menyimpan type secara permanen dalam objek
+                    ->map(function ($item) {
+                        return array_merge($item->toArray(), ['type' => 'news']);
                     });
             
                 $galeris = Gallery::where('title_id', 'like', '%' . $request->search . '%')
                     ->get()
-                    ->each(function ($item) {
-                        $item->type = 'gallery'; // Menyimpan type secara permanen dalam objek
+                    ->map(function ($item) {
+                        return array_merge($item->toArray(), ['type' => 'gallery']);
                     });
             
                 $lists = $news->merge($galeris);
             
                 return view('frontend.pages.global-search', compact('lists'));
             }
+            
             
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
