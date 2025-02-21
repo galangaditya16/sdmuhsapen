@@ -13,12 +13,15 @@ class QAMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    public $detail;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($detail)
     {
-        //
+        // 
+        $this->detail = $detail;
     }
 
     /**
@@ -27,7 +30,7 @@ class QAMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Q A Mail',
+            subject: 'Q&A Mail',
         );
     }
 
@@ -37,7 +40,8 @@ class QAMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'frontend.pages.mail.admin.faqtemplate',
+            with: $this->detail,
         );
     }
 
