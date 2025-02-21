@@ -38,13 +38,15 @@
             <li class="list-none flex justify-between">
               @if($list['type'] == 'gallery')
               <a href="{{ route('galeryDetail', $list['title_id'] ?? $list['title_en']) }}" class="underline text-blue-600 hover:text-blue-800">
-              @else
-              {{-- @dd($list) --}}
-              <a href="{{ route('newsDetail', ['id' => $list['slug'], 'lang' => 'id']) }}" class="underline text-blue-600 hover:text-blue-800">
-              @endif
                 {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
               </a>
-              <div>{{ $list['type'] ?? 'undefined' }}</div>
+              <div>gallery</div>
+              @else
+              <a href="{{ route('newsDetail', ['id' => $list['slug'], 'lang' => 'id']) }}" class="underline text-blue-600 hover:text-blue-800">
+                {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
+              </a>
+              <div>News</div>
+              @endif
             </li>
           @endforeach
           <li class="list-none text-biru-tua">
