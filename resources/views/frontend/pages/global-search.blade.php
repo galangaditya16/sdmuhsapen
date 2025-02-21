@@ -31,8 +31,7 @@
 
     <p class="px-4 md:px-0 font-bold">Hasil penulusuran untuk “Contoh Halaman Hasil Penelusuran</p>
 
-    <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <div class="px-8 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <ol class="list-disc space-y-3">
           @foreach ($lists as $list)
             <li class="list-none flex justify-between">
