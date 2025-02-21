@@ -39,7 +39,8 @@
               @if($list['type'] == 'gallery')
               <a href="{{ route('galeryDetail', $list['title_id'] ?? $list['title_en']) }}" class="underline text-blue-600 hover:text-blue-800">
               @else
-              <a href="{{ route('newsDetail', ['id' => $list->slug, 'lang' => 'id']) }}" class="underline text-blue-600 hover:text-blue-800">
+              {{-- @dd($list) --}}
+              <a href="{{ route('newsDetail', ['id' => $list['slug'], 'lang' => 'id']) }}" class="underline text-blue-600 hover:text-blue-800">
               @endif
                 {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
               </a>
