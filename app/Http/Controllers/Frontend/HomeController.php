@@ -25,36 +25,28 @@ class HomeController extends Controller
             $lang     = SessionHelpers::get('lang');
             $slider   = Slider::all();
             $gallerys = Gallery::orderBy('created_at', 'asc')->get();
-            if($request->has('search')){
-                $news  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
-                         ->whereHas('ContentNews', function($query) use ($request) {
-                            $query->where('title', 'like', '%' . $request->search . '%');
-                         })
-                         ->where('lang',$lang)
-                         ->get()
-                         ->map(function($item) {
-                            $item->type = 'news';
-                            return $item;
-                         });
-                if($lang == 'id'){
-                    $galeris = Gallery::where('title_id','like','%' . $request->search .'%')
-                               ->get()
-                               ->map(function($item) {
-                                   $item->type = 'gallery';
-                                   return $item;
-                               });
-                }else{
-                    $galeris = Gallery::where('title_id','like','%' . $request->search .'%')
-                                ->get()
-                                ->map(function($item) {
-                                    $item->type = 'gallery';
-                                    return $item;
-                                });
-                }
+            if ($request->has('search')) {
+                $news = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+                    ->whereHas('ContentNews', function ($query) use ($request) {
+                        $query->where('title', 'like', '%' . $request->search . '%');
+                    })
+                    ->where('lang', $lang)
+                    ->get()
+                    ->each(function ($item) {
+                        $item->type = 'news'; // Menyimpan type secara permanen dalam objek
+                    });
+            
+                $galeris = Gallery::where('title_id', 'like', '%' . $request->search . '%')
+                    ->get()
+                    ->each(function ($item) {
+                        $item->type = 'gallery'; // Menyimpan type secara permanen dalam objek
+                    });
+            
                 $lists = $news->merge($galeris);
-
-                return view('frontend.pages.global-search',compact('lists'));
-            } 
+            
+                return view('frontend.pages.global-search', compact('lists'));
+            }
+            
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
                 ->whereHas('ContentNews', function ($query) {
