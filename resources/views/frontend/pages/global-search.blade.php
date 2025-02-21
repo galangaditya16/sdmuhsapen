@@ -32,16 +32,26 @@
     <p class="px-4 md:px-0 font-bold">Hasil penulusuran untuk “Contoh Halaman Hasil Penelusuran</p>
 
     <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      <ol class="list-disc space-y-3">
-        @foreach ($lists as $list)
-          <li class="list-none flex justify-between">
-            <p class="underline">{{ $list['title'] }}</p>
-            <div>type</div>
+      <div class="px-4 lg:px-0 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <ol class="list-disc space-y-3">
+          @foreach ($lists as $list)
+            <li class="list-none flex justify-between">
+              @if($list['type'] == 'gallery')
+              <a href="{{ route('galeryDetail', $list['title_id'] ?? $list['title_en']) }}" class="underline text-blue-600 hover:text-blue-800">
+              @else
+              <a href="{{ route('newsDetail', ['id' => $list->slug, 'lang' => 'id']) }}" class="underline text-blue-600 hover:text-blue-800">
+              @endif
+                {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
+              </a>
+              <div>{{ $list['type'] ?? 'undefined' }}</div>
+            </li>
+          @endforeach
+          <li class="list-none text-biru-tua">
+            {{-- <a href="/next" class="underline text-blue-600 hover:text-blue-800">Laman berikutnya >>></a> --}}
           </li>
-        @endforeach
-        <li class="list-none text-biru-tua"><a href="/next">Laman berikutnya >>></a></li>
-      </ol>
-    </div>
+        </ol>
+      </div>
+      
   </section>
 
   @include('frontend.layouts.footer')

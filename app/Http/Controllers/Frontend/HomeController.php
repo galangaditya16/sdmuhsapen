@@ -19,11 +19,42 @@ use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $lang = SessionHelpers::get('lang');
-            $slider = Slider::all();
+            $lang     = SessionHelpers::get('lang');
+            $slider   = Slider::all();
+            $gallerys = Gallery::orderBy('created_at', 'asc')->get();
+            if($request->has('search')){
+                $news  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
+                         ->whereHas('ContentNews', function($query) use ($request) {
+                            $query->where('title', 'like', '%' . $request->search . '%');
+                         })
+                         ->where('lang',$lang)
+                         ->get()
+                         ->map(function($item) {
+                            $item->type = 'news';
+                            return $item;
+                         });
+                if($lang == 'id'){
+                    $galeris = Gallery::where('title_id','like','%' . $request->search .'%')
+                               ->get()
+                               ->map(function($item) {
+                                   $item->type = 'gallery';
+                                   return $item;
+                               });
+                }else{
+                    $galeris = Gallery::where('title_id','like','%' . $request->search .'%')
+                                ->get()
+                                ->map(function($item) {
+                                    $item->type = 'gallery';
+                                    return $item;
+                                });
+                }
+                $lists = $news->merge($galeris);
+
+                return view('frontend.pages.global-search',compact('lists'));
+            } 
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
                 ->whereHas('ContentNews', function ($query) {
@@ -32,7 +63,6 @@ class HomeController extends Controller
                 ->latest()
                 ->take(3)
                 ->get();
-            $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
             dd($th);

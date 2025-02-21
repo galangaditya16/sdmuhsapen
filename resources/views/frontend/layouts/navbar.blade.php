@@ -48,8 +48,8 @@
                     <span class="sr-only">Search</span>
                 </button>
                 <div id="search-popup" class="absolute top-12 right-0 hidden bg-white rounded-lg shadow-lg p-4 w-96">
-                    <form class="relative">
-                        <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <form action="{{ route('front.home') }}" class="relative">
+                        <input type="text" name="search" placeholder="Search..." class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <button type="submit" class="absolute right-2 top-2 text-gray-500 hover:text-blue-500">
                             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
