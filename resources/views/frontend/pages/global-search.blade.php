@@ -36,7 +36,7 @@
             <div class="px- lg:px-0 lg:w-[65%] grid grid-cols-1">
               <table class="w-full text-left rtl:text-right text-lg">
                 @foreach ($lists as $list)
-                <tr class="bg-white border-b dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 w-full">
+                <tr class="bg-white border-b dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">
                   @if($list['type'] == 'gallery')
                   <th scope="row" class="px-8 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     <a href="{{ route('galeryDetail', $list['title_id'] ?? $list['title_en']) }}">
