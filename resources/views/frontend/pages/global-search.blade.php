@@ -30,41 +30,40 @@
                 </div>
             </div>
         </form>
-
         <p class="px-4 md:px-0 font-bold">Hasil penelusuran untuk "{{ request('search') ?? '-' }}"</p>
-        <div class="block lg:flex">
-            <div class="px- lg:px-0 lg:w-[65%] grid grid-cols-1">
-              <table class="w-full text-left rtl:text-right text-lg">
-                @foreach ($lists as $list)
-                <tr class="bg-white border-b dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">
-                  @if($list['type'] == 'gallery')
-                  <th scope="row" class="px-8 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <a href="{{ route('galeryDetail', $list['title_id'] ?? $list['title_en']) }}">
-                      {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
-                    </a>
-                  </th>
-                  <td class="px-6 py-2 text-right">
-                    <button class="py-2 px-4 bg-biru-tua text-white rounded-lg text-sm">Galeri</button>
-                  </td>
-                  @else
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <a href="{{ route('newsDetail', ['id' => $list['slug'], 'lang' => 'id']) }}">
-                      {{ $list['title'] ?? $list['title_id'] ?? $list['title_en'] }}
-                    </a>
-                  </th>
-                  <td class="px-6 py-2 text-right">
-                    <button class="py-2 px-4 bg-oren text-white rounded-lg text-sm">Berita</button>
-                  </td>
-                  @endif
-                </tr>
-                @endforeach
-              </table>
-            </div>
-            <div class="w-[30%] space-y-3 hidden lg:block">
-                <x-side-news />
+        <div class="block lg:flex gap-x-10">
+            <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
+                @forelse ($lists as $new)
+                @php
+                    $decode = $new['content_news'] ? json_decode($new['content_news']['images']) : '';
+                    $firstImage = $decode ? $decode[0] : '';
+                @endphp
+                    <div style="background-image: url('{{ asset('assets/images/news').'/'.$firstImage }}');" alt="$news"
+                        class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
+                        <div class="h-[565px] relative">
+                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">                     {{ \Carbon\Carbon::parse($new['created_at'])->format('F d, Y') }}</button>
+                        </div>
+                        <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
+                            <div class="space-y-3">
+                                <a href="{{ route('newsDetail', ['id' => $new['slug'], 'lang' => $lang]) }}">
+                                    <strong><p class="text-lg font-bold">{{ $new['title'] }}</p></strong>
+                                </a>
+                                <p>{!! str($new['body'])->limit(100) !!}</p>
+                            </div>
+                            <div class="flex justify-center mt-5">
+                                <a href="{{ route('newsDetail', ['id' => $new['slug'], 'lang' => $lang]) }}"
+                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5">Baca lagi</a>
+                            </div>
+                        </div>
+                    </div>
+              @empty 
+                div class="text-center lg:col-span-2 px-10 lg:px-30 pt-0 pb-20">
+                  <p class="font-bold text-2xl mt-10">Maaf, kata kunci yang Anda masukkan tidak ditemukan.</p>
+                  <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
+                </div>
+                @endforelse
             </div>
         </div>
-
 
         <div class="px-4 lg:hidden space-y-3">
             <x-side-news />

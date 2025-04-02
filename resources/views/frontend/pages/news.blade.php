@@ -78,13 +78,6 @@
             </div>
         </div>
 
-        {{--  <div class="flex justify-center gap-x-1 font-bold">
-      <button class="h-10 w-10 bg-oren rounded-full text-white">1</button>
-      <button class="h-10 w-10 bg-gray-300 rounded-full text-black">2</button>
-      <button class="h-10 w-10 bg-gray-300 rounded-full text-black">...</button>
-      <button class="h-10 w-10 bg-gray-300 rounded-full text-black">5</button>
-    </div>  --}}
-
         <div class="px-4 lg:hidden space-y-3">
             <x-side-news />
         </div>

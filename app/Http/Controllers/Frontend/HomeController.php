@@ -26,10 +26,12 @@ class HomeController extends Controller
             $slider   = Slider::all();
             $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             if ($request->has('search')) {
-                $news = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
-                    ->whereHas('ContentNews', function ($query) use ($request) {
-                        $query->where('title', 'like', '%' . $request->search . '%');
+
+                    $news = AllContentTranslite::with('ContentNews')
+                    ->whereHas('ContentNews', function($query){
+                        $query->take(1);
                     })
+                    ->where('title','like','%'.$request->search.'%')
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
@@ -44,9 +46,8 @@ class HomeController extends Controller
             
                 $lists = $news->merge($galeris);
             
-                return view('frontend.pages.global-search', compact('lists'));
+                return view('frontend.pages.global-search', compact('lists','lang'));
             }
-            
             
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
