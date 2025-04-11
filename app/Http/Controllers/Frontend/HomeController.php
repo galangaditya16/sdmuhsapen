@@ -31,14 +31,14 @@ class HomeController extends Controller
                     ->whereHas('ContentNews', function($query){
                         $query->take(1);
                     })
-                    ->whereRaw('BINARY title LIKE ?', ['%' . $request->search . '%'])
+                    ->whereRaw('"title" COLLATE "C" LIKE ?', ['%' . $request->search . '%'])
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'news']);
                     });
 
-                $galeris = Gallery::where('title_id', 'like', '%' . $request->search . '%')
+                $galeris = Gallery::whereRaw('"title_id" COLLATE "C" LIKE ?', ['%' . $request->search . '%'])
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'gallery']);
