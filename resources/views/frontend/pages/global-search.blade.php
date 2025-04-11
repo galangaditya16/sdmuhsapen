@@ -35,8 +35,10 @@
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($lists as $new)
                 @php
-                    $decode = $new['content_news'] && $new['content_news']['images'] ? json_decode($new['content_news']['images']) : '';
-                    $firstImage = $decode ? $decode[0] : '';
+                if($new['content_news'] ){
+                  $decode = $new['content_news'] && $new['content_news']['images'] ? json_decode($new['content_news']['images']) : '';
+                  $firstImage = $decode ? $decode[0] : '';
+                }
                 @endphp
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$firstImage }}');" alt="$news"
                         class="rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
