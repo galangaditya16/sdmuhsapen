@@ -27,26 +27,26 @@ class HomeController extends Controller
             $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             if ($request->has('search')) {
 
-                    $news = AllContentTranslite::with('ContentNews')
-                    ->whereHas('ContentNews', function($query){
+                $news = collect(AllContentTranslite::with('ContentNews')
+                    ->whereHas('ContentNews', function ($query) {
                         $query->take(1);
                     })
-                    ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
+                    ->whereRaw('title ILIKE ?', ['%' . request()->search . '%'])
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'news']);
-                    });
+                    }));
 
-                $galeris = Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
+                $galeris = collect(Gallery::whereRaw('title_id ILIKE ?', ['%' . request()->search . '%'])
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'gallery']);
-                    });
+                    }));
 
                 $lists = $news->merge($galeris);
 
-                return view('frontend.pages.global-search', compact('lists','lang'));
+                return view('frontend.pages.global-search', compact('lists', 'lang'));
             }
 
             DB::enableQueryLog();
@@ -187,7 +187,7 @@ class HomeController extends Controller
                 ->where('lang', $lang)
                 ->where('slug', $slug)
                 ->first();
-            if($relatedNews != null){
+            if ($relatedNews != null) {
                 if ($relatedNews->ContentNews->hasCategory !== null) {
                     $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
                 } else {
@@ -197,10 +197,9 @@ class HomeController extends Controller
                     'title' => $title ?? '-',
                     'relatedNews' => $relatedNews,
                 ]);
-            }else{
+            } else {
                 abort(404);
             }
-
         } catch (\Throwable $th) {
             dd($th);
             abort(404);
