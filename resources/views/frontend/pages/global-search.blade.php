@@ -35,7 +35,7 @@
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($lists as $new)
                 @php
-                if($new['content_news'] ){
+                if(isset($new['content_news']) && $new['content_news']){
                   $decode = $new['content_news'] && $new['content_news']['images'] ? json_decode($new['content_news']['images']) : '';
                   $firstImage = $decode ? $decode[0] : '';
                 }
