@@ -31,7 +31,7 @@ class HomeController extends Controller
                     ->whereHas('ContentNews', function($query){
                         $query->take(1);
                     })
-                    ->whereRaw('"title" COLLATE "C" LIKE ?', ['%' . $request->search . '%'])
+                    ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
