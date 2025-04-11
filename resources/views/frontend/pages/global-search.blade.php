@@ -35,7 +35,7 @@
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($lists as $new)
                 @php
-                    $decode = $new['content_news'] ? json_decode($new['content_news']['images']) : '';
+                    $decode = $new['content_news'] && $new['content_news']['images'] ? json_decode($new['content_news']['images']) : '';
                     $firstImage = $decode ? $decode[0] : '';
                 @endphp
                     <div style="background-image: url('{{ asset('assets/images/news').'/'.$firstImage }}');" alt="$news"
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-              @empty 
+              @empty
                 div class="text-center lg:col-span-2 px-10 lg:px-30 pt-0 pb-20">
                   <p class="font-bold text-2xl mt-10">Maaf, kata kunci yang Anda masukkan tidak ditemukan.</p>
                   <p class="">Silakan masukkan kata kunci lain atau kunjungi halaman lain: <a href="{{ route('front.home') }}" class="text-oren">home</a>, <a class="text-oren" href="/profile">tentang kami</a>, atau <a class="text-oren" href="/contacts">kontak</a></p>
