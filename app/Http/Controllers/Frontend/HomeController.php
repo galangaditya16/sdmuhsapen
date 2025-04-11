@@ -38,7 +38,7 @@ class HomeController extends Controller
                         return array_merge($item->toArray(), ['type' => 'news']);
                     });
 
-                $galeris = Gallery::whereRaw('"title_id" COLLATE "C" LIKE ?', ['%' . $request->search . '%'])
+                $galeris = Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'gallery']);
