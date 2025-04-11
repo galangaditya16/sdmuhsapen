@@ -31,14 +31,14 @@ class HomeController extends Controller
                     ->whereHas('ContentNews', function ($query) {
                         $query->take(1);
                     })
-                    ->whereRaw('title ILIKE ?', ['%' . request()->search . '%'])
+                    ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'news']);
                     }));
 
-                $galeris = collect(Gallery::whereRaw('title_id ILIKE ?', ['%' . request()->search . '%'])
+                $galeris = collect(Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'gallery']);
