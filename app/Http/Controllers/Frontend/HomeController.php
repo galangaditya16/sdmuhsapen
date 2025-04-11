@@ -31,24 +31,24 @@ class HomeController extends Controller
                     ->whereHas('ContentNews', function($query){
                         $query->take(1);
                     })
-                    ->where('title','like','%'.$request->search.'%')
+                    ->whereRaw('BINARY title LIKE ?', ['%' . $request->search . '%'])
                     ->where('lang', $lang)
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'news']);
                     });
-            
+
                 $galeris = Gallery::where('title_id', 'like', '%' . $request->search . '%')
                     ->get()
                     ->map(function ($item) {
                         return array_merge($item->toArray(), ['type' => 'gallery']);
                     });
-            
+
                 $lists = $news->merge($galeris);
-            
+
                 return view('frontend.pages.global-search', compact('lists','lang'));
             }
-            
+
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
                 ->whereHas('ContentNews', function ($query) {
