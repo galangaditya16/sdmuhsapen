@@ -7,7 +7,7 @@ return [
     'berita'    => 'Berita',
     'fasilitas' => 'Fasilitas',
     'program'   => 'Program',
-    'galeri_kegiatan' => 'Galeri Kegiatan',
+    'galeri_kegiatan' => 'Galeri Kegiatan Sekolah',
     'hubungi_kami' => 'Hubungi Kami',
     'saluran_kami' => 'Saluran Kami',
     'struktur_organisasi' => 'Struktur Organisasi',
@@ -71,5 +71,12 @@ return [
     'faq_pertanyaan_4' => 'Apabila saya mengikuti PPDB di SD Muhammadiyah Sapen berapa biaya yang dikenakan?',
     'faq_jawaban_4_part1' => 'SD Muhammadiyah Sapen menawarkan berbagai program pendidikan dengan biaya yang disesuaikan untuk setiap jenjang dan layanan yang diberikan. Biaya ini mencakup pendaftaran, pengembangan fasilitas sekolah, kebutuhan seragam, buku, serta kegiatan belajar mengajar. Selain itu, ada biaya bulanan yang sudah termasuk layanan makan siang dan kebutuhan harian siswa selama di sekolah. Program reguler dan kelas khusus, seperti program Cerdas Istimewa Matematika dan IPA (CIMIKA), memiliki rincian biaya yang berbeda sesuai dengan fasilitas tambahan yang disediakan.',
     'faq_jawaban_4_part2' => 'Dengan sistem pembayaran yang transparan, sekolah ini juga memastikan bahwa setiap biaya yang dikenakan sebanding dengan fasilitas dan kualitas pendidikan yang diberikan. Untuk mendapatkan informasi lebih lengkap dan memastikan biaya sesuai dengan kebutuhan Anda, calon wali murid disarankan untuk langsung menghubungi pihak sekolah melalui situs resmi atau saluran komunikasi lainnya. SD Muhammadiyah Sapen selalu berkomitmen memberikan layanan terbaik bagi siswa dan orang tua.',
+    //halaman home ends, footer start
+    'alamat_lengkap' => 'Jl. Bimo Kurdo No.33, Demangan, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55221',
+    'halaman_website' => 'Halaman Website',
+    'saluran_kami' => 'Saluran Kami',
+    'fasilitas_sekolah' => 'Fasilitas Sekolah',
+    'berita_sekolah' => 'Berita Sekolah',
+    'edukasi_tiada_henti' => 'Mengedukasi Tiada Henti',
 ];
 
