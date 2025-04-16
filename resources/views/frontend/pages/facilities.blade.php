@@ -34,9 +34,9 @@
 @endpush
 
 @section('content')
-    <x-profile-menu-header title="Fasilitas Sekolah" />
+    <x-profile-menu-header title="{{ __('message.fasilitas_sekolah') }}" />
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 mb-14">
-        <p class="lg:w-1/2 mx-auto text-center text-lg">SD Muhammadiyah Sapen Yogyakarta dilengkapi dengan fasilitas lengkap dan memadai, seperti ruang kelas yang nyaman, perpustakaan dengan koleksi buku berkualitas, laboratorium komputer dan sains, lapangan olahraga, serta ruang ibadah yang mendukung proses belajar mengajar secara optimal.</p>
+        <p class="lg:w-1/2 mx-auto text-center text-lg">{{ __('message.fasilitas_sekolah_content') }}</p>
 
         @foreach ($facilities as $index => $facility)
             @if ($index % 2 != 0)

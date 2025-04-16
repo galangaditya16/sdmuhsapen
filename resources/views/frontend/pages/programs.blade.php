@@ -34,10 +34,9 @@
 @endpush
 
 @section('content')
-    <x-profile-menu-header title="Program Sekolah" />
+    <x-profile-menu-header title="{{ __('message.program_sekolah') }}" />
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 mb-14">
-        <p class="lg:w-1/2 mx-auto text-center text-lg">SD Muhammadiyah Sapen memiliki berbagai layanan program pendidikan
-            bagi peserta didiknya. Berbagai layanan program pendidikan tersebut di antaranya :</p>
+        <p class="lg:w-1/2 mx-auto text-center text-lg">{{__('message.program_sekolah_content')}}</p>
         @forelse ($programs as $index => $program)
             @if ($index % 2 != 0)
                 {{-- mobile --}}

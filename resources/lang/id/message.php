@@ -107,6 +107,11 @@ return [
     'tujuan_content_3' => 'Menjalin kerjasama dengan berbagai pihak/instansi terkait dalam rangka peningkatan kualitas sumber daya manusia.',
     'tujuan_content_4' => 'Mengembangkan bidang garapan kejuruan, seperti kemampuan bahasa Inggris, olah raga dan tata kelola TI.',
     'tujuan_content_5' => 'Menumbuhkan kesadaran akan pentingnya lingkungan.',
+    'struktur_organisasi_content' => 'SD Muhammadiyah Sapen memiliki struktur organisasi yang sangat terstruktur sebagai hierarki. berikut adalah struktur organisasi SD Muhammadiyah Sapen',
+    'profil_guru_content' => 'SD Muhammadiyah Sapen memiliki ratusan guru yang memiliki pengalaman mengajar yang tinggi. Selain berpengalaman, tenaga pengajar kami memiliki sertifikasi mengajar.',
+    'fasilitas_sekolah_content' => 'SD Muhammadiyah Sapen Yogyakarta dilengkapi dengan fasilitas lengkap dan memadai, seperti ruang kelas yang nyaman, perpustakaan dengan koleksi buku berkualitas, laboratorium komputer dan sains, lapangan olahraga, serta ruang ibadah yang mendukung proses belajar mengajar secara optimal.',
+    'program_sekolah' => 'Program Sekolah',
+    'program_sekolah_content' => 'SD Muhammadiyah Sapen memiliki berbagai layanan program pendidikan bagi peserta didiknya. Berbagai layanan program pendidikan tersebut di antaranya :',
     //halaman profile ends
 
 ];

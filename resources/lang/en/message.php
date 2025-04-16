@@ -106,6 +106,11 @@ This achievement reflects the school’s commitment to producing superior genera
     'tujuan_content_3' => 'Establishing cooperation with various related parties/agencies in order to improve the quality of human resources.',
     'tujuan_content_4' => 'Developing vocational fields, such as English language skills, sports and IT governance.',
     'tujuan_content_5' => 'Raising awareness of the importance of the environment.',
+    'struktur_organisasi_content' => 'SD Muhammadiyah Sapen has a very structured organizational structure as a hierarchy. The following is the organizational structure of SD Muhammadiyah Sapen',
+    'profil_guru_content' => 'SD Muhammadiyah Sapen has hundreds of teachers who have high teaching experience. In addition to being experienced, our teaching staff have teaching certification.',
+    'fasilitas_sekolah_content' => 'Muhammadiyah Sapen Yogyakarta Elementary School is equipped with complete and adequate facilities, such as comfortable classrooms, a library with a collection of quality books, computer and science laboratories, sports fields, and a prayer room that supports the teaching and learning process optimally.',
+    'program_sekolah' => 'School Programs',
+    'program_sekolah_content' => 'SD Muhammadiyah Sapen has various educational program services for its students. The various educational program services include:',
     //halaman profile ends
 
 ];
