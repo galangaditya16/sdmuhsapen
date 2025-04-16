@@ -32,17 +32,17 @@
     <section class=" border-gray-200 mb-20 mt-0 content-center">
         <!--HTML CODE-->
         <div class="w-full md:w-[75%] container mx-auto px-4 absolute top-52 md:top-[25%] md:left-[5%] lg:top-[25%] lg:left-[25%] z-20">
-            <h1 class="text-xl md:text-2xl font-bold text-kuning-muda">Selamat Datang di</h1>
-            <h1 class="text-xl md:text-4xl font-bold my-3 text-white">SD Muhammadiyah Sapen Yogyakarta</h1>
-            <h1 class="text-xl md:text-lg my-3 text-white">Sekolahku Inspirasiku</h1>
+            <h1 class="text-xl md:text-2xl font-bold text-kuning-muda">{{ __('message.selamat_datang') }}</h1>
+            <h1 class="text-xl md:text-4xl font-bold my-3 text-white">{{ __('message.sd_sapen') }}</h1>
+            <h1 class="text-xl md:text-lg my-3 text-white">{{ __('message.sekolahku_inspirasiku') }}</h1>
             <a href="{{ route('profile') }}">
                 <button type="button" class="text-white ml-3 my-5 font-bold bg-biru-tua hover:bg-blue-900 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
-                    Pelajari Lebih Lanjut
+                    {{ __('message.learn_more') }}
                 </button>
             </a>
             <a target="_blank" href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
                 <button type="button" class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
-                PPDB
+                {{ __('message.ppdb') }}
                 </button>
             </a>
         </div>
@@ -71,7 +71,7 @@
                 <div class="mx-auto max-w-7xl px-6 py-12 sm:py-18 lg:px-8 bg-biru-tua rounded-2xl">
                     <dl class="grid grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-oren">Prestasi Matematika dan Sains</dt>
+                            <dt class="text-base leading-7 text-oren">{{ __('message.prestasi_matematika_dan_sains') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl" data-text="945">945</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
@@ -80,11 +80,11 @@
                             <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl" data-text="174">174</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
-                            <dt class="text-base leading-7 text-hijau-terang">Prestasi Bidang Agama</dt>
+                            <dt class="text-base leading-7 text-hijau-terang">{{ __('message.prestasi_bidang_agama') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl" data-text="100">19</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <dt class="text-base leading-7 text-biru-langit">Prestasi Seni dan Olahraga</dt>
+                            <dt class="text-base leading-7 text-biru-langit">{{ __('message.prestasi_seni_dan_olahraga') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl" data-text="84">84</dd>
                         </div>
                     </dl>
@@ -108,7 +108,7 @@
                     <a href="{{ route('profile') }}">
                         <button type="button"
                             class="mt-5 text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                            {{ __('message.read_more') }}
+                            {{ __('message.learn_more') }}
                         </button>
                     </a>
                 </div>
@@ -127,10 +127,9 @@
 
         <div class="w-full relative container mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl font-bold my-3 text-black mx-auto">Keunggulan SD Muhammadiyah Sapen</h1>
+                <h1 class="text-4xl font-bold my-3 text-black mx-auto">{{ __('message.keunggulan') }}</h1>
                 <p class="text-lg my-6 text-black mx-auto">
-                    SD Muhammadiyah Sapen adalah sekolah yang memiliki berbagai keungggulan dalam membentuk karakter peserta
-                    didik antara lain:
+                    {{ __('message.keunggulan_subtitle') }}
                 </p>
             </div>
             <div class="flex flex-nowrap lg:grid overflow-x-auto md:grid-cols-2 lg:grid-cols-3 gap-16 max-h-[65%]">
@@ -149,13 +148,10 @@
                       </svg>
                       <h5
                         class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                        Unggul dalam Prestasi Akademik
+                        {{ __('message.prestasi_akademik') }}
                       </h5>
                       <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                      SD Muhammadiyah Sapen Yogyakarta memiliki reputasi gemilang dalam prestasi akademik, baik di tingkat lokal,
-                      nasional, maupun internasional. Dengan didukung oleh kurikulum yang modern, tenaga pendidik profesional, dan
-                      metode pembelajaran inovatif, siswa berhasil meraih berbagai penghargaan di bidang sains, matematika, bahasa, dan teknologi.
-                      Prestasi ini mencerminkan komitmen sekolah dalam mencetak generasi unggul yang berdaya saing tinggi dan berwawasan luas.
+                      {{__('message.prestasi_akademik_content')}}
                       </p>
                     </div>
                   </a>
@@ -177,10 +173,10 @@
                       </svg>
                       <h5
                         class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                        Unggul dalam Prestasi NonAkademik
+                        {{ __('message.prestasi_nonakademik') }}
                       </h5>
                       <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                      SD Muhammadiyah Sapen Yogyakarta juga unggul dalam prestasi non-akademik dengan berbagai penghargaan di bidang seni, olahraga, dan keterampilan. Siswa-siswa kami sering kali memenangkan kompetisi tari, musik, keagamaan, serta olahraga seperti futsal, pencak silat, tapak suci, renang di tingkat daerah maupun nasional. Keberhasilan ini didukung oleh program ekstrakurikuler yang terarah dan pembinaan intensif, menjadikan siswa tidak hanya cerdas secara akademik, tetapi juga berbakat dan berprestasi di berbagai bidang lainnya.
+                      {{ __('message.prestasi_nonakademik_content') }}
                       </p>
                     </div>
                   </a>
@@ -202,10 +198,10 @@
                       </svg>
                       <h5
                         class="mb-2 text-3xl md:text-4xl text-white group-hover:text-oren font-bold tracking-tight text-center">
-                        Unggul dalam Pendidikan Karakter
+                        {{ __('message.pendidikan_karakter') }}
                       </h5>
                       <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10">
-                      SD Muhammadiyah Sapen Yogyakarta unggul dalam pendidikan karakter dengan mengintegrasikan nilai-nilai Islami ke dalam setiap aspek pembelajaran dan kegiatan sekolah. Melalui program seperti pembiasaan ibadah harian, tahfiz Al-Qur'an, dan penguatan akhlak mulia, siswa dibimbing untuk menjadi individu yang beriman, bertanggung jawab, dan memiliki empati tinggi. Pendekatan ini memastikan siswa tidak hanya unggul secara akademik, tetapi juga tumbuh menjadi pribadi yang berkarakter dan siap menghadapi tantangan masa depan.
+                      {{ __('message.pendidikan_karakter_content') }}
                       </p>
                     </div>
                   </a>
@@ -244,7 +240,7 @@
                             <div class="flex justify-center mt-5">
                                 <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
                                   class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5"
-                                >Baca lagi</a>
+                                >{{ __('message.read_more') }}</a>
                             </div>
                         </div>
                     </div>
@@ -255,7 +251,7 @@
                 <a href="{{ route('front.news') }}" class="mx-auto">
                     <button type="button"
                         class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                        Lihat Semua Berita
+                        {{ __('message.lihat_semua_berita') }}
                     </button>
                 </a>
             </div>
@@ -472,7 +468,7 @@
                 <a href="{{ route('front.galery') }}" class="mx-auto">
                     <button type="button"
                         class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                        Lihat Semua Galery
+                        {{ __('message.lihat_semua_galeri') }}
                     </button>
                 </a>
             </div>
@@ -487,8 +483,8 @@
             <div class="grid md:grid-cols-2 grid-rows-auto gap-28">
 
                 <div class="">
-                    <h1 class="text-lg font-bold text-oren">Testimonial</h1>
-                    <h1 class="text-4xl font-bold my-3 text-dark-blue">Kenapa Memilih Kami?</h1>
+                    <h3 class="text-lg font-bold text-oren">{{ __('message.testimonial') }}</h3>
+                    <h2 class="text-4xl font-bold my-3 text-dark-blue">{{ __('message.kenapa_memilih_kami') }}</h2>
 
                     <div class="default-carousel relative" data-carousel="slide">
                         <div class="relative overflow-hidden w-full min-h-[500px] md:min-h-[350px] justify-self-center">
@@ -755,7 +751,7 @@
                     <a target="_blank" href="https://www.google.com/maps/place/SD+Muhammadiyah+Sapen/@-7.7859359,110.3899218,17z/data=!4m8!3m7!1s0x2e7a59dafb0f533f:0x703ab4cd80139883!8m2!3d-7.7859359!4d110.3924967!9m1!1b1!16s%2Fg%2F11f3rdnn6m?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D">
                         <button type="button"
                             class="mt-5 relative text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                            Pelajari Selengkapnya
+                            {{ __('message.learn_more') }}
                         </button>
                     </a>
                 </div>
@@ -834,9 +830,8 @@
     <section class=" border-gray-200 my-10 pt-20">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">Pertanyaan yang Sering Ditanyakan</h1>
-            <p class="text-center mx-auto">Berikut adalah beberapa pertanyaan yang sering ditanyakan kepada kami. Dapatkan
-                jawaban Anda di bawah ini atau hubungi kami secara langsung!</p>
+            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">{{ __('message.faq_judul') }}</h1>
+            <p class="text-center mx-auto">{{ __('message.faq_subjudul') }}</p>
 
             <div class="flex flex-row gap-4">
 
@@ -849,7 +844,7 @@
                             data-accordion-target="#accordion-color-body-1" aria-expanded="true"
                             aria-controls="accordion-color-body-1">
                             <span class="text-left">
-                                Kenapa saya harus mendaftar di SD Muhammadiyah Sapen?
+                                {{ __('message.faq_pertanyaan_1') }}
                             </span>
                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -861,12 +856,10 @@
                     <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
                         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">
-                                SD Muhammadiyah Sapen merupakan salah satu sekolah dasar unggulan yang dikenal dengan pendekatan pendidikan berbasis nilai-nilai Islam. Sekolah ini mengintegrasikan ajaran agama dengan kurikulum nasional, menciptakan lingkungan belajar yang tidak hanya berfokus pada akademik tetapi juga pengembangan karakter dan akhlak mulia. Dengan pendekatan ini, siswa dididik untuk menjadi pribadi yang cerdas, beriman, dan berakhlak baik, sesuai dengan prinsip pendidikan holistik.
-
+                                {{ __('message.faq_jawaban_1_part1') }}
                             </p>
                             <p class="text-gray-500 dark:text-gray-400">
-                                Selain itu, SD Muhammadiyah Sapen memiliki rekam jejak prestasi gemilang di berbagai bidang, baik akademik maupun non-akademik. Sekolah ini menyediakan fasilitas yang lengkap, tenaga pendidik yang kompeten, serta berbagai kegiatan ekstrakurikuler untuk mendukung pengembangan minat dan bakat siswa. Lingkungan belajar yang positif dan program-program pengayaan yang inovatif menjadikan SD Muhammadiyah Sapen sebagai pilihan yang tepat bagi orang tua yang ingin memberikan pendidikan terbaik bagi anak-anak mereka.
-
+                                {{ __('message.faq_jawaban_1_part2') }}
                             </p>
                         </div>
                     </div>
@@ -876,7 +869,7 @@
                             data-accordion-target="#accordion-color-body-2" aria-expanded="false"
                             aria-controls="accordion-color-body-2">
                             <span class="text-left">
-                                Bagaimana cara mendaftar di SD Muhammadiyah Sapen?
+                                {{ __('message.faq_pertanyaan_2') }}
                             </span>
                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -887,10 +880,9 @@
                     </h2>
                     <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
                         <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Untuk mendaftar di SD Muhammadiyah Sapen, langkah pertama adalah mendapatkan informasi terbaru mengenai Penerimaan Peserta Didik Baru (PPDB). Anda dapat mengunjungi situs resmi sekolah di sdmuhsapen-yog.sch.id atau menghubungi call center di nomor 0811-2642-733. Informasi yang tersedia mencakup jadwal pendaftaran, persyaratan, dan prosedur yang harus diikuti. Selain itu, sekolah juga menyediakan layanan inden PPDB bagi calon siswa yang berminat mendaftar lebih awal.
-
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_2_part1') }}
                                 </p>
-                            <p class="text-gray-500 dark:text-gray-400">Selanjutnya, siapkan dokumen-dokumen yang diperlukan, seperti akta kelahiran, kartu keluarga, dan pas foto terbaru. Proses pendaftaran bisa dilakukan secara online melalui platform yang disediakan sekolah atau secara langsung dengan mendatangi kantor administrasi SD Muhammadiyah Sapen. Jika membutuhkan informasi tambahan, Anda dapat menghubungi pihak sekolah melalui email di info@sdmuhsapen-yog.sch.id atau akun Instagram resmi mereka di @sdmuhsapen. Pastikan semua persyaratan terpenuhi agar proses pendaftaran berjalan lancar.
+                            <p class="text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_2_part2') }}
                             </p>
                         </div>
                     </div>
@@ -900,7 +892,7 @@
                             data-accordion-target="#accordion-color-body-3" aria-expanded="false"
                             aria-controls="accordion-color-body-3">
                             <span class="text-left">
-                                Apa saja keunggulan dari SD Muhammadiyah Sapen?
+                                {{ __('message.faq_pertanyaan_3') }}
                             </span>
                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -911,10 +903,9 @@
                     </h2>
                     <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
                         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">SD Muhammadiyah Sapen memiliki sejumlah keunggulan yang menjadikannya pilihan unggul bagi para orang tua. Sekolah ini menawarkan pendidikan berbasis nilai-nilai Islam yang terintegrasi dengan kurikulum nasional, memastikan siswa tidak hanya berkembang secara akademis tetapi juga memiliki karakter yang berakhlak mulia. Dengan pendekatan ini, sekolah berhasil mencetak siswa yang cerdas, disiplin, dan bertanggung jawab. Selain itu, prestasi akademik dan non-akademik yang diraih siswa di tingkat lokal, nasional, dan internasional menjadi bukti kualitas pendidikan di sekolah ini.
-
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_3_part1') }}
                                 </p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Fasilitas yang lengkap dan modern, seperti laboratorium, perpustakaan, ruang multimedia, dan area olahraga, mendukung kegiatan belajar yang nyaman dan efektif. Didukung oleh tenaga pendidik yang kompeten dan berdedikasi, siswa mendapatkan bimbingan yang optimal untuk mengembangkan potensi mereka. SD Muhammadiyah Sapen juga menawarkan berbagai kegiatan ekstrakurikuler, seperti robotik, seni, dan olahraga, untuk mengasah minat dan bakat siswa. Dengan kombinasi kurikulum inovatif, lingkungan belajar yang kondusif, dan pendidikan karakter, sekolah ini menjadi pilihan ideal untuk membangun generasi yang unggul dan berintegritas.</p>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_3_part2') }}</p>
                         </div>
                     </div>
                     <h2 id="accordion-color-heading-4">
@@ -923,7 +914,7 @@
                             data-accordion-target="#accordion-color-body-4" aria-expanded="false"
                             aria-controls="accordion-color-body-4">
                             <span class="text-left">
-                                Apabila saya mengikuti PPDB di SD Muhammadiyah Sapen berapa biaya yang dikenakan?
+                                {{ __('message.faq_pertanyaan_4') }}
                             </span>
                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -934,9 +925,9 @@
                     </h2>
                     <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
                         <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">SD Muhammadiyah Sapen menawarkan berbagai program pendidikan dengan biaya yang disesuaikan untuk setiap jenjang dan layanan yang diberikan. Biaya ini mencakup pendaftaran, pengembangan fasilitas sekolah, kebutuhan seragam, buku, serta kegiatan belajar mengajar. Selain itu, ada biaya bulanan yang sudah termasuk layanan makan siang dan kebutuhan harian siswa selama di sekolah. Program reguler dan kelas khusus, seperti program Cerdas Istimewa Matematika dan IPA (CIMIKA), memiliki rincian biaya yang berbeda sesuai dengan fasilitas tambahan yang disediakan.
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_4_part1') }}
                                 </p>
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Dengan sistem pembayaran yang transparan, sekolah ini juga memastikan bahwa setiap biaya yang dikenakan sebanding dengan fasilitas dan kualitas pendidikan yang diberikan. Untuk mendapatkan informasi lebih lengkap dan memastikan biaya sesuai dengan kebutuhan Anda, calon wali murid disarankan untuk langsung menghubungi pihak sekolah melalui situs resmi atau saluran komunikasi lainnya. SD Muhammadiyah Sapen selalu berkomitmen memberikan layanan terbaik bagi siswa dan orang tua.</p>
+                            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ __('message.faq_jawaban_4_part2') }}</p>
                         </div>
                     </div>
                 </div>
