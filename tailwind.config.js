@@ -33,11 +33,12 @@ export default {
     },
   },
   corePlugins: {
-    container: false
+    container: false,
   },
   plugins: [
     require('flowbite/plugin'),
     require('tailwindcss-textshadow'),
+    require('tailwind-scrollbar-hide'),
     function ({ addComponents }) {
       addComponents({
         '.container': {
