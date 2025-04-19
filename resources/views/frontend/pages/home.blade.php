@@ -225,11 +225,15 @@
                     @php
                       $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang',$lang);
                     @endphp
-                    <div style="background-image: url('{{ asset('assets/images/news').'/'.$b->ContentNews->getFirstImage() }}');" alt="{{ $b->ContentNews->getFirstImage() }}"
-                        class="swiper-slide rounded-3xl bg-cover bg-center h-[565px] max-h-[600px] w-full hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
-                        <div class="h-[565px] relative">
-                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px]">{{ $b->created_at->format('F d, Y') }}</button>
-                        </div>
+                    <div
+                    class="rounded-3xl h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
+                        <div class="relative h-[300px]">
+                          <img src="{{ asset('assets/images/news') . '/' . $b->ContentNews->getFirstImage() }}"
+                              alt="{{ $b['title'] }}" class="w-full h-[300px] object-cover rounded-t-3xl">
+                          <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px] z-10">
+                              {{ $b->created_at->format('F d, Y') }}
+                          </button>
+                      </div>
                         <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
                             <div class="space-y-3">
                                 <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
@@ -335,133 +339,7 @@
               @empty
 
               @endforelse
-                {{--
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
 
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-2.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
-
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative col-span-2 row-span-2 bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-4.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
-
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-5.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
-
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="relative bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('assets/galeri/galery-6.jpeg') }}') ">
-                    <div
-                        class="opacity-0 hover:opacity-80 bg-white duration-300 absolute inset-0 z-10 hidden md:flex text-white font-semibold items-end p-5">
-                        <div class="flex flex-col">
-
-                            <span class="flex text-black">
-                                <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M13 10a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H14a1 1 0 0 1-1-1Z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12c0 .556-.227 1.06-.593 1.422A.999.999 0 0 1 20.5 20H4a2.002 2.002 0 0 1-2-2V6Zm6.892 12 3.833-5.356-3.99-4.322a1 1 0 0 0-1.549.097L4 12.879V6h16v9.95l-3.257-3.619a1 1 0 0 0-1.557.088L11.2 18H8.892Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 Gambar
-                            </span>
-
-                            <h3 class="text-dark-blue text-xl">
-                                Galeri: Suasana Pembelajaran di SD Muhammadiyah Sapen
-                            </h3>
-                            <p class="italic text-black text-sm"> Oktober 24, 2024</p>
-
-                        </div>
-                    </div>
-                </div>  --}}
             </div>
 
             <div class="relative flex">
@@ -807,11 +685,11 @@
                 <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-ku">
               </div>
             </div>
-            <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
+            {{--  <div class="mx-auto bg-white self-auto w-[300px] flex items-center justify-items-center">
                 <div class="p-2 my-auto h-fit">
                   <img class="object-contain " src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-bos">
                 </div>
-              </div>
+              </div>  --}}
           </div>
           <div class="my-auto w-[10%]">
             <button class="right-button bg-biru-tua rounded-full p-2">
