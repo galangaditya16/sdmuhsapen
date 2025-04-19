@@ -27,26 +27,21 @@ class HomeController extends Controller
             $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             if ($request->has('search')) {
 
-                $news = collect(AllContentTranslite::with('ContentNews')
-                    ->whereHas('ContentNews', function ($query) {
-                        $query->take(1);
-                    })
-                    ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
-                    ->where('lang', $lang)
-                    ->get()
-                    ->map(function ($item) {
-                        return array_merge($item->toArray(), ['type' => 'news']);
-                    }));
 
-                $galeris = collect(Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
-                    ->get()
-                    ->map(function ($item) {
-                        return array_merge($item->toArray(), ['type' => 'gallery']);
-                    }));
-
-                $lists = $news->merge($galeris);
-
-                return view('frontend.pages.global-search', compact('lists', 'lang'));
+                $news   = collect(AllContentTranslite::with(['ContentNews' => function($query){
+                                $query->limit(1);
+                            }])
+                            ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
+                            ->where('lang', $lang)
+                            ->get());
+                if($lang == 'id'){
+                    $galeris = Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
+                    ->get();
+                }else{
+                    $galeris = Gallery::whereRaw('title_en ILIKE ?', ['%' . $request->search . '%'])
+                    ->get();
+                }
+                return view('frontend.pages.global-search', compact('news','galeris', 'lang'));
             }
 
             DB::enableQueryLog();
