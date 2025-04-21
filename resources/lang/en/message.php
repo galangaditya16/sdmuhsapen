@@ -111,6 +111,29 @@ This achievement reflects the school’s commitment to producing superior genera
     'fasilitas_sekolah_content' => 'Muhammadiyah Sapen Yogyakarta Elementary School is equipped with complete and adequate facilities, such as comfortable classrooms, a library with a collection of quality books, computer and science laboratories, sports fields, and a prayer room that supports the teaching and learning process optimally.',
     'program_sekolah' => 'School Programs',
     'program_sekolah_content' => 'SD Muhammadiyah Sapen has various educational program services for its students. The various educational program services include:',
-    //halaman profile ends
+    //halaman profile ends, berita and gallery starts
+    'terbaru' => 'Newest',
+    'terlama' => 'Oldest',
+    'semua_kategori' => 'All Categories',
+    'berita_pilihan' => 'Selected News',
+    'galeri_terbaru' => 'Latest Galleries',
+    'cari_galeri' => 'Find Galleries...',
+    'jumlah_foto' => 'Photos',
+    //halaman galeri, berita ends, halaman kontak starts
+    'kontak_sapen' => 'Contact SD Muhammadiyah Sapen',
+    'saling_terhubung' => 'Let’s Connect With Us',
+    'saling_terhubung_content' => 'Are you looking for a way to contact us? You can contact us by phone, email, or by filling out our online contact form.',
+    'telepon' => 'Telephone',
+    'jam_kerja' => 'Working Hours',
+    'kirimi_pesan' => 'Send Us a Message',
+    'kirimi_pesan_content' => 'We would love to hear your messages, suggestions, criticisms and feedback.',
+    'nama_anda' => 'Your Name',
+    'no_hp' => 'Phone Number',
+    'bagian_pendaftaran' => 'Registration Section',
+    'pesan_anda' => 'Your Messages',
+    'tulis_captcha' => 'Write Captcha',
+    'submit' => 'Submit',
+    'sosmed_saluran' => 'Social Media & Our Channels',
+    'lokasi_maps' => 'Google Maps Location',
 
 ];

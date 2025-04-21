@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <x-profile-menu-header title="Berita Sekolah" />
+    <x-profile-menu-header title="{{ __('message.berita_sekolah') }}" />
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 px-2">
         <form action="#" method="GET">
             <div class="grid md:grid-cols-2 gap-y-4 px-4 lg:px-0">
@@ -10,7 +10,7 @@
                         <select name="category"
                             class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
                             type="text" onchange="this.form.submit()">
-                            <option value="" disabled>Semua kategori</option>
+                            <option value="" disabled>{{ __('message.semua_kategori') }}</option>
                             @forelse ($categorys as $category)
                                 <option value="">{{ $category->title }}</option>
                             @empty
@@ -22,8 +22,8 @@
                         <select name="orderBy"
                             class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
                             type="text" onchange="this.form.submit()">
-                            <option value="DESC">Terbaru</option>
-                            <option value="ASC">Terlama</option>
+                            <option value="DESC">{{ __('message.terbaru') }}</option>
+                            <option value="ASC">{{ __('message.terlama') }}</option>
                         </select>
                     </div>
                 </div>
@@ -68,8 +68,7 @@
                             </div>
                             <div class="flex justify-center mt-5">
                                 <a href="{{ route('newsDetail', ['id' => $new->slug, 'lang' => $lang]) }}"
-                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5">Baca
-                                    lagi</a>
+                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5">{{ __('message.read_more') }}</a>
                             </div>
                         </div>
                     </div>

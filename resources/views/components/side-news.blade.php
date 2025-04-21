@@ -1,7 +1,7 @@
 <div class="px-4 space-y-10">
   <div>
     <div>
-      <p class="text-2xl font-bold">Berita Terbaru</p>
+      <p class="text-2xl font-bold">{{ __('message.berita_terkini') }}</p>
       <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
     </div>
 
@@ -25,7 +25,7 @@
 
   <div>
     <div>
-      <p class="text-2xl font-bold">Berita Pilihan</p>
+      <p class="text-2xl font-bold">{{ __('message.berita_pilihan') }}</p>
       <div class="block w-40 h-1 bg-biru-tua mt-1"></div>
     </div>
     <div class="grid">

@@ -1,11 +1,11 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <x-profile-menu-header title="Kontak SD Muh Sapen" />
+    <x-profile-menu-header title="{{ __('message.kontak_sapen') }}" />
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 mb-14 px-7">
         <div class="md:flex md:gap-x-20 space-y-6 md:space-y-0">
             <div class="md:w-1/2 space-y-6">
-                <p class="text-3xl font-bold text-biru-tua">Mari Saling Terhubung</p>
+                <p class="text-3xl font-bold text-biru-tua">{{ __('message.saling_terhubung') }}</p>
                 <p class="text-black text-sm">Apakah Anda mencari cara untuk menghubungi kami? Anda dapat menghubungi kami
                     melalui telepon, email, atau dengan mengisi formulir kontak online kami.</p>
                 <div
@@ -51,7 +51,7 @@
                         </svg>
                     </div>
                     <div class="w-5/6">
-                        <p class="text-sm">Telepon</p>
+                        <p class="text-sm">{{ __('message.telepon') }}</p>
                         <a href="tel:62274556674" target="_blank">
                             <p class="font-bold text-xl">{{ $contact->tlp ?? '-' }}</p>
                         </a>
@@ -68,7 +68,7 @@
 
                     </div>
                     <div class="w-5/6">
-                        <p class="text-sm">Jam Kerja</p>
+                        <p class="text-sm">{{ __('message.jam_kerja') }}</p>
                         <p class="font-bold text-xl">{{ $contact->working_days ?? '-' }}</p>
                         <p class="font-bold text-xl">{{ $contact->working_hours ?? '-' }}</p>
                     </div>
@@ -81,21 +81,20 @@
                 </div>
                 @endif
             
-                <p class="text-3xl text-biru-tua text-center">Kirimi Kami Pesan</p>
-                <p class="text-black text-sm text-center">Kami sangat ingin mendengar pesan, saran, kritik, dan masukan dari
-                    Anda.</p>
+                <p class="text-3xl text-biru-tua text-center">{{ __('message.kirimi_pesan') }}</p>
+                <p class="text-black text-sm text-center">{{ __('message.kirimi_pesan_content') }}</p>
                 <form action="{{ route('send.message') }}" method="post" class="space-y-6">
                     @csrf
                     <div class="flex items-center border-b border-black py-1">
                         <input name="name"
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                            type="text" placeholder="Nama anda" aria-label="Nama anda" required>
+                            type="text" placeholder="{{ __('message.nama_anda') }}" aria-label="Nama anda" required>
                     </div>
                     <div class="flex gap-x-1.5">
                         <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="phone"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="No. hp" aria-label="No. hp" required>
+                                type="text" placeholder="{{ __('message.no_hp') }}" aria-label="No. hp" required>
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="email"
@@ -107,14 +106,14 @@
                         <select name="shown"
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                             type="text" placeholder="No. hp" aria-label="No. hp">
-                            <option value="Bagian pendaftaran">Bagian pendaftaran</option>
+                            <option value="Bagian pendaftaran">{{ __('message.bagian_pendaftaran') }}</option>
                             <option value="Bagian pendaftaran">Admin</option>
                         </select>
                     </div>
                     <div class="flex items-center border-b border-black py-1">
                         <textarea
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                            type="text" name="message" placeholder="Pesan Anda" aria-label="Pesan Anda" required></textarea>
+                            type="text" name="message" placeholder="{{ __('message.pesan_anda') }}" aria-label="Pesan Anda" required></textarea>
                     </div>
                     <div class="flex gap-x-2 mb-20">
                         <div class="flex items-center border-b border-black py-1 w-1/2">
@@ -128,17 +127,17 @@
                         <div class="flex items-center border-b border-black py-1 w-1/2">
                             <input name="captcha"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="Tulis captcha" aria-label="Tulis captcha">
+                                type="text" placeholder="Tulis captcha" aria-label="{{ __('message.tulis_captcha') }}">
                         </div>
                     </div>
                     <button id="submit-btn"
-                        class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng disabled:bg-gray-400">Submit</button>
+                        class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng disabled:bg-gray-400">{{ __('message.submit') }}</button>
                 </form>
             </div>
         </div>
 
         <div>
-            <p class="text-3xl font-bold text-biru-tua text-center relative">Sosial Media & Saluran Kami</p>
+            <p class="text-3xl font-bold text-biru-tua text-center relative">{{ __('message.sosmed_saluran') }}</p>
             <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-10">
@@ -209,7 +208,7 @@
         </div>
         @if ($contact->google_loc)
             <div>
-                <p class="text-3xl font-bold text-biru-tua text-center relative">Lokasi Google Maps</p>
+                <p class="text-3xl font-bold text-biru-tua text-center relative">{{ __('message.lokasi_maps') }}</p>
                 <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
                 <div class="w-full mt-10 rounded-xl overflow-hidden">
                     {!! $contact->google_loc !!}

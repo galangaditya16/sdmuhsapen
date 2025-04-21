@@ -112,7 +112,30 @@ return [
     'fasilitas_sekolah_content' => 'SD Muhammadiyah Sapen Yogyakarta dilengkapi dengan fasilitas lengkap dan memadai, seperti ruang kelas yang nyaman, perpustakaan dengan koleksi buku berkualitas, laboratorium komputer dan sains, lapangan olahraga, serta ruang ibadah yang mendukung proses belajar mengajar secara optimal.',
     'program_sekolah' => 'Program Sekolah',
     'program_sekolah_content' => 'SD Muhammadiyah Sapen memiliki berbagai layanan program pendidikan bagi peserta didiknya. Berbagai layanan program pendidikan tersebut di antaranya :',
-    //halaman profile ends
+    //halaman profile ends, berita and gallery starts
+    'terbaru' => 'Terbaru',
+    'terlama' => 'Terlama',
+    'semua_kategori' => 'Semua Kategori',
+    'berita_pilihan' => 'Berita Pilihan',
+    'galeri_terbaru' => 'Galeri Terbaru',
+    'cari_galeri' => 'Cari Galeri...',
+    'jumlah_foto' => 'Foto',
+    //halaman galeri, berita ends, halaman kontak starts
+    'kontak_sapen' => 'Hubungi SD Muhammadiyah Sapen',
+    'saling_terhubung' => 'Mari Saling Terhubung',
+    'saling_terhubung_content' => 'Apakah Anda mencari cara untuk menghubungi kami? Anda dapat menghubungi kami melalui telepon, email, atau dengan mengisi formulir kontak online kami.',
+    'telepon' => 'Telepon',
+    'jam_kerja' => 'Jam Kerja',
+    'kirimi_pesan' => 'Kirimi Kami Pesan',
+    'kirimi_pesan_content' => 'Kami sangat ingin mendengar pesan, saran, kritik, dan masukan dari Anda.',
+    'nama_anda' => 'Nama Anda',
+    'no_hp' => 'Nomor Handphone',
+    'bagian_pendaftaran' => 'Bagian Pendaftaran',
+    'pesan_anda' => 'Pesan Anda',
+    'tulis_captcha' => 'Tulis Captcha',
+    'submit' => 'Kirim',
+    'sosmed_saluran' => 'Media Sosial & Saluran Kami',
+    'lokasi_maps' => 'Lokasi Google Maps',
 
 ];
 
