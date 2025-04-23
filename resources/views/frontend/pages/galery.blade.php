@@ -13,7 +13,7 @@
                 <select name="phone"
                     class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
                     type="text">
-                    <option value="Bagian pendaftaran" value="">{{ __('message.galeri_terbaru') }}</option>
+                    <option value="Bagian pendaftaran" value="">{{  }}</option>
                 </select>
             </div>
 
@@ -22,7 +22,7 @@
                 <div class="flex items-center relative bg-gray-300 rounded-3xl">
                     <input name="search"
                         class="appearance-none bg-transparent border-none rounded-3xl text-center md:text-end font-bold bg-gray-300 w-full text-gray-700 py-2.5 pl-2 pr-10 leading-tight focus:outline-2 focus:border-2"
-                        type="text" placeholder="{{ __('message.cari_galeri') }}" aria-label="Cari Galeri...">
+                        type="text" placeholder="Cari Galeri..." aria-label="Cari Galeri...">
                     <div class="absolute right-3">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-6 text-gray-700">
@@ -46,7 +46,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                             </svg>
-                            <p>{{ $new->countGallery() ?? '0' }} {{ __('message.jumlah_foto') }}</p>
+                            <p>{{ $new->countGallery() ?? '0' }} Photos</p>
                         </div>
                     </div>
                     <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full">
@@ -74,7 +74,7 @@
                                     class="py-2 px-10 bg-oren text-white rounded-3xl">Lihat Galeri</a>
                             @else
                                 <a href="{{ route('galeryDetail', $new->slug_en) }}"
-                                    class="py-2 px-10 bg-oren text-white rounded-3xl">View Gallery</a>
+                                    class="py-2 px-10 bg-oren text-white rounded-3xl">Lihat Galeri</a>
                             @endif
                         </div>
                     </div>
