@@ -13,7 +13,7 @@
                 <select name="phone"
                     class="appearance-none bg-transparent border-none rounded-3xl text-center font-bold bg-gray-300 w-full text-gray-700 mr-3 py-2.5 px-2 leading-tight focus:outline-1"
                     type="text">
-                    <option value="Bagian pendaftaran" value="">{{  }}</option>
+                    <option value="Bagian pendaftaran" value=""></option>
                 </select>
             </div>
 
