@@ -67,9 +67,11 @@ class NewsController extends BaseController
                     $file->move($path,$code);
                     $imagesName[] = $code;
                 }
-                $request['image_filenames'] = json_encode($imagesName);
-                $request['path']   = $manifes_path;
-                $request['author'] = 'galang_ganteng';
+                $request->merge([
+                    'image' => json_encode($imagesName),
+                    'path' => $manifes_path,
+                    'author' => 'admin',
+                ]);
             }
             $data           = News::create([
                 'id_category'  => $request->id_category,
@@ -152,26 +154,30 @@ class NewsController extends BaseController
             $contentEN =AllContentTranslite::where('id_news',$news->id)->where('lang','en')->first();
 
             if($request->hasFile('images')){
+                $imagesName = [];
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
                     $manifes_path = asset('assets/images/news');
-                    $code = time().'.'.$file->extension();
-                    $file->move($path,$code);
+                    $code = uniqid() . '_' . time() . '.' . $file->extension();
+                    $file->move($path, $code);
                     $imagesName[] = $code;
                 }
-                $request['images'] = json_encode($imagesName);
-                $request['path']   = $manifes_path;
-                $request['author'] = 'galang_ganteng';
-            }else{
-                $request['images'] = $news->image;
-                $request['path']   = $news->path;
+                $request->merge([
+                    'image' => json_encode($imagesName),
+                    'path' => $manifes_path,
+                    'author' => 'admin',
+                ]);
+            } else {
+                $request->merge([
+                    'image' => $news->image,
+                    'path' => $news->path,
+                ]);
             }
-
             $news->update([
                 'id_category' => $request->id_category,
                 'author'      => 'galang_ganteng',
                 'path'        => $request->input('path'),
-                'image'       => $request->input('images')
+                'images'       => $request->image
             ]);
             $contentID->update([
                 'title' => $request->title,
