@@ -136,6 +136,11 @@ return [
     'submit' => 'Kirim',
     'sosmed_saluran' => 'Media Sosial & Saluran Kami',
     'lokasi_maps' => 'Lokasi Google Maps',
+    //halaman kontak ends, halaman hasil penelusuran starts
+    'hasil_penelusuran_berita' => 'Hasil penelusuran berita untuk',
+    'hasil_penelusuran_galeri' => 'Hasil penelusuran galeri untuk',
+    'halaman_hasil_penelusuran' => 'Halaman Hasil Penelusuran',
+
 
 ];
 

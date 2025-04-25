@@ -135,5 +135,9 @@ This achievement reflects the school’s commitment to producing superior genera
     'submit' => 'Submit',
     'sosmed_saluran' => 'Social Media & Our Channels',
     'lokasi_maps' => 'Google Maps Location',
+    //halaman kontak ends, halaman hasil penelusuran starts
+    'hasil_penelusuran_berita' => 'News search results for keyword',
+    'hasil_penelusuran_galeri' => 'Galleries search results for keyword',
+    'halaman_hasil_penelusuran' => 'Search Results Page',
 
 ];

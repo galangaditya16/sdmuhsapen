@@ -16,10 +16,10 @@
 @endsection
 
 @section('content')
-    <x-profile-menu-header title="Hasil Penelusuran" />
-    <! -- news -->
+    <x-profile-menu-header title="{{ __('message.halaman_hasil_penelusuran') }}" />
+    <!-- news -->
         <section class="container mx-auto md:my-20 relative">
-            <p class="px-4 md:px-0 font-bold mb-6">Hasil penelusuran berita untuk "{{ request('search') ?? '-' }}"</p>
+            <p class="px-4 md:px-0 font-bold mb-6">{{ __('message.hasil_penelusuran_berita') }} "{{ request('search') ?? '-' }}"</p>
 
             <div id="carouselWrapper" class="overflow-x-auto  scrollbar-hide">
                 <div class="flex gap-6 px-4 md:px-0 w-max">
@@ -68,6 +68,7 @@
 
         <!-- images gallery -->
         <section class="container mx-auto md:my-20 relative">
+            <p class="px-4 md:px-0 font-bold mb-6">{{ __('message.hasil_penelusuran_galeri') }} "{{ request('search') ?? '-' }}"</p>
             <div class="px-4 lg:px-4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse ($galeris as $new)
                     <div style="background-image: url('{{ asset('assets/images/gallery/thumbnail/').'/'. $new->thumbnail }}');" alt="galeries-1.png"
