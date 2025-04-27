@@ -12,7 +12,7 @@
                     <label class="form-label required">Name User</label>
                     <div>
                         <input type="text" class="form-control" name="name" aria-describedby="name"
-                            placeholder="Enter Name" value="{{ old('name') ?? 'name' }}">
+                            placeholder="Enter Name" value="{{ old('name') ?? '-' }}">
                         @error('menu_name')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror

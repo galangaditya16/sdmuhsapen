@@ -252,11 +252,11 @@
                                 </span>
                                 <span class="nav-link-title">
                                     @if($menus->menu_name != 'null')
-                                    @can(strtolower($menus->menu_name).'-view')
-                                    {{ $menus->menu_name }}
-                                    @endcan
+                                        @can(strtolower($menus->menu_name).'-view')
+                                        {{ $menus->menu_name }}
+                                        @endcan
                                     @else
-                                    {{ $menus->menu_name }}
+                                        {{ $menus->menu_name }}
                                     @endif
                                 </span>
                             </a>
