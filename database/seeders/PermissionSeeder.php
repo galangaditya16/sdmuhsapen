@@ -90,7 +90,7 @@ class PermissionSeeder extends Seeder
 
         // 5. Buat User SUPERADMIN
         $superAdminUser = User::firstOrCreate(
-            ['email' => 'admin@exxample.com'], // Ubah kalau mau
+            ['email' => 'admin@example.com'], // Ubah kalau mau
             [
                 'name' => 'Superadmin',
                 'password' => Hash::make('password'), // Password default

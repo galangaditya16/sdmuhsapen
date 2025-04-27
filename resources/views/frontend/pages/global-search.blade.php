@@ -20,7 +20,20 @@
     <!-- news -->
         <section class="container mx-auto md:my-20 relative">
             <p class="px-4 md:px-0 font-bold mb-6">{{ __('message.hasil_penelusuran_berita') }} "{{ request('search') ?? '-' }}"</p>
-
+            <button id="scrollLeft"
+                class="absolute left-2 top-[50%] -translate-y-1/2 bg-biru-tua hover:bg-gray-300 text-black rounded-full p-2 z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-10 h-10 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                </svg>
+            </button>
+            <button id="scrollRight"
+                class="absolute right-2 top-[50%] -translate-y-1/2 bg-biru-tua hover:bg-gray-300 text-black rounded-full p-2 z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-10 h-10 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                </svg>
+            </button>
             <div id="carouselWrapper" class="overflow-x-auto  scrollbar-hide">
                 <div class="flex gap-6 px-4 md:px-0 w-max">
                     @forelse ($news as $new)
