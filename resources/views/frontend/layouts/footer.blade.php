@@ -73,10 +73,10 @@
                         <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">{{ __('message.saluran_kami') }}</h2>
                         <div class="w-full bg-kuning-muda rounded-lg p-3 mx-auto">
                                 <img class="mx-auto my-2 w-64" src="{{ asset('assets/images/equalizer.gif') }}">
-                                {{--  <audio controls="" autoplay="autoplay" class="mx-auto w-full">
-                                    <source src="http://freeuk22.listen2myradio.com:12804/;listen.pls" type="audio/mp3">
-                                        Your browser does not support the audio element.
-                                </audio>  --}}
+                                <audio controls autoplay class="mx-auto w-full">
+                                    <source src="https://95.154.195.3:5988" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>                                
                                 <h3 class="text-3xl text-center mt-2 text-black font-bold">Sapen Radio</h3>
                                 <h3 class="text-xl text-center text-black">{{ __('message.edukasi_tiada_henti') }}</h3>
                         </div>
