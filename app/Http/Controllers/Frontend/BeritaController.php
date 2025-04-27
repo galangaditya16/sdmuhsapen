@@ -47,6 +47,11 @@ class BeritaController extends Controller
     public function listNews(Request $request){
         try {
             $lang = SessionHelpers::get('lang');
+            $orderByDirection = 'DESC'; // Default: terbaru dulu
+
+            if ($request->has('orderBy') && in_array(strtoupper($request->orderBy), ['ASC', 'DESC'])) {
+                $orderByDirection = strtoupper($request->orderBy);
+            }
             $categorys = AllCategoryTranslite::with('CategoryNews','CategoryNews.transLite')
             ->whereHas('CategoryNews')
             ->where('lang',$lang)
@@ -57,13 +62,13 @@ class BeritaController extends Controller
                 ->where('lang',$lang)
                 ->whereNotNull('id_news')
                 ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
-                ->orderBy('created_at', 'DESC')
+                ->orderBy('created_at', $orderByDirection)
                 ->paginate(10);
             }else{
                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
                 ->whereNotNull('id_news')
                 ->whereHas('ContentNews')->where('lang',$lang)
-                ->orderBy('created_at', 'DESC')
+                ->orderBy('created_at', $orderByDirection)
                 ->paginate(10);
 
             }
