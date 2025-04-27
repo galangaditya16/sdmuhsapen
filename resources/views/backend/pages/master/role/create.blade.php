@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form class="card" method="POST" action="{{ route('category-news.store') }}" enctype="multipart/form-data">
+        <form class="card" method="POST" action="{{ route('permission.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="card-header">
                 <h3 class="card-title">Add New Role</h3>

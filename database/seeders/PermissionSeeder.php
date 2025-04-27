@@ -5,6 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use DB;
 use Carbon\Carbon;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Hash;
 
 class PermissionSeeder extends Seeder
 {
@@ -33,7 +37,8 @@ class PermissionSeeder extends Seeder
             'User Management',
             'Contact',
             'Slider',
-            'role',
+            'Role',
+            'Gallery'
         ];
 
         // Iterasi setiap menu untuk membuat 4 permission
@@ -71,5 +76,29 @@ class PermissionSeeder extends Seeder
                 ],
             ]);
         }
+        // 2. Buat role SUPERADMIN
+        $superAdminRole = Role::firstOrCreate([
+            'name' => 'superadmin',
+            'guard_name' => 'web',
+        ]);
+
+        // 3. Ambil semua permissions
+        $allPermissions = Permission::pluck('name')->toArray();
+
+        // 4. Assign semua permission ke SUPERADMIN
+        $superAdminRole->syncPermissions($allPermissions);
+
+        // 5. Buat User SUPERADMIN
+        $superAdminUser = User::firstOrCreate(
+            ['email' => 'admin@exxample.com'], // Ubah kalau mau
+            [
+                'name' => 'Superadmin',
+                'password' => Hash::make('password'), // Password default
+                'email_verified_at' => now(),
+            ]
+        );
+
+        // 6. Assign Role ke User SUPERADMIN
+        $superAdminUser->assignRole($superAdminRole);
     }
 }
