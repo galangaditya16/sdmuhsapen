@@ -3,7 +3,7 @@
 @section('content')
     <x-profile-menu-header title="{{ __('message.berita_sekolah') }}" />
     <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20 px-2">
-        <form action="#" method="GET">
+        <form action="{{ route('front.news') }}" method="GET">
             <div class="grid md:grid-cols-2 gap-y-4 px-4 lg:px-0">
                 <div class="w-full md:flex grid gap-y-4">
                     <div class="flex items-center w-full bg-gray-300 rounded-3xl">
@@ -48,10 +48,15 @@
         <div class="block lg:flex gap-x-10">
             <div class="px-4 lg:px-0 lg:w-[65%] grid grid-cols-1 lg:grid-cols-2 gap-10">
                 @forelse ($news as $new)
+
                     <div
                         class="rounded-3xl h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
                         <div class="relative h-[300px]">
-                            <img src="{{ asset('assets/images/news') . '/' . $new->ContentNews->getFirstImage() }}"
+                            @if($new->ContentNews->getFirstImage())
+                                <img src="{{ asset('assets/images/news') . '/' . $new->ContentNews->getFirstImage() }}"
+                            @else
+                                <img src="{{ asset('assets/images/no-image.jpg') }}"
+                            @endif
                                 alt="{{ $new['title'] }}" class="w-full h-[300px] object-cover rounded-t-3xl">
                             <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px] z-10">
                                 {{ $new->created_at->format('F d, Y') }}
@@ -85,7 +90,9 @@
                 <x-side-news />
             </div>
         </div>
-
+        <div class="flex justify-center mt-10">
+            {{ $news->links('frontend.pagination.index') }}
+        </div>
         <div class="px-4 lg:hidden space-y-3">
             <x-side-news />
         </div>

@@ -55,13 +55,13 @@ class BeritaController extends Controller
             if($request->has('search') && $request->search != null){
                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
                 ->where('lang',$lang)
-                ->whereHas('ContentNews', function ($query) use ($request){
-                    $query->where('title', 'like', '%' . $request->search . '%');
-                })
+                ->whereNotNull('id_news')
+                ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
             }else{
                 $news = AllContentTranslite::with('ContentNews','ContentNews.hasCategory')
+                ->whereNotNull('id_news')
                 ->whereHas('ContentNews')->where('lang',$lang)
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
@@ -75,6 +75,7 @@ class BeritaController extends Controller
             return view('frontend.pages.news', compact('categorys','news','lang','newnews'));
 
         } catch (\Throwable $th) {
+            dd($th->getMessage());
             abort(404);
         }
     }
