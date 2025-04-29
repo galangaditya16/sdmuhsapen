@@ -6,8 +6,7 @@
         <div class="md:flex md:gap-x-20 space-y-6 md:space-y-0">
             <div class="md:w-1/2 space-y-6">
                 <p class="text-3xl font-bold text-biru-tua">{{ __('message.saling_terhubung') }}</p>
-                <p class="text-black text-sm">Apakah Anda mencari cara untuk menghubungi kami? Anda dapat menghubungi kami
-                    melalui telepon, email, atau dengan mengisi formulir kontak online kami.</p>
+                <p class="text-black text-sm">{{__('message.saling_terhubung_content')}}</p>
                 <div
                     class="flex border rounded-2xl py-3 px-2.5 border-black bg-white hover:bg-biru-tua hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-101 duration-150">
                     <div class="w-1/6 flex justify-center items-center">
