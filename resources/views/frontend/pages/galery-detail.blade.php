@@ -63,7 +63,7 @@
                     @endphp
 
                     @forelse($images as $image)
-                        <img src="{{ asset('assets/images/gallery/') . '/' . $image }}" alt="banner.jpg"
+                        <img src="{{ asset('assets/images/gallery/') . '/' . $image }}" alt="Galeri SD Muhammadiyah Sapen"
                             class="h-[450px] object-cover w-full rounded-lg">
                     @empty
                         <p class="text-gray-500 text-center">Tidak ada gambar yang tersedia.</p>
