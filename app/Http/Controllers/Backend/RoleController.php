@@ -35,7 +35,7 @@ class RoleController extends BaseController
             $typePermissions = SysPermission::selectRaw("split_part(name, '-', 1) AS first_word, COUNT(*) AS total")
             ->groupBy('first_word')
             ->get();
-        
+
 			$lists = SysPermission::where('name', 'like', '%view%')->orderBy('created_at', 'ASC')->get();
 			$creates = SysPermission::where('name', 'like', '%create%')->orderBy('created_at', 'ASC')->get();
 			$updates = SysPermission::where('name', 'like', '%edit%')->orderBy('created_at', 'ASC')->get();
@@ -52,13 +52,16 @@ class RoleController extends BaseController
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+        ]);
 
         DB::beginTransaction();
         try {
             $role = SpatieRole::create([
                 'name' => $request->name,
                 'guard_name' => 'web', // <- tambahkan ini
-            ]);            
+            ]);
             if ($request->has('permission')) {
                 $permissions = SysPermission::whereIn('id', $request->permission)->get();
                 $role->syncPermissions($permissions);
@@ -67,6 +70,7 @@ class RoleController extends BaseController
             }
 
         } catch (\Throwable $th) {
+            dd($th);
             DB::rollback();
             abort(404);
         }
@@ -118,10 +122,10 @@ class RoleController extends BaseController
         DB::beginTransaction();
         try {
             $role = SpatieRole::with(['permissions'])->findOrFail($id);
-            // cek data lama 
+            // cek data lama
             $currentPermissions  = $role->permissions->pluck('id')->toArray();
             //dd($currentPermissions);
-            // data baru 
+            // data baru
             $newPermissions      = $request->input('permission', []);
             $permissionsToRemove = array_diff($currentPermissions, $newPermissions);
             $permissionsToAdd    = array_diff($newPermissions, $currentPermissions);
@@ -131,7 +135,7 @@ class RoleController extends BaseController
                 if ($permission) {
                     $role->revokePermissionTo($permission->name);
                 }
-            } 
+            }
 
             foreach ($permissionsToAdd as $permName) {
                 $permission = SysPermission::where('id', $permName)->first();
@@ -155,7 +159,7 @@ class RoleController extends BaseController
 
     /**
      * Remove the specified resource from storage.
-     */ 
+     */
     public function destroy(string $id)
     {
         //
@@ -172,7 +176,7 @@ class RoleController extends BaseController
         } catch (\Throwable $th) {
             DB::rollback();
             //throw $th;
-            
+
         }
     }
 }

@@ -38,44 +38,37 @@ class PermissionSeeder extends Seeder
             'Contact',
             'Slider',
             'Role',
-            'Gallery'
+            'Permission Role',
+            'Gallery',
         ];
 
         // Iterasi setiap menu untuk membuat 4 permission
         foreach ($menus as $index => $menu) {
-            // Generate ID unik berdasarkan tahun, bulan, hari, dan urutan menu
             $now = Carbon::now();
             $uniqueIdPrefix = $now->format('Ymd'); // Format: TahunBulanHari
             $menuIndex = str_pad($index + 1, 2, '0', STR_PAD_LEFT); // Menu urutan
 
-            // 4 permission untuk setiap menu
-            DB::table('permissions')->insert([
-                [
-                    'id' => $uniqueIdPrefix . $menuIndex . '01',
-                    'name' => strtolower($menu) . '-view',
-                    'guard_name' => 'web',
-                    'created_at' => $now,
-                ],
-                [
-                    'id' => $uniqueIdPrefix . $menuIndex . '02',
-                    'name' => strtolower($menu) . '-create',
-                    'guard_name' => 'web',
-                    'created_at' => $now,
-                ],
-                [
-                    'id' => $uniqueIdPrefix . $menuIndex . '03',
-                    'name' => strtolower($menu) . '-edit',
-                    'guard_name' => 'web',
-                    'created_at' => $now,
-                ],
-                [
-                    'id' => $uniqueIdPrefix . $menuIndex . '04',
-                    'name' => strtolower($menu) . '-delete',
-                    'guard_name' => 'web',
-                    'created_at' => $now,
-                ],
-            ]);
+            // Permissions to be inserted
+            $permissions = [
+                strtolower($menu) . '-view',
+                strtolower($menu) . '-create',
+                strtolower($menu) . '-edit',
+                strtolower($menu) . '-delete',
+            ];
+
+            foreach ($permissions as $permission) {
+                // Check if permission already exists before inserting
+                if (!Permission::where('name', $permission)->exists()) {
+                    DB::table('permissions')->insert([
+                        'id' => $uniqueIdPrefix . $menuIndex . str_pad(array_search($permission, $permissions) + 1, 2, '0', STR_PAD_LEFT),
+                        'name' => $permission,
+                        'guard_name' => 'web',
+                        'created_at' => $now,
+                    ]);
+                }
+            }
         }
+
         // 2. Buat role SUPERADMIN
         $superAdminRole = Role::firstOrCreate([
             'name' => 'superadmin',
