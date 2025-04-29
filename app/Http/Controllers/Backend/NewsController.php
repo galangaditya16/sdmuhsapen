@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Models\AllContentTranslite;
-use App\Models\CategoryNews;
 use App\Models\News;
 use App\Models\NewsNew;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\CategoryNews;
+use Illuminate\Http\Request;
+use App\Http\Requests\NewsRequest;
+use Illuminate\Support\Facades\DB;
+use App\Models\AllContentTranslite;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Base\Controller\BaseController;
 
 class NewsController extends BaseController
 {
@@ -26,6 +27,7 @@ class NewsController extends BaseController
                     ->whereHas('ContentNews.hasCategory.transLite', function ($query) use ($lang) {
                         $query->where('lang',$lang);
                     })
+                    ->orderBy('created_at', 'desc')
                     ->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.master.news.index',compact('data'));
         } catch (\Throwable $th) {
@@ -75,10 +77,10 @@ class NewsController extends BaseController
             }
             $data           = News::create([
                 'id_category'  => $request->id_category,
-                'author'       => 'galang_ganteng',
+                'author'       => Auth::user()->name,
                 'view'         => $request->view,
-                'path'         => $request['path'],
-                'images'       => $request['image_filenames'],
+                'path'         => $request->path,
+                'images'       => $request->image,
             ]);
 
             $data_tanslite  =AllContentTranslite::create([
@@ -175,7 +177,7 @@ class NewsController extends BaseController
             }
             $news->update([
                 'id_category' => $request->id_category,
-                'author'      => 'galang_ganteng',
+                'author'      => Auth::user()->name,
                 'path'        => $request->input('path'),
                 'images'       => $request->image
             ]);
