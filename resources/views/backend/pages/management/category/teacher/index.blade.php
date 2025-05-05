@@ -11,9 +11,11 @@
                 <h3 class="card-title"> Management Teacher Position</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
+                      @can('jabatan guru-create')
                         <a href="{{ route('teacher-position.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             Add Category Teacher
                         </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -25,7 +27,6 @@
                             <th>Name Category</th>
                             <th>Order</th>
                             <th>Icon</th>
-                            <th>Order</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,10 +49,13 @@
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                          @can('jabatan guru-edit')
                                             <a href="{{ route('teacher-position.edit', $row->CategoryTeacher) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
+                                          @endcan
+                                          @can('jabatan guru-delete')
                                             <form action="{{ route('teacher-position.destroy', $row->CategoryTeacher) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -59,7 +63,7 @@
                                                     Hapus
                                                 </button>
                                             </form>
-
+                                          @endcan
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

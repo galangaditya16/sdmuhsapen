@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryContentRequest;
-use App\Http\Requests\CategoryNewsRequest;
-use App\Models\AllCategoryTranslite;
-use App\Models\CategoryContent;
 use App\Models\ContentNew;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\CategoryContent;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\AllCategoryTranslite;
+use Illuminate\Support\Facades\Auth;
+use App\Base\Controller\BaseController;
+use App\Http\Requests\CategoryNewsRequest;
+use App\Http\Requests\CategoryContentRequest;
 
 class CategoryContentController extends BaseController
 {
@@ -20,7 +21,7 @@ class CategoryContentController extends BaseController
      */
     public function index()
     {
-        if(!Auth::user()->can('kategori-konten-view')){
+        if(!Auth::user()->can('kategori konten-view')){
             abort(403);
         }
         try {
@@ -37,7 +38,7 @@ class CategoryContentController extends BaseController
      */
     public function create()
     {
-        if(!Auth::user()->can('kategori-konten-create')){
+        if(!Auth::user()->can('kategori konten-create')){
             abort(403);
         }
         //
@@ -49,7 +50,7 @@ class CategoryContentController extends BaseController
      */
     public function store(CategoryContentRequest $request)
     {
-        if(!Auth::user()->can('kategori-konten-create')){
+        if(!Auth::user()->can('kategori konten-create')){
             abort(403);
         }
         DB::beginTransaction();
@@ -102,7 +103,7 @@ class CategoryContentController extends BaseController
      */
     public function edit(string $id)
     {
-        if(!Auth::user()->can('kategori-konten-edit')){
+        if(!Auth::user()->can('kategori konten-edit')){
             abort(403);
         }
         try {
@@ -128,7 +129,7 @@ class CategoryContentController extends BaseController
     public function update(CategoryContentRequest $request, string $id)
     {
 
-        if(!Auth::user()->can('kategori-konten-edit')){
+        if(!Auth::user()->can('kategori konten-edit')){
             abort(403);
         }
         DB::beginTransaction();
@@ -173,7 +174,7 @@ class CategoryContentController extends BaseController
      */
     public function destroy(string $id)
     {
-        if(!Auth::user()->can('kategori-konten-delete')){
+        if(!Auth::user()->can('kategori konten-delete')){
             abort(403);
         }
         try {

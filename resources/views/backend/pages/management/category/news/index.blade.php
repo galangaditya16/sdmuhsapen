@@ -11,9 +11,11 @@
                 <h3 class="card-title">Management Category News</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('category-news.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add Category News
-                        </a>
+                        @can('kategori berita-create')
+                            <a href="{{ route('category-news.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                                Add Category News
+                            </a>
+                        @endcan
                     </div>
                 </div>
             </div>
@@ -37,27 +39,31 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->title }}</td>
                                 <td>{{ $row->slug }}</td>
-                                <td>{{ $row->images ? $row->images : "-"}}</td>
+                                <td>{{ $row->images ? $row->images : '-' }}</td>
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                            <a href="{{ route('category-news.edit', $row->CategoryNews) }}"
-                                                class="btn btn-primary btn-pill w-120">
-                                                Edit
-                                            </a>
-                                            <form action="{{ route('category-news.destroy', $row->CategoryNews) }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
-                                                    Hapus
-                                                </button>
-                                            </form>
-
+                                            @can('kategori berita-edit')
+                                                <a href="{{ route('category-news.edit', $row->CategoryNews) }}"
+                                                    class="btn btn-primary btn-pill w-120">
+                                                    Edit
+                                                </a>
+                                            @endcan
+                                            @can('kategori berita-delete')
+                                                <form action="{{ route('category-news.destroy', $row->CategoryNews) }}"
+                                                    method="POST" style="display: inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-pill w-120"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                        Hapus
+                                                    </button>
+                                                </form>
+                                            @endcan
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">
-                                            <a href=""
-                                                class="btn btn-warning btn-pill w-200">
+                                            <a href="" class="btn btn-warning btn-pill w-200">
                                                 Restore
                                             </a>
                                         </div>
@@ -76,12 +82,13 @@
     </div>
 @endsection
 @section('js')
-<script src="https://cdn.tiny.cloud/1/gafdlqc9hh36ubwwjslopo148dipwejra3hau2lsv7k2pzle/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-    tinymce.init({
-      selector: 'textarea',
-      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-    });
-  </script>
+    <script src="https://cdn.tiny.cloud/1/gafdlqc9hh36ubwwjslopo148dipwejra3hau2lsv7k2pzle/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+    </script>
 @endsection

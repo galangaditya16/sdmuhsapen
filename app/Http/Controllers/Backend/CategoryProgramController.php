@@ -19,7 +19,7 @@ class CategoryProgramController extends BaseController
      */
     public function index()
     {
-        if(!Auth::user()->can('kategori-programs-view')){
+        if(!Auth::user()->can('kategori programs-view')){
             abort(403);
         }
         try {
@@ -37,7 +37,7 @@ class CategoryProgramController extends BaseController
      */
     public function create()
     {
-        if(!Auth::user()->can('kategori-programs-create')){
+        if(!Auth::user()->can('kategori programs-create')){
             abort(403);
         }
         //
@@ -49,7 +49,7 @@ class CategoryProgramController extends BaseController
      */
     public function store(CategoryProgramRequest $request)
     {
-        if(!Auth::user()->can('kategori-programs-create')){
+        if(!Auth::user()->can('kategori programs-create')){
             abort(403);
         }
         DB::beginTransaction();
@@ -100,7 +100,7 @@ class CategoryProgramController extends BaseController
      */
     public function edit(string $id)
     {
-        if(!Auth::user()->can('kategori-programs-edit')){
+        if(!Auth::user()->can('kategori programs-edit')){
             abort(403);
         }
         //
@@ -122,7 +122,7 @@ class CategoryProgramController extends BaseController
      */
     public function update(CategoryProgramRequest $request, string $id)
     {
-        if(!Auth::user()->can('kategori-programs-edit')){
+        if(!Auth::user()->can('kategori programs-edit')){
             abort(403);
         }
         //
@@ -167,7 +167,7 @@ class CategoryProgramController extends BaseController
      */
     public function destroy(string $id)
     {
-        if(!Auth::user()->can('kategori-programs-destroy')){
+        if(!Auth::user()->can('kategori programs-destroy')){
             abort(403);
         }
         //

@@ -11,9 +11,11 @@
                 <h3 class="card-title">Management Category Content</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
+                      @can('kategori konten-create')
                         <a href="{{ route('category-content.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             Add Category Content
                         </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -41,17 +43,21 @@
                                 <td>
                                     @if (!$row->is_delete)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                          @can('kategori konten-edit')
                                             <a href="{{ route('category-content.edit',$row->CategoryContent) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('category-content.destroy', $row->CategoryContent) }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
-                                                    Hapus
-                                                </button>
-                                            </form>
+                                          @endcan
+                                          @can('kategori konten-delete')
+                                          <form action="{{ route('category-content.destroy', $row->CategoryContent) }}" method="POST" style="display: inline;">
+                                              @csrf
+                                              @method('DELETE')
+                                              <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                  Hapus
+                                              </button>
+                                          </form>
+                                          @endcan
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

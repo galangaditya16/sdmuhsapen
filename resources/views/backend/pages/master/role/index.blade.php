@@ -11,9 +11,11 @@
                 <h3 class="card-title">Management Roles</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
+                      @can('role-create')
                         <a href="{{ route('permission.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             Add Roles
                         </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -37,19 +39,23 @@
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->guard_name }}</td>
                                 <td>
+                                  @can('role-edit')
                                     <a href="{{ route('permission.edit', $row->id) }}"
                                         class="btn btn-primary btn-pill w-120">
                                         Edit
                                     </a>
-                                    <form action="{{ route('permission.destroy', $row->id) }}" method="POST"
-                                        style="display: inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-pill w-120"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
-                                            Hapus
-                                        </button>
-                                    </form>
+                                  @endcan
+                                  @can('role-delete')
+                                  <form action="{{ route('permission.destroy', $row->id) }}" method="POST"
+                                      style="display: inline;">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger btn-pill w-120"
+                                          onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                          Hapus
+                                      </button>
+                                  </form>
+                                  @endcan
 
                                 </td>
                             </tr>

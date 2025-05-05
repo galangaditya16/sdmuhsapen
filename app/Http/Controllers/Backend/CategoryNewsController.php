@@ -19,7 +19,7 @@ class CategoryNewsController extends BaseController
      */
     public function index()
     {
-        if (!Auth::user()->can('kategori-berita-view')) {
+        if (!Auth::user()->can('kategori berita-view')) {
             abort(403);
         }
         try {
@@ -38,7 +38,7 @@ class CategoryNewsController extends BaseController
     public function create()
     {
         //
-        if (!Auth::user()->can('kategori-berita-create')) {
+        if (!Auth::user()->can('kategori berita-create')) {
             abort(403);
         }
         return $this->makeView('backend.pages.management.category.news.create');
@@ -49,7 +49,7 @@ class CategoryNewsController extends BaseController
      */
     public function store(CategoryNewsRequest $request)
     {
-        if (!Auth::user()->can('kategori-berita-create')) {
+        if (!Auth::user()->can('kategori berita-create')) {
             abort(403);
         }
         DB::beginTransaction();
@@ -101,7 +101,7 @@ class CategoryNewsController extends BaseController
     public function edit(string $id)
     {
 
-        if (!Auth::user()->can('kategori-berita-edit')) {
+        if (!Auth::user()->can('kategori berita-edit')) {
             abort(403);
         }
         //
@@ -122,7 +122,7 @@ class CategoryNewsController extends BaseController
      */
     public function update(CategoryNewsRequest $request, string $id)
     {
-        if (!Auth::user()->can('kategori-berita-edit')) {
+        if (!Auth::user()->can('kategori berita-edit')) {
             abort(403);
         }
         DB::beginTransaction();
@@ -166,7 +166,7 @@ class CategoryNewsController extends BaseController
      */
     public function destroy($id)
     {
-        if(!Auth::user()->can('kategori-berita-delete')){
+        if(!Auth::user()->can('kategori berita-delete')){
             abort(403);
         }
         try {

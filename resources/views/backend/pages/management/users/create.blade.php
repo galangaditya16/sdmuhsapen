@@ -102,7 +102,7 @@
                     <label class="form-label">Image</label>
                     <div>
                         <input type="file" accept="image/jpeg,image/png,image/jpg" name="image" class="form-control" aria-describedby="title" placeholder="Upload Image">
-                        @error('image')     
+                        @error('image')
                             <div class="invalid-feedback" style="display: block">{{ $message }}</div>
                         @enderror
                     </div>
@@ -129,17 +129,17 @@
                 $('.repassword').removeClass('is-invalid');
             }
         });
-        
+
         // Handle show/hide password
         $('.show-password, .show-repassword').on('click', function(e) {
             e.preventDefault();
 
             let input = $(this).hasClass('show-password') ? $('input[name="password"]') : $('input[name="repassword"]');
-            
+
             if(input.attr('type') === 'password') {
                 input.attr('type', 'text');
             } else {
-                input.attr('type', 'password'); 
+                input.attr('type', 'password');
             }
         });
     });

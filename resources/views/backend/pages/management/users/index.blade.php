@@ -11,9 +11,11 @@
                 <h3 class="card-title">Management Users</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                        <a href="{{ route('users.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                            Add User
-                        </a>
+                      @can('user management-create')
+                      <a href="{{ route('users.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                          Add User
+                      </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -36,7 +38,7 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->roles->first()->name ?? '-' }}</td>
-                                <td>    
+                                <td>
                                     <div class="col-2 col-sm-0 col-md-2 col-xl py-1">
                                             @can('user management-edit')
                                             <a href="{{ route('users.edit',$row->id) }}" class="btn btn-warning btn-pill w-200">

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Backend\TeacherNew;
-use App\Models\AllCategoryTranslite;
-use App\Models\TeacherPositionnew;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\TeacherPositionnew;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\AllCategoryTranslite;
+use Illuminate\Support\Facades\Auth;
+use App\Base\Controller\BaseController;
+use App\Http\Controllers\Backend\TeacherNew;
 
 class TeacherPositionController extends BaseController
 {
@@ -19,6 +20,9 @@ class TeacherPositionController extends BaseController
     public function index()
     {
         try {
+            if (!Auth::user()->can('jabatan guru-view')) {
+                abort(403);
+            }
            $lang = 'id';
            $data = AllCategoryTranslite::with(['CategoryTeacher.transLite'])
                   ->whereHas('CategoryTeacher')
@@ -36,6 +40,9 @@ class TeacherPositionController extends BaseController
     public function create()
     {
         //
+        if (!Auth::user()->can('jabatan guru-create')) {
+            abort(403);
+        }
         return $this->makeView('backend.pages.management.category.teacher.create');
     }
 
@@ -45,6 +52,9 @@ class TeacherPositionController extends BaseController
     public function store(Request $request)
     {
         //
+        if (!Auth::user()->can('jabatan guru-create')) {
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if($request->hasFile('images')){
@@ -97,6 +107,9 @@ class TeacherPositionController extends BaseController
     public function edit(string $id)
     {
         //
+        if (!Auth::user()->can('jabatan guru-edit')) {
+            abort(403);
+        }
         try {
             $category   = TeacherPositionnew::with('transLite')->findOrFail($id);
             $categoryID = $category->transLite->firstWhere('lang','id');
@@ -114,6 +127,9 @@ class TeacherPositionController extends BaseController
     public function update(Request $request, string $id)
     {
         //
+        if (!Auth::user()->can('jabatan guru-edit')) {
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $category   = TeacherPositionnew::with('transLite')->findOrfail($id);
@@ -159,6 +175,9 @@ class TeacherPositionController extends BaseController
     public function destroy(string $id)
     {
         //
+        if (!Auth::user()->can('jabatan guru-delete')) {
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $category = TeacherPositionnew::with('transLite')->findOrFail($id);

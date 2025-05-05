@@ -23,7 +23,7 @@ class ContetController extends BaseController
      */
     public function index()
     {
-        if(!Auth::user()->can('contents-view')){
+        if(!Auth::user()->can('content-view')){
             abort(403);
         }
         try {

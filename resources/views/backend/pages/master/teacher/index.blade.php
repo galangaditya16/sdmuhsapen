@@ -14,9 +14,11 @@
                 <h3 class="card-title">Management Teacher</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
+                      @can('guru-create')
                         <a href="{{ route('teacher.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             Add Teacher
                         </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -52,18 +54,22 @@
                                 <td>{{ Carbon\Carbon::parse($row->created_at)->format('l, d F Y') }}</td>
                                 <td>
                                     @if (!$row->delete_at)
-                                        <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                    <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                          @can('guru-edit')
                                             <a href="{{ route('teacher.edit', $row->id) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('teacher.destroy', $row->id) }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
-                                                    Hapus
-                                                </button>
-                                            </form>
+                                          @endcan
+                                          @can('guru-delete')
+                                          <form action="{{ route('teacher.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                              @csrf
+                                              @method('DELETE')
+                                              <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                  Hapus
+                                              </button>
+                                          </form>
+                                          @endcan
 
                                         </div>
                                     @else

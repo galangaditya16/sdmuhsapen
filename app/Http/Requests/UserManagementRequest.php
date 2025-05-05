@@ -26,7 +26,7 @@ class UserManagementRequest extends FormRequest
             'role'      => 'required|numeric|min:1|exists:roles,id',
             'email'     => 'required|email|unique:users,email',
         ];
-    
+
         if ($this->isMethod('post')) {
             // Saat tambah user
             $rules['password'] = 'required|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
@@ -37,16 +37,16 @@ class UserManagementRequest extends FormRequest
             $rules['password'] = 'nullable|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
             $rules['repassword'] = 'same:password';
         }
-    
+
         return $rules;
     }
-    
+
 
     public function attributes()
     {
         return [
             'name' => 'Name',
-            'password' => 'Password', 
+            'password' => 'Password',
             'email' => 'Email',
             'role' => 'Role',
             'repassword' => 'Confirm Password'

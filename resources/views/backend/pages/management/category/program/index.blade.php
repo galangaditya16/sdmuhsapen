@@ -11,9 +11,11 @@
                 <h3 class="card-title">Management Category Programs</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
+                      @can('kategori programs-create')
                         <a href="{{ route('category-programs.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             Add Category Programs
                         </a>
+                      @endcan
                     </div>
                 </div>
             </div>
@@ -41,10 +43,13 @@
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+                                          @can('kategori programs-edi')
                                             <a href="{{ route('category-programs.edit', $row->CategoryPrograms) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
+                                          @endcan
+                                          @can('kategori programs-delete')
                                             <form action="{{ route('category-programs.destroy', $row->CategoryPrograms) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -52,7 +57,7 @@
                                                     Hapus
                                                 </button>
                                             </form>
-
+                                          @endcan
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">

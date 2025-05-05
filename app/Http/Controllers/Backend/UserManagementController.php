@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Spatie\Model\User as SpatieUser;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Model\User as SpatieUser;
+use App\Base\Controller\BaseController;
+use Spatie\Permission\Models\Permission;
 use App\Http\Requests\UserManagementRequest;
 
 class UserManagementController extends BaseController
@@ -20,6 +21,9 @@ class UserManagementController extends BaseController
     {
         //
         try {
+            if(!Auth::user()->can('user management-view')){
+                abort(403);
+            }
             $lang = 'id';
             $data = User::with('roles.permissions')->paginate(10);
             return $this->makeView('backend.pages.management.users.index', compact('data'));
@@ -35,6 +39,9 @@ class UserManagementController extends BaseController
     public function create()
     {
         //
+        if(!Auth::user()->can('user management-create')){
+            abort(403);
+        }
         $permission = Role::all();
         return $this->makeView('backend.pages.management.users.create',compact('permission'));
     }
@@ -45,7 +52,10 @@ class UserManagementController extends BaseController
     public function store(UserManagementRequest $request)
     {
         //
-            DB::beginTransaction();
+        if(!Auth::user()->can('user management-create')){
+            abort(403);
+        }
+        DB::beginTransaction();
         try {
             $dataRole = Role::findOrfail($request->role);
             $user = User::create([
@@ -79,6 +89,9 @@ class UserManagementController extends BaseController
     public function edit($id)
     {
         //
+        if(!Auth::user()->can('user management-edit')){
+            abort(403);
+        }
         try {
             $permission = Role::all();
             $data = User::with('roles.permissions')->findOrfail($id);
@@ -95,6 +108,9 @@ class UserManagementController extends BaseController
     public function update(UserManagementRequest $request, string $id)
     {
         //
+        if(!Auth::user()->can('user management-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $user = User::with(['roles.permissions'])->findOrFail($id);
@@ -108,7 +124,7 @@ class UserManagementController extends BaseController
             $user->name = $request->name;
             $user->email = $request->email;
             $user->save();
-            
+
             DB::commit();
             return redirect()->route('users.index')->with('success','Success Update User');
         } catch (\Throwable $th) {
@@ -122,6 +138,9 @@ class UserManagementController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('user management-delete')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $user = User::findOrFail($id);
