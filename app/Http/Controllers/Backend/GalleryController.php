@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Gallery;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use App\Http\Requests\MenuRequest;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 use App\Base\Controller\BaseController;
 use App\Base\Repositories\AppRepository;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\MenuRequest;
+use App\Models\Gallery;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
 class GalleryController extends BaseController
@@ -20,6 +21,9 @@ class GalleryController extends BaseController
     public function index()
     {
         //
+        if (!Auth::user()->can('gallery-view')) {
+            abort(403);
+        }
         $data = Gallery::orderBy('created_at', 'ASC')->paginate(10);
         return $this->makeView('backend.pages.management.gallery.index', compact('data'));
     }
@@ -30,6 +34,9 @@ class GalleryController extends BaseController
     public function create()
     {
         //
+        if (!Auth::user()->can('gallery-create')) {
+            abort(403);
+        }
         return $this->makeView('backend.pages.management.gallery.create');
     }
 
@@ -38,6 +45,9 @@ class GalleryController extends BaseController
      */
     public function store(Request $request)
     {
+        if (!Auth::user()->can('gallery-create')) {
+            abort(403);
+        }
         try {
             if ($request->hasFile('image_thumnail')) {
                 $path      = public_path('assets/images/gallery/thumbnail');
@@ -62,6 +72,9 @@ class GalleryController extends BaseController
     public function show(string $id)
     {
         //
+        if (!Auth::user()->can('gallery-view')) {
+            abort(403);
+        }
         $data = Gallery::findOrfail($id);
         return $this->makeView('backend.pages.management.gallery.detail', compact('data'));
     }
@@ -73,7 +86,9 @@ class GalleryController extends BaseController
     {
         //
         try {
-
+            if (!Auth::user()->can('gallery-edit')) {
+                abort(403);
+            }
             $data = Gallery::findOrfail($id);
             return $this->makeView('backend.pages.management.gallery.edit', compact('data'));
         } catch (\Throwable $th) {
@@ -87,6 +102,9 @@ class GalleryController extends BaseController
      */
     public function update(Request $request, string $id)
     {
+        if (!Auth::user()->can('gallery-edit')) {
+            abort(403);
+        }
         try {
             $data = Gallery::findOrfail($id);
             if($request->has('image_thumnail')){
@@ -113,6 +131,9 @@ class GalleryController extends BaseController
      */
     public function destroy(string $id)
     {
+        if (!Auth::user()->can('gallery-delete')) {
+            abort(403);
+        }
         try {
             $data = Gallery::findOrfail($id);
             $data->delete();

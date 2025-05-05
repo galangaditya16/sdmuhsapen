@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SliderRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SliderController extends BaseController
@@ -16,6 +17,9 @@ class SliderController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('slider-view')){
+            abort(403);
+        }
         try {
             $sliders = Slider::paginate(10);
             return $this->makeView('backend.pages.management.slider.index',compact('sliders'));
@@ -33,6 +37,9 @@ class SliderController extends BaseController
     public function create()
     {
         //
+        if(!Auth::user()->can('slider-create')){
+            abort(403);
+        }
         return $this->makeView('backend.pages.management.slider.create');
     }
 
@@ -42,6 +49,9 @@ class SliderController extends BaseController
     public function store(SliderRequest $request)
     {
         //
+        if(!Auth::user()->can('slider-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if($request->hasFile('image')){
@@ -97,6 +107,9 @@ class SliderController extends BaseController
     public function destroy(string $id)
     {
         //
+        if(!Auth::user()->can('slider-delete')){
+            abort(403);
+        }
         try {
             $data = Slider::findOrFail($id);
             $path = public_path('assets/images/slider/');

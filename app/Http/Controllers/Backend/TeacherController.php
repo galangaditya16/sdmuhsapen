@@ -18,6 +18,9 @@ class TeacherController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('teacher-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $contents = Teachernew::with(['ticherposition','ticherposition.transLite'])->paginate(10);
@@ -33,7 +36,9 @@ class TeacherController extends BaseController
      */
     public function create()
     {
-        //
+        if(!Auth::user()->can('teacher-create')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $catgeorys = AllCategoryTranslite::with('CategoryTeacher')->whereHas('CategoryTeacher')->where('lang',$lang)->get();
@@ -50,7 +55,10 @@ class TeacherController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        // 
+        if(!Auth::user()->can('teacher-create')){
+            abort(403);
+        }
         // dd($request->all());
         DB::beginTransaction();
         try {
@@ -91,6 +99,9 @@ class TeacherController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('teacher-edit')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $catgeorys = AllCategoryTranslite::with('CategoryTeacher')->whereHas('CategoryTeacher')->where('lang',$lang)->get();
@@ -108,6 +119,9 @@ class TeacherController extends BaseController
     public function update(Request $request, string $id)
     {
         //
+        if(!Auth::user()->can('teacher-edit')){
+            abort(403);
+        }
         try {
             $data = Teachernew::findOrfail($id);
             if($request->has('image') && !empty($data->image) ){
@@ -141,7 +155,9 @@ class TeacherController extends BaseController
      */
     public function destroy(string $id)
     {
-
+        if(!Auth::user()->can('teacher-delete')){
+            abort(403);
+        }
         try {
             $data = Teachernew::findOrfail($id);
             $data->delete();

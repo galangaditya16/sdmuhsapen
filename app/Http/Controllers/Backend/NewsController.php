@@ -21,6 +21,9 @@ class NewsController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('berita-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
@@ -41,7 +44,9 @@ class NewsController extends BaseController
      */
     public function create()
     {
-        //
+        if(!Auth::user()->can('berita-create')){
+            abort(403);
+        }
         try {
             $categorys = CategoryNews::all();
             return $this->makeView('backend.pages.master.news.create',compact('categorys'));;
@@ -57,6 +62,9 @@ class NewsController extends BaseController
      */
     public function store(NewsRequest $request)
     {
+        if(!Auth::user()->can('berita-create')){
+            abort(403);
+        }
         DB::beginTransaction();
 
         try {
@@ -121,7 +129,9 @@ class NewsController extends BaseController
      */
     public function edit(string $id)
     {
-
+        if(!Auth::user()->can('berita-edit')){
+            abort(403);
+        }
         $lang = 'id';
         try {
             $categorys = CategoryNews::all();
@@ -145,7 +155,9 @@ class NewsController extends BaseController
      */
     public function update(NewsRequest $request, string $id)
     {
-        //
+        if(!Auth::user()->can('berita-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $news = News::with(['hasCategory','transLite' => function($query) use ($id){
@@ -205,6 +217,9 @@ class NewsController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('berita-delete')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $content = News::with('transLite')->findOrFail($id);

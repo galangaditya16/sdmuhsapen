@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use App\Models\AllContentTranslite;
-use App\Models\ContentNew;
-use Illuminate\Support\Str;
 use App\Base\Controller\BaseController;
+use App\Http\Controllers\Controller;
 use App\Models\AllCategoryTranslite;
+use App\Models\AllContentTranslite;
 use App\Models\CategoryContent;
+use App\Models\ContentNew;
 use App\Models\News;
+use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Content;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use PhpParser\Node\Stmt\TryCatch;
 
 class ContetController extends BaseController
@@ -22,6 +23,9 @@ class ContetController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('contents-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllContentTranslite::with(['ContentContent','ContentContent.Categorys','ContentContent.Categorys.transLite'])
@@ -40,6 +44,9 @@ class ContetController extends BaseController
      */
     public function create()
     {
+        if(!Auth::user()->can('contents-create')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $categorys = $this->LoadCategoryContets($lang);
@@ -55,6 +62,9 @@ class ContetController extends BaseController
     public function store(Request $request)
     {
         //
+        if(!Auth::user()->can('contents-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if ($request->images) {
@@ -108,6 +118,9 @@ class ContetController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('contents-edit')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $categorys = AllCategoryTranslite::with(['CategoryContent'])->where('lang',$lang)->get();
@@ -126,6 +139,9 @@ class ContetController extends BaseController
      */
     public function update(Request $request, string $id)
     {
+        if(!Auth::user()->can('contents-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $content    = ContentNew::with('transLite')->findOrFail($id);
@@ -182,7 +198,9 @@ class ContetController extends BaseController
      */
     public function destroy(string $id)
     {
-        //
+        if(!Auth::user()->can('contents-delete')){
+            abort(403);
+        }
         try {
             $content = ContentNew::with('transLite')->findOrFail($id);
             if($content->transLite){

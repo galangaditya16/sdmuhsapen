@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\SysPermission;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role as SpatieRole;
 
@@ -17,6 +18,9 @@ class RoleController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('role-view')){
+            abort(403);
+        }
         try {
             $permission = DB::table('permissions')->where('name','LIKE','role-%')->get();
             $roles      = DB::table('roles')->paginate(10);
@@ -30,7 +34,10 @@ class RoleController extends BaseController
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+    {      
+        if(!Auth::user()->can('role-create')){
+            abort(403);
+        }
         try {
             $typePermissions = SysPermission::selectRaw("split_part(name, '-', 1) AS first_word, COUNT(*) AS total")
             ->groupBy('first_word')
@@ -51,7 +58,9 @@ class RoleController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        if(!Auth::user()->can('role-create')){
+            abort(403);
+        }
         $request->validate([
             'name' => 'required',
         ]);
@@ -89,7 +98,10 @@ class RoleController extends BaseController
      */
     public function edit(string $id)
     {
-        //
+        // 
+        if(!Auth::user()->can('role-edit')){
+            abort(403);
+        }
         try {
             $role = SpatieRole::with(['permissions'])->findOrFail($id);
             $typePermissions = SysPermission::select('name')
@@ -119,6 +131,9 @@ class RoleController extends BaseController
      */
     public function update(Request $request, string $id)
     {
+        if(!Auth::user()->can('role-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $role = SpatieRole::with(['permissions'])->findOrFail($id);
@@ -162,7 +177,9 @@ class RoleController extends BaseController
      */
     public function destroy(string $id)
     {
-        //
+        if(!Auth::user()->can('role-delete')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
            $role = SpatieRole::findOrFail($id);

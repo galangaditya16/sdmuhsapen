@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Base\Repositories\AppRepository;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends BaseController
 {
@@ -25,6 +26,9 @@ class MenuController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('management menu-view')){
+            abort(403);
+        }
         try {
             $menus = Menu::with('parent')->paginate(10);
             return $this->makeView('backend.pages.management.menu.index',compact('menus'));
@@ -39,6 +43,9 @@ class MenuController extends BaseController
      */
     public function create()
     {
+        if(!Auth::user()->can('management menu-create')){
+            abort(403);
+        }
         try {
             $parents = Menu::whereNull('parent_id')->get();
             return $this->makeView('backend.pages.management.menu.create',compact('parents'));
@@ -53,6 +60,9 @@ class MenuController extends BaseController
      */
     public function store(MenuRequest $request)
     {
+        if(!Auth::user()->can('management menu-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         $menu = NULL;
         try {
@@ -80,6 +90,9 @@ class MenuController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('management menu-edit')){
+            abort(403);
+        }
         try {
             $parents = Menu::whereNull('parent_id')->get();
             $menu    = Menu::find($id);
@@ -96,6 +109,9 @@ class MenuController extends BaseController
      */
     public function update(MenuRequest $request, string $id)
     {
+        if(!Auth::user()->can('management menu-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         $menu = NULL;
         try {
@@ -116,6 +132,9 @@ class MenuController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('management menu-delete')){
+            abort(403);
+        }
         //
         DB::beginTransaction();
         $menu = NULL;

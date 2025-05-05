@@ -8,10 +8,11 @@ use App\Models\AllCategoryTranslite;
 use App\Models\AllContentTranslite;
 use App\Models\CategoryProgram;
 use App\Models\ProgramsNew;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 
 class ProgramController extends BaseController
@@ -21,6 +22,9 @@ class ProgramController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('programs-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllContentTranslite::with(['ContentPrograms.Categorys.transLite'])
@@ -41,6 +45,9 @@ class ProgramController extends BaseController
      */
     public function create()
     {
+        if(!Auth::user()->can('programs-create')){
+            abort(403);
+        }
         try {
             $lang      = 'id';
             $categorys = $this->LoadCategoryProrgams($lang);
@@ -56,6 +63,9 @@ class ProgramController extends BaseController
      */
     public function store(Request $request)
     {
+        if(!Auth::user()->can('programs-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if($request->has('images')){
@@ -112,7 +122,9 @@ class ProgramController extends BaseController
      */
     public function edit(string $id)
     {
-        //
+        if(!Auth::user()->can('programs-edit')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data       = ProgramsNew::with('transLite')->findOrFail($id);
@@ -134,7 +146,10 @@ class ProgramController extends BaseController
      */
     public function update(Request $request, string $id)
     {
-        //
+        //      
+        if(!Auth::user()->can('programs-edit')){
+            abort(403);
+        }
         try {
             $content    = ProgramsNew::with('transLite')->findOrFail($id);
             $path_web = asset('assets/images/programs/');
@@ -186,7 +201,9 @@ class ProgramController extends BaseController
      */
     public function destroy(string $id)
     {
-        //
+        if(!Auth::user()->can('programs-delete')){
+            abort(403);
+        }
         try {
             DB::beginTransaction();
             $data =ProgramsNew::with('transLite')->findOrfail($id);

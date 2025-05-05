@@ -6,9 +6,10 @@ use App\Base\Controller\BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ContactController extends BaseController
 {
@@ -17,6 +18,9 @@ class ContactController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('contact-view')){
+            abort(403);
+        }
         try {
             return redirect()->route('contact.show', 1);
         } catch (\Throwable $th) {
@@ -39,7 +43,9 @@ class ContactController extends BaseController
     public function store(Request $request)
     {
         //
-
+        if(!Auth::user()->can('contact-create')){
+            abort(403);
+        }
         try {
             if ($request->has('logo')) {
                 $nameImage = time() . '.' . $request->logo->extension();
@@ -62,6 +68,9 @@ class ContactController extends BaseController
      */
     public function show(string $id)
     {
+        if(!Auth::user()->can('contact-create')){
+            abort(403);
+        }
         try {
             $data = Contact::latest()->first();
             return $this->makeView('backend.pages.master.contact.edit', compact('data'));
@@ -84,6 +93,9 @@ class ContactController extends BaseController
      */
     public function update(Request $request, string $id)
     {
+        if(!Auth::user()->can('contact-update')){
+            abort(403);
+        }
         //
         try {
             $data = Contact::findorfail($id);
