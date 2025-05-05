@@ -1,4 +1,9 @@
 @extends('backend.layout.main')
+
+
+	protected $casts = [
+
+	];
 @section('breadcrumbs')
     <h2 class="page-title">
         Management Menu

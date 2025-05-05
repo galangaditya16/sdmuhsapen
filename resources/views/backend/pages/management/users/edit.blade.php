@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="col-md-12">
-        <form class="card" method="POST" action="{{ route('users.store') }}">
-            @csrf
+        <form class="card" method="POST" action="{{ route('users.update',$data->id) }}">
+            @csrf @method('PUT')
             <div class="card-header">
                 <h3 class="card-title">Add User</h3>
             </div>

@@ -21,25 +21,26 @@ class UserManagementRequest extends FormRequest
      */
     public function rules(): array
     {
+
         $rules = [
-            'name'      => 'required|string|min:1|max:100',
-            'role'      => 'required|numeric|min:1|exists:roles,id',
-            'email'     => 'required|email|unique:users,email',
+            'name'  => 'required|string|min:1|max:100',
+            'role'  => 'required|numeric|min:1|exists:roles,id',
+            'email' => 'required|email|unique:users,email,' . $this->route('user'),
         ];
 
         if ($this->isMethod('post')) {
-            // Saat tambah user
             $rules['password'] = 'required|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
             $rules['repassword'] = 'required|same:password';
         } elseif ($this->isMethod('put') || $this->isMethod('patch')) {
-            // Saat update user
-            $rules['email'] = 'required|email|unique:users,email,' . $this->user->id;
-            $rules['password'] = 'nullable|min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
-            $rules['repassword'] = 'same:password';
+            if ($this->filled('password')) {
+                $rules['password'] = 'min:8|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
+                $rules['repassword'] = 'same:password';
+            }
         }
 
         return $rules;
     }
+
 
 
     public function attributes()
