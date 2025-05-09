@@ -76,16 +76,27 @@
             </div>
             <div class="bg-white py-6 lg:py-10 px-10 lg:px-16 md:w-1/2 rounded-3xl shadow-lg space-y-1.5">
                 @if (session('success'))
-                <div class="bg-green-500 opacity-50 border border-green-500 text-green-900 px-6 py-3 rounded-md text-center flex items-center justify-center w-full">
-                    {{ session('success') }}
-                </div>
+                    <div
+                        class="bg-green-500 opacity-50 border border-green-500 text-green-900 px-6 py-3 rounded-md text-center flex items-center justify-center w-full">
+                        {{ session('success') }}
+                    </div>
                 @endif
-            
+
                 <p class="text-3xl text-biru-tua text-center">Kirimi Kami Pesan</p>
                 <p class="text-black text-sm text-center">Kami sangat ingin mendengar pesan, saran, kritik, dan masukan dari
                     Anda.</p>
                 <form action="{{ route('send.message') }}" method="post" class="space-y-6">
                     @csrf
+                    @if ($errors->any())
+                        <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+                            <ul class="list-disc ml-5">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="flex items-center border-b border-black py-1">
                         <input name="name"
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -95,7 +106,7 @@
                         <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="phone"
                                 class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="No. hp" aria-label="No. hp" required>
+                                type="number" placeholder="No. hp" aria-label="No. hp" required>
                         </div>
                         <div class="flex items-center border-b border-black py-1 w-full">
                             <input name="email"
@@ -117,19 +128,7 @@
                             type="text" name="message" placeholder="Pesan Anda" aria-label="Pesan Anda" required></textarea>
                     </div>
                     <div class="flex gap-x-2 mb-20">
-                        <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <p id="captcha"
-                                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
-                                {{ $captcha ?? '-' }}</p>
-                            <p id="captcha"
-                                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
-                            </p>
-                        </div>
-                        <div class="flex items-center border-b border-black py-1 w-1/2">
-                            <input name="captcha"
-                                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="text" placeholder="Tulis captcha" aria-label="Tulis captcha">
-                        </div>
+                      <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                     </div>
                     <button id="submit-btn"
                         class="bg-biru-tua rounded-3xl w-full block text-white py-2 hover:bg-biru-tua-peteng disabled:bg-gray-400">Submit</button>
@@ -221,6 +220,7 @@
 @endsection
 
 @section('extend-script')
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         const captcha = document.getElementById('captcha').innerText;
         const submitBtn = document.getElementById('submit-btn');
@@ -233,4 +233,14 @@
             }
         });
     </script>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+          var recaptchaResponse = document.querySelector('textarea[name="g-recaptcha-response"]').value;
+          if (!recaptchaResponse) {
+              event.preventDefault();  // Mencegah form dikirim jika CAPTCHA tidak tercentang
+              alert('Harap verifikasi CAPTCHA terlebih dahulu.');
+          }
+      });
+  </script>
+
 @endsection
