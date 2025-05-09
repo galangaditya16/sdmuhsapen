@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Models\AllContentTranslite;
-use App\Models\CategoryNews;
 use App\Models\News;
 use App\Models\NewsNew;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\CategoryNews;
+use Illuminate\Http\Request;
+use App\Http\Requests\NewsRequest;
+use Illuminate\Support\Facades\DB;
+use App\Models\AllContentTranslite;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Base\Controller\BaseController;
 
 class NewsController extends BaseController
 {
@@ -20,12 +21,16 @@ class NewsController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('berita-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
                     ->whereHas('ContentNews.hasCategory.transLite', function ($query) use ($lang) {
                         $query->where('lang',$lang);
                     })
+                    ->orderBy('created_at', 'desc')
                     ->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.master.news.index',compact('data'));
         } catch (\Throwable $th) {
@@ -39,7 +44,9 @@ class NewsController extends BaseController
      */
     public function create()
     {
-        //
+        if(!Auth::user()->can('berita-create')){
+            abort(403);
+        }
         try {
             $categorys = CategoryNews::all();
             return $this->makeView('backend.pages.master.news.create',compact('categorys'));;
@@ -55,6 +62,9 @@ class NewsController extends BaseController
      */
     public function store(NewsRequest $request)
     {
+        if(!Auth::user()->can('berita-create')){
+            abort(403);
+        }
         DB::beginTransaction();
 
         try {
@@ -67,16 +77,18 @@ class NewsController extends BaseController
                     $file->move($path,$code);
                     $imagesName[] = $code;
                 }
-                $request['image_filenames'] = json_encode($imagesName);
-                $request['path']   = $manifes_path;
-                $request['author'] = 'galang_ganteng';
+                $request->merge([
+                    'image' => json_encode($imagesName),
+                    'path' => $manifes_path,
+                    'author' => 'admin',
+                ]);
             }
             $data           = News::create([
                 'id_category'  => $request->id_category,
-                'author'       => 'galang_ganteng',
+                'author'       => Auth::user()->name,
                 'view'         => $request->view,
-                'path'         => $request['path'],
-                'images'       => $request['image_filenames'],
+                'path'         => $request->path,
+                'images'       => $request->image,
             ]);
 
             $data_tanslite  =AllContentTranslite::create([
@@ -117,7 +129,9 @@ class NewsController extends BaseController
      */
     public function edit(string $id)
     {
-
+        if(!Auth::user()->can('berita-edit')){
+            abort(403);
+        }
         $lang = 'id';
         try {
             $categorys = CategoryNews::all();
@@ -141,7 +155,9 @@ class NewsController extends BaseController
      */
     public function update(NewsRequest $request, string $id)
     {
-        //
+        if(!Auth::user()->can('berita-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $news = News::with(['hasCategory','transLite' => function($query) use ($id){
@@ -152,26 +168,30 @@ class NewsController extends BaseController
             $contentEN =AllContentTranslite::where('id_news',$news->id)->where('lang','en')->first();
 
             if($request->hasFile('images')){
+                $imagesName = [];
                 foreach ($request->file('images') as $file) {
                     $path = public_path('assets/images/news/');
                     $manifes_path = asset('assets/images/news');
-                    $code = time().'.'.$file->extension();
-                    $file->move($path,$code);
+                    $code = uniqid() . '_' . time() . '.' . $file->extension();
+                    $file->move($path, $code);
                     $imagesName[] = $code;
                 }
-                $request['images'] = json_encode($imagesName);
-                $request['path']   = $manifes_path;
-                $request['author'] = 'galang_ganteng';
-            }else{
-                $request['images'] = $news->image;
-                $request['path']   = $news->path;
+                $request->merge([
+                    'image' => json_encode($imagesName),
+                    'path' => $manifes_path,
+                    'author' => 'admin',
+                ]);
+            } else {
+                $request->merge([
+                    'image' => $news->image,
+                    'path' => $news->path,
+                ]);
             }
-
             $news->update([
                 'id_category' => $request->id_category,
-                'author'      => 'galang_ganteng',
+                'author'      => Auth::user()->name,
                 'path'        => $request->input('path'),
-                'image'       => $request->input('images')
+                'images'       => $request->image
             ]);
             $contentID->update([
                 'title' => $request->title,
@@ -197,6 +217,9 @@ class NewsController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('berita-delete')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $content = News::with('transLite')->findOrFail($id);

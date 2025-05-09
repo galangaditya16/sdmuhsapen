@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Controller;
-use App\Models\AllCategoryTranslite;
 use App\Models\Teachernew;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\AllCategoryTranslite;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Base\Controller\BaseController;
 
 
 class TeacherController extends BaseController
@@ -18,6 +19,9 @@ class TeacherController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('guru-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $contents = Teachernew::with(['ticherposition','ticherposition.transLite'])->paginate(10);
@@ -33,7 +37,9 @@ class TeacherController extends BaseController
      */
     public function create()
     {
-        //
+        if(!Auth::user()->can('guru-create')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $catgeorys = AllCategoryTranslite::with('CategoryTeacher')->whereHas('CategoryTeacher')->where('lang',$lang)->get();
@@ -51,6 +57,9 @@ class TeacherController extends BaseController
     public function store(Request $request)
     {
         //
+        if(!Auth::user()->can('guru-create')){
+            abort(403);
+        }
         // dd($request->all());
         DB::beginTransaction();
         try {
@@ -91,6 +100,9 @@ class TeacherController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('guru-edit')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $catgeorys = AllCategoryTranslite::with('CategoryTeacher')->whereHas('CategoryTeacher')->where('lang',$lang)->get();
@@ -108,6 +120,9 @@ class TeacherController extends BaseController
     public function update(Request $request, string $id)
     {
         //
+        if(!Auth::user()->can('gutu-edit')){
+            abort(403);
+        }
         try {
             $data = Teachernew::findOrfail($id);
             if($request->has('image') && !empty($data->image) ){
@@ -141,7 +156,9 @@ class TeacherController extends BaseController
      */
     public function destroy(string $id)
     {
-
+        if(!Auth::user()->can('guru-delete')){
+            abort(403);
+        }
         try {
             $data = Teachernew::findOrfail($id);
             $data->delete();

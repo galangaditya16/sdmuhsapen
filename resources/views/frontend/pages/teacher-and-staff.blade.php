@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-  <x-profile-menu-header title="Profil Guru dan Karyawan" />
+  <x-profile-menu-header title="{{ __('message.profil_guru_dan_karyawan') }}" />
   <section class="container mx-auto grid grid-cols-1 gap-y-14 md:my-20">
-    <p class="w-3/4 mx-auto text-center text-lg">SD Muhammadiyah Sapen memiliki ratusan guru yang memiliki pengalaman mengajar yang tinggi. Selain berpengalaman, tenaga pengajar kami memiliki sertifikasi mengajar.</p>
+    <p class="w-3/4 mx-auto text-center text-lg">{{ __('message.profil_guru_content') }}</p>
     <div class="flex justify-between">
       <div></div>
       <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3">

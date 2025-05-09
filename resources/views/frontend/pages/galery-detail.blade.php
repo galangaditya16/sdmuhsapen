@@ -4,7 +4,7 @@
     <section class="container mx-auto grid grid-cols-1 gap-y-6 md:my-20">
         <div class="sm:flex mt-20 sm:mt-12 lg:mt-5 sm:justify-between grid gap-y-4 sm:gap-y-0">
             <div class="sm:w-[65%] px-2 lg:px-0">
-                <x-breadcumb :breadcrumbs="[['url' => '/galery', 'name' => 'Galery'], ['url' => '', 'name' => 'Kategori']]" />
+                <x-breadcumb :breadcrumbs="[['url' => '/galery', 'name' => 'Galleries'], ['url' => '', 'name' => '']]" />
             </div>
 
             <div class="px-2 lg:px-0 sm:place-self-center sm:place-items-end">
@@ -63,7 +63,7 @@
                     @endphp
 
                     @forelse($images as $image)
-                        <img src="{{ asset('assets/images/gallery/') . '/' . $image }}" alt="banner.jpg"
+                        <img src="{{ asset('assets/images/gallery/') . '/' . $image }}" alt="Galeri SD Muhammadiyah Sapen"
                             class="h-[450px] object-cover w-full rounded-lg">
                     @empty
                         <p class="text-gray-500 text-center">Tidak ada gambar yang tersedia.</p>

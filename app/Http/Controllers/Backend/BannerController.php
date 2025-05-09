@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Base\Controller\BaseController;
-use App\Models\Banner;
-use Intervention\Image\Facades\Image;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\BannerRequest;
+use App\Models\Banner;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 
 class BannerController extends BaseController
@@ -17,6 +18,9 @@ class BannerController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('banner-view')){
+            abort(403);
+        }
         try {
             $banners = Banner::orderBy('created_at', 'DESC')->paginate(10);
             return $this->makeView('backend.pages.master.banner.index',compact('banners'));
@@ -32,6 +36,9 @@ class BannerController extends BaseController
     public function create()
     {
         //
+        if(!Auth::user()->can('banner-create')){
+            abort(403);
+        }
         try {
             return $this->makeView('backend.pages.master.banner.create');
         } catch (\Throwable $th) {
@@ -44,6 +51,9 @@ class BannerController extends BaseController
      */
     public function store(BannerRequest $request)
     {
+        if(!Auth::user()->can('banner-create')){
+            abort(403);
+        }
         //
         try {
            if($request->hasFile('image')){
@@ -74,6 +84,9 @@ class BannerController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('banner-edit')){
+            abort(403);
+        }
         //
         try {
            $data = Banner::findOrfail($id);
@@ -88,6 +101,9 @@ class BannerController extends BaseController
      */
     public function update(Request $request, string $id)
     {
+        if(!Auth::user()->can('banner-update')){
+            abort(403);
+        }
         //
         try {
             $data_banner = Banner::findOrfail($id);
@@ -114,6 +130,9 @@ class BannerController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('banner-delete')){
+            abort(403);
+        }
         //
         try {
             $data_banner = Banner::findOrfail($id);

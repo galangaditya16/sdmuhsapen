@@ -11,11 +11,13 @@
                 <h3 class="card-title">Management Slider</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                      <a href="{{ route('slider.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                        Add Slider
-                      </a>
+                        @can('slider-create')
+                            <a href="{{ route('slider.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                                Add Slider
+                            </a>
+                        @endcan
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="table-responsive">
                 <table class="table card-table table-vcenter text-nowrap datatable">
@@ -28,14 +30,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @php
-                        $no = ($sliders->currentPage() - 1) * $sliders->perPage() + 1;
-                    @endphp
+                        @php
+                            $no = ($sliders->currentPage() - 1) * $sliders->perPage() + 1;
+                        @endphp
                         @forelse ($sliders as $row)
                             <tr>
-                                <td>{{ $no++}}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $row->title }}</td>
-                                <td><img src="{{ $row->path.'/'.$row->image }}" style="width: 150px; height: auto">{{ $row->slider }}</td>
+                                <td><img src="{{ $row->path . '/' . $row->image }}"
+                                        style="width: 150px; height: auto">{{ $row->slider }}</td>
                                 <td>
                                     @if (!$row->delete_at)
                                         <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
@@ -43,30 +46,33 @@
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a> --}}
-                                            <form action="{{ route('slider.destroy', $row->id) }}" method="POST" style="display: inline;">
+                                            @can('slider-delete')
+                                            <form action="{{ route('slider.destroy', $row->id) }}" method="POST"
+                                                style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                <button type="submit" class="btn btn-danger btn-pill w-120"
+                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
                                                     Hapus
                                                 </button>
                                             </form>
-                                            
+                                            @endcan
+
                                         </div>
                                     @else
                                         <div class="col-6 col-sm-4 col-md- col-xl py-3">
-                                            <a href=""
-                                                class="btn btn-warning btn-pill w-200">
+                                            <a href="" class="btn btn-warning btn-pill w-200">
                                                 Restore
                                             </a>
                                         </div>
                                     @endif
                                 </td>
                             </tr>
-                            @empty
+                        @empty
                             <tr>
                                 <td colspan="6" style="text-align: center">Tidak Ada Data</td>
                             </tr>
-                            @endforelse
+                        @endforelse
                 </table>
             </div>
             {!! $sliders->links('backend.layout.pagination') !!}

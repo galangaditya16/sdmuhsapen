@@ -24,6 +24,7 @@ use App\Http\Controllers\Backend\TeacherPositionController;
 use App\Http\Controllers\Frontend\BeritaController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\MessageController;
+use App\Http\Controllers\Backend\UserManagementController;
 use App\Http\Controllers\SwitchLangController;
 use App\Http\Controllers\UserController;
 use App\Models\SysPermission;
@@ -76,12 +77,13 @@ Route:Route::prefix('backyard')->middleware('auth')->group(function () {
     Route::resource('teacher',TeacherController::class);
     // contact
     Route::resource('contact',ContactController::class);
-    // user
-    Route::resource('user', UserController::class);
     // permission
     Route::resource('permission',RoleController::class);
     //banner
     Route::resource('banner', BannerController::class);
+    //user management
+    Route::resource('users',UserManagementController::class);
+
 
 
     route::resource('gallery',GalleryController::class);

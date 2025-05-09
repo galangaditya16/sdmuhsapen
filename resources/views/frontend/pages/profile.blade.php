@@ -25,7 +25,7 @@
 
 @section('content')
     <!-- PROFILE SD MUHAMDIYAH SAPEN -->
-    <x-profile-menu-header title="Profil SD Muhammadiyah Sapen" />
+    <x-profile-menu-header title="{{ __('message.profil_sd_muhammadiyahsapen') }}" />
 
     <section class="my-10 md:my-20">
         <!--HTML CODE-->
@@ -49,7 +49,7 @@
     <section class="my-20">
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
-            <h1 class="text-2xl md:text-5xl font-bold my-8 text-oren text-center">Tentang SD Muhammadiyah Sapen</h1>
+            <h1 class="text-2xl md:text-5xl font-bold my-8 text-oren text-center">{{ __('message.tentang_sd_muhammadiyah_sapen') }}</h1>
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
                 <div class="flex-auto w-50">
                     <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
@@ -57,12 +57,12 @@
                 </div>
                 <div>
 
-                    <h1 class="text-xl md:text-4xl font-bold my-3 text-dark-blue">Sejarah Sekolah Dasar Muhammadiyah Sapen</h1>
+                    <h1 class="text-xl md:text-4xl font-bold my-3 text-dark-blue">{{ __('message.sejarah_sapen') }}</h1>
                     <p class="text-sm md:text-base mt-3 text-justify">
-                        Sekolah Dasar (SD) Sapen, yang terletak di Yogyakarta, memiliki sejarah yang kaya. Didirikan pada tahun 1976, SD Sapen bertujuan untuk memberikan pendidikan dasar yang berkualitas bagi anak-anak di sekitar wilayah Sapen. Sejak awal, sekolah ini fokus pada pengembangan karakter dan akademik siswa, dengan menekankan pentingnya pendidikan yang holistik.
+                        {{ __('message.sejarah_sapen_content1') }}
                     </p>
                     <p class="text-sm md:text-base mt-3 text-justify" >
-                        Selama bertahun-tahun, SD Sapen mengalami berbagai perkembangan, baik dalam kurikulum maupun fasilitas. Dengan dukungan masyarakat dan pemerintah, sekolah ini terus berupaya untuk meningkatkan mutu pendidikan dan mengadaptasi metode pengajaran yang relevan dengan kebutuhan zaman.
+                        {{ __('message.sejarah_sapen_content2') }}
                     </p>
 
                 </div>
@@ -79,7 +79,7 @@
 
         <div class="w-full relative container mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl font-bold my-5 text-dark-blue mx-auto">Keunggulan SD Muhammadiyah Sapen</h1>
+                <h1 class="text-4xl font-bold my-5 text-dark-blue mx-auto">{{ __('message.keunggulan') }}</h1>
             </div>
             <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-3 gap-16 max-h-[65%] lg:h-auto">
                 {{-- <div class="swiper-wrapper"> --}}
@@ -96,10 +96,10 @@
                               </svg>
                               <h5
                                 class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                Unggul dalam Ilmu Pendidikan
+                                {{ __('message.unggul_ilmu_pendidikan') }}
                               </h5>
                               <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                SD Muhammadiyah Sapen Yogyakarta unggul dalam ilmu pendidikan dengan kurikulum terpadu, metode pengajaran inovatif, dan tenaga pendidik berkualitas yang berkomitmen mencetak generasi cerdas, kreatif, dan berakhlak mulia.
+                                {{ __('message.unggul_ilmu_pendidikan_content') }}
                               </p>
 
                             </a>
@@ -120,10 +120,10 @@
                                 </svg>
                                 <h5
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Unggul dalam Ilmu Agama
+                                    {{ __('message.unggul_ilmu_agama') }}
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam ilmu agama melalui program tahfiz Al-Qur'an, pembiasaan ibadah, dan penguatan akhlak Islami, membimbing siswa menjadi pribadi beriman, berakhlak mulia, dan berkarakter kuat.
+                                    {{ __('message.unggul_ilmu_agama_content') }}
                                 </p>
                             </a>
 
@@ -143,10 +143,10 @@
                                 </svg>
                                 <h5
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Tenaga Pengajar yang Kompeten
+                                    {{ __('message.tenaga_pengajar_kompeten') }}
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen Yogyakarta memiliki tenaga pengajar yang kompeten, berpengalaman, dan berdedikasi tinggi dalam mendidik siswa, menggunakan metode inovatif untuk mencetak generasi berprestasi, berkarakter Islami, dan berdaya saing global.
+                                    {{ __('message.tenaga_pengajar_kompeten_content') }}
                                 </p>
                             </a>
 
@@ -166,10 +166,10 @@
                                 </svg>
                                 <h5
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Unggul dalam Inovasi dan Kreatifitas Pembelajaran
+                                    {{ __('message.unggul_inovasi_kreativitas') }}
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen Yogyakarta unggul dalam inovasi dan kreativitas pembelajaran dengan menerapkan metode modern, teknologi interaktif, dan pendekatan tematik, sehingga siswa lebih aktif, kreatif, dan terlibat dalam proses belajar.
+                                    {{ __('message.unggul_inovasi_kreativitas_content') }}
                                 </p>
                             </a>
 
@@ -189,10 +189,10 @@
                                 </svg>
                                 <h5
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Fasilitas Pendukung yang Memadai
+                                    {{ __('message.fasilitas_pendukung_memadai') }}
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen Yogyakarta memiliki fasilitas pendukung yang memadai, seperti ruang kelas modern, perpustakaan lengkap, laboratorium teknologi, area olahraga, dan tempat ibadah, menciptakan lingkungan belajar yang nyaman dan kondusif.
+                                    {{ __('message.fasilitas_pendukung_memadai_content') }}
                                 </p>
                             </a>
 
@@ -212,10 +212,10 @@
                                 </svg>
                                 <h5
                                     class="mb-2 text-3xl md:text-4xl text-white group-hover:text-dark-blue font-bold tracking-tight text-center">
-                                    Program Ekstrakulikuler Penunjang Prestasi
+                                    {{ __('message.program_ekstra_penunjang') }}
                                 </h5>
                                 <p class="hidden group-hover:block font-normal text-gray-900 text-center mt-10 p-6">
-                                    SD Muhammadiyah Sapen Yogyakarta memiliki program ekstrakurikuler unggulan yang menunjang prestasi, seperti seni, olahraga, tahfiz Al-Qur'an, teknologi dan keterampilan , yang membantu mengembangkan bakat dan minat siswa secara optimal.
+                                    {{ __('message.program_ekstra_penunjang_content') }}
                                 </p>
                             </a>
 
@@ -258,7 +258,7 @@
 
       <div class="w-full relative container mx-auto px-4 py-5">
         <div class="text-center">
-          <h1 class="text-4xl font-bold my-5 text-white mx-auto">Prestasi Kami</h1>
+          <h1 class="text-4xl font-bold my-5 text-white mx-auto">{{ __('message.prestasi_kami') }}</h1>
         </div>
         <div class="flex flex-nowrap md:grid overflow-x-auto md:grid-cols-6 gap-2 max-h-[65%]">
 
@@ -274,7 +274,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="129">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Bidang Akademis
+                {{ __('message.bidang_akademis') }}
                 </p>
 
               </a>
@@ -294,7 +294,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="945">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Prestasi Siswa
+                {{ __('message.prestasi_siswa') }}
                 </p>
 
               </a>
@@ -314,7 +314,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="174">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Prestasi Guru
+                {{ __('message.prestasi_guru') }}
                 </p>
 
               </a>
@@ -334,7 +334,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="19">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Prestasi Sekolah
+                {{ __('message.prestasi_sekolah') }}
                 </p>
 
               </a>
@@ -354,7 +354,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="84">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Prestasi Internasional
+                {{ __('message.prestasi_internasional') }}
                 </p>
 
               </a>
@@ -374,7 +374,7 @@
 
                 <h5 class="mb-2 text-4xl md:text-4xl text-white font-bold tracking-tight text-center" data-text="84">0</h5>
                 <p class="group-hover:block text-white font-bold text-center mt-2">
-                Bidang Olahraga
+                {{ __('message.bidang_olahraga') }}
                 </p>
 
               </a>
@@ -394,39 +394,39 @@
         <!--HTML CODE-->
         <div class="w-full container mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl font-bold my-5 text-oren mx-auto">Visi & Misi SD Muhammadiyah Sapen</h1>
+                <h1 class="text-4xl font-bold my-5 text-oren mx-auto">{{ __('message.visi_misi_sd_muhammadiyah_sapen') }}</h1>
             </div>
             <div class="grid md:grid-cols-2 grid-rows-auto gap-16">
                 <div class="flex-auto w-50">
-                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Visi</h1>
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">{{ __('message.visi') }}</h1>
                     <p class="text-sm md:text-xl my-3 text-justify">
-                        Terbentuknya pribadi muslim yang unggul, berakhlak mulia, berbudaya, berwawasan global, dan berkemajuan
+                        {{ __('message.visi_content') }}
                     </p>
                     <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/testi-20012025.jpeg" alt="visi dan misi sd muh sapen">
                 </div>
                 <div>
-                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Misi</h1>
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">{{ __('message.misi') }}</h1>
                     <ul class="list-disc ml-5">
                         <li class="text-sm md:text-xl">
-                            Melaksanakan pembelajaran dan bimbingan secara efektif sehinggapotensi peserta dididik dapat berkembang.
+                            {{ __('message.misi_content_1') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Mengembangkan pembelajaran berbasis IT dan keterampilan bahasa asing.
+                            {{ __('message.misi_content_2') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Memberikan kesempatan bagi perkembangan kognitif, psikomotor dan kepada pepembentukan manusia pemecah masalah.
+                            {{ __('message.misi_content_3') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Mengembangkan budaya disiplin dan etos kerja yang tinggi.
+                            {{ __('message.misi_content_4') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Menyelenggarakan pendidikan lingkungan di sekolah yang dapat menumbuhkan dadan meningkatkan kualitas siswa yang religius.
+                            {{ __('message.misi_content_5') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Membangkitkan semangat berprestasi di seluruh warga sekolah.
+                            {{ __('message.misi_content_6') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Menumbuhkan kesadaran dan kepedulian terhadap lingkungan.
+                            {{ __('message.misi_content_7') }}
                         </li>
 
                     </ul>
@@ -451,22 +451,22 @@
             </div>
             <div class="flex justify-center w-full">
                 <div class="w-full md:w-1/2">
-                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">Tujuan</h1>
+                    <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">{{ __('message.tujuan') }}</h1>
                     <ul class="list-disc ml-5">
                         <li class="text-sm md:text-xl">
-                            Menginventarisasi dan menilai sumber daya yang ada di SD Muhammadiyah Sapen Yogyakarta. Menetapkan program pelatihan tentang prestasi siswa.
+                            {{ __('message.tujuan_content_1') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Melibatkan komite sekolah untuk mendapatkan masukan dan dukungan bagi pe pepelaksanaan program sekolah.
+                            {{ __('message.tujuan_content_2') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Menjalin kerjasama dengan berbagai pihak/instansi terkait dalam rangka pepeningkatan kualitas sumber daya manusia.
+                            {{ __('message.tujuan_content_3') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Mengembangkan bidang garapan kejuruan, seperti kemampuan bahasa Inggris, olah raraga dan tata kelola TI.
+                            {{ __('message.tujuan_content_4') }}
                         </li>
                         <li class="text-sm md:text-xl">
-                            Menumbuhkan kesadaran akan pentingnya lingkungan.
+                            {{ __('message.tujuan_content_5') }}
                         </li>
                     </ul>
                 </div>

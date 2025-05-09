@@ -1,4 +1,9 @@
 @extends('backend.layout.main')
+
+
+	protected $casts = [
+
+	];
 @section('breadcrumbs')
     <h2 class="page-title">
         Management Menu
@@ -11,9 +16,11 @@
                 <h3 class="card-title">Management Menu</h3>
                 <div class="col-auto ms-auto">
                     <div class="btn-list">
-                      <a href="{{ route('management-menu.create') }}" class="btn btn-primary d-none d-sm-inline-block">
-                        Add Menu
-                      </a>
+                      @can('management menu-create')
+                        <a href="{{ route('management-menu.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                          Add Menu
+                        </a>
+                      @endcan
                     </div>
                   </div>
             </div>
@@ -40,17 +47,21 @@
                                 <td>
                                   @if (!$menu->delete_at)
                                       <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                          <a href="{{ route('management-menu.edit', $menu->id) }}"
-                                              class="btn btn-primary btn-pill w-120">
-                                              Edit
-                                          </a>
-                                          <form action="{{ route('management-menu.destroy', $menu->id) }}" method="POST" style="display: inline;">
-                                              @csrf
-                                              @method('DELETE')
-                                              <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
-                                                  Hapus
-                                              </button>
-                                          </form>
+                                        @can('management menu-edit')
+                                        <a href="{{ route('management-menu.edit', $menu->id) }}"
+                                            class="btn btn-primary btn-pill w-120">
+                                            Edit
+                                        </a>
+                                        @endcan
+                                        @can('management menu-delete')
+                                        <form action="{{ route('management-menu.destroy', $menu->id) }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-pill w-120" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">
+                                                Hapus
+                                            </button>
+                                        </form>
+                                        @endcan
 
                                       </div>
                                   @else

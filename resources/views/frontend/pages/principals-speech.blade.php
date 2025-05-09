@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
     @if (!is_null($data))
-        <x-profile-menu-header title="Sambutan Kepala Sekolah" />
+        <x-profile-menu-header title="{{ __('message.sambutan_kepala_sekolah') }}" />
         <section class="w-10/12 xl:w-9/12 mx-auto my-10 md:my-20">
             <div class="space-y-8">
                 <div class="md:float-left md:mr-10 mb-6 md:mb-4 w-full lg:w-[530px]">
@@ -18,7 +18,7 @@
                 <div class="prose max-w-none">
                     <div class="mt-4 space-y-2">
                         <p class="text-biru-tua text-4xl font-extrabold">Agung Rahmanto, S.H., M.Pd.</p>
-                        <p class="text-oren text-lg font-bold">Kepala SD Muhammadiyah Sapen</p>
+                        <p class="text-oren text-lg font-bold">{{ __('message.kepala_sd_muhammadiyahsapen') }}</p>
                     </div>
                     {!! $data->body !!}
                 </div>

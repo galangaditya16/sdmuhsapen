@@ -8,6 +8,7 @@ use App\Http\Requests\CategoryProgramRequest;
 use App\Models\AllCategoryTranslite;
 use App\Models\CategoryProgram;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -18,6 +19,9 @@ class CategoryProgramController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('kategori programs-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllCategoryTranslite::whereHas('CategoryPrograms')->where('lang',$lang)->paginate(10);
@@ -33,6 +37,9 @@ class CategoryProgramController extends BaseController
      */
     public function create()
     {
+        if(!Auth::user()->can('kategori programs-create')){
+            abort(403);
+        }
         //
         return $this->makeView('backend.pages.management.category.program.create');
     }
@@ -42,6 +49,9 @@ class CategoryProgramController extends BaseController
      */
     public function store(CategoryProgramRequest $request)
     {
+        if(!Auth::user()->can('kategori programs-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if($request->hasFile('images')){
@@ -90,6 +100,9 @@ class CategoryProgramController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('kategori programs-edit')){
+            abort(403);
+        }
         //
         try {
 
@@ -109,6 +122,9 @@ class CategoryProgramController extends BaseController
      */
     public function update(CategoryProgramRequest $request, string $id)
     {
+        if(!Auth::user()->can('kategori programs-edit')){
+            abort(403);
+        }
         //
         DB::beginTransaction();
         try {
@@ -151,6 +167,9 @@ class CategoryProgramController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('kategori programs-destroy')){
+            abort(403);
+        }
         //
         try {
             $category = CategoryProgram::findOrFail($id);

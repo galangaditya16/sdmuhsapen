@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Base\Controller\BaseController;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryContentRequest;
-use App\Http\Requests\CategoryNewsRequest;
-use App\Models\AllCategoryTranslite;
-use App\Models\CategoryContent;
 use App\Models\ContentNew;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\CategoryContent;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\AllCategoryTranslite;
+use Illuminate\Support\Facades\Auth;
+use App\Base\Controller\BaseController;
+use App\Http\Requests\CategoryNewsRequest;
+use App\Http\Requests\CategoryContentRequest;
 
 class CategoryContentController extends BaseController
 {
@@ -20,6 +21,9 @@ class CategoryContentController extends BaseController
      */
     public function index()
     {
+        if(!Auth::user()->can('kategori konten-view')){
+            abort(403);
+        }
         try {
             $lang = 'id';
             $data = AllCategoryTranslite::whereHas('CategoryContent')->where('lang',$lang)->paginate(10);
@@ -34,6 +38,9 @@ class CategoryContentController extends BaseController
      */
     public function create()
     {
+        if(!Auth::user()->can('kategori konten-create')){
+            abort(403);
+        }
         //
         return $this->makeView('backend.pages.management.category.content.create');
     }
@@ -43,6 +50,9 @@ class CategoryContentController extends BaseController
      */
     public function store(CategoryContentRequest $request)
     {
+        if(!Auth::user()->can('kategori konten-create')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             if($request->hasFile('images')){
@@ -93,6 +103,9 @@ class CategoryContentController extends BaseController
      */
     public function edit(string $id)
     {
+        if(!Auth::user()->can('kategori konten-edit')){
+            abort(403);
+        }
         try {
             $data = CategoryContent::whereHas('transLite', function($query) use ($id) {
                 $query->where('id_category_content', $id);
@@ -116,6 +129,9 @@ class CategoryContentController extends BaseController
     public function update(CategoryContentRequest $request, string $id)
     {
 
+        if(!Auth::user()->can('kategori konten-edit')){
+            abort(403);
+        }
         DB::beginTransaction();
         try {
             $category = CategoryContent::findOrFail($id);
@@ -158,6 +174,9 @@ class CategoryContentController extends BaseController
      */
     public function destroy(string $id)
     {
+        if(!Auth::user()->can('kategori konten-delete')){
+            abort(403);
+        }
         try {
             $category = CategoryContent::with('transLite')->findOrFail($id);
             if($category->transLite->isNotEmpty()){

@@ -19,11 +19,31 @@ use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $lang = SessionHelpers::get('lang');
-            $slider = Slider::all();
+            $lang     = SessionHelpers::get('lang');
+            $slider   = Slider::all();
+            $gallerys = Gallery::orderBy('created_at', 'asc')->get();
+            if ($request->has('search')) {
+
+
+                $news   = collect(AllContentTranslite::with(['ContentNews' => function($query){
+                                $query->limit(1);
+                            }])
+                            ->whereRaw('title ILIKE ?', ['%' . $request->search . '%'])
+                            ->where('lang', $lang)
+                            ->get());
+                if($lang == 'id'){
+                    $galeris = Gallery::whereRaw('title_id ILIKE ?', ['%' . $request->search . '%'])
+                    ->get();
+                }else{
+                    $galeris = Gallery::whereRaw('title_en ILIKE ?', ['%' . $request->search . '%'])
+                    ->get();
+                }
+                return view('frontend.pages.global-search', compact('news','galeris', 'lang'));
+            }
+
             DB::enableQueryLog();
             $berita  = AllContentTranslite::with(['ContentNews.hasCategory.transLite'])
                 ->whereHas('ContentNews', function ($query) {
@@ -32,7 +52,6 @@ class HomeController extends Controller
                 ->latest()
                 ->take(3)
                 ->get();
-            $gallerys = Gallery::orderBy('created_at', 'asc')->get();
             return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
             dd($th);
@@ -163,7 +182,7 @@ class HomeController extends Controller
                 ->where('lang', $lang)
                 ->where('slug', $slug)
                 ->first();
-            if($relatedNews != null){
+            if ($relatedNews != null) {
                 if ($relatedNews->ContentNews->hasCategory !== null) {
                     $title = $relatedNews->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
                 } else {
@@ -173,10 +192,9 @@ class HomeController extends Controller
                     'title' => $title ?? '-',
                     'relatedNews' => $relatedNews,
                 ]);
-            }else{
+            } else {
                 abort(404);
             }
-
         } catch (\Throwable $th) {
             dd($th);
             abort(404);

@@ -7,6 +7,7 @@
 /storage/*.key
 /storage/*
 /storage/logs/*
+/storage/logs/laravel.log
 /vendor
 .env
 .env.backup

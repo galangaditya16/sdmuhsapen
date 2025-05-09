@@ -10,21 +10,21 @@
                             <span class="self-center text-2xl font-semibold">{{ env('APP_NAME') }}</span>
                         </a>
                         <p class="text-xl mt-4">
-                            Sekolahku Inspirasiku
+                            {{ __('message.sekolahku_inspirasiku') }}
                         </p>
                         <p class="text-lg mt-4">
-                            Jl. Bimo Kurdo No.33, Demangan, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55221
+                            {{ __('message.alamat_lengkap') }}
                         </p>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">Halaman Website</h2>
+                    <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">{{ __('message.halaman_website') }}</h2>
                         <ul class="space-y-4 text-left text-bold">
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
                                 <svg class="w-6 h-6 text-kuning-muda" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('profile') }}">
-                                <p>Profile Sekolah SD Sapen</p>
+                                <p>{{ __('message.profil_sd_muhammadiyahsapen') }}</p>
                                 </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
@@ -32,7 +32,7 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('teacher-and-staff') }}">
-                                <span>Profile Pengajar</span>
+                                <span>{{ __('message.profil_guru_dan_karyawan') }}</span>
                                 </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
@@ -40,7 +40,7 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('contacts') }}">
-                                <p>Hubungi Kami</p>
+                                <p>{{ __('message.hubungi_kami') }}</p>
                                 </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
@@ -48,7 +48,7 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('facilities') }}">
-                                <p>Fasilitas Sekolah</p>
+                                <p>{{ __('message.fasilitas_sekolah') }}</p>
                                 </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
@@ -56,7 +56,7 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('front.news') }}">
-                                <span>Berita Sekolah</span>
+                                <span>{{ __('message.berita_sekolah') }}</span>
                                 </a>
                             </li>
                             <li class="flex items-center space-x-3 rtl:space-x-reverse text-bold">
@@ -64,21 +64,21 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                                 </svg>
                                 <a href="{{ route('front.galery') }}">
-                                <p>Galeri Kegiatan Sekolah</p>
+                                <p>{{ __('message.galeri_kegiatan') }}</p>
                                 </a>
                             </li>
                         </ul>
                 </div>
                 <div>
-                        <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">Saluran Kami</h2>
+                        <h2 class="mb-6 text-3xl font-semibold text-center text-kuning-muda">{{ __('message.saluran_kami') }}</h2>
                         <div class="w-full bg-kuning-muda rounded-lg p-3 mx-auto">
                                 <img class="mx-auto my-2 w-64" src="{{ asset('assets/images/equalizer.gif') }}">
-                                {{--  <audio controls="" autoplay="autoplay" class="mx-auto w-full">
-                                    <source src="http://freeuk22.listen2myradio.com:12804/;listen.pls" type="audio/mp3">
-                                        Your browser does not support the audio element.
-                                </audio>  --}}
+                                <audio controls autoplay class="mx-auto w-full">
+                                    <source src="https://95.154.195.3:5988" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>                                
                                 <h3 class="text-3xl text-center mt-2 text-black font-bold">Sapen Radio</h3>
-                                <h3 class="text-xl text-center text-black">Mengedukasi Tiada Henti</h3>
+                                <h3 class="text-xl text-center text-black">{{ __('message.edukasi_tiada_henti') }}</h3>
                         </div>
                         <div class="flex my-4 md:mt-2 justify-center mx-auto justify-items-center">
                             <a href="https://www.instagram.com/sdmuhsapen/" class="" target="_blank">
