@@ -227,52 +227,56 @@
     </section>
 
     {{-- BERITA --}}
-    <section class=" border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
-        <div class="w-full block container mx-auto px-4">
-            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">{{ __('message.berita_terkini') }}</h1>
-            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-0 mb-4"></div>
-            <div class="flex flex-nowrap lg:grid overflow-x-auto lg:grid-cols-3 gap-4 max-h-[65%]">
-                @foreach ($berita as $b)
-                    @php
-                        $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
-                    @endphp
-                    <div
-                        class="rounded-3xl h-[565px] max-h-[600px] w-full shadow-xl hover:-translate-y-1 hover:scale-101 duration-150 relative overflow-hidden">
-                        <div class="relative h-[300px]">
-                            <img src="{{ asset('assets/images/news') . '/' . $b->ContentNews->getFirstImage() }}"
-                                alt="{{ $b['title'] }}" class="w-full h-[300px] object-cover rounded-t-3xl">
-                            <button class="py-2 px-4 bg-oren text-white rounded-lg absolute left-8 top-[235px] z-10">
-                                {{ $b->created_at->format('F d, Y') }}
-                            </button>
-                        </div>
-                        <div class="absolute bottom-0 bg-white pt-6 px-9 h-1/2 w-full overflow-hidden">
-                            <div class="space-y-3">
-                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
-                                    <strong>
-                                        <p class="text-lg font-bold">{{ $b['title'] }}</p>
-                                    </strong>
-                                </a>
-                                <p class="news-content">{!! Str::limit(strip_tags($b->body), 150) !!}</p>
-                            </div>
-                            <div class="flex justify-center mt-5">
-                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
-                                    class="py-2 px-10 bg-biru-tua text-white rounded-3xl absolute items-center bottom-5">{{ __('message.read_more') }}</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+    <section class="border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
+      <div class="w-full container mx-auto px-4">
+          <h1 class="text-3xl md:text-4xl font-bold my-3 text-black text-center">{{ __('message.berita_terkini') }}</h1>
+          <div class="w-32 h-1 bg-biru-tua mx-auto mb-6"></div>
 
-            <div class="relative flex">
-                <a href="{{ route('front.news') }}" class="mx-auto">
-                    <button type="button"
-                        class="mt-5 font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
-                        {{ __('message.lihat_semua_berita') }}
-                    </button>
-                </a>
-            </div>
-        </div>
-    </section>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              @foreach ($berita as $b)
+                  @php
+                      $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
+                  @endphp
+                  <div
+                      class="rounded-3xl h-auto shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition duration-150 overflow-hidden flex flex-col">
+                      <div class="relative h-[220px] md:h-[260px] lg:h-[300px]">
+                          <img src="{{ asset('assets/images/news') . '/' . $b->ContentNews->getFirstImage() }}"
+                              alt="{{ $b['title'] }}"
+                              class="w-full h-full object-cover rounded-t-3xl">
+                          <button
+                              class="py-1.5 px-3 text-sm bg-oren text-white rounded-lg absolute left-4 bottom-4 z-10 shadow-md">
+                              {{ $b->created_at->format('F d, Y') }}
+                          </button>
+                      </div>
+                      <div class="bg-white p-5 flex flex-col justify-between flex-1">
+                          <div class="space-y-3">
+                              <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
+                                  <p class="text-base md:text-lg font-bold line-clamp-2">{{ $b['title'] }}</p>
+                              </a>
+                              <p class="text-sm text-gray-600">{!! Str::limit(strip_tags($b->body), 150) !!}</p>
+                          </div>
+                          <div class="flex justify-center mt-5">
+                              <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
+                                  class="py-2 px-6 bg-biru-tua text-white rounded-2xl text-sm font-semibold">
+                                  {{ __('message.read_more') }}
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
+          </div>
+
+          <div class="flex justify-center mt-8">
+              <a href="{{ route('front.news') }}">
+                  <button type="button"
+                      class="font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-6 py-2.5 dark:focus:ring-yellow-900">
+                      {{ __('message.lihat_semua_berita') }}
+                  </button>
+              </a>
+          </div>
+      </div>
+  </section>
+
 
     {{-- GALERY --}}
     <section class=" border-gray-200 py-10">
