@@ -708,52 +708,91 @@
     </section>
 
     {{-- SEMUA SPONSOR --}}
-    <section class="border-gray-200 mx-auto">
-      <div class="w-full container mx-auto">
-          <h1 class="text-3xl md:text-4xl font-bold my-3 text-black text-center">{{ __('message.semua_aplikasi_kami') }}</h1>
-          <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2 mb-4"></div>
+    <section class=" border-gray-200 mx-auto">
+        <!--HTML CODE-->
+        <div class="w-full container mx-auto">
+            <h1 class="text-4xl font-bold my-3 text-black text-center mx-auto">{{ __('message.semua_aplikasi_kami') }}
+            </h1>
+            <div class="block w-32 h-1 bg-biru-tua mx-auto mt-2"></div>
 
-          <div class="relative w-full">
-              <!-- Tombol Geser Kiri -->
-              <div class="absolute top-1/2 left-2 transform -translate-y-1/2 z-10">
-                  <button onclick="scrollContentLeft()"
-                      class="bg-biru-tua rounded-full p-2 shadow-lg hover:bg-blue-900 transition">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8 text-white">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                      </svg>
-                  </button>
-              </div>
+            <div class="flex justify-between text-center">
+                <!-- carousel -->
+                <!-- Container Utama -->
+                <div class="relative w-full">
 
-              <!-- Tombol Geser Kanan -->
-              <div class="absolute top-1/2 right-2 transform -translate-y-1/2 z-10">
-                  <button onclick="scrollRight()"
-                      class="bg-biru-tua rounded-full p-2 shadow-lg hover:bg-blue-900 transition">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8 text-white">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                  </button>
-              </div>
+                    <!-- Tombol Geser Kiri -->
+                    <div class="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
+                        <button onclick="scrollContentLeft()"
+                            class="bg-biru-tua rounded-full p-2 shadow-lg hover:bg-blue-900 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                    </div>
 
-              <!-- Scroll Container -->
-              <div id="scrollContainer" class="overflow-x-auto scroll-smooth snap-x scrollbar-hide px-4 md:px-12">
-                  <div class="flex w-max gap-4 items-center h-32 md:h-40 py-4">
-                      @foreach ([
-                          'bos.png', 'dapodik-logo.png', 'logo-sipintar.png',
-                          'pngtree-merdeka.png', 'rumah-belajar.png', 'dapodik-logo.png'
-                      ] as $logo)
-                          <div class="snap-center bg-white w-[220px] md:w-[300px] flex items-center justify-center rounded-lg shadow-md">
-                              <img class="w-full h-[100px] md:h-[120px] object-contain p-2"
-                                  src="{{ asset('assets/images/logo/' . $logo) }}" alt="logo">
-                          </div>
-                      @endforeach
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                    <!-- Tombol Geser Kanan -->
+                    <div class="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
+                        <button onclick="scrollRight()"
+                            class="bg-biru-tua rounded-full p-2 shadow-lg hover:bg-blue-900 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
 
+                    <!-- Scroll Container -->
+                    <!-- Container Scroll -->
+                    <div id="scrollContainer" class="overflow-x-auto scroll-smooth snap-x scrollbar-hide">
+                        <div class="flex w-max gap-4 px-12 py-4 items-center h-40">
+
+                            <!-- Gambar 1 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
+                            </div>
+
+                            <!-- Gambar 2 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-dapodik">
+                            </div>
+
+                            <!-- Gambar 3 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/logo-sipintar.png') }}" alt="logo-sipintar">
+                            </div>
+
+                            <!-- Gambar 4 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}" alt="logo-merdeka">
+                            </div>
+
+                            <!-- Gambar 5 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-rumah">
+                            </div>
+
+                            <!-- Gambar 6 -->
+                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                                <img class="w-full h-[120px] object-contain p-2"
+                                    src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-lain">
+                            </div>
+
+                            <!-- Tambah gambar lainnya dengan format yang sama -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     {{-- FAQ --}}
     <section class=" border-gray-200 my-10 pt-20">
