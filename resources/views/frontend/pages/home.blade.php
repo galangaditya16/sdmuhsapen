@@ -228,54 +228,54 @@
 
     {{-- BERITA --}}
     <section class="border-gray-200 mt-20 py-5" style="background-color: rgba(248, 111, 3, 0.1)">
-      <div class="w-full container mx-auto px-4">
-          <h1 class="text-3xl md:text-4xl font-bold my-3 text-black text-center">{{ __('message.berita_terkini') }}</h1>
-          <div class="w-32 h-1 bg-biru-tua mx-auto mb-6"></div>
+        <div class="w-full container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold my-3 text-black text-center">{{ __('message.berita_terkini') }}</h1>
+            <div class="w-32 h-1 bg-biru-tua mx-auto mb-6"></div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              @foreach ($berita as $b)
-                  @php
-                      $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
-                  @endphp
-                  <div
-                      class="rounded-3xl h-auto shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition duration-150 overflow-hidden flex flex-col">
-                      <div class="relative h-[220px] md:h-[260px] lg:h-[300px]">
-                          <img src="{{ asset('assets/images/news') . '/' . $b->ContentNews->getFirstImage() }}"
-                              alt="{{ $b['title'] }}"
-                              class="w-full h-full object-cover rounded-t-3xl">
-                          <button
-                              class="py-1.5 px-3 text-sm bg-oren text-white rounded-lg absolute left-4 bottom-4 z-10 shadow-md">
-                              {{ $b->created_at->format('F d, Y') }}
-                          </button>
-                      </div>
-                      <div class="bg-white p-5 flex flex-col justify-between flex-1">
-                          <div class="space-y-3">
-                              <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
-                                  <p class="text-base md:text-lg font-bold line-clamp-2">{{ $b['title'] }}</p>
-                              </a>
-                              <p class="text-sm text-gray-600">{!! Str::limit(strip_tags($b->body), 150) !!}</p>
-                          </div>
-                          <div class="flex justify-center mt-5">
-                              <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
-                                  class="py-2 px-6 bg-biru-tua text-white rounded-2xl text-sm font-semibold">
-                                  {{ __('message.read_more') }}
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              @endforeach
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($berita as $b)
+                    @php
+                        $categorys = $b->ContentNews->hasCategory->transLite->firstWhere('lang', $lang);
+                    @endphp
+                    <div
+                        class="rounded-3xl h-auto shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition duration-150 overflow-hidden flex flex-col">
+                        <div class="relative h-[220px] md:h-[260px] lg:h-[300px]">
+                            <img src="{{ asset('assets/images/news') . '/' . $b->ContentNews->getFirstImage() }}"
+                                alt="{{ $b['title'] }}" class="w-full h-full object-cover rounded-t-3xl">
+                            <button
+                                class="py-1.5 px-3 text-sm bg-oren text-white rounded-lg absolute left-4 bottom-4 z-10 shadow-md">
+                                {{ $b->created_at->format('F d, Y') }}
+                            </button>
+                        </div>
+                        <div class="bg-white p-5 flex flex-col justify-between flex-1">
+                            <div class="space-y-3">
+                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}">
+                                    <p class="text-base md:text-lg font-bold line-clamp-2">{{ $b['title'] }}</p>
+                                </a>
+                                <p class="text-sm text-gray-600">{!! Str::limit(strip_tags($b->body), 150) !!}</p>
+                            </div>
+                            <div class="flex justify-center mt-5">
+                                <a href="{{ route('newsDetail', ['id' => $b->slug, 'lang' => $lang]) }}"
+                                    class="py-2 px-6 bg-biru-tua text-white rounded-2xl text-sm font-semibold">
+                                    {{ __('message.read_more') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
 
-          <div class="flex justify-center mt-8">
-              <a href="{{ route('front.news') }}">
-                  <button type="button"
-                      class="font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-6 py-2.5 dark:focus:ring-yellow-900">
-                      {{ __('message.lihat_semua_berita') }}
-                  </button>
-              </a>
-          </div>
-      </div>
-  </section>
+            <div class="flex justify-center mt-8">
+                <a href="{{ route('front.news') }}">
+                    <button type="button"
+                        class="font-bold text-white bg-oren hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 rounded-full text-sm px-6 py-2.5 dark:focus:ring-yellow-900">
+                        {{ __('message.lihat_semua_berita') }}
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
 
 
     {{-- GALERY --}}
@@ -748,37 +748,43 @@
                         <div class="flex w-max gap-4 px-12 py-4 items-center h-40">
 
                             <!-- Gambar 1 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/bos.png') }}" alt="logo-bos">
                             </div>
 
                             <!-- Gambar 2 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-dapodik">
                             </div>
 
                             <!-- Gambar 3 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/logo-sipintar.png') }}" alt="logo-sipintar">
                             </div>
 
                             <!-- Gambar 4 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/pngtree-merdeka.png') }}" alt="logo-merdeka">
                             </div>
 
                             <!-- Gambar 5 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/rumah-belajar.png') }}" alt="logo-rumah">
                             </div>
 
                             <!-- Gambar 6 -->
-                            <div class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
+                            <div
+                                class="snap-center bg-white w-[300px] flex items-center justify-center rounded-lg shadow-md">
                                 <img class="w-full h-[120px] object-contain p-2"
                                     src="{{ asset('assets/images/logo/dapodik-logo.png') }}" alt="logo-lain">
                             </div>
@@ -981,6 +987,7 @@
                 }
             }
         });
+
         function scrollContentLeft() {
             const container = document.getElementById('scrollContainer');
             container.scrollBy({
@@ -988,6 +995,7 @@
                 behavior: 'smooth'
             });
         }
+
         function scrollRight() {
             const container = document.getElementById('scrollContainer');
             container.scrollBy({
