@@ -74,9 +74,9 @@
                         <div class="w-full bg-kuning-muda rounded-lg p-3 mx-auto">
                                 <img class="mx-auto my-2 w-64" src="{{ asset('assets/images/equalizer.gif') }}">
                                 <audio controls autoplay class="mx-auto w-full">
-                                    <source src="https://95.154.195.3:5988" type="audio/mpeg">
+                                    <source src="https://stream-154.zeno.fm/xg7mcgf1bf9uv" type="audio/mpeg">
                                     Your browser does not support the audio element.
-                                </audio>                                
+                                </audio>
                                 <h3 class="text-3xl text-center mt-2 text-black font-bold">Sapen Radio</h3>
                                 <h3 class="text-xl text-center text-black">{{ __('message.edukasi_tiada_henti') }}</h3>
                         </div>
