@@ -37,6 +37,7 @@ class SliderRequest extends FormRequest
         return [
             'title.required'           => ':attribute Wajib di isi',
             'title.max'                => ':attribute tidak boleh lebih dari 100 karakter',
+            'image.dimensions'         => 'minimal ukurang tinggi gambar 900 pixel',
             // 'image.required'           => 'Gambar harus diunggah.',
             // 'image.image'              => 'File yang diunggah harus berupa gambar.',
             'image.mimes'              => 'Gambar harus berformat: jpeg, png, jpg, gif, svg.',
