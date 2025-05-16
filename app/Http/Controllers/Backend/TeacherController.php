@@ -63,17 +63,17 @@ class TeacherController extends BaseController
         // dd($request->all());
         DB::beginTransaction();
         try {
-            if($request->has('image')){
+            if($request->has('images')){
                 $path      = public_path('assets/images/teacher/');
                 $nameImage = time().'.'.$request->image->extension();
                 $request->image->move($path,$nameImage);
-                $request['images'] = $nameImage;
+                $request->merge(['image' => $nameImage]);
 
             }
             $data = new Teachernew ([
                 'position_id'       => $request->id_posotion,
                 'name'              => $request->name,
-                'image'             => $request->input('images') ?? '',
+                'image'             => $request->image ?? '',
                 'detail_id'         => $request->title,
                 'detail_en'         => $request->title_translite,
             ]);
@@ -125,12 +125,12 @@ class TeacherController extends BaseController
         }
         try {
             $data = Teachernew::findOrfail($id);
-            if($request->has('image') && empty($data->image) ){
+            if($request->has('images') && empty($data->image) ){
                 $path = public_path('assets/images/teacher/' . $data->image);
                 if (File::exists($path)) {
                     File::delete($path);
                 }
-                $file = $request->file('image');
+                $file = $request->file('images');
                 $newFileName = time() . '_' . $file->getClientOriginalName(); // Bisa diubah sesuai kebutuhan
                 $file->move(public_path('assets/images/teacher/'), $newFileName);
                 $request->merge(['image' => $newFileName]);
