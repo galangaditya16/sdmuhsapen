@@ -120,7 +120,7 @@ class TeacherController extends BaseController
     public function update(Request $request, string $id)
     {
         //
-        if(!Auth::user()->can('gutu-edit')){
+        if(!Auth::user()->can('guru-edit')){
             abort(403);
         }
         try {
