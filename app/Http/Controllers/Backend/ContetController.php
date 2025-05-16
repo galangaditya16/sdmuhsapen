@@ -44,7 +44,7 @@ class ContetController extends BaseController
      */
     public function create()
     {
-        if(!Auth::user()->can('contents-create')){
+        if(!Auth::user()->can('content-create')){
             abort(403);
         }
         try {
@@ -62,7 +62,7 @@ class ContetController extends BaseController
     public function store(Request $request)
     {
         //
-        if(!Auth::user()->can('contents-create')){
+        if(!Auth::user()->can('content-create')){
             abort(403);
         }
         DB::beginTransaction();
@@ -118,7 +118,7 @@ class ContetController extends BaseController
      */
     public function edit(string $id)
     {
-        if(!Auth::user()->can('contents-edit')){
+        if(!Auth::user()->can('content-edit')){
             abort(403);
         }
         try {
@@ -139,7 +139,7 @@ class ContetController extends BaseController
      */
     public function update(Request $request, string $id)
     {
-        if(!Auth::user()->can('contents-edit')){
+        if(!Auth::user()->can('content-edit')){
             abort(403);
         }
         DB::beginTransaction();
@@ -198,7 +198,7 @@ class ContetController extends BaseController
      */
     public function destroy(string $id)
     {
-        if(!Auth::user()->can('contents-delete')){
+        if(!Auth::user()->can('content-delete')){
             abort(403);
         }
         try {
