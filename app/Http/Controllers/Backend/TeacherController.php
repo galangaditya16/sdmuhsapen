@@ -125,7 +125,7 @@ class TeacherController extends BaseController
         }
         try {
             $data = Teachernew::findOrfail($id);
-            if($request->has('images') && empty($data->image) ){
+            if($request->has('images') ){
                 $path = public_path('assets/images/teacher/' . $data->image);
                 if (File::exists($path)) {
                     File::delete($path);
