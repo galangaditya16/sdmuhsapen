@@ -53,13 +53,13 @@
                                 <td>
                                     @if (!$row->delete_at)
                                     <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
-                                          @can('content edit')
+                                          @can('content-edit')
                                             <a href="{{ route('content.edit', $row->ContentContent) }}"
                                                 class="btn btn-primary btn-pill w-120">
                                                 Edit
                                             </a>
                                           @endcan
-                                          @can('content delete')
+                                          @can('content-delete')
                                             <form action="{{ route('content.destroy', $row->ContentContent) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
