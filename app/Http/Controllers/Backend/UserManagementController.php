@@ -97,7 +97,7 @@ class UserManagementController extends BaseController
             $data = User::with('roles.permissions')->findOrfail($id);
             return $this->makeView('backend.pages.management.users.edit',compact('data','permission'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             abort(404);
         }
     }

@@ -24,7 +24,7 @@ class SliderController extends BaseController
             $sliders = Slider::paginate(10);
             return $this->makeView('backend.pages.management.slider.index',compact('sliders'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','gagal melakukan aksi');
         }
 
@@ -71,7 +71,7 @@ class SliderController extends BaseController
             DB::commit();
             return redirect()->route('slider.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -117,12 +117,12 @@ class SliderController extends BaseController
                 $image_path = $path.$data->image;
                 if(file_exists($image_path)){
                     unlink($image_path);
-                }   
+                }
             }
             $data->delete();
             return redirect()->route('slider.index')->with('success','Success Deleted Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }

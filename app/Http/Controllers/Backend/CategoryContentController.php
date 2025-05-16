@@ -84,7 +84,7 @@ class CategoryContentController extends BaseController
             return redirect()->route('category-content.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -117,7 +117,7 @@ class CategoryContentController extends BaseController
             $contentEN = $data->transLite->firstWhere('lang','en') ?? '';
             return $this->makeView('backend.pages.management.category.content.edit',compact('data','contentID','contentEN'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
             //throw $th;
         }
@@ -163,7 +163,7 @@ class CategoryContentController extends BaseController
             return redirect()->route('category-content.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
             //throw $th;
         }
@@ -187,7 +187,7 @@ class CategoryContentController extends BaseController
             return redirect()->route('category-content.index')->with('success','Success Deleting Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }

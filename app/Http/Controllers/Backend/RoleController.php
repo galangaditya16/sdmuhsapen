@@ -26,7 +26,7 @@ class RoleController extends BaseController
             $roles      = DB::table('roles')->paginate(10);
             return $this->makeView('backend.pages.master.role.index',compact('roles','permission'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
         }
     }
 
@@ -34,7 +34,7 @@ class RoleController extends BaseController
      * Show the form for creating a new resource.
      */
     public function create()
-    {      
+    {
         if(!Auth::user()->can('role-create')){
             abort(403);
         }
@@ -79,7 +79,7 @@ class RoleController extends BaseController
             }
 
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollback();
             abort(404);
         }
@@ -98,7 +98,7 @@ class RoleController extends BaseController
      */
     public function edit(string $id)
     {
-        // 
+        //
         if(!Auth::user()->can('role-edit')){
             abort(403);
         }

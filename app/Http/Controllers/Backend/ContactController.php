@@ -24,7 +24,7 @@ class ContactController extends BaseController
         try {
             return redirect()->route('contact.show', 1);
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Gagal melakukan aksi');
         }
     }
@@ -58,7 +58,7 @@ class ContactController extends BaseController
             $data->save();
             return redirect()->route('contact.index')->with('success', 'Data Success Save');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Gagal melakukan aksi');
         }
     }
@@ -75,7 +75,7 @@ class ContactController extends BaseController
             $data = Contact::latest()->first();
             return $this->makeView('backend.pages.master.contact.edit', compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Gagal melakukan aksi');
         }
     }
@@ -113,7 +113,7 @@ class ContactController extends BaseController
             $data->update($request->input());
             return redirect()->route('contact.index')->with('success', 'Data Success Save');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Gagal melakukan aksi');
         }
     }
@@ -132,7 +132,7 @@ class ContactController extends BaseController
             // TODO: write the logic here
             return redirect()->back()->with('success', 'Data Success Save');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Gagal melakukan aksi');
         }
     }

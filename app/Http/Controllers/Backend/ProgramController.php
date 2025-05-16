@@ -35,7 +35,7 @@ class ProgramController extends BaseController
             ->paginate(10);
             return $this->makeView('backend.pages.master.program.index',compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','gagal melakukan aksi');
         }
     }
@@ -53,7 +53,7 @@ class ProgramController extends BaseController
             $categorys = $this->LoadCategoryProrgams($lang);
             return $this->makeView('backend.pages.master.program.create',compact('categorys'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','gagal melakukan aksi');
         }
     }
@@ -103,7 +103,7 @@ class ProgramController extends BaseController
             DB::commit();
             return redirect()->route('programs.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -136,7 +136,7 @@ class ProgramController extends BaseController
             $contentEN  = $data->transLite->firstWhere('lang','en');
             return $this->makeView('backend.pages.master.program.edit',compact('contentID','contentEN','categorys','data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }
@@ -146,7 +146,7 @@ class ProgramController extends BaseController
      */
     public function update(Request $request, string $id)
     {
-        //      
+        //
         if(!Auth::user()->can('programs-edit')){
             abort(403);
         }
@@ -190,7 +190,7 @@ class ProgramController extends BaseController
             return redirect()->route('programs.index')->with('success','Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->route('content.index')->with('error','Gagal Menyimpan Data');
             //throw $th;
         }
@@ -215,7 +215,7 @@ class ProgramController extends BaseController
            return redirect()->route('programs.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }

@@ -27,7 +27,7 @@ class CategoryProgramController extends BaseController
             $data = AllCategoryTranslite::whereHas('CategoryPrograms')->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.management.category.program.index',compact('data'));
          } catch (\Throwable $th) {
-             dd($th);
+            \Log::error($th);
              return redirect()->back()->with('error','galga melakukan aksi');
          }
     }
@@ -81,7 +81,7 @@ class CategoryProgramController extends BaseController
             return redirect()->route('category-programs.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -111,7 +111,7 @@ class CategoryProgramController extends BaseController
             $contentEN = $data->transLite->firstWhere('lang','en') ?? '';
             return $this->makeView('backend.pages.management.category.program.edit',compact('data','contentID','contentEN'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
             //throw $th;
         }
@@ -157,7 +157,7 @@ class CategoryProgramController extends BaseController
             DB::commit();
             return redirect()->route('category-programs.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }
@@ -180,7 +180,7 @@ class CategoryProgramController extends BaseController
             return redirect()->route('category-programs.index')->with('success','Success Delete Data');
          } catch (\Throwable $th) {
              //throw $th;
-             dd($th);
+            \Log::error($th);
              return redirect()->back()->with('error','Error Action');
          }
     }

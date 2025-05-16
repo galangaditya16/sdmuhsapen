@@ -25,7 +25,7 @@ class BannerController extends BaseController
             $banners = Banner::orderBy('created_at', 'DESC')->paginate(10);
             return $this->makeView('backend.pages.master.banner.index',compact('banners'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
            abort(404);
         }
     }

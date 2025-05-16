@@ -29,7 +29,7 @@ class TeacherPositionController extends BaseController
                   ->where('lang',$lang)->paginate(10);
            return $this->makeView('backend.pages.management.category.teacher.index',compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -116,7 +116,7 @@ class TeacherPositionController extends BaseController
             $categoryEN = $category->transLite->firstWhere('lang','en');
             return $this->makeView('backend.pages.management.category.teacher.edit',compact('categoryEN','categoryID','category'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -163,7 +163,7 @@ class TeacherPositionController extends BaseController
             DB::commit();
             return redirect()->route('teacher-position.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -187,7 +187,7 @@ class TeacherPositionController extends BaseController
             $category->delete();
             return redirect()->route('teacher-position.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }

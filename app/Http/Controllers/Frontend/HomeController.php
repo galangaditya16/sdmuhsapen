@@ -54,7 +54,7 @@ class HomeController extends Controller
                 ->get();
             return view('frontend.pages.home', compact('slider', 'berita', 'lang', 'gallerys'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return view('errors.404');
         }
     }
@@ -88,7 +88,7 @@ class HomeController extends Controller
                 ->where('lang', $lang)->first();
             return view('frontend.pages.principals-speech', compact('data', 'lang'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             abort(404);
         }
     }
@@ -110,7 +110,7 @@ class HomeController extends Controller
                 });
             return view('frontend.pages.teacher-and-staff', compact('lang', 'positions'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             abort(404);
         }
     }
@@ -198,7 +198,7 @@ class HomeController extends Controller
                 abort(404);
             }
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             abort(404);
         }
     }

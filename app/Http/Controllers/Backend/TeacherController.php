@@ -27,7 +27,7 @@ class TeacherController extends BaseController
             $contents = Teachernew::with(['ticherposition','ticherposition.transLite'])->orderBy('created_at', 'asc')->paginate(10);
             return $this->makeView('backend.pages.master.teacher.index',compact('contents','lang'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -45,7 +45,7 @@ class TeacherController extends BaseController
             $catgeorys = AllCategoryTranslite::with('CategoryTeacher')->whereHas('CategoryTeacher')->where('lang',$lang)->get();
             return $this->makeView('backend.pages.master.teacher.create',compact('catgeorys'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
 
@@ -82,7 +82,7 @@ class TeacherController extends BaseController
             return redirect()->route('teacher.index')->with('success','Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -109,7 +109,7 @@ class TeacherController extends BaseController
             $data = Teachernew::findOrfail($id);
             return $this->makeView('backend.pages.master.teacher.edit',compact('data','catgeorys'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -147,7 +147,7 @@ class TeacherController extends BaseController
             ]);
             return redirect()->route('teacher.index')->with('success','Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -165,7 +165,7 @@ class TeacherController extends BaseController
             $data->delete();
             return redirect()->route('teacher.index')->with('success','Berhasil Menghapus Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }

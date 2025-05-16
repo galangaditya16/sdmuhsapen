@@ -72,7 +72,7 @@ class MenuController extends BaseController
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Disimpan');
         } catch (\Throwable $th) {
             DB::rollback();
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
     }
@@ -99,7 +99,7 @@ class MenuController extends BaseController
             return $this->makeView('backend.pages.management.menu.edit',compact('menu','parents'));
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
     }
@@ -122,7 +122,7 @@ class MenuController extends BaseController
         } catch (\Throwable $th) {
             //throw $th;
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
     }
@@ -144,7 +144,7 @@ class MenuController extends BaseController
             DB::commit();
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
@@ -155,7 +155,7 @@ class MenuController extends BaseController
             $this->repositories->activeNonActive($id,1);
             return redirect()->route('management-menu.index')->with('succes','Data Berhasil Hapus');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Gagal Melakukan Aksi');
         }
     }

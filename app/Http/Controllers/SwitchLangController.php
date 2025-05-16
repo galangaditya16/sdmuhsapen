@@ -19,7 +19,7 @@ class SwitchLangController extends Controller
             }
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
 
         }
 

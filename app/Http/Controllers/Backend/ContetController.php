@@ -35,7 +35,7 @@ class ContetController extends BaseController
             })->paginate(10);
             return $this->makeView('backend.pages.master.content.index', compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
         }
     }
 
@@ -52,7 +52,7 @@ class ContetController extends BaseController
             $categorys = $this->LoadCategoryContets($lang);
             return $this->makeView('backend.pages.master.content.create', compact('categorys'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
         }
     }
 
@@ -100,7 +100,7 @@ class ContetController extends BaseController
             return redirect()->route('content.index')->with('success','Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->route('content.index')->with('error','Gagal Menyimpan Data');
         }
     }
@@ -130,7 +130,7 @@ class ContetController extends BaseController
              return $this->makeView('backend.pages.master.content.edit',compact('categorys','contentID','contentEN','data'));
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
         }
     }
 
@@ -187,7 +187,7 @@ class ContetController extends BaseController
             return redirect()->route('content.index')->with('success','Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
             DB::rollBack();
-            dd($th);
+            \Log::error($th);
             return redirect()->route('content.index')->with('error','Gagal Menyimpan Data');
             //throw $th;
         }
@@ -209,7 +209,7 @@ class ContetController extends BaseController
             $content->delete();
             return redirect()->route('content.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }

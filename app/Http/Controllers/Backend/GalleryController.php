@@ -61,7 +61,7 @@ class GalleryController extends BaseController
             $data->save();
             return redirect()->route('gallery.index')->with('success', 'Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->route('content.index')->with('error', 'Gagal Menyimpan Data');
         }
     }
@@ -92,7 +92,7 @@ class GalleryController extends BaseController
             $data = Gallery::findOrfail($id);
             return $this->makeView('backend.pages.management.gallery.edit', compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->route('content.index')->with('error', 'Gagal Melakukan Aksi');
         }
     }
@@ -121,7 +121,7 @@ class GalleryController extends BaseController
             $data->update($request->input());
             return redirect()->route('gallery.index')->with('success', 'Berhasil Menyimpan Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             abort(404);
         }
     }

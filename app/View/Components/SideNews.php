@@ -8,6 +8,7 @@ use Illuminate\View\Component;
 use App\Helpers\SessionHelpers;
 use App\Models\AllContentTranslite;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 use App\Models\AllCategoryTranslite;
 
 class SideNews extends Component
@@ -49,7 +50,7 @@ class SideNews extends Component
                 'lang'  => $lang,
             ]);
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
            abort('404');
         }
     }

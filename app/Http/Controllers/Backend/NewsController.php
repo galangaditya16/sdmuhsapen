@@ -34,7 +34,7 @@ class NewsController extends BaseController
                     ->where('lang',$lang)->paginate(10);
             return $this->makeView('backend.pages.master.news.index',compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','galga melakukan aksi');
         }
     }
@@ -51,7 +51,7 @@ class NewsController extends BaseController
             $categorys = CategoryNews::all();
             return $this->makeView('backend.pages.master.news.create',compact('categorys'));;
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -110,7 +110,7 @@ class NewsController extends BaseController
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Saving Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             DB::rollBack();
             return redirect()->back()->with('error','Error Action');
         }
@@ -144,7 +144,7 @@ class NewsController extends BaseController
             $contentEN = $news->transLite->firstWhere('lang','en');
             return $this->makeView('backend.pages.master.news.edit',compact('news','categorys','contentID','contentEN'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
             //throw $th;
         }
@@ -207,7 +207,7 @@ class NewsController extends BaseController
             DB::commit();
             return redirect()->route('news.index')->with('success','Success Updating Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }
@@ -231,7 +231,7 @@ class NewsController extends BaseController
             return redirect()->route('news.index')->with('success','Success Delete Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error','Error Action');
         }
     }
@@ -254,7 +254,7 @@ class NewsController extends BaseController
                 return redirect()->back()->with('error','Headline Max');
             }
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
            abort(404);
         }
     }

@@ -27,7 +27,7 @@ class CategoryNewsController extends BaseController
             $data = AllCategoryTranslite::whereHas('CategoryNews')->where('lang', $lang)->paginate(10);
             return $this->makeView('backend.pages.management.category.news.index', compact('data'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'galga melakukan aksi');
         }
     }
@@ -82,7 +82,7 @@ class CategoryNewsController extends BaseController
             return redirect()->route('category-news.index')->with('success', 'Success Saving Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Error Action');
         }
     }
@@ -112,7 +112,7 @@ class CategoryNewsController extends BaseController
             $contentEN = $data->transLite->firstWhere('lang', 'en') ?? '';
             return $this->makeView('backend.pages.management.category.news.edit', compact('data', 'contentID', 'contentEN'));
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Error Action');
         }
     }
@@ -156,7 +156,7 @@ class CategoryNewsController extends BaseController
             DB::commit();
             return redirect()->route('category-news.index')->with('success', 'Success Updating Data');
         } catch (\Throwable $th) {
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Error Action');
         }
     }
@@ -178,7 +178,7 @@ class CategoryNewsController extends BaseController
             return redirect()->route('category-news.index')->with('success', 'Success Delete Data');
         } catch (\Throwable $th) {
             //throw $th;
-            dd($th);
+            \Log::error($th);
             return redirect()->back()->with('error', 'Error Action');
         }
     }
