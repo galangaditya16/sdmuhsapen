@@ -24,7 +24,7 @@ class TeacherController extends BaseController
         }
         try {
             $lang = 'id';
-            $contents = Teachernew::with(['ticherposition','ticherposition.transLite'])->paginate(10);
+            $contents = Teachernew::with(['ticherposition','ticherposition.transLite'])->orderBy('created_at', 'asc')->paginate(10);
             return $this->makeView('backend.pages.master.teacher.index',compact('contents','lang'));
         } catch (\Throwable $th) {
             dd($th);
@@ -125,7 +125,7 @@ class TeacherController extends BaseController
         }
         try {
             $data = Teachernew::findOrfail($id);
-            if($request->has('image') && !empty($data->image) ){
+            if($request->has('image') && empty($data->image) ){
                 $path = public_path('assets/images/teacher/' . $data->image);
                 if (File::exists($path)) {
                     File::delete($path);
@@ -133,14 +133,15 @@ class TeacherController extends BaseController
                 $file = $request->file('image');
                 $newFileName = time() . '_' . $file->getClientOriginalName(); // Bisa diubah sesuai kebutuhan
                 $file->move(public_path('assets/images/teacher/'), $newFileName);
-                $request->merge(['images' => $newFileName]);
+                $request->merge(['image' => $newFileName]);
             }else{
-                $request->merge(['images' => $data->images]);
+
+                $request->merge(['image' => $data->image]);
             }
             $data->update([
                 'position_id'       => $request->id_posotion,
                 'name'              => $request->name,
-                'image'             => $request->images ?? '',
+                'image'             => $request->image ?? '',
                 'detail_id'         => $request->title,
                 'detail_en'         => $request->title_translite,
             ]);

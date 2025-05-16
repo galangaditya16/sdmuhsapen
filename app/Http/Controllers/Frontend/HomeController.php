@@ -99,7 +99,9 @@ class HomeController extends Controller
             $lang = SessionHelpers::get('lang');
             $positions = AllCategoryTranslite::with(['CategoryTeacher' => function ($query) {
                 $query->orderBy('order', 'ASC'); // Urutkan relasi
-            }, 'CategoryTeacher.Guru', 'CategoryTeacher.transLite'])
+            }, 'CategoryTeacher.Guru' => function($query){
+                $query->orderBy('created_at','ASC');
+            }, 'CategoryTeacher.transLite'])
                 ->whereNotNull('id_teacher_position')
                 ->where('lang', $lang)
                 ->get()
