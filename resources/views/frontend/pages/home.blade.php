@@ -77,25 +77,25 @@
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
                             <dt class="text-base leading-7 text-oren">{{ __('message.prestasi_matematika_dan_sains') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-oren sm:text-5xl" data-text="945">
-                                945</dd>
+                                317</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
 
                             <dt class="text-base leading-7 text-pink">{{ __('message.prestasi_bahasa_dan_sastra') }}</dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-pink sm:text-5xl" data-text="174">
-                                174</dd>
+                                301</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4 w-full lg:border-r-2">
                             <dt class="text-base leading-7 text-hijau-terang">{{ __('message.prestasi_bidang_agama') }}
                             </dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-hijau-terang sm:text-5xl"
-                                data-text="100">19</dd>
+                                data-text="100">262</dd>
                         </div>
                         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                             <dt class="text-base leading-7 text-biru-langit">{{ __('message.prestasi_seni_dan_olahraga') }}
                             </dt>
                             <dd class="order-first text-3xl font-bold tracking-tight text-biru-langit sm:text-5xl"
-                                data-text="84">84</dd>
+                                data-text="84">197</dd>
                         </div>
                     </dl>
                 </div>
