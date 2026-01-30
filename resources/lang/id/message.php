@@ -72,7 +72,7 @@ return [
     'edukasi_tiada_henti' => 'Mengedukasi Tiada Henti',
     //footer ends, halaman profile starts
     'sejarah_sapen' => 'Sejarah Sekolah Dasar Muhammadiyah Sapen',
-    'sejarah_sapen_content1' => 'Sekolah Dasar (SD) Sapen, yang terletak di Yogyakarta, memiliki sejarah yang kaya. Didirikan pada tahun 1976, SD Sapen bertujuan untuk memberikan pendidikan dasar yang berkualitas bagi anak-anak di sekitar wilayah Sapen. Sejak awal, sekolah ini fokus pada pengembangan karakter dan akademik siswa, dengan menekankan pentingnya pendidikan yang holistik',
+    'sejarah_sapen_content1' => 'Sekolah Dasar (SD) Sapen, yang terletak di Yogyakarta, memiliki sejarah yang kaya. Didirikan pada tahun 1966, SD Sapen bertujuan untuk memberikan pendidikan dasar yang berkualitas bagi anak-anak di sekitar wilayah Sapen. Sejak awal, sekolah ini fokus pada pengembangan karakter dan akademik siswa, dengan menekankan pentingnya pendidikan yang holistik',
     'sejarah_sapen_content2' => 'Selama bertahun-tahun, SD Sapen mengalami berbagai perkembangan, baik dalam kurikulum maupun fasilitas. Dengan dukungan masyarakat dan pemerintah, sekolah ini terus berupaya untuk meningkatkan mutu pendidikan dan mengadaptasi metode pengajaran yang relevan dengan kebutuhan zaman.',
     'unggul_ilmu_pendidikan' => 'Unggul dalam Ilmu Pendidikan',
     'unggul_ilmu_pendidikan_content' => 'SD Muhammadiyah Sapen Yogyakarta unggul dalam ilmu pendidikan dengan kurikulum terpadu, metode pengajaran inovatif, dan tenaga pendidik berkualitas yang berkomitmen mencetak generasi cerdas, kreatif, dan berakhlak mulia.',

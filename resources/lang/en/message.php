@@ -72,7 +72,7 @@ This achievement reflects the school’s commitment to producing superior genera
     'edukasi_tiada_henti' => 'Providing Education Endlessly',
     //footer ends, halaman profile starts
     'sejarah_sapen' => 'History of Muhammadiyah Sapen Elementary School',
-    'sejarah_sapen_content1' => 'Sapen Elementary School (SD), located in Yogyakarta, has a rich history. Established in 1976, SD Sapen aims to provide quality basic education for children around the Sapen area. Since its inception, the school has focused on developing students’ character and academics, emphasizing the importance of holistic education.',
+    'sejarah_sapen_content1' => 'Sapen Elementary School (SD), located in Yogyakarta, has a rich history. Established in 1966, SD Sapen aims to provide quality basic education for children around the Sapen area. Since its inception, the school has focused on developing students’ character and academics, emphasizing the importance of holistic education.',
     'sejarah_sapen_content2' => 'Over the years, SD Sapen has undergone various developments, both in curriculum and facilities. With the support of the community and government, this school continues to strive to improve the quality of education and adapt teaching methods that are relevant to the needs of the times.',
     'unggul_ilmu_pendidikan' => 'Excellence in Educational Sciences',
     'unggul_ilmu_pendidikan_content' => 'Muhammadiyah Sapen Elementary School Yogyakarta excels in educational science with an integrated curriculum, innovative teaching methods, and quality educators who are committed to producing intelligent, creative, and noble generations.',
