@@ -133,7 +133,7 @@
 
     </section>
 
-    {{-- KEUNGGULAN --}}
+    {{-- KEUNGGULAN! --}}
     <section class=" border-gray-200 my-20">
 
         <div class="w-full relative container mx-auto px-4">
