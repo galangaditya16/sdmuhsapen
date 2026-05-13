@@ -123,8 +123,11 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg"
+                    <!-- <img class="h-auto max-w-full rounded-lg"
                         src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
+                        alt="mengenal SD Muhammadiyah Sapen"> -->
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="{{ asset('assets/images/coloring-3a.png') }}"
                         alt="mengenal SD Muhammadiyah Sapen">
                 </div>
 
@@ -698,7 +701,9 @@
                     </a>
                 </div>
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/testi-20012025.jpeg') }}"
+                    <!-- <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/testi-20012025.jpeg') }}"
+                        alt="testimoni SD Muhammadiyah Sapen"> -->
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/coloring-2.png') }}"
                         alt="testimoni SD Muhammadiyah Sapen">
                 </div>
 

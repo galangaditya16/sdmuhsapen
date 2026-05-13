@@ -52,8 +52,10 @@
             <h1 class="text-2xl md:text-5xl font-bold my-8 text-oren text-center">{{ __('message.tentang_sd_muhammadiyah_sapen') }}</h1>
             <div class="grid md:grid-cols-2 grid-rows-auto gap-8">
                 <div class="flex-auto w-50">
-                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
-                        alt="image description">
+                    <!-- <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/prof-20012025.jpeg"
+                        alt="image description"> -->
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/coloring-3a.png') }}"
+                        alt="Sejarah SD Muhammadiyah Sapen Yogyakarta">
                 </div>
                 <div>
 
@@ -402,7 +404,8 @@
                     <p class="text-sm md:text-xl my-3 text-justify">
                         {{ __('message.visi_content') }}
                     </p>
-                    <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/testi-20012025.jpeg" alt="visi dan misi sd muh sapen">
+                    <!-- <img class="h-auto max-w-full rounded-lg" src="https://sdmuhsapen-yog.sch.id/assets/images/testi-20012025.jpeg" alt="visi dan misi sd muh sapen"> -->
+                    <img class="h-auto max-w-full rounded-lg" src="{{ asset('assets/images/coloring-2.png') }}" alt="visi dan misi sd muh sapen">
                 </div>
                 <div>
                     <h1 class="text-4xl font-bold my-5 text-biru-tua mx-auto">{{ __('message.misi') }}</h1>
