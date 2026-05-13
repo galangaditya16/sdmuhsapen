@@ -43,7 +43,7 @@
                 </button>
             </a>
             <a target="_blank"
-                href="https://wa.me/628112642733?text=Halo%2C%20saya%20ingin%20bertanya%20mengenai%20info%20PPDB%20di%20SD%20Muhammadiyah%20Sapen">
+                href="https://supersapen.com/">
                 <button type="button"
                     class="text-white ml-3 my-5 font-bold bg-oren hover:bg-orange-800 hover:cursor-pointer rounded-lg text-sm px-5 py-2 text-center md:mx-1">
                     {{ __('message.ppdb') }}
