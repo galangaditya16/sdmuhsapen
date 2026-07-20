@@ -6,7 +6,7 @@
             <div class="grid gap-12 md:grid-cols-3 sm:gap-6 sm:grid-cols-1 :grid-cols-1 md:flex-auto md:p-2">
                 <div>
                         <a href="{{ url('/') }}" class="flex items-center">
-                            <img src="{{ asset('assets/images/LOGO_SAPEN.png') }}" class="h-20 me-3" alt="{{ 'Logo' . env('APP_NAME') }}" />
+                            <img src="{{ asset('assets/images/logo-sapen-baru.png') }}" class="h-20 me-3" alt="{{ 'Logo' . env('APP_NAME') }}" />
                             <span class="self-center text-2xl font-semibold">{{ env('APP_NAME') }}</span>
                         </a>
                         <p class="text-xl mt-4">
